@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Barebones</title>
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+
+		<link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+<style> 
+body {
+  font-family: Arial;
+}
+.footer {
+   height: 1.7em;
+   position: fixed;
+   bottom: 0;
+}
+.footer-left {
+   left: 0.3em;
+}
+.footer-right {
+   right: 0.3em;
+   vertical-align: top;
+}
+.footer-right img {
+  height: 2em;
+  margin-top: -0.3em;
+}
+
+.reveal .controls div.navigate-up,
+.reveal .controls div.navigate-down { display: none; }
+ 
+.reveal .progress { height: 0.3em; }
+
+.reveal .controls .slideNb {
+  position: relative;
+  opacity: 1;
+  z-index: -1;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 110px;
+  height: 110px !important;
+  width: 110px;
+  text-align: center;
+  border: 0;
+  font-size: 20px;
+  color: #ff6600;
+}
+
+@media (max-width: 767px) { 
+  .footer-left {
+    top: 0.3em;
+    bottom: auto;
+  }
+}
+
+.reveal .slides {
+  text-align: left;
+}
+/* override reveal.js settings */
+.reveal h2, .reveal h3 { 
+	-webkit-hyphens: manual;
+	   -moz-hyphens: manual;
+	        hyphens: manual;
+}
+.reveal h2, .reveal h3, .reveal h4, .reveal .center {
+  text-align: center;
+}
+
+.reveal h2 {
+  color: #fff;
+  background-color: #003366;
+  display: block;
+  padding: 0.3em;
+}
+.reveal h4 {
+  color: #ff6600;
+  font-weight: bold;
+}
+.reveal small {
+  vertical-align: middle;
+}
+
+.reveal ul li,.reveal ol li {
+  margin: 0.1em 0;
+  padding-left: 0.15em; 
+}
+
+.reveal .progress {
+  background: rgba(255, 102, 0, 0.1);
+}
+.reveal .progress span {
+  background: rgba(255, 102, 0, 0.8);
+}
+
+.reveal .slides>section,
+.reveal .slides>section>section {
+  padding: 0 0 110px 0;
+}
+.h1em {
+  height: 1em;
+}
+.vspace {
+  padding-top: 0.4em !important;
+}
+
+.as-if-no-link {
+  color: black !important;
+}
+
+.reveal pre {
+  width: 100%;
+}
+</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+
+<section>
+
+<h2>Main title</h2>
+
+<h3>details</h3>
+
+<p class="h1em">
+<h4>Pascal.Rigaux @ univ-paris1.fr</h4>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>slide title</h2>
+<h4>foo</h4>
+<p>foo
+<h4>bar</h4>
+<p>bar
+<p>boo
+</section>
+
+			</div>
+		</div>
+
+<div class="footer footer-left">where - Paris XX xxx 2014</div>
+
+<div class="footer footer-right">
+Copyright 2014 ©
+<img src="https://www.esup-portail.org/download/attachments/131089/logo-esup.png">
+</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			Reveal.initialize({
+	margin: 0,
+	controls: true,
+	progress: true,
+	history: true,
+	center: true,
+
+	theme: 'simple', // available themes are in /css/theme
+	transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+
+	dependencies: [ 
+			// Cross-browser element.classList (esp needed on safari 4.0.5)
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+			// Syntax highlight for <code> elements
+		        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+			],
+});
+
+       function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+                var node = container.querySelector( '.' + classname );
+                if( !node ) {
+                        node = document.createElement( tagname );
+                        node.classList.add( classname );
+                        if( innerHTML !== null ) {
+                                node.innerHTML = innerHTML;
+                        }
+                        container.appendChild( node );
+                }
+                return node;
+
+        }
+
+// From https://github.com/hakimel/reveal.js/pull/56
+function slidenumber(event){
+  var current_slide = 0;
+
+  var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+  for (var i = 0; i < event.indexh; i++) {
+    // get subslides
+    var subslides = horizontal_slides[i].querySelectorAll('section');
+
+    // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+    current_slide += (subslides.length === 0) ? 1 : subslides.length;
+  }
+
+  current_slide += event.indexv+1;
+  return current_slide.toString();
+}
+
+function setSlideNb(event) {
+  var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+  dom.innerHTML = event.indexh ? event.indexh : '';
+}
+
+Reveal.addEventListener('slidechanged', setSlideNb);
+Reveal.addEventListener('ready', setSlideNb);
+
+		</script>
+
+	</body>
+</html>
