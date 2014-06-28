@@ -1,0 +1,155 @@
+<svg width="745" height="383" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:se="http://svg-edit.googlecode.com">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <defs>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_32">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40l100,40z" id="svg_2"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_33">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40l100,40z" id="svg_3"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_34">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40l100,40z" id="svg_4"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_32">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40l-100,40z" id="svg_13"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_33">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40l-100,40z" id="svg_16"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_34">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40l-100,40z" id="svg_24"/>
+  </marker>
+  <marker id="se_marker_end_svg_40" markerUnits="strokeWidth" orient="auto" viewBox="0 0 100 100" markerWidth="5" markerHeight="5" refX="50" refY="50">
+   <path id="svg_14" d="m100,50l-100,40l30,-40l-30,-40l100,40z" fill="#000000" stroke="#000000" stroke-width="10"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_56">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_56">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_59">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_59">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_61">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_61">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_64">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_64">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_76">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_76">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_79">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_79">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_82">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_82">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_83">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_83">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_88">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_88">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="leftarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_start_svg_89">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m0,50l100,40l-30,-40l30,-40z"/>
+  </marker>
+  <marker refY="50" refX="50" markerHeight="5" markerWidth="5" viewBox="0 0 100 100" se_type="rightarrow" orient="auto" markerUnits="strokeWidth" id="se_marker_end_svg_89">
+   <path stroke-width="10" stroke="#000000" fill="#000000" d="m100,50l-100,40l30,-40l-30,-40z"/>
+  </marker>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#e76f00" id="svg_90" fill="#e76f00" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="264.875005" y="135.485657" width="219.750009" height="236.166678"/>
+  <image x="349.245704" y="207.777319" width="51.008591" height="54.769593" id="svg_9" xlink:href="java-logo.png"/>
+  <polyline marker-end="url(#se_marker_end_svg_59)" marker-start="url(#se_marker_start_svg_59)" se:connector="svg_57 svg_41" fill="none" stroke-width="2" stroke="#000000" points="653.5 52.2773 653.5 63.819 653.5 75.3607" id="svg_59"/>
+  <polyline marker-end="url(#se_marker_end_svg_56)" marker-start="url(#se_marker_start_svg_56)" se:connector="svg_42 svg_55" fill="none" stroke-width="2" stroke="#000000" points="682.366 126.027 688.07 118.787 693.774 111.547" id="svg_56"/>
+  <rect stroke="#ffc58e" fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="269.386617" y="323.027316" width="210.946715" height="44.000002" id="svg_7" opacity="0.95"/>
+  <text fill="#000000" stroke="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="444.333339" y="362.846992" id="svg_11" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">REST/JSON</text>
+  <text fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="374.86258" y="342.96835" id="svg_10" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve" stroke="#000000">WebService</text>
+  <g id="svg_35">
+   <rect stroke="#ffc58e" id="svg_27" fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="450.666677" y="221.610648" width="28.999992" height="31.000001" opacity="0.95"/>
+   <text stroke="#000000" id="svg_28" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="465.166687" y="244.043871" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">/</text>
+  </g>
+  <line stroke="#000000" marker-start="url(#se_marker_start_svg_32)" marker-end="url(#se_marker_end_svg_32)" id="svg_32" y2="237.027322" x2="489.999993" y1="237.027322" x1="564.249991" stroke-linecap="square" stroke-width="2" fill="none"/>
+  <polyline id="svg_33" marker-end="url(#se_marker_end_svg_33)" marker-start="url(#se_marker_start_svg_33)" fill="none" stroke-width="2" stroke="#000000" points="568.25 288.694 529.417 288.694 490.583 288.694"/>
+  <line stroke="#000000" marker-start="url(#se_marker_start_svg_34)" id="svg_34" marker-end="url(#se_marker_end_svg_34)" y2="345.360654" x2="490.583333" y1="345.360654" x1="568.000007" stroke-linecap="square" stroke-width="2" fill="none"/>
+  <rect stroke="#ffc58e" id="svg_17" fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="269.583322" y="266.027316" width="210.75001" height="44.000002" opacity="0.95"/>
+  <text stroke="#000000" id="svg_21" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="374.95833" y="285.96835" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">/login</text>
+  <text style="cursor: move;" stroke="#000000" id="svg_18" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="417.666672" y="307.256828" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">JSONP, postMessage</text>
+  <text fill="#000000" stroke="#000000" stroke-width="0" x="529.416664" y="282.360656" id="svg_29" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">CAS</text>
+  <text fill="#000000" stroke="#000000" stroke-width="0" x="529.416664" y="302.860656" id="svg_30" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">shibboleth</text>
+  <polyline se:connector="svg_36 svg_27" id="svg_40" points="412.633 209.111 426.65 216.581 440.667 224.052" stroke="#000000" stroke-width="2" fill="none" marker-end="url(#se_marker_end_svg_40)"/>
+  <g id="svg_23">
+   <image x="663" y="337.652913" id="svg_22" xlink:href="https://raw.github.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-medium.png" height="0" width="0"/>
+   <image x="672" y="249.360656" id="svg_20" xlink:href="https://raw.github.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-medium.png" height="0" width="0"/>
+   <rect stroke="#463265" id="svg_25" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="574.250008" y="219.360653" width="160.499991" height="153.916684" opacity="0.25"/>
+   <rect stroke="#463265" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" x="578" y="259.027327" width="153" height="110.282307" id="svg_1"/>
+   <text font-weight="normal" transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#ffc58e" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="603.5" y="368.446128" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve" id="svg_12">angular</text>
+   <text transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#000000" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="654.497396" y="305.447991" id="svg_6" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">Web Widget</text>
+   <text transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#000000" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="705.5" y="367.446128" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve" id="svg_15">bootstrap</text>
+   <image x="631.5" y="323.483327" width="45.000003" height="48.285958" id="svg_19" xlink:href="https://raw.github.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-medium.png"/>
+   <text xml:space="preserve" text-anchor="middle" font-family="arial" font-size="16" id="svg_26" y="240.360656" x="653.16925" opacity="0.95" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">&lt;html&gt;</text>
+  </g>
+  <image id="svg_39" x="579" y="133.360656" xlink:href="https://raw.github.com/angular/angular.js/master/images/logo/AngularJS-Shield.exports/AngularJS-Shield-medium.png" height="0" width="0"/>
+  <rect stroke="#463265" id="svg_41" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="573.250008" y="85.360654" width="160.499991" height="107.916685" opacity="0.25"/>
+  <rect stroke="#463265" id="svg_42" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" x="577" y="136.027327" width="153" height="53.282306"/>
+  <text id="svg_44" transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#000000" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="653.497396" y="175.792004" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">Web Widget</text>
+  <text id="svg_47" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="16" y="104.360656" x="619.16925" opacity="0.95" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">appTest</text>
+  <rect stroke="#ffc58e" id="svg_52" fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="422.170965" y="141.11065" width="56.999996" height="22.500001" opacity="0.95"/>
+  <g id="svg_50">
+   <rect fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="320.670967" y="173.110648" width="106.999995" height="31.000001" opacity="0.95" id="svg_36" stroke="#ffc58e"/>
+   <text stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="374.177889" y="192.778232" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve" id="svg_37">js + css + main div</text>
+  </g>
+  <text id="svg_53" stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="450.676054" y="156.521702" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">appTest</text>
+  <line id="svg_54" stroke="#000000" marker-start="url(#se_marker_start_svg_32)" marker-end="url(#se_marker_end_svg_32)" y2="152.027322" x2="489.499993" y1="152.027322" x1="563.749991" stroke-linecap="square" stroke-width="2" fill="none"/>
+  <text xml:space="preserve" text-anchor="middle" font-family="arial" font-size="12" id="svg_55" y="104" x="703" stroke-linecap="square" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">mock http</text>
+  <rect stroke="#463265" id="svg_57" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="611.749992" y="12.360656" width="83.5" height="29.916687" opacity="0.25"/>
+  <text id="svg_58" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="16" y="32.859343" x="653.497367" opacity="0.95" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">e2e test</text>
+  <line stroke="#000000" marker-end="url(#se_marker_end_svg_61)" marker-start="url(#se_marker_start_svg_61)" id="svg_61" y2="155.749999" x2="414" y1="166.000001" x1="397" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <rect stroke="#ffc58e" id="svg_62" fill="#ffc58e" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="269.170967" y="140.11065" width="83.749994" height="25.250001" opacity="0.95"/>
+  <text id="svg_63" stroke="#000000" fill="#000000" stroke-width="0" stroke-dasharray="null" stroke-linejoin="null" stroke-linecap="null" x="311.049215" y="156.899267" font-size="12" font-family="arial" text-anchor="middle" xml:space="preserve">StartPagePortlet</text>
+  <line stroke="#000000" id="svg_64" marker-end="url(#se_marker_end_svg_64)" marker-start="url(#se_marker_start_svg_64)" y2="182.000001" x2="312.75" y1="172.249999" x1="298" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <rect stroke="#463265" id="svg_65" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="14.250008" y="276.860652" width="160.499991" height="92.66" opacity="0.25"/>
+  <rect id="svg_66" stroke="#463265" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" x="18" y="313.027327" width="153" height="53.282306"/>
+  <text id="svg_67" transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#000000" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="94.497396" y="349.120892" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">Web Widget</text>
+  <text id="svg_68" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="16" y="296.610656" x="52.755187" opacity="0.95" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">uPortal</text>
+  <rect stroke="#463265" id="svg_69" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="12.750008" y="150.360655" width="160.499991" height="92.666685" opacity="0.25"/>
+  <rect id="svg_70" stroke="#463265" fill="#463265" stroke-width="10" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="round" x="16.5" y="185.777327" width="153" height="53.282306"/>
+  <text id="svg_71" transform="matrix(1 0 0 1.02118 0 -9.83824)" stroke="#000000" fill="#ffffff" stroke-width="0" stroke-dasharray="null" stroke-linejoin="round" stroke-linecap="null" x="92.997396" y="224.510152" font-size="20" font-family="arial" text-anchor="middle" xml:space="preserve">Web Widget</text>
+  <text id="svg_73" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="12" y="283.75" x="148.25" stroke-linecap="square" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">WebProxy</text>
+  <text id="svg_74" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="16" y="170.860656" x="46.255187" opacity="0.95" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">uPortal</text>
+  <text id="svg_75" xml:space="preserve" text-anchor="middle" font-family="arial" font-size="12" y="157" x="152.25" stroke-linecap="square" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" stroke="#aad4ff" fill="#000000">JSR 168</text>
+  <polyline stroke="#000000" marker-end="url(#se_marker_end_svg_76)" marker-start="url(#se_marker_start_svg_76)" se:connector="svg_75 svg_62" fill="none" stroke-width="2" points="182.25 152.817 220.71 152.793 259.171 152.768" id="svg_76"/>
+  <line stroke="#000000" id="svg_79" marker-end="url(#se_marker_end_svg_79)" marker-start="url(#se_marker_start_svg_79)" y2="198.749996" x2="312.749995" y1="276.250006" x1="183.000001" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <polyline marker-end="url(#se_marker_end_svg_82)" marker-start="url(#se_marker_start_svg_82)" se:connector="svg_66 svg_7" fill="none" stroke-width="2" stroke="#000000" points="181 341.322 220.193 342.071 259.387 342.82" id="svg_82"/>
+  <polyline marker-end="url(#se_marker_end_svg_83)" marker-start="url(#se_marker_start_svg_83)" se:connector="svg_66 svg_17" fill="none" stroke-width="2" stroke="#000000" points="181 323.741 220.292 316.506 259.583 309.271" id="svg_83"/>
+  <line stroke="#000000" id="svg_88" marker-end="url(#se_marker_end_svg_88)" marker-start="url(#se_marker_start_svg_88)" y2="325.000005" x2="261.249996" y1="236.249995" x1="177.999998" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <line id="svg_89" stroke="#000000" marker-end="url(#se_marker_end_svg_89)" marker-start="url(#se_marker_start_svg_89)" y2="292.500005" x2="261.249996" y1="203.749995" x1="177.999998" stroke-linecap="null" stroke-linejoin="round" stroke-dasharray="null" stroke-width="2" fill="none"/>
+ </g>
+</svg>

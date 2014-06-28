@@ -1,10 +1,10 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - Barebones</title>
+		<title>SMS-U v2 : AngularJS, Web widget, WS REST/JSON</title>
 
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
@@ -78,6 +78,9 @@ body {
   display: block;
   padding: 0.3em;
 }
+.reveal h2.legende { 
+  font-size: 1.3em;
+}
 .reveal h4 {
   color: #ff6600;
   font-weight: bold;
@@ -89,6 +92,11 @@ body {
 .reveal ul li,.reveal ol li {
   margin: 0.1em 0;
   padding-left: 0.15em; 
+}
+
+.reveal small ul li {
+  margin-left: 0.35em;
+  padding-left: 0.65em;
 }
 
 .reveal .progress {
@@ -116,6 +124,29 @@ body {
 .reveal pre {
   width: 100%;
 }
+
+table.valign-middle td { vertical-align: middle; }
+table.with-border { border-collapse: collapse; width: 100%; }
+table.with-border th { text-align: center; padding-bottom: 0.2em; min-width: 3em; }
+table.with-border td { border: 1px solid; border-bottom-color: #ccc; padding: 0.4em !important; }
+table.with-border.title-on-left tr td:first-child { border-left: none; border-top: none; border-bottom: none; vertical-align: middle; text-align: right; padding-right: 0.7em !important; }
+table.with-border tr:last-child td { border-bottom-color: #000; }
+table.with-border td.light-border-right { border-right-color: #ccc; border-right-style: dashed; }
+table.with-border td.light-border-left { border-left-color: #ccc; border-left-style: dashed; }
+
+table.title-on-left {
+  width: 100%;
+}
+table.title-on-left th {
+  text-align: center;
+  vertical-align: bottom;
+  font-size: 90%;
+}
+table.title-on-left td {
+  text-align: center;
+}
+</style>
+
 </style>
 	</head>
 
@@ -126,10 +157,9 @@ body {
 			<div class="slides">
 
 <section>
+<h2>SMS-U version 2</h2>
 
-<h2>Main title</h2>
-
-<h3>details</h3>
+<h3>AngularJS, Web widget, REST/JSON</h3>
 
 <p class="h1em">
 <h4>Pascal.Rigaux @ univ-paris1.fr</h4>
@@ -137,22 +167,543 @@ body {
 
 <!-------------------------------------------------->
 <section>
-<h2>slide title</h2>
-<h4>foo</h4>
-<p>foo
-<h4>bar</h4>
-<p>bar
-<p>boo
+<h2>Plan</h2>
+
+<ul>
+<li>Présentation
+<li>Single Page Application
+<li>AngularJS
+<li>Web widget
+<li>Authentification
+<li>Problèmes rencontrés
+</ul>
+
 </section>
 
+
+<!-------------------------------------------------->
+<section>
+  <h2>Présentation</h2>
+
+  <ul>
+    <li>service d'envoi de SMS
+    <li>développé dans le cadre de l'UNPIdF avec un financement de la Mairie de Paris
+    <li>développement initial réalisé par un prestataire
+  </ul>
+<p class="vspace">
+  <h4>Fonctionnalités</h4>
+  <ul>
+    <li>envoi à des groupes
+    <li>gestion de quotas
+    <li>gestion des modérateurs
+    <li>gestion des accusés de réception <small>(l'envoi de SMS est asynchrone)</small>
+  </ul>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+  <h2>Présentation</h2>
+  <h4>SMS-U à Paris 1</h4>
+
+  <ul>
+    <li>Notre LDAP connait le numéro de téléphone de :
+      <ul>
+	<li>80% des étudiants
+	<li>33% du personnel
+      </ul>
+    <li>Personnes ayant autorisé SMS-U (opt-in)
+      <ul>
+	<li>50% des étudiants
+	<li>20% du personnel
+      </ul>
+  </ul>  
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+  <h2>Présentation</h2>
+  <h4>Utilisations à Paris1 en 2013/2014</h4>
+
+  En un an, 18000 SMS envoyés &#10145; 1000 € <small>(0.05€/sms)</small>
+<p>
+
+  <ul>
+    <li>Principaux consommateurs :
+      <ul>
+	<li>8500 SMS : pédagogique et administratif <br><small>(dont 50% service des sports, 30% UFR 12)</small>
+	<li>8000 SMS : ré-initilisation de mot de passe
+      </ul>
+    <li>Nouveautés cette année :
+      <ul>
+	<li>rendez-vous médicaux et administratifs
+	<li>alertes climatisation
+      </ul>
+  </ul>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+  <h2>Présentation</h2>
+<h4>Migration technologique</h4>
+
+<style>
+table.left-to-right {
+  line-height: 1em;
+  width: 100%;
+}
+table.left-to-right td {
+  padding: 0.4em !important;
+  text-align: center;
+}
+table.left-to-right td:first-child {
+  text-align: right;
+}
+table.left-to-right td:last-child {
+   text-align: left;
+}
+</style>
+<table class="left-to-right">
+  <tr>
+    <td>ant</td>
+    <td>&#10145;</td>
+    <td>maven + ant</td>
+  </tr>
+  <tr>
+    <td>JSF</td>
+    <td>&#10145;</td>
+    <td>AngularJS</td>
+  </tr>
+  <tr>
+    <td>SOAP</td>
+    <td>&#10145;</td>
+    <td>REST/JSON</td>
+  </tr>
+  <tr>
+    <td>desktop</td>
+    <td>&#10145;</td>
+    <td>responsive web design</td>
+  </tr>
+  <tr>
+    <td>servlet / portlet</td>
+    <td>&#10145;</td>
+    <td>servlet / web widget</td>
+  </tr>
+</table>
+
+</section>
+
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/smsu-v1-no-title.png">
+  <h2 class="legende fragment">SMS-U v1</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/send.png">
+  <h2 class="legende fragment">SMS-U v2</h2>
+</section>
+
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/welcome-mobile.png">
+  <h2 class="legende fragment">Pensé pour mobile</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/send-mobile.png">
+  <h2 class="legende fragment">CSS Bootstrap 3.1</h2>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Single Page Application</h2>
+
+<h4>Tout est fait en Ajax !</h4>
+
+<p class="vspace">
+L'application mono-page la plus connue : Gmail
+
+<p class="vspace">
+Petite démonstration avec SMS-U v2...
+
+</section>
+
+<!-------------------------------------------------->
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/cas.png">
+  <h2 class="legende">Pour accéder à SMS-U, authentification</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/welcome.png">
+  <h2 class="legende fragment">On clique sur « Envoi SMS »...</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/send.png">
+  <h2 class="legende fragment">Remarquez l'URL</h2>
+  <h2 class="legende fragment">On clique sur « Envoyer »...</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/suivi.png">
+  <h2 class="legende fragment">Remarquez l'URL<br><small>(permet le lien en profondeur)</small></h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/send2.png">
+  <h2 class="legende">Un autre envoi</h2>
+  <h2 class="legende fragment">Au moment d'envoyer, la session est expirée...</h2>
+  <h2 class="legende fragment">On clique sur « Envoyer »...</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/session-expired.png">
+  <h2 class="legende fragment">On clique pour se logger à nouveau</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/session-expired-window-open.png">
+  <h2 class="legende fragment">Un nouvel onglet est ouvert !</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/suivi2.png">
+  <h2 class="legende fragment current-visible">... le message a été envoyé !<p class="fragment"> L'expiration n'a pas été un problème :)</p></h2>
+</section>
+<!--
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/suivi2.png">
+  <h2 class="legende">Que se passe-t-il si l'utilisateur sauvegarde l'url ?</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/cas-rest-login.png"></section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/suivi2.png">
+  <h2 class="legende">Aucun problème : l'URL est conservée intacte après l'authentification</h2>
+</section>
+-->
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/maintenance.png">
+  <h2 class="legende">Pendant le redémarrage du serveur ?</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/maintenance.png">
+  <h2 class="legende fragment">L'utilisateur est prévenu...</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/send.png">
+  <h2 class="legende">Quand le serveur est démarré<br>l'application reprend là où elle en était</h2>
+  <h2 class="legende fragment">Comme l'application démarre assez vite, ce redémarrage passera souvent inaperçu</h2>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Single Page Application</h2>
+
+<ul>
+
+<li>toute la navigation est faite en Ajax
+<li>toutes les actions sont faites en Ajax :
+<br> &#10145; on s'abstrait des contraintes des &lt;form&gt; HTML
+<br> &#10145; les données client-&gt;serveur peuvent être complexes
+
+<li>templates manipulés dans le navigateur &#10145; cache
+
+<li>routage avec URLs ...#/send
+  <br><small>(NB : HTML5 permet de faire plus transparent avec pushState)</small>
+
+<li>les données de navigation sont conservées en mémoire dans le navigateur
+<li>la session java ne stocke que le login ! re-log transparent
+<li>debug facile dans le navigateur
+
+</ul>
+
+⚠ programmation asynchrone !
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>AngularJS</h2>
+
+<h4>fantastique framework javascript</h4>
+<ul>
+<li>MVC
+<li>liaison bidirectionnelle des données comme dans JSF
+<br> &#10145; pas de manipulation du DOM, sauf dans les <a href="http://docs.angularjs.org/guide/directive">directives</a>
+<li>injection de dépendances comme dans Spring
+<li>documentation, exemples éditables <small>(jsfiddle, plunk)</small>
+<li>sécurité <small>(avec porte de sortie : <a href="https://docs.angularjs.org/api/ng/service/$sce">Strict Contextual Escaping</a>)</small>, routage, validateurs de formulaires, framework de tests
+<li><small>intégration en cours dans les navigateurs (web components : <a href="https://mail.mozilla.org/pipermail/es-discuss/2012-September/024978.html">object.observe</a>, <a href="http://julienvey.com/2013/02/18/web-components/">templates</a>)</small>
+</ul>
+
+</section>
+
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/test.png">
+  <h2 class="legende">Démonstrateur de l'interface utilisateur <small>(purement dans le navigateur avec mock web-service)</small></h2>
+  <h2 class="legende fragment">Je vous invite à aller tester !</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/e2e.png">
+  <h2 class="legende">Tests d'interface pour vérifier automatiquement la compatibilité dans différents navigateurs
+    <small><br>NB: Protractor replaces deprecated AngularJS Scenario Runner</small>
+</h2>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>AngularJS vs JSF</h2>
+
+<h4>inconvénients d'AngularJS</h4>
+<ul>
+<li>le code serveur doit être plus fiable, le spoofing des paramètres d'entrée étant facile
+<li>validateurs souvent dupliqués côté client
+<li>rôles vérifiés côté client et côté serveur
+<!--<li>traductions côté client et un peu côté serveur <small>(pour l'envoi de mails par exemple)</small>-->
+</ul>
+<p>
+<h4>avantages d'AngularJS</h4>
+<ul>
+<li>réactivité de l'interface
+<li>facile, léger
+<li>bonne intégration avec le javascript :)
+  <li>simple de faire des composants UI réutilisables (les "directives")
+</ul>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Web widget</h2>
+
+<h4>Définition</h4>
+Widget intégrable dans une page web :
+<ul>
+<li>ne maîtrise pas l'url de la page
+<li>peut utiliser un web service
+</ul>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Web widget</h2>
+
+ <h4>Utilisation dans uPortal</h4>
+
+Il faut autoriser le portail à utiliser le web service SMS-U :
+
+<pre><code data-trim>
+# dans config.properties:
+portal.urls=http://up4-unpidf.univ-paris1.fr
+</code></pre>
+
+<p class="vspace">
+Multiples possibilités d'intégration : 
+CMS, <a href="https://wiki.jasig.org/display/PLT/WebProxy" class="as-if-no-link">WebProxy</a>, JSR 168.
+<p>Pour uPortal 4, créer un canal « Advanced CMS » et mettre :
+<pre><code data-trim class="html">
+&lt;script src="https://sms.univ-paris1.fr/WebWidget.js"&gt;
+</code></pre>
+
+</section>
+
+<!--
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/up4-new-portlet.png">
+  <h2 class="legende">On crée une nouvelle portlet</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/up4-new-portlet2.png">
+  <h2 class="legende">de type Web Proxy Portlet</h2>
+</section>
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/up4-new-portlet3.png">
+  <h2 class="legende fragment">On met l'URL WebWidget : <br>HTML permettant la configuration et l'initialisation du Web widget</h2>
+</section>
+-->
+<section data-background-position="top" data-background-size="contain" data-background-image="demo/smsu-in-up4.png">
+  <h2 class="legende">Ça marche !<br>Ça ressemble à une portlet java !</h2>
+  <h2 class="legende fragment">Mais en fait, cela fait des requêtes cross-domain directement vers le web service https://sms.univ-paris1.fr/rest</h2>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Web widget vs Portlet</h2>
+
+<table class="with-border" style="font-size: 80%">
+  <tr><th style="width: 45%">Web widget</th><th>Portlet</th></tr>
+  <tr><td>toute techno serveur</td><td>seulement JVM</td></tr>
+  <tr><td>même serveur ou ailleurs</td><td>même tomcat/java</td></tr>
+  <tr><td>gère authentification &amp; session</td><td>délègue authentification &amp; session</td></tr>
+  <tr><td>gère son autorisation</td><td>peut déléguer l'autorisation</td></tr>
+  <tr>
+    <td>urls #/send
+      <small>&#10145; attention aux conflits si plusieurs SPA dans la page</small> </td><td>urls remapped pour passer par uPortal <small>(qui fait l'agrégation html)</small>
+      <small>(si plusieurs portlets dans la page, l'url contient les paramètres pour une portlet, les autres portlets utilisent les paramètres enregistrés en session)</small>
+    </td></tr>
+</table>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Web widget vs Portlet</h2>
+<h4>avantages du web widget</h4>
+<ul>
+<li>pas lié à un seul portail
+<br> &#10145; intégrable dans plusieurs portails
+<li>pas lié à un seul tomcat
+<br> &#10145; redémarrage rapide, isolation...
+<li>navigation Ajax
+<br> &#10145; plus réactif, plus rapide sur mobile
+</ul>
+
+<p class="vspace">
+<h4>inconvénients du web widget</h4>
+<ul>
+<li>authentification délicate
+</ul>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Authentification</h2>
+
+Pour authentifier un web service depuis le navigateur :
+<p>
+<table class="with-border valign-middle">
+  <tr><th style="width: 33%">possibilité</th><th>contraintes</th></tr>
+  <tr><td>classique</td>
+    <td>maitriser l'url de la page</td></tr>
+  <tr><td>window.open + postMessage</td>
+    <td>clic utilisateur</td></tr>
+  <tr><td>JSONP</td><td>auth préalable, third party cookies, pas shibboleth</td></tr>
+  <tr><td>iframe cachée</td><td>auth préalable, third party cookies</td></tr>
+</table>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Authentification</h2>
+<h4>Shibboleth</h4>
+
+La fédération Éducation-Recherche utilise le binding « HTTP Post ».
+Cela rend difficile l'authentification :
+<p>
+<ul>
+<li>JSONP : impossible
+<li>iframe cachée : possible mais impossible de savoir si l'authentification a échoué ou est en cours
+</ul>
+<p class="vspace">
+
+L'autorisation du binding « HTTP Artifact » rendrait le mécanisme similaire à CAS et résoudrait le problème.
+Cela éviterait aussi les syndromes « page blanche » et « action "page précédente" impossible »
+
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Problèmes rencontrés</h2>
+<h4>Dette technique dans le code java existant</h4>
+<ul>
+<li>requêtes SQL construite à la main, sans escaping !
+<li>champs base de données limités à des strings très petites
+<li>différences entre create_tables.sql et *.hbm.xml
+<li>param hibernate MysqlInnodb plutôt Mysql5Innodb
+<p class="vspace">
+<li>duplication de code entre les sous-projets
+<small>
+(DAO POJOs, *.hbm.xml, WS exceptions, WS beans)
+</small>
+<li>librairies obsolètes <small>(commons-httpclient, xfire)</small>
+</ul>
+</section>
+
+<!-------------------------------------------------->
+<section>
+
+<h2>Problèmes rencontrés</h2>
+<h4>Java</h4>
+<ul>
+
+<li>maven
+<ul>
+<li> pas de gestion de conflits
+<small>
+ <ul>
+ <li>xercesimpl vs xml-apis
+ <li>conflicting versions (jackson-*, spring-*...)
+ <li>opensaml obsolete deps
+</ul>
+</small>
+<li>lent en ligne de commande
+<li>complexe comparé à ant
+</ul>
+
+<li>manque d'outils pour la gestion des css/js
+
+<li>tentative de rester à hibernate, en remplaçant la gestion des sessions hibernate esup-commons par OpenSessionInView, sans mettre de point-cut
+<br> &#10145; échec, autocommit=true pour l'instant...
+
+</ul>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Problèmes rencontrés</h2>
+<h4>outils pour la gestion des css/js</h4>
+
+<small>
+<table class="title-on-left with-border">
+  <tr><th></th><th>Java</th><th>node.js</th></tr>
+  <tr><td>aggrégation</td><td>yuicompressor</td><td>grunt-concat</td></tr>
+  <tr><td>minification</td><td>yuicompressor</td><td>grunt-usemin</td></tr>
+  <tr><td>lint</td><td>jshint-maven-plugin <small>(lent)</small></td><td>grunt-contrib-jshint</td></tr>
+  <tr><td>cache buster</td><td>jasig resource-server <small>(wro4j namingStrategy?)</small> </td><td>grunt-rev</td></tr>
+  <tr><td>download libs</td><td>webjars</td><td>bower</td></tr>
+  <tr><td>custom jquery</td><td>?</td><td>grunt-jquery-builder</td></tr>
+  <tr><td>angular templates</td><td>?</td><td>grunt-angular-templates</td></tr>
+</table>
+
+<p class="vspace">
+NB : les webjars ne fournissent pas de liste ordonnée pour concaténation, par contre possibilité d'utiliser require.js
+
+</small>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+
+<h2>Problèmes rencontrés</h2>
+<h4>Java</h4>
+<small>
+<ul>
+<li>jackson est bien, mais plus compliqué qu'en PHP ou node.js
+<li>spring-ldap : faire une requête spécifique à l'attribut "members" pas possible
+  <small>(solution utilisée : bean spécifique pour accéder à "members")</small>
+<li>eclipse trouve pas les sources pour le debug
+  <small>(solution utilisée : remote debugging)</small>
+<li>JAX-RS : si utilisé pour proposer du JSON ou du XML,
+  nécessite Accept-Content-Type rendant l'url difficile à tester dans le navigateur
+<li>jetty servlet3 : lenteur démarrage si classpath scanning (pb disparu !?)
+<li>UI beans avec setters/getters ralentissent la ré-architecturation
+
+<li>interfaces entre controller et business ralentissent la ré-architecturation
+
+</ul>
+</small>
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Problèmes rencontrés</h2>
+<h4>AngularJS</h4>
+<ul>
+<li>conflit avec le routage jquery-mobile dans uPortal 4 <small>(<a target="_blank" href="https://github.com/EsupPortail/esup-smsu/commit/13b46a86495318a6ce9ade32d0c23f339824f011">solution</a>)</small>
+<li>les « directives » sont difficiles à manipuler en dehors des cas documentés
+<li>danger du ng-model si pas de "."
+<li>prévenir les clics doublés pendant l'attente
+</ul>
+
+</section>
+
+<!-------------------------------------------------->
+<section>
+<h2>Conclusion</h2>
+
+<ul>
+<li>la version 2 de SMS-U est plus réactive
+<li>AngularJS est super
+</ul>
+
+<p class="vspace"></p>
+<p class="vspace"></p>
+
+<h2>Questions ?</h2>
+</section>
+
+<!-------------------------------------------------------------------------->
 			</div>
 		</div>
 
-<div class="footer footer-left">where - Paris XX xxx 2014</div>
+<div class="footer footer-left">ESUP-Days #18 - Paris 3 juillet 2014</div>
 
 <div class="footer footer-right">
 Copyright 2014 ©
-<img src="https://www.esup-portail.org/download/attachments/131089/logo-esup.png">
+<img src="img/logo-esup--NEW.png">
 </div>
 
 		<script src="lib/js/head.min.js"></script>
