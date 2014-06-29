@@ -291,6 +291,11 @@ table.left-to-right td:last-child {
     <td>&#10145;</td>
     <td>servlet / web widget</td>
   </tr>
+  <tr>
+    <td>groupes PAGS</td>
+    <td>&#10145;</td>
+    <td>groupes LDAP / <a href="http://github.com/prigaux/wsgroups">wsgroups</a></td>
+  </tr>
 </table>
 
 </section>
@@ -325,7 +330,7 @@ Petite démonstration avec SMS-U v2...
 
 <!-------------------------------------------------->
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/cas.png">
-  <h2 class="legende">Pour accéder à SMS-U, authentification</h2>
+  <h2 class="legende">Pour accéder à SMS-U, authentification classique</h2>
 </section>
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/welcome.png">
   <h2 class="legende fragment">On clique sur « Envoi SMS »...</h2>
@@ -347,6 +352,7 @@ Petite démonstration avec SMS-U v2...
 </section>
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/session-expired-window-open.png">
   <h2 class="legende fragment">Un nouvel onglet est ouvert !</h2>
+  <h2 class="legende fragment">window.open + postMessage</h2>
 </section>
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/suivi2.png">
   <h2 class="legende fragment current-visible">... le message a été envoyé !<p class="fragment"> L'expiration n'a pas été un problème :)</p></h2>
@@ -369,6 +375,7 @@ Petite démonstration avec SMS-U v2...
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/send.png">
   <h2 class="legende">Quand le serveur est démarré<br>l'application reprend là où elle en était</h2>
   <h2 class="legende fragment">Comme l'application démarre assez vite, ce redémarrage passera souvent inaperçu</h2>
+  <h2 class="legende fragment">re-log transparent sur CAS avec JSONP</h2>
 </section>
 
 <!-------------------------------------------------->
@@ -492,7 +499,7 @@ CMS, <a href="https://wiki.jasig.org/display/PLT/WebProxy" class="as-if-no-link"
 </section>
 -->
 <section data-background-position="top" data-background-size="contain" data-background-image="demo/smsu-in-up4.png">
-  <h2 class="legende">Ça marche !<br>Ça ressemble à une portlet java !</h2>
+  <h2 class="legende">Voilà le résultat.<br>Ça ressemble à une portlet java !</h2>
   <h2 class="legende fragment">Mais en fait, cela fait des requêtes cross-domain directement vers le web service https://sms.univ-paris1.fr/rest</h2>
 </section>
 
@@ -523,7 +530,7 @@ CMS, <a href="https://wiki.jasig.org/display/PLT/WebProxy" class="as-if-no-link"
 <li>pas lié à un seul portail
 <br> &#10145; intégrable dans plusieurs portails
 <li>pas lié à un seul tomcat
-<br> &#10145; redémarrage rapide, isolation...
+<br> &#10145; isolation (redémarrage...)
 <li>navigation Ajax
 <br> &#10145; plus réactif, plus rapide sur mobile
 </ul>
@@ -566,11 +573,33 @@ Cela rend difficile l'authentification :
 <li>iframe cachée : possible mais impossible de savoir si l'authentification a échoué ou est en cours
 </ul>
 <p class="vspace">
-
-L'autorisation du binding « HTTP Artifact » rendrait le mécanisme similaire à CAS et résoudrait le problème.
+Solution : 
+<ul>
+<li>tester un login automatique dans une iframe cachée
+<li>tout en proposant un login explicite avec window.open
+</ul>
+<p class="vspace">
+<small>
+NB : 
+l'utilisation du binding « HTTP Artifact » rendrait le mécanisme similaire à CAS.
 Cela éviterait aussi les syndromes « page blanche » et « action "page précédente" impossible »
+</small>
+</section>
 
+<!-------------------------------------------------->
+<section>
+<h2>Authentification</h2>
+<h4>Web widget sur site externe</h4>
 
+Safari refuse les cookies des sites non visités. Cela concerne uniquement les sites externes.
+<p class="vspace">
+Un web service peut contourner le problème en utilisant <a href="http://caniuse.com/sessionStorage">sessionStorage</a> :
+<ul>
+<li>phpCAS : facile <small>(setNoClearTicketsFromUrl)</small>
+<li>java-cas-client: à tester
+<li>mod-auth-cas, mod-auth-shib : impossible, cookies obligatoires
+<li>oiosaml, simplesaml : à tester
+</ul>
 </section>
 
 <!-------------------------------------------------->
@@ -600,7 +629,7 @@ Cela éviterait aussi les syndromes « page blanche » et « action "page p
 
 <li>maven
 <ul>
-<li> pas de gestion de conflits
+<li> peu de gestion de conflits entre jars
 <small>
  <ul>
  <li>xercesimpl vs xml-apis
@@ -614,8 +643,8 @@ Cela éviterait aussi les syndromes « page blanche » et « action "page p
 
 <li>manque d'outils pour la gestion des css/js
 
-<li>tentative de rester à hibernate, en remplaçant la gestion des sessions hibernate esup-commons par OpenSessionInView, sans mettre de point-cut
-<br> &#10145; échec, autocommit=true pour l'instant...
+<li>tentative de rester à hibernate, en remplaçant la gestion des sessions hibernate esup-commons par OpenSessionInView
+ &#10145; échec &#10145; autocommit=true
 
 </ul>
 </section>
