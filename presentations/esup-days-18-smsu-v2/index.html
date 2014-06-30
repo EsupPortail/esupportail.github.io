@@ -207,7 +207,7 @@ table.title-on-left td {
   <h4>SMS-U à Paris 1</h4>
 
   <ul>
-    <li>Notre LDAP connait le numéro de téléphone de :
+    <li>Notre LDAP connait le numéro de portable de :
       <ul>
 	<li>80% des étudiants
 	<li>33% du personnel
@@ -596,7 +596,7 @@ Safari refuse les cookies des sites non visités. Cela concerne uniquement les s
 Un web widget peut contourner le problème en gardant l'id de session en mémoire ou en utilisant <a href="http://caniuse.com/sessionStorage">sessionStorage</a>.
 <ul>
 <li>phpCAS : facile <small>(setNoClearTicketsFromUrl + sessionId en HTTP header)</small>
-<li>Java CAS Client : facile <small>(redirectAfterValidation + jsessionid dans l'URL)</small>
+<li>Java CAS Client : <a href="https://github.com/EsupPortail/esup-smsu/commit/5ec293f8928ab478451857b2ded7ba2d6d1ed663">facile</a> <small>(redirectAfterValidation + jsessionid dans l'URL)</small>
 <li>Shibboleth SP : impossible, cookies obligatoires
 <li>SimpleSAMLphp, OpenSAML... : à tester
 </ul>
