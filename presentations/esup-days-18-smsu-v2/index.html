@@ -530,7 +530,7 @@ CMS, <a href="https://wiki.jasig.org/display/PLT/WebProxy" class="as-if-no-link"
 <li>pas lié à un seul portail
 <br> &#10145; intégrable dans plusieurs portails
 <li>pas lié à un seul tomcat
-<br> &#10145; isolation (redémarrage...)
+<br> &#10145; décentralisation de la maintenance, gestion, charge
 <li>navigation Ajax
 <br> &#10145; plus réactif, plus rapide sur mobile
 </ul>
@@ -593,12 +593,12 @@ Cela éviterait aussi les syndromes « page blanche » et « action "page p
 
 Safari refuse les cookies des sites non visités. Cela concerne uniquement les sites externes.
 <p class="vspace">
-Un web service peut contourner le problème en utilisant <a href="http://caniuse.com/sessionStorage">sessionStorage</a> :
+Un web widget peut contourner le problème en gardant l'id de session en mémoire ou en utilisant <a href="http://caniuse.com/sessionStorage">sessionStorage</a>.
 <ul>
-<li>phpCAS : facile <small>(setNoClearTicketsFromUrl)</small>
-<li>java-cas-client: à tester
-<li>mod-auth-cas, mod-auth-shib : impossible, cookies obligatoires
-<li>oiosaml, simplesaml : à tester
+<li>phpCAS : facile <small>(setNoClearTicketsFromUrl + sessionId en HTTP header)</small>
+<li>Java CAS Client : facile <small>(redirectAfterValidation + jsessionid dans l'URL)</small>
+<li>Shibboleth SP : impossible, cookies obligatoires
+<li>SimpleSAMLphp, OpenSAML... : à tester
 </ul>
 </section>
 
@@ -629,7 +629,7 @@ Un web service peut contourner le problème en utilisant <a href="http://caniuse
 
 <li>maven
 <ul>
-<li> peu de gestion de conflits entre jars
+<li>peu de gestion de <a href="http://www.encodedknowledge.com/2011/08/saner-maven-dependencies/">conflits entre jars</a>
 <small>
  <ul>
  <li>xercesimpl vs xml-apis
@@ -703,8 +703,8 @@ NB : les webjars ne fournissent pas de liste ordonnée pour concaténation, par 
 <ul>
 <li>conflit avec le routage jquery-mobile dans uPortal 4 <small>(<a target="_blank" href="https://github.com/EsupPortail/esup-smsu/commit/13b46a86495318a6ce9ade32d0c23f339824f011">solution</a>)</small>
 <li>les « directives » sont difficiles à manipuler en dehors des cas documentés
-<li>danger du ng-model si pas de "."
 <li>prévenir les clics doublés pendant l'attente
+<li>danger du ng-model si pas de "."
 </ul>
 
 </section>
