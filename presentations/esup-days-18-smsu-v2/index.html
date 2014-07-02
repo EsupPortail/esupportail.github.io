@@ -593,10 +593,10 @@ Cela éviterait aussi les syndromes « page blanche » et « action "page p
 
 Safari refuse les cookies des sites non visités. Cela concerne uniquement les sites externes.
 <p class="vspace">
-Un web widget peut contourner le problème en gardant l'id de session en mémoire ou en utilisant <a href="http://caniuse.com/sessionStorage">sessionStorage</a>.
+Un web widget peut contourner le problème en gardant l'id de session dans <a href="http://caniuse.com/sessionStorage">sessionStorage</a> ou en mémoire.
 <ul>
-<li>phpCAS : facile <small>(setNoClearTicketsFromUrl + sessionId en HTTP header)</small>
-<li>Java CAS Client : <a href="https://github.com/EsupPortail/esup-smsu/commit/5ec293f8928ab478451857b2ded7ba2d6d1ed663">facile</a> <small>(redirectAfterValidation + jsessionid dans l'URL)</small>
+  <li>Java CAS Client : facile &#10145; <a href="https://github.com/EsupPortail/esup-smsu/commit/5ec293f8928ab478451857b2ded7ba2d6d1ed663">fait dans SMS-U</a> <small>(redirectAfterValidation + jsessionid dans l'URL)</small>
+    <li>phpCAS : facile <br><small>(setNoClearTicketsFromUrl + sessionId en HTTP header)</small>
 <li>Shibboleth SP : impossible, cookies obligatoires
 <li>SimpleSAMLphp, OpenSAML... : à tester
 </ul>
@@ -715,7 +715,8 @@ NB : les webjars ne fournissent pas de liste ordonnée pour concaténation, par 
 
 <ul>
 <li>la version 2 de SMS-U est plus réactive
-<li>AngularJS est super
+<li>90% code java DAO/business inchangé
+<li>AngularJS très bien
 </ul>
 
 <p class="vspace"></p>
