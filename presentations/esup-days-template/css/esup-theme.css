@@ -16,20 +16,28 @@ body,
 .esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
 	font-family: Verdana,Helvetica,Arial,sans-serif;
 }
+.header,
 .footer {
-   height: 1.7em;
    position: fixed;
-   bottom: 0;
+   font-size: 0.8em;
+   color: #bcbcbc;
 }
+.header {
+   top: 10px;
+}
+.footer {
+  bottom: 15px;
+}
+.header-left,
 .footer-left {
    left: 1.5em;
 }
-.footer-right {
-  right: 1.5em;
-  vertical-align: top;
-  bottom: 14px;
+.header span,
+.footer span {
+  display: block;
 }
-.footer-right img {
+
+.footer-left img {
   height: 2em;
   margin-top: -0.3em;
 }
