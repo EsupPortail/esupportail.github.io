@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Template Presentation ESUP</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+  </head>
+
+  <body>
+
+    <div class="header header-left"><span>ESUP-Days #19</span><span>(05.02.2015 @Paris)</span></div>
+
+    <div class="reveal esup">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1><img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="logo-img"></h1>
+            <h5 class="event shadow">
+              <span class="event-name">ESUP-Days #19</span>
+              <span class="event-date">06.02.2015</span>
+              <span class="event-location">Paris</span>
+            </h5>
+          </header>
+          <div class="presentation-title shadow">
+            <h3>Socle 4.1 et compatibilité des portlets</h3>
+            <ul class="presenters">
+              <li><span class="author">Vincent Bonamy</span><span class="logo"><img class="logo-img" src="http://www.univ-rouen.fr/images/logo.png" alt="" style="background-color: #FFF;"></span></li>
+              <li><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>
+                Point sécurité - JSESSIONID  
+              </li>
+              <li>uPortal 4.1
+                <ol>
+                  <li>RWD</li>
+		  <li>SimpleContentPortlet</li>
+                  <li>Groupes PAGS en base</li>
+		  <li>Multitenant</li>
+		  <li>Customisation des thèmes graphiques à la volée</li>
+                </ol>
+	      </li>
+              <li>Compatibilité des anciennes portlets</li>
+              <li>Quel plan de travail ?</li>
+            </ol>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Socle 4.1 et compatibilité des portlets</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Point Sécurité - JSESSIONID</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Point Sécurité - JSESSIONID</h2>
+            <h3 class="shadow">&gt; le cookie de session</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Authentification utilisateur sur l'ENT : 
+                <ul>
+                  <li>username/password</li>
+		  <li>CAS</li>
+		  <li>Shibboleth</li>
+		</ul>
+	      </li>
+	      <li>Maintien de la session :
+		<ul>
+		  <li>à chaque requête grâce à JSESSIONID
+		  </li>
+		  <li>JSESSIONID fait office d'identifiant tout au long de la session
+		  </li>
+		</ul>
+	      </li>
+	      <li>Pour le portail, le tps de la session, JSESSIONID est aussi important à sécuriser que le username/password !
+	      </li>
+	    </ul>
+	    JSESSIONID, comme Username/Password, doit transiter en HTTPS.
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Point Sécurité - JSESSIONID</h2>
+            <h3 class="shadow">&gt; spécificité Esup/uPortal</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>JSESSIONID 
+                <ul>
+                  <li>renouvelé à chaque session dans une appli JEE</li>
+		  <li>... mais dans l'ENT Esup/uPortal :-(</li>
+		</ul>
+	      </li>
+	      <li>Identité de session, il est préférable que JSESSIONID ...
+		<ul>
+		  <li>ne puisse pas être défini par le client
+		  </li>
+		  <li>soit renouvelé très régulièrement - à chaque authentification
+		  </li>
+		</ul>
+	      </li>
+	      <li>Pour forcer le renouvellement du JSESSIONID, on vous incite à installer la valve changeSessionIdValve : <a href="https://github.com/EsupPortail/changeSessionIdValve">https://github.com/EsupPortail/changeSessionIdValve</a> 
+	      </li>
+	    </ul>
+          </div>
+        </section>
+
+
+	<!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Socle 4.1 et compatibilité des portlets</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>uPortal 4.1</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; RWD</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Thème uPortal 4.1 RWD par défaut</li>
+	      <li>Le thème universality amené à disparaître</li>
+	      <li>... le thème muniversality aus</li>
+	    </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; SimpleContentPortlet</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Portlet textuelle</li>
+	      <li>... modifiable en ligne</li>
+	    </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; Groupes PAGS en base</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Possibilité de définir les groupes PAGS en base de données</li>
+	      <li>Par rapport au XML, permet une prise en compte immédiate (sans redémarrage)</li>
+	      <li>Option en 4.1, sera sans doute l'usage par défaut ... avec IHM d'édition associée.</li>
+	    </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; Multitenant</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Apparition du Multitenant en uPortal 4.1</li>
+	      <li>Permet une vraie délégation de la gestion
+		<ul>
+		  <li>de la défintion des portlets</li>
+		  <li>édition des fragments</li>
+		  <li>...</li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+        </section>
+
+	<!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; Customisation des thèmes graphiques à la volée</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Thème graphique personnalisable en quelques clics</li>
+	      <li>Utilise les possibilités des variables LESS</li>
+	      <li>Déléguable aussi dans les tenants !</li>
+	    </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Socle 4.1 et compatibilité des portlets</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Compatibilité des anciennes portlets</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Socle 4.1 et compatibilité des portlets</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Quel plan de travail ?</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	
+      </div>
+    </div>
+
+    <div class="footer footer-left"><img src="img/logo-esup--NEW.png"><span>Copyright 2015 &copy;</span></div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
