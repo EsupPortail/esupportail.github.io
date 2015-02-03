@@ -37,7 +37,7 @@
           <div class="presentation-title shadow">
             <h3>Socle 4.1 et compatibilité des portlets</h3>
             <ul class="presenters">
-              <li><span class="author">Vincent Bonamy</span><span class="logo"><img class="logo-img" src="http://www.univ-rouen.fr/images/logo.png" alt="" style="background-color: #FFF;"></span></li>
+              <li><span class="author">Vincent Bonamy</span><span class="logo"><img class="logo-img" src="./img/univ-rouen-logo.png" alt="" style="background-color: #FFF;"></span></li>
               <li><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
             </ul>
           </div>
@@ -139,7 +139,7 @@
 		  </li>
 		</ul>
 	      </li>
-	      <li>Pour forcer le renouvellement du JSESSIONID, on vous incite à installer la valve changeSessionIdValve : <a href="https://github.com/EsupPortail/changeSessionIdValve">https://github.com/EsupPortail/changeSessionIdValve</a> 
+	      <li>Pour forcer le renouvellement du JSESSIONID, on vous incite à installer la valve changeSessionIdValve : <a href="https://github.com/EsupPortail/changeSessionIdValve">https://github.com/EsupPortail/changeSessionIdValve</a>.
 	      </li>
 	    </ul>
           </div>
@@ -183,13 +183,45 @@
             <h3 class="shadow">&gt; SimpleContentPortlet</h3>
           </header>
           <div class="slide-content">
+	    <span>... qui s'appelle aussi "Advanced CMS Portlet"</span>
             <ul>
-	      <li>Portlet textuelle</li>
-	      <li>... modifiable en ligne</li>
+	      <li>Version 1.0.9 en 4.1 (dernière version = 1.1.1 )</li>
+	      <li>A bien évolué :
+		<ul>
+		  <li>utilise un CKEditor récent (4.3.2)</li>
+		  <li>permet l'upload d'images en base de données</li>
+		  <li>permet une édition instantanée lors de la navigation</li>
+		</ul>
+	      </li>
+	      <li>Est maintenant LA portlet incontournable de l'ENT
+		<ul>
+		  <li>Même le logo de l'ENT correspond à une SimpleContentPortlet désormais</li>
+		  <li>Bon rendu dès maintenant quel que soit le thème</li>
+		  <li>SimpleContentPortlet + MultiTenants = ENT plus souple et réactif ?!</li>
+		</ul>
+	      </li>
 	    </ul>
           </div>
         </section>
 
+
+	<section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; SimpleContentPortlet</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              <div class="gallery-item">
+                <img src="img/SimpleContentPortlet.png" alt"Copie d'écran de SimpleContentPortlet">
+                <span>SimpleContentPortlet : édition du logo de l'ENT en live avec possibilité d'upload.</span>
+              </div>
+            </p>	    
+          </div>
+        </section>
+
+
+	
         <!--///////////////////////////////////////////-->
 
 
@@ -202,7 +234,7 @@
             <ul>
 	      <li>Possibilité de définir les groupes PAGS en base de données</li>
 	      <li>Par rapport au XML, permet une prise en compte immédiate (sans redémarrage)</li>
-	      <li>Option en 4.1, sera sans doute l'usage par défaut ... avec IHM d'édition associée.</li>
+	      <li>Option en 4.1, sera sans doute l'usage par défaut par la suite ... avec IHM d'édition associée !!</li>
 	    </ul>
           </div>
         </section>
@@ -217,17 +249,35 @@
           <div class="slide-content">
             <ul>
 	      <li>Apparition du Multitenant en uPortal 4.1</li>
-	      <li>Permet une vraie délégation de la gestion
+	      <li>Permet une vraie délégation de la gestion :
 		<ul>
 		  <li>de la défintion des portlets</li>
+		  <li>... et de leur configuration !</li>
 		  <li>édition des fragments</li>
-		  <li>...</li>
 		</ul>
 	      </li>
 	    </ul>
           </div>
         </section>
 
+
+
+	<section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; Multitenant</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              <div class="gallery-item">
+                <img src="img/multitenant-admin.png" alt"Copie d'écran onglet administration pour l'administrateur d'un tenant">
+                <span>ENT d'un administrateur d'un tenant.</span>
+              </div>
+            </p>	    
+          </div>
+        </section>
+
+	
 	<!--///////////////////////////////////////////-->
 
         <section>
@@ -238,12 +288,29 @@
           <div class="slide-content">
             <ul>
 	      <li>Thème graphique personnalisable en quelques clics</li>
-	      <li>Utilise les possibilités des variables LESS</li>
-	      <li>Déléguable aussi dans les tenants !</li>
+	      <li>Utilise les possibilités des variables less</li>
+	      <li><b>Portlet</b> (<i>DynamicRespondrSkin</i>) -> Déléguable aussi dans les tenants !</li>
 	    </ul>
           </div>
         </section>
 
+
+	<section>
+          <header>
+            <h2>uPortal 4.1</h2>
+            <h3 class="shadow">&gt; DynamicRespondrSkin</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              <div class="gallery-item">
+                <img src="img/DynamicRespondrSkin.png" alt"Copie d'écran DynamicRespondrSkin">
+                <span>Utilisation de DynamicRespondrSkin par l'administrateur d'un tenant.</span>
+              </div>
+            </p>	    
+          </div>
+        </section>
+
+	
         <!--///////////////////////////////////////////-->
 
         <section class="divider">
