@@ -171,7 +171,7 @@ body,
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.esup section.present h2 {
+.esup section h2 {
   color: #ffffff;
   background: #1d71b8;
   font-size: 1.2em;
@@ -179,7 +179,7 @@ body,
   padding: 20px;
   margin: 0;
 }
-.esup section.present h3 {
+.esup section h3 {
   color: #ffffff;
   background: #e2007a;
   font-size: 1em;
@@ -203,8 +203,8 @@ body,
   opacity: 0.2;
 }
 
-.esup section.present h2.shadow,
-.esup section.present h3.shadow {
+.esup section h2.shadow,
+.esup section h3.shadow {
   margin-bottom: 20px;
 }
 .esup div.slide-content {
