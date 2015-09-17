@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Template Presentation ESUP</title>
+    <title>ProlongationENT : intégrer une application web sans iframe</title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="css/reveal.min.css">
@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="css/esup-theme.css">
 
     <link rel="stylesheet" href="plugin/highlight/default.min.css">
+<style>
+.reveal .slides > section, .reveal .slides > section > section {
+    padding-top: 0;
+}
+</style>
 
   </head>
 
@@ -35,11 +40,15 @@
             </h5>
           </header>
           <div class="presentation-title shadow">
-            <h3>Titre principal de la pr&eacute;sentation (sur plusieurs lignes si n&eacute;cessaire)</h3>
+            <h3>ProlongationENT : intégrer une application web sans iframe.</h3>
             <ul class="presenters">
-              <li><span class="author">Prenom1 NOM1</span><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
-              <li><span class="author">Prenom2a NOM2a<br> Prenom2b NOM2b</span><span class="institution">InstitutionSansLogo</span></li>
-              <li><span class="author">Prenom3 NOM3</span><span class="institution">InstitutionPlusLogo</span><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
+	      <li><span class="author">Pascal RIGAUX</span>
+	      </li>
+	    </ul><br>
+            <ul class="presenters">
+              <li><span class="logo"><img class="logo-img" src="img/logo-up1.png" alt="" style="background-color: #FFF;"></span></li>
+
+              <li><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
             </ul>
           </div>
           <footer>
@@ -49,199 +58,312 @@
 
         <!--///////////////////////////////////////////-->
 
-        <section>
+	<section>
           <header>
-            <h2 class="shadow">Titre slide</h2>
+            <h2 class="shadow">Démonstration</h2>
           </header>
           <div class="slide-content">
-            <ol>
-              <li>
-                Section 1
-                <ol>
-                  <li>Item 1</li>
-                  <li>Item 2</li>
-                </ol>
-              </li>
-              <li>Section 2</li>
-              <li>Section 3</li>
-              <li>Section 4</li>
-              <li>Section 5</li>
-              <li>Section 6</li>
-            </ol>
+	    <div class="gallery-item" style="width: 50%">
+              <img src="img/filex-iframe.png">
+	      <span>Iframe</span>
+	    </div>
+	    <div class="gallery-item" style="width: 50%">
+              <img src="img/filex-ProlongationENT.png">
+	      <span>ProlongationENT</span>
+	    </div>
           </div>
         </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section data-background-position="top" data-background-size="contain" data-background-image="img/filex-iframe.png"
+		 style="padding: 0">
+        </section>
+
+	<section data-background-position="top" data-background-size="contain" data-background-image="img/filex-ProlongationENT.png"
+		 style="padding: 0">
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2 class="shadow">Démonstration</h2>
+          </header>
+          <div class="slide-content">
+	    <div class="gallery-item" style="width: 50%">
+              <img src="img/iframe.png">
+	      <span>Iframe</span>
+	    </div>
+	    <div class="gallery-item" style="width: 50%">
+              <img src="img/ProlongationENT.png">
+	      <span>ProlongationENT</span>
+	    </div>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Utilisation</h2>
+          </header>
+          <div class="slide-content">
+	      <h4>À l'Université Paris 1</h4>
+		  Utilisation dans les applications difficiles à mettre en iframe, puis généralisation progressive.
+		  <ul>
+		    <li>2013 : Aleph et Metalib (ExLibris), GLPI, Nuxeo, DokuWiki, Grouper Lite UI</li>
+		    <li>2014 : Moodle, Intranet Typo3, Sifac</li>
+		    <li>2015 : Hyperplanning, IPweb, IAweb, Horde 5...
+		  </ul>
+<p class="vspace">
+	      <h4>Ailleurs</h4>
+		  Expérimentations à l'Université de Rennes 1, l'Université de Lorraine.
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Comment intégrer une application ?</h2>
+            <h3 class="shadow">&gt; basique</h3>
+	  </header>
+          <div class="slide-content">
+
+Ajouter les lignes suivantes :
+<pre><code data-trim class="html">
+&lt;script&gt;  
+  window.bandeau_ENT = { current: "moodle" };
+&lt;/script&gt;  
+&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+</code></pre>
+
+<small>NB : le "async" permet l'absence de SPOF</small>
+
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Comment intégrer une application ?</h2>
+            <h3 class="shadow">&gt; avec bouton logout</h3>
+	  </header>
+          <div class="slide-content">
+Le bandeau a un bouton déconnexion.
+<br>
+Pour que le bouton déconnecte l'application, il suffit de donner un sélecteur CSS :
+	    <pre><code data-trim class="javascript">
+&lt;script&gt;  
+  window.bandeau_ENT = { current: "moodle", logout: ".logoutButton" };
+&lt;/script&gt;  
+&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+</code></pre>
+
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Comment intégrer une application ?</h2>
+            <h3 class="shadow">&gt; avec déshabillage</h3>
+	  </header>
+          <div class="slide-content">
+
+Pour cacher le bandeau ou le bouton déconnexion dans l'application, utilisez une feuille de style :
+	    <pre><code data-trim class="javascript">
+&lt;script&gt;  
+  window.cssToLoadIfInsideIframe = "https://.../xxx.css";
+  window.bandeau_ENT = { current: "moodle" };
+&lt;/script&gt;  
+&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+</code></pre>
+
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Comment intégrer une application ?</h2>
+            <h3 class="shadow">&gt; via reverse proxy apache</h3>
+	  </header>
+          <div class="slide-content">
+
+Il est possible d'utiliser apache pour ajouter la prolongation ENT :
+	    <pre><code data-trim>
+RequestHeader unset  Accept-Encoding
+AddOutputFilterByType SUBSTITUTE text/html
+Substitute "s|&lt;/head&gt;| &lt;script async type=\"text/javascript\"&gt;window.bandeau_ENT = { current: \"moodle\"}; &lt;/script&gt;&lt;script async src=\"https://ent.univ.fr/ProlongationENT/loader.js\"&gt;&lt;/script&gt; &lt;/head&gt;|"
+	    </code></pre>
+
+Nous utilisons cette technique pour nuxeo par exemple.
+	    
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Technologies</h2>
+            <h3 class="shadow">&gt; Javascript !</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>ajout d'un <code>&lt;div&gt;</code> en entête des pages
+		<small>(et un <code>&lt;div&gt;</code> de pied de page pour les liens mentions légales)</small></li>
+	      <li>JSONP ou AJAX</li>
+	      <li>cache navigateur ou sessionStorage pour éviter les clignotements</li>
+	    </ul>
+    
+	  </div>
+	</section>
+	
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2 class="shadow">Comparaison iframe</h2>
+	  </header>
+
+<style>
+table.two-parts {
+  width: 100%;
+}
+table.two-parts td:first-child {
+  width: 50%;
+  border-right: 1px solid;
+}
+table.two-parts td:last-child {
+  padding-left: 1em;
+}
+</style>
+
+
+          <div class="slide-content">
+	    <table class="two-parts">
+	      <tr><td>
+		<h4>Avantages</h4>
+		<ul>
+		  <li>asynchrone =&gt; pas de SPOF</li>
+		  <li>n'interfère pas avec la mise en signet</li>
+		  <li>fonctionne en http, en cross-domain</li>
+		</ul>
+		<small><ul>
+		  <li>plus léger (pas de fluid, jquery...)
+		  <li>les applis restent maître de leur viewport (mobile)</li>
+		  <li>pour les applications javascript, pas de problème de double ascenseur</li>
+		</ul></small>
+	      </td><td>
+
+		<h4>Inconvénients</h4>
+		<p>
+		  <ul>
+		    <li>une seul application par page <small>(pas de dashboard)</small></li>
+		    <li>parfois des ajustements CSS pour les applications full-page</li>
+		  </ul>
+		  <small><ul>
+		    <li>les URLs sont visibles (gênant pour les applications multi-auth comme compilatio ou lemonde.fr)</li>
+		    <li>interférences du CSS des applications avec celui du bandeau (nécessite beaucoup de <code>!important</code>)</li>
+		    <li>bypass les stats esup-uportal (plus un pb avec Agimus)</li>
+		  </ul></small>
+	      </tr></td>
+	    </table>
+	  </div>
+	</section>
+
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Historique</h2>
+            <h3 class="shadow">&gt; différentes implémentations</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>2012 : création de <a href="https://github.com/prigaux/bandeau-ENT">bandeau-ENT en PHP</a> et passage en production à Paris 1</li>
+	      <li>2014 : preuve de concept <a href="http://bandeau-ENT.univ-paris1.fr/uportal4/prolongation-ENT.js">utilisant layout.json</a> de uPortal</li>
+	      <li>2015 : portage du PHP en java pour s'intégrer dans uPortal et passage en production à Paris 1</li>
+	    </ul>
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Implémentation pour uPortal</h2>
+            <h3 class="shadow">&gt; Fonctionnalités</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>authentication transparente sur CAS
+		<small>(avec CAS gateway pour gérer les utilisateurs non authentifiés ou plus authentifiés)</small></li>
+	      <li>échange d'identité avec <a href="https://github.com/prigaux/impersonate-cas-apache-wrapper">impersonate-cas-apache-wrapper</a></li>
+	      <li>statistiques compatibles Agimus
+		<small>(gère notamment les applications shibbolethisées et les pages non authentifiées)</small>
+	      </li>
+	    </ul>
+    
+	  </div>
+	</section>
+
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Implémentation pour uPortal</h2>
+            <h3 class="shadow">&gt; Limitations</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>droits des DLMs non gérés (droits gérés par canaux)</li>
+	      <li>onglets non modifiables par l'utilisateur</li>
+	      <li>réfléchir aux parties mutualisables et aux parties adaptables (via des plugins ?)</li>
+	    </ul>
+	  </div>
+	</section>
+	
+	
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Comment intégrer une application ?</h2>
+            <h3 class="shadow">&gt; Shibbolethisée</h3>
+	  </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Pour une application d'établissement, la prolongation ENT casifiée apparait pour les utilisateurs de l'établissement.</li>
+	      <li>Il est aussi possible de charger la prolongation ENT casifiée de l'établissement.
+		<br>&#10145; parfait pour des applications nationales.
+		<small>Exemple : notre <a href="https://filex.univ-paris1.fr/upload">Filex</a> utilise <a href="https://github.com/prigaux/bandeau-ENT/blob/master/proxy-shib-js.php">un proxy shib</a> pour charger la prolongation de l'établissement ou utiliser le layout.json de l'établissement (nécessite d'activer CORS). <a href="https://bandeau-ent.univ-paris1.fr/uportal4/fake-cru/">POC avec compte CRU</a>.</small></li>
+	      <li>Il est possible d'avoir une prolongation shibbolethisée.
+		<small>(le <a href="https://github.com/prigaux/bandeau-ENT">bandeau-ENT en PHP</a> le permet)</small></li>
+	    </ul>
+	  </div>
+	</section>
 
         <!--///////////////////////////////////////////-->
 
         <section class="divider">
           <header>
-            <h2 class="shadow">Titre principal de la pr&eacute;sentation (sur plusieurs lignes si n&eacute;cessaire)</h2>
+            <h2 class="shadow">ProlongationENT : intégrer une application web sans iframe</h2>
             <img class="cloud" src="./img/cloud.png" alt="">
-            <h3>Titre de section</h3>
+            <h3>Question(s) ??</h3>
           </header>
           <footer>
             <img src="./img/communaute.png" alt="">
           </footer>
         </section>
-
-        <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Titre slide</h2>
-            <h3 class="shadow">&gt; Avec sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <ul>
-              <li>1er niveau
-                <ul>
-                  <li>
-                    2e niveau
-                    <ul>
-                      <li>3e niveau
-                        <ul>
-                            <li>4e niveau
-                              <ul>
-                                <li>5e niveau</li>
-                              </ul>
-                            </li>
-                          </ul>  
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <p>
-              Simple text...              
-            </p>
-          </div>
-        </section>
-
-
-        <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <p>
-              Simple text w/ 1 img...
-              <div class="gallery-item">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-            </p>
-          </div>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <p>
-              Simple text w/ 2 img...
-              <div class="gallery-item" style="width: 50%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 50%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-            </p>
-          </div>
-        </section>
-
-         <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <p>
-              Simple text w/ 4 img...
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 20%">
-                <img src="img/example_long.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-
-           
-            </p>
-          </div>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-
-        <section>
-          <header>
-            <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
-          </header>
-          <div class="slide-content">
-            <p>
-              Simple text w/ lot of img...
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 20%">
-                <img src="img/example_long.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="new-line"></div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-              <div class="gallery-item" style="width: 26%">
-                <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
-              </div>
-           
-            </p>
-          </div>
-        </section>
-
 
         <!--///////////////////////////////////////////-->
 
