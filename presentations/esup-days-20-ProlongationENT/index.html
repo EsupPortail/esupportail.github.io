@@ -193,7 +193,7 @@ table.two-parts td:last-child {
 	      <tr><td>
 		<h4>Avantages</h4>
 		<ul>
-		  <li>asynchrone =&gt; pas de SPOF</li>
+		  <li>asynchrone =&gt; presque pas de SPOF</li>
 		  <li>n'interfère pas avec la mise en signet</li>
 		  <li>fonctionne en http, en cross-domain</li>
 		</ul>
@@ -260,12 +260,11 @@ Ajouter les lignes suivantes :
 &lt;script&gt;  
   window.bandeau_ENT = { current: "moodle" };
 &lt;/script&gt;  
-&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+&lt;script src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
 </code></pre>
 
 <ul>
   <li>le fname <small>("moodle" dans l'exemple)</small> permet d'afficher le nom de l'application et l'onglet actif
-  <li><code>async</code> permet l'absence de SPOF</li>
 </ul>
 
 	  </div>
@@ -284,7 +283,7 @@ Il est possible d'utiliser apache pour ajouter la prolongation ENT :
 	    <pre><code data-trim>
 RequestHeader unset  Accept-Encoding
 AddOutputFilterByType SUBSTITUTE text/html
-Substitute "s|&lt;/head&gt;| &lt;script async type=\"text/javascript\"&gt;window.bandeau_ENT = { current: \"moodle\"}; &lt;/script&gt;&lt;script async src=\"https://ent.univ.fr/ProlongationENT/loader.js\"&gt;&lt;/script&gt; &lt;/head&gt;|"
+Substitute "s|&lt;/head&gt;| &lt;script type=\"text/javascript\"&gt;window.bandeau_ENT = { current: \"moodle\"}; &lt;/script&gt;&lt;script src=\"https://ent.univ.fr/ProlongationENT/loader.js\"&gt;&lt;/script&gt; &lt;/head&gt;|"
 	    </code></pre>
 
 Nous utilisons cette technique pour nuxeo par exemple.
@@ -307,7 +306,7 @@ Pour que le bouton déconnecte l'application, il suffit de donner un sélecteur 
 &lt;script&gt;  
   window.bandeau_ENT = { current: "moodle", logout: ".logoutButton" };
 &lt;/script&gt;  
-&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+&lt;script src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
 </code></pre>
 
 	  </div>
@@ -328,7 +327,7 @@ Pour cacher le bandeau ou le bouton déconnexion dans l'application, utilisez un
   window.cssToLoadIfInsideIframe = "https://.../xxx.css";
   window.bandeau_ENT = { current: "moodle" };
 &lt;/script&gt;  
-&lt;script async src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
+&lt;script src="https://ent.univ.fr/ProlongationENT/loader.js"&gt;&lt;/script&gt;
 </code></pre>
 
 	  </div>
