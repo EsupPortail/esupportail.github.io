@@ -16,6 +16,7 @@ body,
 .esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
 	font-family: Verdana,Helvetica,Arial,sans-serif;
 }
+
 .header,
 .footer {
    position: fixed;
@@ -86,6 +87,12 @@ body,
   text-align: left;
 }
 /* override reveal.js settings */
+.esup h1 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
 .esup h2, .esup h3 { 
   -webkit-hyphens: manual;
      -moz-hyphens: manual;
@@ -171,7 +178,7 @@ body,
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.esup section h2 {
+.esup section.present h2 {
   color: #ffffff;
   background: #1d71b8;
   font-size: 1.2em;
@@ -179,7 +186,7 @@ body,
   padding: 20px;
   margin: 0;
 }
-.esup section h3 {
+.esup section.present h3 {
   color: #ffffff;
   background: #e2007a;
   font-size: 1em;
@@ -203,8 +210,8 @@ body,
   opacity: 0.2;
 }
 
-.esup section h2.shadow,
-.esup section h3.shadow {
+.esup section.present h2.shadow,
+.esup section.present h3.shadow {
   margin-bottom: 20px;
 }
 .esup div.slide-content {
@@ -234,8 +241,9 @@ body,
 }
 .esup section.main-title header h1 img.logo-img {
 	margin: 0 auto;
-	display: block;
+	display: inline-block;
 	padding-top: 30px;
+  max-height: 50px;
 }
 
 .esup section.main-title h5 {
@@ -243,8 +251,8 @@ body,
   border-radius: 0 0 0 100%;
   -moz-border-radius: 0 0 0 100%;
   -webkit-border-radius: 0 0 0 100%;
-	width: 180px;
-	height: 160px; 
+	width: 250px;
+	height: 250px; 
 	right: 0;
 	top: 0;
 	position: absolute;
@@ -266,6 +274,9 @@ body,
 	font-size: 0.7em;
 	margin-top: 5px;
 	display: block;
+}
+.esup section.main-title h5 .event-date {
+  padding-top: 20px;
 }
 
 .esup section.main-title .presentation-title {
