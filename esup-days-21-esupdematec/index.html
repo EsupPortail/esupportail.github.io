@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <title>EsupDematEC</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+
+    <div class="reveal esup">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="logo-img">
+              <img src="./img/logo-apereo.png" alt="Apereo" class="logo-img">
+            </h1>
+            <h5 class="event shadow">
+              <span class="event-name">ESUP-Days #21</span>
+              <span class="event-name">Apereo Europe 2016</span>
+              <span class="event-date">Feb. 1-2, 2016</span>
+              <span class="event-location">Paris</span>
+            </h5>
+          </header>
+          <div class="presentation-title shadow">
+            <h3>ESUP-DematEC
+	    <hr/>Retour d'expérience et nouveautés</h3>
+            <ul class="presenters">
+              <li><span class="author">Vincent Bonamy</span><span class="logo"><img class="logo-img" src="./img/univ-rouen-logo.png" alt="" /></span></li>
+              <li><span class="author">Thierry Cheminade</span><span class="logo"><img class="logo-img" src="./img/larochelle.png" alt="" /></span></li>
+	      <li><span class="author">Eric Lussan</span><span class="logo"><img class="logo-img" src="./img/larochelle.png" alt="" /></span></li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan de la présentation</h2>
+          </header>
+          <div class="slide-content">
+	    <img class="logo-img" src="./img/logo-esup-dematec.png" alt="" />
+            <ol>
+              <li>Développement d'EsupDematEC et version 1.4</li>
+              <li>Installation et maintenance de EsupDematEC à l'Université de la Rochelle</li>
+              <li><b>Retour d'usage d'EsupDematEC à l'Université de la Rochelle</b></li>	      
+            </ol>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">ESUP-DematEC - Retour d'expérience et nouveautés</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Développement d'EsupDematEC<br/> et version 1.4</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section data-transition="zoom">
+          <header>
+            <h2>Rappel</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>EsupematEC
+		<ul>
+		  <li>application permettant la dématérialisation du dépôt de pièces de candidature</li>
+		  <li>pour les postes  <acronym title="Enseignant Chercheur">EC</acronym> et <acronym title="Attaché Temporaire d'Enseignement et de Recherche">ATER</acronym></li>
+		  <li>dont la candidature se fait sur <a href="https://www.galaxie.enseignementsup-recherche.gouv.fr/ensup/candidats.html">Galaxie</a>.</li>
+		</ul>
+	      </li>
+	      <li>Versions
+		<ul>
+		  <li>1 ère version 1.0.0 en Avril 2013</li>
+		  <li>15 versions depuis : la 1.4.0 date de décembre 2015</li>
+		</ul>
+	      </li>
+	      <li>Présentée dans sa version 1.0.3 en février 2014 à <a href="https://www.esup-portail.org/wiki/pages/viewpage.action?pageId=347045939">EsupDay#17</a></li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+	  <header>
+	    <h2>Status</h2>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>Un peu plus d'une 20 aine d'établissements en production</li>
+	      <li>Un projet soutenu par Esup</li>
+	      <li>Une documentation un peu plus étoffée</li>
+	      <li>Un contact en place avec les collègues Galaxie au ministère</li>
+	      <li>Un recueil régulier des besoins d'évolution via mails, pages wiki, issues github, ...</li>
+	    </ul>
+	  </div>
+	</section>
+
+	<section>
+	  <header>
+	    <h2>Nouveautés</h2>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>Depuis la 1.0.3, quelques changements notables ... :
+		<ul>
+		  <li>Le support de la phase 'retenue pour audition'</li>
+		  <li>Rapports de commissions</li>
+		  <li>Archivage</li>
+		  <li>Tags vue/non_vue/...</li>
+		  <li>JDK 8 et Tomcat 7 OK</li>
+		  <li>Bash pour import fichiers XLS Galaxie</li>
+		  <li>Ajout de paramétrages/options modifiables depuis l'IHM</li>
+		  <li>...</li>
+		</ul>
+	    </ul>
+	  </div>
+	</section>
+
+	<section  data-transition="fade">
+	  <header>
+	    <h2>Nouveautés</h2>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>Depuis la 1.0.3, quelques changements notables ... :
+		<ul>
+		  <li>...</li>
+		  <li>Typage des pièces demandées et contraintes techniques</li>
+		  <li>Optimisations variées</li>
+		  <li>Ajout/améliorations de filtres de recherche</li>
+		  <li>Commentaires RH à destination des membres de commission</li>
+		  <li>Fonctionnalité zip / concaténation pdf pour les membres</li>
+		  <li>Lien d'activation pour password oublié</li>
+		  <li>Etc. ... voir le <a href="https://www.esup-portail.org/wiki/display/EsupDematEC/Changelog">Changelog</a> !</li>
+		</ul>
+		</li>
+	    </ul>
+	  </div>
+	</section>	
+
+
+	<section>
+	  <header>
+	    <h2>... à venir ?</h2>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>Des demandes variées qui concordent et qui sont à l'étude :
+		<ul>
+		  <li>Ajout d'un rôle de président de commission et un rôle de rapporteur</li>
+		  <li>Mailing via EsupDematEC pour rappel</li>
+		  <li>Etc. ... voir les <a href="https://www.esup-portail.org/wiki/pages/viewpage.action?pageId=345702437">Remarques et demandes d'évolution</a> !</li>
+		</ul>
+		</li>
+	    </ul>
+	  </div>
+
+	  <div class="slide-content">
+	    <ul>
+	      <li>L'implémentation se fait en considérant un certain nombre de choses :
+		<ul>
+		  <li>Le besoin</li>
+		  <li>La faisabilité technique : le simple et rapide à implémenter est prioritaire</li>
+		  <li>Ne pas complexifier EsupDematEC qui a l'atout initial d'être assez simple et dédié à un usage bien (dé)limité ...
+		</ul>
+		</li>
+	    </ul>
+	  </div>
+	  
+	</section>
+	
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>

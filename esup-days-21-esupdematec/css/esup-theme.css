@@ -1,0 +1,349 @@
+/**
+ * ESUP default theme 
+ * @author Mathilde Guerin
+ *
+ * Main colors: 
+ *    - blue: #1d71b8;
+ *    - pinkish-red: #e2007a;
+ */
+
+
+body,
+.esup  {
+ 	font-family: 'Open Sans', Verdana,Helvetica,Arial,sans-serif;
+ 	color: #000;
+}
+.esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
+	font-family: Verdana,Helvetica,Arial,sans-serif;
+}
+
+.header,
+.footer {
+   position: fixed;
+   font-size: 0.8em;
+   color: #bcbcbc;
+}
+.header {
+   top: 10px;
+}
+.footer {
+  bottom: 15px;
+}
+.header-left,
+.footer-left {
+   left: 1.5em;
+}
+.header span,
+.footer span {
+  display: block;
+}
+
+.footer-left img {
+  height: 2em;
+  margin-top: -0.3em;
+}
+
+.esup .controls div.navigate-up,
+.esup .controls div.navigate-down { display: none; }
+ 
+.esup .progress { height: 0.3em; }
+
+.esup .controls .slideNb {
+  position: relative;
+  opacity: 1;
+  z-index: -1;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 110px;
+  height: 110px !important;
+  width: 110px;
+  text-align: center;
+  border: 0;
+  font-size: 20px;
+  color: #e2007a;
+}
+
+.esup .controls div.navigate-left, .esup .controls div.navigate-left.enabled {
+  border-right-color: #e2007a;
+}
+.esup .controls div.navigate-left.enabled:hover {
+  border-right-color: #F495C8;
+}
+.esup .controls div.navigate-right, .esup .controls div.navigate-right.enabled {
+  border-left-color: #e2007a;
+}
+.esup .controls div.navigate-right.enabled:hover {
+  border-left-color: #F495C8;
+}
+
+@media (max-width: 767px) { 
+  .footer-left {
+    top: 0.3em;
+    bottom: auto;
+  }
+}
+
+.esup .slides {
+  text-align: left;
+}
+/* override reveal.js settings */
+.esup h1 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.esup h2, .esup h3 { 
+  -webkit-hyphens: manual;
+     -moz-hyphens: manual;
+          hyphens: manual;
+}
+.esup .center {
+  text-align: center;
+}
+
+.esup h4 {
+  color: #e2007a;
+  font-weight: bold;
+}
+.esup small {
+  vertical-align: middle;
+}
+
+.esup ul li,.esup ol li {
+  margin: 0.1em 0;
+  padding-left: 0.15em; 
+}
+.esup ul li {
+  color: #e2007a;
+}
+.esup ul li ul li {
+  color: #1d71b8;
+  font-size: 0.95em;
+}
+.esup ul li ul li ul li {
+  color: #000;
+  font-size: 0.9em;
+}
+.esup ul li ul li ul li ul li {
+  color: #888;
+  font-size: 0.85em;
+}
+.esup ul li ul li ul li ul li ul li {
+  font-style: italic;
+}
+
+.esup .progress {
+  background: rgba(226, 0, 122, 0.1);
+}
+.esup .progress span {
+  background: rgba(226, 0, 122, 0.8);
+}
+
+/*.esup .slides>section,
+.esup .slides>section>section {
+  padding: 0 0 110px 0;
+}*/
+.h1em {
+  height: 1em;
+}
+.vspace {
+  padding-top: 0.4em !important;
+}
+.esup .new-line,
+.esup .clear {
+  clear: both;
+}
+
+.as-if-no-link {
+  color: black !important;
+}
+
+.esup pre {
+  width: 100%;
+}
+.esup .shadow {
+   -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+}
+
+.esup section {
+	background-image: url(../img/background_template.png);
+  background-repeat: no-repeat;
+  min-height: 650px;
+}
+.esup section img {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.esup section.present h2 {
+  color: #ffffff;
+  background: #1d71b8;
+  font-size: 1.2em;
+  font-weight: bold;
+  padding: 20px;
+  margin: 0;
+}
+.esup section.present h3 {
+  color: #ffffff;
+  background: #e2007a;
+  font-size: 1em;
+  padding: 10px 0 10px 30px;
+  margin: 0;
+}
+.esup section.divider h2 {
+  font-size: 0.8em;
+  color: #bcbcbc;
+}
+.esup section.divider h3 {
+  margin: 20px auto 0;
+  border: 10px solid #FFF;
+  width: 80%;
+  min-height: 150px;
+  font-weight: bold;
+}
+.esup section.divider header img.cloud {
+  display: block;
+  margin: 0 auto;
+  opacity: 0.2;
+}
+
+.esup section.present h2.shadow,
+.esup section.present h3.shadow {
+  margin-bottom: 20px;
+}
+.esup div.slide-content {
+  padding-left: 30px;
+  font-size: 0.9em;
+}
+
+.esup section.present.main-title{
+	position: relative;
+}
+.esup section.present.main-title::after {
+	content : "";
+  display: block;
+  position: absolute;
+  top: -120px;
+  left: 0;
+  background-image: url(../img/pictos-down.png);
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  opacity : 0.6;
+  z-index: -1;
+}
+
+.esup section.present.main-title header {
+	height: 240px;
+}
+.esup section.main-title header h1 img.logo-img {
+	margin: 0 auto;
+	display: inline-block;
+	padding-top: 30px;
+  max-height: 50px;
+}
+
+.esup section.main-title h5 {
+	background: #e2007a;
+  border-radius: 0 0 0 100%;
+  -moz-border-radius: 0 0 0 100%;
+  -webkit-border-radius: 0 0 0 100%;
+	width: 250px;
+	height: 250px; 
+	right: 0;
+	top: 0;
+	position: absolute;
+	color: #ffffff;
+	text-align: right;
+	font-size: 0.8em;
+	padding-right: 10px;
+}
+
+.esup section.main-title h5 span.event-name {
+	margin-top: 10px;
+	margin-bottom: 20px;
+	display: block;
+}
+
+.esup section.main-title h5 .event-date,
+.esup section.main-title h5 .event-location {
+	font-style: italic;
+	font-size: 0.7em;
+	margin-top: 5px;
+	display: block;
+}
+.esup section.main-title h5 .event-date {
+  padding-top: 20px;
+}
+
+.esup section.main-title .presentation-title {
+	color: #ffffff;
+	background: #1d71b8;
+	padding: 20px 5px 0;
+	opacity : 0.9;
+  text-align: center;
+}
+.esup section.main-title .presentation-title h3 {
+	color: #ffffff;
+	padding: 20px 10px 5px 70px;
+	opacity : 0.9;
+	text-align: left;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-size: 1.2em;
+  background: transparent;
+}
+
+.esup .presenters li {
+	display: inline-block;
+  vertical-align: top;
+	list-style: none;
+	padding: 0 20px;
+	font-size: 0.8em;
+	text-align: center;
+}
+.esup .presenters li span {
+	display: block;
+  color: #bcbcbc;
+}
+.esup .presenters li span.author{
+  line-height: 1em;
+  text-align: left;
+  font-size: 0.8em;
+}
+.esup .presenters li span.institution {
+	font-style: italic;
+  font-size: 0.8em;
+}
+.esup .presenters li span.logo img {
+	max-width: 150px;
+}
+
+.esup section .gallery-item {
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.esup section .gallery-item img {
+  margin: 0 auto;
+  display: block;
+  max-height: 450px;
+}
+.esup section .gallery-item span {
+  font-style: italic;
+  font-size: 0.7em;
+  color: #888;
+  display: block;
+}
+
+.esup section footer {
+
+}
+.esup section footer img {
+  max-height: 40px;
+  display: block;
+  margin: 15px auto 0;
+}
