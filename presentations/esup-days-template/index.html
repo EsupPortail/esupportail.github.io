@@ -19,35 +19,33 @@
   </head>
 
   <body>
-
-    <div class="reveal esup">
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
 
       <div class="slides">
 
         <section class="main-title">
           <header>
             <h1>
-              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="logo-img">
-              <img src="./img/logo-apereo.png" alt="Apereo" class="logo-img">
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">
+              <img src="./img/event-title.png" alt="ESUP-Days #22" class="event-title">
             </h1>
-            <h5 class="event shadow">
-              <span class="event-name">ESUP-Days #21</span>
-              <span class="event-name">Apereo Europe 2016</span>
-              <span class="event-date">Feb. 1-2, 2016</span>
-              <span class="event-location">Paris</span>
-            </h5>
           </header>
-          <div class="presentation-title shadow">
-            <h3>Titre principal de la pr&eacute;sentation (sur plusieurs lignes si n&eacute;cessaire)</h3>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Titre principal de la pr&eacute;sentation (sur plusieurs lignes si n&eacute;cessaire)</h2>
             <ul class="presenters">
-              <li><span class="author">Prenom1 NOM1</span><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
-              <li><span class="author">Prenom2a NOM2a<br> Prenom2b NOM2b</span><span class="institution">InstitutionSansLogo</span></li>
-              <li><span class="author">Prenom3 NOM3</span><span class="institution">InstitutionPlusLogo</span><span class="logo"><img class="logo-img" src="./img/logo-esup--NEW.png" alt="" style="background-color: #FFF;"></span></li>
+              <li>Prenom1 NOM1</li>
+              <li>Prenom2a NOM2a, Prenom2b NOM2b</li>
+              <li>Prenom3 NOM3</li>
+            </ul>
+            <ul class="institutions">
+              <li>Institution A</li>
+              <li>Institution B</li>
+              <li>Institution C</li>
             </ul>
           </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
@@ -61,17 +59,28 @@
               <li>
                 Section 1
                 <ol>
-                  <li>Item 1</li>
-                  <li>Item 2</li>
+                  <li>Item 1.1</li>
+                  <li>Item 1.2
+                    <ol>
+                      <li>Item 1.2.1
+                        <ol>
+                          <li>Item 1.2.1.1</li>
+                          <li>Item 1.2.1.2</li>
+                        </ol> 
+                      </li>
+                      <li>Item 1.2.2</li>
+                    </ol>  
+                  </li>
                 </ol>
               </li>
               <li>Section 2</li>
               <li>Section 3</li>
               <li>Section 4</li>
-              <li>Section 5</li>
-              <li>Section 6</li>
             </ol>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
@@ -80,11 +89,17 @@
           <header>
             <h2 class="shadow">Titre principal de la pr&eacute;sentation (sur plusieurs lignes si n&eacute;cessaire)</h2>
             <img class="cloud" src="./img/cloud.png" alt="">
+            <img class="event-title" src="./img/event-title.png" alt="">
+            <div class="topics">
+              <ul>
+                <li>Texte 1</li>
+                <li>Texte 2</li>
+                <li>Texte 3</li>
+              </ul>
+              <div class="line-divider"></div>
+            </div>
             <h3>Titre de section</h3>
           </header>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
@@ -92,7 +107,7 @@
         <section>
           <header>
             <h2>Titre slide</h2>
-            <h3 class="shadow">&gt; Avec sous-titre</h3>
+            <h3 class="shadow">Mon sous-titre</h3>
           </header>
           <div class="slide-content">
             <ul>
@@ -116,6 +131,9 @@
               </li>
             </ul>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
@@ -123,13 +141,16 @@
         <section>
           <header>
             <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
+            <h3 class="shadow">Mon sous-titre</h3>
           </header>
           <div class="slide-content">
             <p>
               Simple text...              
             </p>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
 
@@ -138,17 +159,20 @@
         <section>
           <header>
             <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
+            <h3 class="shadow">Mon sous-titre</h3>
           </header>
           <div class="slide-content">
             <p>
               Simple text w/ 1 img...
               <div class="gallery-item">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
             </p>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
@@ -156,21 +180,24 @@
         <section>
           <header>
             <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
+            <h3 class="shadow">Mon sous-titre</h3>
           </header>
           <div class="slide-content">
             <p>
               Simple text w/ 2 img...
               <div class="gallery-item" style="width: 50%">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
               <div class="gallery-item" style="width: 50%">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
             </p>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
          <!--///////////////////////////////////////////-->
@@ -178,31 +205,82 @@
         <section>
           <header>
             <h2>Mon titre</h2>
-            <h3 class="shadow">&gt; Mon sous-titre</h3>
+            <h3 class="shadow">Mon sous-titre</h3>
           </header>
           <div class="slide-content">
             <p>
               Simple text w/ 4 img...
               <div class="gallery-item" style="width: 26%">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
               <div class="gallery-item" style="width: 26%">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
               <div class="gallery-item" style="width: 20%">
                 <img src="img/example_long.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
               <div class="gallery-item" style="width: 26%">
                 <img src="img/example_large.png" alt"Exemple de screenshot">
-                <span>Legende de l'image</span>
+                <span>L&eacute;gende de l'image</span>
               </div>
 
            
             </p>
           </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Mon titre</h2>
+            <h3>Mon sous-titre</h3>
+          </header>
+          <div class="slide-content">
+            <div class="bubble">
+              <span>This is a quote.</span>
+            </div>
+            <div class="bubble-tail"></div>
+            <div class="quote-author">
+              Someone, somewhere
+            </div>
+          
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Mon titre</h2>
+            <h3>Mon sous-titre</h3>
+          </header>
+          <div class="slide-content">
+            <div class="code-area">
+              <pre>
+    
+    /* A simple yet efficient "Hello world" example in Java. */
+
+    public class HelloWorld {
+      public static void main(String[] args) {
+        System.out.println("Hello, World");
+      }
+    }
+              </pre>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
         </section>
 
         <!--///////////////////////////////////////////-->
