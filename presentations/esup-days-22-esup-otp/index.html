@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://esupportail.github.io/presentations/esup-days-template/#/ -->
+<html lang="fr">
+<!-- version 1.0 -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Présentation ESUP-OTP</title>
+    <link href="./css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/simple.css" id="theme">
+    <link rel="stylesheet" href="./css/esup-theme.css">
+    <link rel="stylesheet" href="./css/default.min.css">
+</head>
+
+<body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter linear center" data-transition-speed="default" data-background-transition="default">
+        <div class="slides" style="width: 960px; height: 700px; zoom: 1;">
+            <section class="main-title present" style="top: -346px; display: block;">
+                <header>
+                    <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">
+              <img src="./img/event-title.png" alt="ESUP-Days #22" class="event-title">
+            </h1>
+                </header>
+                <div class="presentation-title">
+                    <div class="line-divider"></div>
+                    <h2>ESUP-OTP</h2>
+                    <h3>Plateforme de gestion de mot de passe à usage unique</h3>
+                    <ul class="presenters">
+                    <br>
+                        <li style="font-size:0.65em; color:#1d71b8;">Alex Bouskine - Université de La Rochelle</li>
+                        <li style="font-size:0.65em; color:#1d71b8;">Aymar ANLI- Université de Paris1</li>
+                    </ul>
+                </div>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Présentation</h2>
+                </header>
+                <div class="slide-content">
+                    <ol>
+                        <li style="color:#1d71b8;"">
+                            Introduction
+                            <ul>
+                                <li style="color:black; font-weight:300;">Avantages et Limites du SSO</li>
+                                <li style="color:black; font-weight:300;">Authentification Multi-facteurs (MFA)</li>
+                                <li style="color:black; font-weight:300;">One Time Password (OTP)</li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;"">
+                            ESUP-OTP
+                            <ul>
+                                <li style="color:black; font-weight:300;">Besoins et Objectifs</li>
+                                <li style="color:black; font-weight:300;">Architecture générale et fonctionnement</li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;"">
+                            Mise en oeuvre du MFA avec CAS et ESUP-OTP
+                            <ul>
+                                <li style="color:black; font-weight:300;">CAS V4 ou inférieur</li>
+                                <li style="color:black; font-weight:300;">CAS V5</li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;"">Conclusion et Perspectives</li>
+                    </ol>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Introduction 1/3</h2>
+                    <h3 class="shadow">Qu'est ce que le SSO ?</h3>
+                </header>
+                <div class="slide-content">
+                    <ul style="display: inline-block;">
+                        <li>Les avantages
+                            <ul>
+                                <li>Meilleure ergonomie
+                                    <ul>
+                                        <li>diminuer le nombre de mots de passe à retenir </li>
+                                        <li>diminuer le nombre d'interfaces d'authentification à connaître</li>
+                                    </ul>
+                                </li>
+                                <li>Meilleure sécurité
+                                    <ul>
+                                        <li>Moindre surface d’exposition des mots de passe.</li>
+                                        <li>Meilleure maitrise de la politique de gestion des mots de passe (chiffrement, longueur, jeu de caractères, recouvrement, renouvellement, ...)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Inconvénient majeur
+                            <ul>
+                                <li>Risques liés à la centralisation des accès</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Introduction 2/3</h2>
+                    <h3 class="shadow">Authentification Multi Facteur (MFA)</h3>
+                </header>
+                <div class="slide-content">
+                    <p>Authentification renforcée par un ou plusieurs facteurs supplémentaires</p>
+                    <p>
+                        <ul style="display: inline-block;">
+                            <li>En plus du mot de passe (ce que je sais) :
+                                <ul>
+                                    <li style="color:black;"">ce que je possède (carte, application smartphone,...)</li>
+                                    <li style="color:black;">où je suis (géolocalisation)</li>
+                                    <li style="color:black;">ce que je suis (biométrie)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/multifactor.png" alt "exemple=" " de=" " screenshot"="">
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Introduction 3/3</h2>
+                    <h3 class="shadow">One Time Password (OTP)</h3>
+                </header>
+                <div class="slide-content">
+                    <p>Mot de passe valide qu'une seule fois ou pendant une courte période</p>
+                    <br>
+                    <p>
+                        <ul style="display: inline-block;">
+                            <li>Plusieurs algorithmes existent :
+                                <ul>
+                                    <li>HMAC-based One-time Password (HOTP)
+                                        <ul>
+                                            <li> RFC 4226</li>
+                                        </ul>
+                                    </li>
+                                    <li>Time-based One-time Password (TOTP)
+                                        <ul>
+                                            <li> RFC 6238</li>
+                                        </ul>
+                                    </li>
+                                    <li>Algorithmes basés sur un nombre généré aléatoirement côté serveur</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Besoins et Objectifs</h3>
+                </header>
+                <div class="slide-content">
+                    <ul style="display: inline-block;">
+                        <li style="font-size:0.8em;">Besoins :
+                            <ul>
+                                <li>Renforcée l'authentification pour l'accès à certains services critiques
+                                    <ul>
+                                        <li>Saisie des notes (par le web)</li>
+                                        <li>GED (Documents confidentiels)</li>
+                                        <li>WebVPN</li>
+                                    </ul>
+                                </li>
+                                <li>CAS n'intègre le MFA qu'en version 5</li>
+                                <li>Les solutions MFA sont payantes et hébergées</li>
+                            </ul>
+                        </li>
+                        <li style="font-size:0.8em;">Objectifs :
+                            <ul>
+                                <li>Service externe à CAS le + générique possible
+                                    <ul>
+                                        <li>Compatible en version 4 puis en 5</li>
+                                        <li>Ajout de méthodes/transports</li>
+                                        <li>Utilisable par d'autres services</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Architecture du projet</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-manager.png" alt "exemple=" " de=" " screenshot"="">
+                        <span style="color: #E9294A; margin-bottom:15px; font-size: 0.65em;">ESUP OTP MANAGER</span>
+                        <div style="font-size:0.65em">
+                            <p>Application Web CASifiée</p>
+                            <p>Interface de réglage des préférences utilisateurs de l'API</p>
+                            <p>Interface d'administration de l'API</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt "exemple=" " de=" " screenshot"="">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-api.png" alt "exemple=" " de=" " screenshot"="">
+                        <span style="color: #E9294A; margin-bottom:15px; font-size: 0.65em;">ESUP OTP API</span>
+                        <div style="font-size:0.65em">
+                            <p>API REST</p>
+                            <p>Plusieurs méthodes de génération de codes</p>
+                            <p>Plusieurs moyens de transport</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt "exemple=" " de=" " screenshot"="">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-cas.png" alt "exemple=" " de=" " screenshot"="">
+                        <span style="color: #E9294A; margin-bottom:15px; font-size: 0.65em;">ESUP OTP CAS</span>
+                        <div style="font-size:0.65em;">
+                            <p>Overlay CAS</p>
+                            <p>Implémente deux handlers spécifiques en 4.0 et 4.2</p>
+                            <p>Implémente un provider MFA spécifique en 5</p>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Mise en oeuvre du MFA</h2>
+                    <h3 class="shadow">en version 4 (ou inférieure)</h3>
+                </header>
+                <div class="slide-content">
+                    <ul style="display: inline-block;">
+                        <li style="color:#1d71b8;">Pré-requis :
+                            <ul>
+                                <li style="color:black;">Installation des projets <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-api" target="_blank">Esup-Otp-Api</a> et <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-manager" target="_blank">Esup-Otp-Manager</a></li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;">Installation du projet Esup-Otp-Cas (Maven overlay du serveur CAS) comprenant :
+                            <ul>
+                                <li style="color:black;">les Handlers d’authentification utilisant l’api</li>
+                                <li style="color:black;">le formulaire de connexion modifié
+                                    <ul>
+                                        <li>vues (JSP)</li>
+                                        <li>comportement (Javascript)</li>
+                                    </ul>
+                                </li>
+                                <li style="color:black;">Documentation sur <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-cas/tree/4.2.X" target="_blank">GitHub</a></li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;">Chaîné le CAS actuel avec Esup-Otp-Cas </li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Mise en oeuvre du MFA</h2>
+                    <h3 class="shadow">en version 5 (1/2)</h3>
+                </header>
+                <div class="slide-content">
+                    <ul style="display: inline-block;">
+                        <li style="color:#1d71b8;">Pré-requis :
+                            <ul>
+                                <li style="color:black;">Installation des projets <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-api" target="_blank">Esup-Otp-Api</a> et <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-manager" target="_blank">Esup-Otp-Manager</a></li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;">Dans CAS version 5:
+                            <ul>
+                                <li style="color:black;">Ajout de la dépendance Maven du module MFA-ESUPOTP(MFA Provider modifié) comprenant :
+                                    <ul>
+                                        <li>vues (Thymeleaf)</li>
+                                        <li>comportement (webflow.xml)</li>
+                                    </ul>
+                                </li>
+                                <li style="color:black;">Définir les services utilisant le MFA Provider MFA-ESUPOTP</li>
+                                <li style="color:black;">Documentation sur <a style="color:#E9294A;" href="https://github.com/EsupPortail/esup-otp-cas" target="_blank">GitHub</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2>Mise en oeuvre du MFA</h2>
+                    <h3 class="shadow">en version 5 (2/2)</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="code-area" style="color:#222; background: whitesmoke;">
+                    <pre>    
+    /* fichier pom.xml */
+
+    &#9001;dependency&#9002;
+      &#9001;groupId&#9002;org.apereo.cas&#9001;/groupId&#9002;
+         &#9001;artifactId&#9002;cas-server-support-gauth&#9001;/artifactId&#9002;
+      &#9001;version&#9002;${cas.version}&#9001;/version&#9002;
+    &#9001;/dependency&#9002;
+                    </pre>
+                </div>
+                <div class="code-area" style="color:#222; background: whitesmoke;">
+                    <pre>    
+    /* fichier AllServicesMFAExample.json */
+
+    {
+      "@class" : "org.apereo.cas.services.RegexRegisteredService",
+      "serviceId" : "^(https|imaps|http)://.*",
+      "id": 10000004,
+      "multifactorPolicy" : {
+        "@class" : "org.apereo.cas.services.DefaultRegisteredServiceMultifactorPolicy",
+        "multifactorAuthenticationProviders" : [ "java.util.LinkedHashSet", [ "mfa-esupotp" ] ]
+      }
+    }
+                    </pre>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2><a style="color:#1d71b8;" href="https://esupotp-manager.univ-paris1.fr/" target="_blank">Démonstration</a></h2>
+                </header>
+                <div class="slide-content">
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Conclusion et Perspectives</h2>
+                </header>
+                <div class="slide-content">
+                    <ul style="display: inline-block;">
+                        <li style="color:#1d71b8;">ESUP OTP permet de :
+                            <ul>
+                                <li style="color:black;">gérer les mots de passe à usage unique</li>
+                                <li style="color:black;">fournir du MFA</li>
+                            </ul>
+                        </li>
+                        <li style="color:#1d71b8;">Et cela :
+                            <ul>
+                                <li style="color:black;">de manière générique (ajout de méthodes/transports)</li>
+                                <li style="color:black;">pour n’importe quelle serveur</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p style="margin: 0.1em 0;padding-left: 0.15em;     color: #1d71b8; font-weight: 700; font-size: 85%;"><br>
+                      Première utilisation envisagée par l’Université Paris 1 pour renforcer l’authentification au WebVPN <br><br>  
+                      Utiliser ESUP-OTP comme alternative au système de base (login+mot de passe)
+                    </p>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                </header>
+                <div class="slide-content">
+                    <ul>
+                        <li>Dépôts Github des projets :<br>
+                    <ul>
+                        <li><a style="color:#1d71b8;" href="https://github.com/EsupPortail/esup-otp-api" target="_blank">Esup-Otp-Api</a><br></li>
+                        <li><a style="color:#1d71b8;" href="https://github.com/EsupPortail/esup-otp-manager" target="_blank">Esup-Otpp-Manager</a><br></li>
+                        <li><a style="color:#1d71b8;" href="https://github.com/EsupPortail/esup-otp-cas/tree/4.2.X" target="_blank">Esup-Otp-Cas v4</a><br></li>
+                        <li><a style="color:#1d71b8;" href="https://github.com/EsupPortail/esup-otp-cas" target="_blank">Esup-Otp-Cas v5</a><br><br></li>
+                    </ul></li>
+                        <li>Démonstrateur <a style="color:#1d71b8;" href="https://esupotp-manager.univ-paris1.fr/" target="_blank">ici</a><br></li>
+                        <li>Documentation CAS v5 <a style="color:#1d71b8;" href="https://apereo.github.io/cas/development/" target="_blank">ici</a><br></li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Merci de votre attention</h2>
+                    <h3 class="shadow">Avez-vous des questions ?</h3>
+                </header>
+                <div class="slide-content">
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Méthodes d'ESUP OTP</h2>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/methodes.png" alt "exemple=" " de=" " screenshot"="">
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Transports d'ESUP OTP</h2>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/transports.png" alt "exemple=" " de=" " screenshot"="">
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/communaute.png" alt="">
+                </footer>
+            </section>
+            <!--///////////////////////////////////////////-->
+        </div>
+        <div class="backgrounds">
+            <div class="slide-background present"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+        </div>
+        <div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+        <aside class="controls" style="display: block;">
+            <div class="navigate-left"></div>
+            <div class="navigate-right enabled"></div>
+            <div class="navigate-up"></div>
+            <div class="navigate-down"></div>
+            <div class="slideNb"></div>
+        </aside>
+        <div class="state-background"></div>
+        <div class="pause-overlay"></div>
+    </div>
+    <script src="./js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            {
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            },
+
+            // Syntax highlight for <pre> elements
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+
+        ],
+    });
+
+    function createSingletonNode(container, tagname, classname, innerHTML) {
+
+        var node = container.querySelector('.' + classname);
+        if (!node) {
+            node = document.createElement(tagname);
+            node.classList.add(classname);
+            if (innerHTML !== null) {
+                node.innerHTML = innerHTML;
+            }
+            container.appendChild(node);
+        }
+        return node;
+
+    }
+
+    // From https://github.com/hakimel/reveal.js/pull/56
+    function slidenumber(event) {
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll('.reveal .slides>section');
+        for (var i = 0; i < event.indexh; i++) {
+            // get subslides
+            var subslides = horizontal_slides[i].querySelectorAll('section');
+
+            // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+            current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv + 1;
+        return current_slide.toString();
+    }
+
+    function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+    }
+
+    Reveal.addEventListener('slidechanged', setSlideNb);
+    Reveal.addEventListener('ready', setSlideNb);
+    </script>
+    <script type="text/javascript" src="./Template Presentation ESUP-Days_files/highlight.js"></script>
+</body>
+
+</html>
