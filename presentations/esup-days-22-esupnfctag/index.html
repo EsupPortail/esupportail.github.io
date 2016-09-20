@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="fr">
+
+  <!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Esup NFC Tag</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+
+    <div class="reveal esup">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">
+              <img src="./img/event-title.png" alt="ESUP-Days #22" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2><img src="img/logo-m.png" alt="Logo EsupNfcTag"> ESUP NFC TAG</h2>
+	    <h3 style="background: #bbb">pour des services institutionnels utilisant les cartes NFC</h3>
+	    <hr/>
+	    <div class="gallery-item" style="width:50%">
+              <ul class="presenters">
+		<li>Vincent Bonamy</li>
+		<li>David Lemaignent</li>
+              </ul>
+	    </div>
+	    <div class="gallery-item" style="width:50%">
+	      <img class="cloud" src="./img/logo.png" alt="">
+	    </div>
+          </div>
+	  <footer>
+	    <div align="center">
+	      <small>
+		<hr/>
+		<a href="https://www.esup-portail.org/wiki/display/ESUPNFC/">https://www.esup-portail.org/wiki/display/ESUPNFC/</a>
+	      </small>
+	    </div>
+	  </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+
+          </header>
+          <div class="slide-content">
+            <ol>
+	      <li>Points clefs de la présentation</li>
+	      <li>Contexte, objectif et contraintes</li>
+	      <li>Tag NFC - Késako ?</li>
+              <li>Prototypes</li>
+              <li>Esup NFC Tag</li>
+              <ol>
+                <li>Principes</li>
+		<li>Cas d'usage</li>
+              </ol>
+              <li>Démonstration</li>
+              <li>Questions</li>
+              <li>Annexes</li>	      
+            </ol>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Esup NFC Tag</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Points clefs de la présentation</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Points clefs de la présentation</h2>
+            <h3 class="shadow"></h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>
+		EsupNfcTag
+	      </li>
+	      <li>... mais plus généralement : 
+		<ul>
+		  <li>
+		    Usage des cartes multi-servies
+		  </li>
+		  <li>
+		    Usage de smartphones (Android) pour porter un service technique
+		    <!--<ul>
+		      <li>smartphones dédiés =~ lecteurs de cartes évolués à faible coût</li>
+		      <li>pas de présence dans les stores</li>
+		      <li>non destiné à l'utilisateur final</li>
+		    </ul>-->
+		  </li>
+		  <li>
+		    Architecture d'une application mobile avec webview prédominante
+		    <!--<ul>
+		      <li>utilisant une fonctionnalité technique propre aux smartphones (NFC)</li>
+		      <li>avec cependant le maximum (grande majorité) de l'application porté par la webview (et donc porté par le serveur)</li>
+		      <li>shibbolethisée mais conservant ensuite un token d'identification</li>
+		    </ul>-->
+		  </li>
+		  <li>
+		    Usage d'un dispositif électronique accessible / grand public
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </div>
+	</section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Esup NFC Tag</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Contexte, objectif et contraintes</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Contexte / Objectifs / Contraintes</h2>
+            <h3 class="shadow">Contexte et objectif</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>
+		Contexte : une carte étudiante/professionnelle/campus
+		<ul>
+		  <li>
+		    nommée Léocarte
+		  </li>
+		  <li>
+		    portée par la COMUE Normandie Université
+		  </li>
+		  <li>
+		    permettant à l'UR d'ouvrir des portes, de se restaurer et d'imprimer
+		  </li>
+		</ul>
+	      <li>Objectif :
+		<ul>
+		  <li>
+		    Proposer des services "institutionnels" au travers de cette Léocarte
+		    <ul>
+		      <li>
+			Livraison Léocarte
+		      </li>		      
+		      <li>
+			Coupons culture
+		      </li>
+		      <li>
+			Recherche par carte dans une application de gestion de comptes 
+		      </li>
+		      <li>
+			Contrôle d'assuidité
+		      </li>
+		      <li>
+			???
+		      </li>
+		    </ul>
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </div>
+	</section>
+	<section>
+          <header>
+            <h2>Contexte / Objectifs / Contraintes</h2>
+            <h3 class="shadow">Contraintes</h3>
+          </header>
+          <div class="slide-content">			
+	    <ul>
+	      <li>
+		Proposer une solution
+		<ul>
+		  <li>
+		    interfaçable facilement avec les applications métiers consommateur de l'évènement "badgeage"
+		  </li>
+		  <li>
+		    capable d'identifier (eppn) le porteur de carte via le CSN ou mieux encore un identifiant en application/fichier "Desfire"
+		  </li>
+		  <li>
+		    facilement déployable.
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+        </section>
+
+	<!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Esup NFC Tag</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <h3>Tag NFC / Léocarte</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+ 	<!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Tag NFC / Léocarte</h2>
+            <h3 class="shadow">Késako ?</h3>
+          </header>
+          <div class="slide-content">
+	    <div class="gallery-item" style="width: 75%">
+              <ul>
+		<li>
+		  Léocarte :
+		  <ul>
+		    <li>
+		      carte à puce sans contact de type Mifare Desfire 
+		    </li>
+		    <li>
+		      qui porte des identifiants :
+		      <ul>
+			<li>identifiant carte (CSN), pas vraiment sécurisé ...</li>
+			<li>indentifiant inscrit dans un "fichier d'une application Desfire" ~= "identifiant chiffré stocké dans la puce" (AES)</li>
+		      </ul>
+		    </li>
+		  </ul>
+	    </div>
+            <div class="gallery-item" style="width: 25%">
+              <img src="img/leocarte.png" alt="Exemple de Léocarte">
+            </div>		  
+          </div>
+        </section>
+
+
+	<section>
+          <header>
+            <h2>Tag NFC / Léocarte</h2>
+            <h3 class="shadow">&gt; Badgeage </h3>
+          </header>
+          <div class="slide-content">
+	    <div class="gallery-item" style="width: 75%">
+              <ul>
+		<li>
+		  Lecture de cartes (ou tags) avec la technologie NFC (Near Field Communication)
+		  <ul>
+		    <li>
+		      Le lecteur recupère le CSN (numéro du Tag) nativement
+		    </li>
+		    <li>
+		      Mifare Desfire est plus sécurisé et permet de lire des fichiers stockés dans la carte à l'aide d'une clé (protocol AES)
+		    </li>
+		  </ul>
+		</li>
+		
+              </ul>
+	    </div>
+	    <div class="gallery-item" style="width: 25%">
+              <img src="img/lecteur-nfc-porte.jpg" alt="Exemple de contrôle d'accès NFC">
+            </div>		  
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Tag NFC / Léocarte</h2>
+            <h3 class="shadow">Lecteurs</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>
+		Pour « lire » une leocarte plusieurs solutions, exemples :
+		<ul>
+		  <li>
+		    Ordinateur
+		    <ul>
+		      <li>Lecteur USB + Driver</li>
+		      <li>Application lourde</li>
+		    </ul>
+		  </li>
+		  <li>
+		    Dispositif léger
+		    <ul>
+		      <li>Basé sur Arduino</li>
+		      <li>et composants : ethernet, led, nfc, lcd, buzzer...</li>
+		    </ul>
+		  </li>
+		  <li>
+		    Tablette ou Smartphone
+		    <ul>
+		      <li>
+			Intégrant un lecteur NFC
+		      </li>
+		      <li>
+			Avec une application maison
+		      </li>
+		    </ul>
+		  </li>
+		</ul>
+	      </li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Esup NFC Tag</h2>
+	    <div>
+	      <div class="gallery-item" style="width: 50%">
+		<img class="cloud" src="./img/prototype1.jpg" alt="">
+	      </div>
+	      <div class="gallery-item" style="width: 50%">
+		<img class="cloud" src="./img/cloud.png" alt="">
+	      </div>
+	    </div>
+            <h3>Prototypes</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+ 	<!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Prototypes</h2>
+            <h3 class="shadow">&gt; Arduino</h3>
+          </header>
+          <div class="slide-content">
+	    <div class="gallery-item" style="width: 75%">	    	    
+              <ul>
+		<li>
+		  Caractéristiques
+		  <ul>
+		    <li>
+		      Rapide et fiable
+		    </li>
+		    <li>
+		      Très peu de code dans l'Arduino
+		    </li>
+		    <li>
+		      Lecture du CSN
+		    </li>
+		    <li>
+		      Des « WGET » en HTTP (pas de HTTPS)
+		    </li>
+		    <li>
+		      Ethernet (connexion) + adaptateur secteur/usb (alimentation)
+		    </li>
+		  </ul>
+		</li>
+		<li>
+		  Conclusion
+		  <ul>
+		    <li>Approche simple, légère, efficace</li>
+		    <li>CSN et HTTP pas très sécurisé</li>
+		    <li>Packaging et mise en œuvre ?</li>
+		  </ul>
+		</li>
+              </ul>
+	    </div>
+	    <div class="gallery-item" style="width: 25%">
+              <img src="img/proto-arduino.png" alt"Le prototype Arduino">
+              <span>Le prototype Arduino finalisé</span>
+            </div>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+        <section>
+          <header>
+            <h2>Prototypes</h2>
+            <h3 class="shadow">&gt; Android</h3>
+          </header>
+          <div class="slide-content">
+	    <div class="gallery-item" style="width: 75%">
+              <ul>
+		<li>
+		  Caractéristiques
+		  <ul>
+		    <li>
+		      Complètement packagé
+		    </li>
+		    <li>
+		      Possibilité de faire du WIFI
+		    </li>
+		    <li>
+		      Tarif raisonnable
+		    </li>
+		    <li>
+		      Peux fonctionner sur batterie
+		    </li>
+		  </ul>
+		</li>
+		<li>
+		  Conclusion
+		  <ul>
+		    <li>Utilisation de la WebView pour déporter le code coté serveur</li>
+		    <li>Mais obligation de developper une application native pour piloter le NFC</li>
+		    <li>CSN et Defire en HTTPS + Authentification Shibboleth</li>
+		  </ul>
+		</li>
+              </ul>
+	    </div>
+            <div class="gallery-item" style="width:25%">
+              <img src="img/prototype2.jpg" alt="proto2">
+              <span>Le prototype sous Android</span>
+            </div>	    
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section class="divider">
+          <header>
+            <h2 class="shadow">Esup NFC Tag</h2>
+	    <div>
+	      <div class="gallery-item" style="width:25%">
+		<img src="img/logo-xl.png" alt="Logo EsupNfcTag">
+	      </div>
+	      <div class="gallery-item" style="width:75%">
+		<img class="cloud" src="./img/cloud.png" alt="">
+	      </div>
+	    </div>
+            <h3>Solution Esup NFC Tag</h3>
+          </header>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">&gt; EsupNFCTagDroid</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Application mobile Android basée sur une webView
+		<ul>
+		  <li>Affichage d'une vue HTML5 fournie par la partie serveur</li>
+		  <li>Lecture de carte via api native Android</li>
+		  <li>Envoi du csn ou desfireId par webService</li>
+		  <li>Rafraichissement de la vue par Long Poll sur déclenchement d'événements</li>
+		  
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">&gt; EsupNFCTagServer</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Application serveur Spring
+		<ul>
+		  <li>Application shibbolethisée</li>
+		  <li>Fournit la vue mobile</li>
+		  <li>Etablit la communication entre le mobile et les apis métiers</li>
+		  <li>Gère la connexion des différents périphériques (token)</li>
+		  <li>Gère la configuration NFC (CSN ou Desfire)<br/>
+		    (En mode Desfire le mobile n'a pas connaissance de la clé de criptage AES)
+		  </li>
+
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+        </section>
+
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">&gt; Schéma de principe</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+                <img src="img/schema_global.jpg" alt="proto2">
+            </p>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">&gt; Première connexion</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              <div class="gallery-item">
+                <img src="img/schema_connexion.jpg" alt"Exemple de screenshot">
+                <span>Schéma de connexion à l'appli mobile</span>
+              </div>
+	      <li>Connexion Shibboleth via webView</li>
+	      <li>Affichage des "locations"</li>
+	      <li>Choix du lieu</li>
+	      <li>Inscription d'un token dans le local storage (coté mobile)</li>
+	      <li>Plus de connexion nécessaire</li>
+            </p>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">&gt; Schéma d'un badgeage</h3>
+          </header>
+            <img src="img/schema_badgeage.jpg" alt="Schéma d'un badgeage">
+        </section>
+
+	<!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">Cas d'usage</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>
+		Dématérialisation des coupons culture
+	      </li>
+	      <li>		
+		Livraison des cartes étudiants
+	      </li>
+</li>
+<li>
+  Le materiel de badgeage est à usage interne, les smartphones sont livrés pré-installés
+</li>
+<li>
+  Pas de developpement sur d'autres plateformes
+</li>
+<li>
+  Pas de Play Store
+</li>
+</ul>
+</div>
+</section>
+
+	<!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Esup NFC Tag</h2>
+            <h3 class="shadow">Cas d'usage : la carte culture</h3>
+          </header>
+          <div class="slide-content">
+	    <img src="./img/schema_carte_culture.png" alt="Schéma / Workflow Carte Culture">
+	  </div>
+
+	</section>
+
+
+<!--///////////////////////////////////////////-->
+
+<section class="divider">
+	<section>
+	  <header>
+	    <h2 class="shadow">Esup NFC Tag</h2>
+	    <div class="gallery-item" style="width: 33%">
+	      <video controls autoplay="true" loop src="img/modulo_arduino.ogg">Badegage Livraison avec le prototype avec Arduino</video>
+	    </div>
+	    <div class="gallery-item" style="width: 33%">
+	      <video controls autoplay="true" loop src="img/modulo_android.ogg">Badegage Livraison avec Android</video>
+	    </div>    
+	    <div class="gallery-item" style="width: 33%">
+	      <video controls autoplay="true" loop src="https://www.esup-portail.org/wiki/download/attachments/555778051/arduino-esup-nfc-tag.ogg">Vidéo de présentation du prototype avec Arduino</video>
+	    </div>    
+	    <center>
+	      <h3>Démonstration</h3>
+	    </center>
+	  </header>
+	  <img class="cloud" src="./img/installations.jpg" alt="Installations / Recharges de téléphones">
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Live</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/esupnfctag_live.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Applications</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/esupnfctag_apps.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Devices</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/esupnfctag_devices.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Details</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/esupnfctag_device.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Carte culture : tags</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/carte_culture_tags.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Carte culture : espace partenaire</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/carte_culture_partenaires.png" alt="">
+		     </div>
+		</div>
+	</section>
+	<section>
+		<header>
+		    <h2 class="shadow">Carte culture : stats</h2>
+		    </center>
+		</header>
+		<div class="slide-content">
+		     <div class="gallery-item" style="width:100%">
+			<img class="cloud" src="./img/carte_culture_stats.png" alt="">
+		     </div>
+		</div>
+	</section>
+</section>
+
+
+<!--///////////////////////////////////////////-->
+
+<section class="divider">
+  <header>
+    <h2 class="shadow">Esup NFC Tag</h2>
+    <div class="gallery-item" style="width:25%">
+      <img src="img/logo-xl-alt.png" alt="Logo EsupNfcTag Alternatif">
+    </div>
+    <div class="gallery-item" style="width:75%">
+      <img class="cloud" src="./img/cloud.png" alt="">
+    </div>
+    <center>
+      <h3><br/>Questions</h3>
+    </center>
+  </header>
+  <footer>
+    <img src="./img/communaute.png" alt="">
+  </footer>
+</section>
+
+
+<!--///////////////////////////////////////////-->
+
+<section class="divider">
+<section>
+  <header>
+    <h2 class="shadow">Esup NFC Tag</h2>
+    <img class="cloud" src="./img/cloud.png" alt="">
+    <center>
+      <h3><br/>Annexe</h3>
+    </center>
+  </header>
+  <footer>
+    <img src="./img/communaute.png" alt="">
+  </footer>
+</section>
+
+
+<!--///////////////////////////////////////////-->
+
+<section>
+  <header>
+    <h2>Esup NFC Tag</h2>
+    <h3 class="shadow">Cas d'usage</h3>
+  </header>
+  <div class="slide-content">
+    <ul>
+      <li>Carte Culture
+	<ul>
+	  <li>
+	    L'application métier Carte Culture fournit une liste de salles en fonction du login du gestionnaire de salle
+	    (<b>getLocations</b>)
+	  </li>
+	  <li>
+	    Lors du badgeage c'est l'application Carte Culture qui contrôle l'identité de l'étudiant dans sa propre base
+	    (<b>tagIdCheck</b>)
+	  </li>
+	  <li>
+	    Après verification du nombre de coupons (<b>isTagable</b>), le badgeage peut être validé (<b>validateTag</b>)
+	  </li>
+	</ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!--///////////////////////////////////////////-->
+
+<section>
+  <header>
+    <h2>Esup NFC Tag</h2>
+    <h3 class="shadow">&gt; Implémentation</h3>
+  </header>
+  <div class="slide-content">
+    <ul>
+      <li>
+	4 fonctions à implémenter
+	<ul>
+	  <li>
+	    TagLog <b>tagIdCheck</b>(desfireId, csn)<br/>recupération de l'eppn en fonction du csn ou idp2s
+	  </li>
+	  <li>
+	    List&lt;String> <b>getLocation</b>(eppn)<br/>recupération des lieux en fonction de l'eppn
+	  </li>
+	  <li>
+	    ResponseEntity&lt;String> <b>isTagable</b>(tagLog)<br/>permet de contrôler si l'individu peut badger
+	  </li>
+	  <li>
+	    ResponseEntity&lt;String> <b>validateTag</b>(tagLog)<br/>déclenchement des actions métier si le badgeage est validé
+	  </li>
+	</ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!--///////////////////////////////////////////-->
+
+<section>
+  <header>
+    <h2>Esup NFC Tag</h2>
+    <h3 class="shadow">&gt; Implémentation</h3>
+  </header>
+  <div class="slide-content">
+    <ul>
+      <li>
+	L'objet TagLog
+	<div class="code-area">
+	  <pre>
+
+	    @RooJavaBean
+	    @JsonIgnoreProperties(ignoreUnknown = true)   
+	    public class EsupNfcTagLog {
+
+	    String csn;
+
+	    String eppn;
+
+	    String desfireId;
+
+	    String lastname;
+
+	    String firstname;
+
+	    String location;
+
+	    String eppnInit;
+	    }
+	    
+	  </pre>
+	</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!--///////////////////////////////////////////-->
+
+<section>
+  <header>
+    <h2>Esup NFC Tag</h2>
+    <h3 class="shadow">&gt; Implémentation</h3>
+  </header>
+  <div class="slide-content">
+    <ul>
+      <li>
+	Déclaration des implémentations dans<br/>applicationContext-custom.xml
+      </li>
+    </ul>
+    <div class="code-area">
+      <pre>
+	
+	&lt;bean id=&quot;carteCultureExtApi&quot; class=&quot;org.esupportail.nfctag.service.api.impl.AppliExtRestWs&quot;&gt;
+	&lt;property name=&quot;isTagableUrl&quot; value=&quot;https://app.univ-ville.fr/nfc-ws/isTagable&quot;/&gt;
+	&lt;property name=&quot;validateTagUrl&quot; value=&quot;https://app.univ-ville.fr/nfc-ws/validateTag&quot;/&gt;
+	&lt;property name=&quot;getLocationsUrl&quot; value=&quot;https://app.univ-ville.fr/nfc-ws/getLocations&quot;/&gt;
+	&lt;property name=&quot;description&quot; value=&quot;Web Service Carte Culture&quot;/&gt;
+	&lt;property name=&quot;backgroundColor&quot; value=&quot;rgb(121, 119, 116)&quot;/&gt;
+	&lt;property name=&quot;header&quot; value=&quot;https://app.univ-ville.fr/resources/images/logo.jpg&quot;/&gt;
+	&lt;/bean&gt;
+      </pre>
+
+      <pre>
+	&lt;bean id=&quot;tagIdCheckApiId&quot; class=&quot;org.esupportail.nfctag.service.api.impl.TagIdCheckRestWs&quot;&gt;
+	&lt;property name=&quot;tagIdCheckUrl&quot; value=&quot;https://app-id.univ-ville.fr/wsrest/tagIdCheck&quot;/&gt;
+	&lt;property name=&quot;description&quot; value=&quot;via Id&quot;/&gt;
+	&lt;/bean&gt;
+      </pre>
+    </div>
+</section>
+
+<!--///////////////////////////////////////////-->
+
+<section>
+  <header>
+    <h2>Esup NFC Tag</h2>
+    <h3 class="shadow">&gt; Implémentation</h3>
+  </header>
+  <div class="slide-content">
+    <ul>
+      <li>
+	Ex : livraison de carte
+	<ul>
+	  <li>
+	    isTagable
+            <div class="code-area">
+	      <pre>
+
+		@RequestMapping(value="/leocarte/livraison/isTagable",  method=RequestMethod.POST)
+		@ResponseBody
+		public ResponseEntity<String> isLeocarteOk4Livraison(@RequestBody EsupNfcTagLog esupNfcTagLog) {
+		  HttpHeaders responseHeaders = new HttpHeaders();
+		  return new ResponseEntity<String>("OK", responseHeaders, HttpStatus.OK);
+		    }
+	      </pre>
+	    </div>
+	  </li>
+	  <li>
+	    validateTag
+	    <div class="code-area">
+	      <pre>
+
+		@RequestMapping(value="/leocarte/livraison/validateTag",  method=RequestMethod.POST)
+		@ResponseBody
+		public ResponseEntity<String> livraisonLeocarte(@RequestBody EsupNfcTagLog esupNfcTagLog) {
+		  HttpHeaders responseHeaders = new HttpHeaders();
+		  try {
+		  String loginInit = esupNfcTagLog.getEppnInit().replaceAll("@univ-rouen.fr", "");
+		  IndividuService.easyIdLivre(esupNfcTagLog.getEppn(), esupNfcTagLog.getCsn());
+		  return new ResponseEntity<String>("OK", responseHeaders, HttpStatus.OK);
+		    } catch(Exception e) {
+		    return new ResponseEntity<String>("KO", responseHeaders, HttpStatus.INTERNAL_SERVER_ERROR);
+		      }
+		      }
+	      </pre>
+	    </div>
+	  </li>
+	</ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+</section>
+
+
+
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+  Reveal.initialize({
+  margin: 0,
+  controls: true,
+  progress: true,
+  history: true,
+  center: true,
+  theme: 'simple', // available themes are in /css/theme
+  transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+  dependencies: [ 
+  // Cross-browser element.classList (esp needed on safari 4.0.5)
+  { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+  // Syntax highlight for <pre> elements
+    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+    ],
+    });
+
+    function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+    var node = container.querySelector( '.' + classname );
+    if( !node ) {
+    node = document.createElement( tagname );
+    node.classList.add( classname );
+    if( innerHTML !== null ) {
+    node.innerHTML = innerHTML;
+    }
+    container.appendChild( node );
+    }
+    return node;
+
+    }
+
+    // From https://github.com/hakimel/reveal.js/pull/56
+    function slidenumber(event){
+    var current_slide = 0;
+
+    var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+    for (var i = 0; i < event.indexh; i++) {
+			// get subslides
+			var subslides = horizontal_slides[i].querySelectorAll('section');
+
+			// if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+			current_slide += (subslides.length === 0) ? 1 : subslides.length;
+			}
+
+			current_slide += event.indexv+1;
+			return current_slide.toString();
+			}
+
+			function setSlideNb(event) {
+			var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+			dom.innerHTML = event.indexh ? event.indexh : '';
+			}
+
+			Reveal.addEventListener('slidechanged', setSlideNb);
+			Reveal.addEventListener('ready', setSlideNb);
+
+			</script>
+
+</body>
+</html>
