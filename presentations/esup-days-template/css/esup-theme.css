@@ -14,11 +14,11 @@
 
 body,
 .esup  {
-  font-family: 'Open Sans', Verdana,Helvetica,Arial,sans-serif;
-  color: #000;
+  font-family: 'Oswald', Verdana,Helvetica,Arial,sans-serif;
+  color: #5E5E5E;
 }
 .esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
-  font-family: Verdana,Helvetica,Arial,sans-serif;
+  font-family:'Oswald', Verdana,Helvetica,Arial,sans-serif;
 }
 
 .header,
@@ -105,7 +105,16 @@ body,
 .esup .center {
   text-align: center;
 }
-
+.esup .really-important {
+  color:#e9294a;
+  text-decoration: underline;
+}
+.esup .important {
+  color:#e9294a;
+}
+.esup .somewhat-important {
+ text-decoration: underline; 
+}
 .esup h4 {
   color: #E9294A;
   font-weight: bold;
@@ -123,14 +132,25 @@ body,
   padding-left: 0.15em; 
 }
 .esup ul li {
-  color: #E9294A;
-  font-weight: 700;
-}
-.esup ul li ul li {
   font-weight: normal;
-  color: #1d71b8;
+  list-style-type: square;
+}
+.esup ul li li {
   font-size: 0.95em;
 }
+.esup ul li li li {
+  font-size: 0.95em;
+}
+.esup ul li li li li {
+  font-size: 0.95em;
+  color: #919191;
+}
+.esup ul li li li li li {
+  font-size: 0.95em;
+  font-style: italic;
+}
+/*
+
 .esup ul li ul li ul li {
   font-weight: normal;
   color: #000;
@@ -144,7 +164,7 @@ body,
 .esup ul li ul li ul li ul li ul li {
   font-weight: normal;
   font-style: italic;
-}
+}*/
 
 .esup ol li {
   font-weight: 700;
@@ -275,8 +295,9 @@ body,
   color: #BBB;
   list-style: none;
   text-transform: uppercase;
-  font-size: 0.6em;
+  font-size: 0.8em;
   line-height: 1.3em;
+  font-weight: lighter;
 }
 
 .esup section.divider h3 {
@@ -329,6 +350,7 @@ body,
   width: 100%;
   margin: 0 auto;
   display: block;
+  padding-bottom: 5px;
   border-top: 2px solid #BBB;
 }
 .esup.lighter section h2 {
@@ -368,7 +390,7 @@ body,
   text-align: left;
   margin-bottom: 40px;
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.4em;
   background: transparent;
   text-transform: uppercase;
   border: none;
@@ -414,6 +436,7 @@ body,
   font-size: 0.7em;
   color: #888;
   display: block;
+  font-weight: lighter;
 }
 
 .esup section footer img {
@@ -445,7 +468,7 @@ body,
   margin: 0 0 20px;
   border: none;
   min-height: 0;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 .esup section header {
   padding-bottom: 10px;
@@ -462,6 +485,10 @@ body,
   color: #888;
   text-transform: uppercase;
 }
+.esup section .bubble span {
+  display: block;
+}
+
 
 .esup.lighter section .bubble {
   background: #1d71b8;
