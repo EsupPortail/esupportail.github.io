@@ -149,22 +149,6 @@ body,
   font-size: 0.95em;
   font-style: italic;
 }
-/*
-
-.esup ul li ul li ul li {
-  font-weight: normal;
-  color: #000;
-  font-size: 0.9em;
-}
-.esup ul li ul li ul li ul li {
-  font-weight: normal;
-  color: #888;
-  font-size: 0.85em;
-}
-.esup ul li ul li ul li ul li ul li {
-  font-weight: normal;
-  font-style: italic;
-}*/
 
 .esup ol li {
   font-weight: 700;
@@ -313,10 +297,6 @@ body,
   opacity: 0.2;
 }
 
-/*.esup section.present h2.shadow,
-.esup section.present h3.shadow {
-  margin-bottom: 20px;
-}*/
 .esup div.slide-content {
   padding-left: 20px;
   font-size: 0.9em;
@@ -355,9 +335,6 @@ body,
 }
 .esup.lighter section h2 {
   border-bottom: 2px solid #BBB;
-}
-.esup.lighter section.main-title h2 {
-  
 }
 
 .esup section.main-title h5 span.event-name {
@@ -488,8 +465,6 @@ body,
 .esup section .bubble span {
   display: block;
 }
-
-
 .esup.lighter section .bubble {
   background: #1d71b8;
   border: none;
