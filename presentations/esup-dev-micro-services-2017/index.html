@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>EsupDev - Microservices</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+    <style type="text/css"> 
+      p.event-title {
+      font-size: 25%;
+      color: #800;
+      padding-top: 5cm;
+      }
+      </style>
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">-->
+              <img src="./img/logo_univrouen.png" alt="Université de Rouen" class="header-img upright" style="max-height: 50px; padding-top: 15px;">
+              <p class="event-title">Atelier Développement - 24 Avril 2017</p>
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>MicroServices</h2>
+            <ul class="presenters">
+              <li>Vincent Bonamy</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>
+                Microservices
+                <ol>
+                  <li>Quésaco ?</li>
+		  <li>Contexte d'usage</li>
+		  <li>Avantages</li>
+		  <li>... et inconvénients</li>
+		</ol>
+	      </li>
+              <li>ESUP et les microservices</li>
+              <li>Conclusion</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+	<section>
+          <header>
+            <h2>Quesaco ?</h2>
+            <h3 class="shadow">Définition</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+	      ~ Architecture Web où l'implémentation d'un service est proposée par une application indépendante / autonome reliée à d'autres applications web par services web via des API REST.
+	    </p>
+	    <ul>
+	      <li>Nom apparu il y a quelques années seulement</li>
+	      <li>Très tendance depuis 2015, continue son ascension (cf <a href="https://trends.google.fr/trends/explore?q=microservices">Google Trends</a> ou <a href="https://www.indeed.com/jobtrends/q-microservices.html">Job Trends d'Indeed</a>)</li>
+	      <li>Comme toujours avec les nouveaux noms IT très tendances (web 2.0, ajax, portail, agile, ...) , c'est pas vraiment nouveau ... à part le nom :-)</li>
+	      <li>Reprend +/- le concept de linux/unix à la KISS (Keep it simple, stupid) ... sauf qu'on n'a toujours pas vraiment le <b>pipe</b>!</li>
+          </div>
+	  <p>
+	    ~ À mettre en concurrence avec une architecture dite <b>monolithique</b> ... ?
+	  </p>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>
+
+
+	<section>
+          <header>
+            <h2>Quesaco ?</h2>
+            <h3 class="shadow">Analogie ...</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+	      L'installation TV ...
+              <div class="gallery-item" style="width: 40%">
+                <img src="img/tv-magneto-dvd-integre.jpg" alt="photo tv-magneto-dvd-integre">
+              </div>
+              <div class="gallery-item" style="width: 50%">
+                <img src="img/tv-magneto-dvd-separe.jpg" alt="photo tv-magneto-dvd-separe">
+              </div>
+            </p>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>	
+
+	<section>
+          <header>
+            <h2>Quesaco ?</h2>
+            <h3 class="shadow">Analogie ...</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+	      ... plus récemment
+              <div class="gallery-item" style="width: 50%">
+                <img src="img/1024px-IPad2_White_no_background.png" alt="tablette">
+              </div>
+              <div class="gallery-item" style="width: 50%">
+                <img src="img/Personal_computer,_exploded_5.svg.png" alt="ordinateur">
+              </div>
+            </p>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>	
+
+
+        <section>
+          <header>
+            <h2>Contexte d'usage</h2>
+            <h3 class="shadow">microservices vs monolithique ?</h3>
+          </header>
+          <div class="slide-content">
+	    <p>les éternels débats ... </p>
+            <ul>
+	      <li>client léger (mainframe) vs PC</li>
+	      <li>micronoyau vs noyau monolithique</li>
+	      <li>cloud storage vs data center</li>
+	      <li>microservices vs application monolithique ...</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+	
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Contexte d'usage</h2>
+            <h3 class="shadow">microservices vs monolithique ?</h3>
+          </header>
+          <div class="slide-content">
+	    <p>Une appli par service ...</p>
+            <ul>
+	      <li>annuaire / identification</li>
+	      <li>authentification</li>
+	      <li>gestion des cours</li>
+	      <li>gestion RH</li>
+	      <li>gestion étudiante</li>
+	      <li>emploi du temps</li>
+	      <li>gestion de projets</li>
+	      <li>gestion des mails</li>	      
+	      <li>etc. </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        <section>
+          <header>
+            <h2>Microservices</h2>
+            <h3 class="shadow">Avantages</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Applications plus petites</li>
+	      <li>Applications indépendantes</li>
+	      <li>Souplesse dans les branchements</li>
+	      <li>Meilleure visibilité des fonctions</li>
+	      <li>Tente à standardiser les services / connecteurs</li>
+	      <li>Réutilsiation des services</li>	      
+	      <li>...</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        <section>
+          <header>
+            <h2>Microservices</h2>
+            <h3 class="shadow">Inconvénients</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Applications à interconnecter</li>
+	      <li>Problèmes techniques multiples :
+		<ol>
+		  <li>compatibilité des versions</li>
+		  <li>pb transactions inter applications</li>
+		  <li>tests d'intégration complexes</li>
+		  <li>branchements : qui branche, comment, quel branchement, ... ?</li>
+		  <li>résolutions de pannes / bugs : responsabilités ?</li>
+		</ol>
+	      </li>
+	      <li>Duplication de codes, de paramétrages, de tests, ...</li>
+	      <li>Code au total plus conséquent</li>
+	      <li>Installation et maintenance plus complexe</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>		
+
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP et les microservices</h2>
+            <h3 class="shadow">c'est pas si nouveau ... :-)</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>CAS, LDAP, Shibboleth ... <small>sql</small>
+		<ol>
+		  <li>devenu omniprésent</li>		  
+		  <li>standardise le 'branchement' (<b>protocole</b> LDAP, <b>protocole</b> SAML)</li>
+		</ol>
+	      </li>
+	      <li>ENT ESUP = présentation ... de micro-services (portlet)</li>
+	      <li>-> des projets qui apportent des services spécifiques (micro) :
+		<ol>
+		  <li>Gestion du stockage</li>
+		  <li>Affichage de notes</li>		  		  
+		  <li>SMS</li>		  
+		  <li>Paiement en ligne</li>
+		  <li>etc.</li>
+		</ol>
+	      </li>
+            </ul>
+	    <hr/>
+	    <p>
+	      <b>... en fait souvent, on développe 'seulement' les <span class="really-important">branchements ou connexions ou glue</span> entre les services, et pas vraiment le service en lui-même.</b>
+	    </p>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP et les microservices</h2>
+            <h3 class="shadow">jusqu'au niveau technique ...</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              <div class="gallery-item" style="width: 50%">
+                <img src="img/smsu-architecture.png" alt="Architecture SMSU">
+                <span>Architecture SMSU</span>
+              </div>
+              <div class="gallery-item" style="width: 50%">
+                <img src="img/ori-oai.png" alt="Architecture ORI-OAI">
+                <span>Architecture ORI-OAI</span>
+              </div>
+            </p>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+         <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP et les microservices</h2>
+            <h3 class="shadow">Attention danger</h3>
+          </header>
+          <div class="slide-content">
+            <p>
+              Attention à ne pas tomber dans les nanoservices, et dans le cadre d'un projet <b>libre mutualisé</b>, à ne pas déporter la complexité du branchement chez l'exploitant.
+            </p>
+	    <div class="gallery-item" style="width: 100%">
+              <img src="img/StudioWiring.jpg" alt="StudioWiring.jpg">
+              <span>Cablage ...</span>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Conclusion</h2>
+            <h3>... conclusion</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Pas de solution, d'architecture miracle</li>
+	      <li>Le curseur est à positionner en toute connaissance de cause</li>
+	      <li>On faisait du microservice ... sans en connaitre le nom</li>
+	      <li>On peut démarrer en micro-service et revenir au monolithique ... et inversement</li>	      	      	      
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Nouveau cas d'usage</h2>
+            <h3>EsupNfcTag : de l'encodage de cartes à un SGC libre ?</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>On parle microservices, notamment pour EsupNfcTag car :
+		<ol>
+		  <li>Solution très technique et spécialisée</li>
+		  <li>Fait intervenir des périphériques multiples</li>
+		  <li>Requiert de la souplesse</li>
+		  <li>Listing des applications possibles encore à imaginer</li>		  		  
+		</ol>
+	      </li>
+	      <li>Mais on doit aussi proposer quelque chose qui ressemble à du monolithique :
+		<ol>
+		  <li>Pour des raisons de maintenance</li>
+		  <li>Pour que ce soit installable et paramétrable "out of the box"</li>
+		</ol>
+	      </li>	      
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <section>
+          <header>
+            <h2>Cas d'un SGC</h2>
+            <h3>du microservice intrinsèquement un peu partout</h3>
+          </header>
+          <div class="slide-content">
+	    <p>Exemples ...</p>
+	    <ul>
+	      <li>Architecture EsupNfcTag
+		<ul>
+		  <li>EsupNfcTag Serveur : algos d'encodage Desfire AES/DES/...</li>
+		  <li>EsupNfcTag Android / Arduino : NFC</li>
+		  <li>Entre les 2 : API REST et APDU NFC/DESFIRE</li>
+		</ul>
+	      </li>
+	      <li>Imprimantes ... : 
+		<ul>
+		  <li>Cas 1 (actuel) : encodage Izly + encodage COMUE + Impression en 1 seul passage</li>
+		  <li>Cas préconisé : encodage Izly, encodage COMUE et Impression  en 3 passages !
+		    <ol>
+		      <li>Pas de SDK spécifique à l'imprimante</li>
+			    <li>Plus près des standards : html/css, nfc/pcsc/apdu, ...</li>
+		      <li>Plus souple</li>
+		      <li>Plus clair ...</li>
+		      <li>... mais plus de manutentions, en tout cas sur le schéma ...</li>
+		    </ol>
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>	
+
+        <!--///////////////////////////////////////////-->
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
