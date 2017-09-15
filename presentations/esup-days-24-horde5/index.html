@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Retour sur l'usage de Horde 5 à l'Université Paris 1</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <img src="./img/event-datelocation.png" alt="20 sept. 2017 @Paris" class="header-img upright">
+              <!--<img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 50px; padding-top: 15px;">-->
+              <img src="./img/event-title.png" alt="ESUP-Days #24" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Retour sur l'usage de Horde 5<br> à l'Université Paris 1</h2>
+            <ul class="presenters">
+              <li>Pascal Rigaux</li>
+              <li>Benoît Branciard</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université Paris 1 Panthéon-Sorbonne</li>
+              <li>Université Paris 1 Panthéon-Sorbonne</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">A propos de Horde</h2>
+          </header>
+          <div class="slide-content">
+          Historique :<br>
+            <ul>
+              <li> 2002 : Horde 2</li>
+              <li> 2004 : Horde 3 <a href="https://lists.horde.org/archives/announce/2004/000140.html">(multi-charset / utf8, Sieve, IMAP quotas)</a></li>
+     <!--         <li> 2008 : <a href="https://lists.horde.org/archives/announce/2008/000411.html">Horde 3.2</a></li> -->
+              <li> 2011 : Horde 4 <a href="https://lists.horde.org/archives/announce/2011/000607.html">(Web 2.0, vue mobile, ActiveSync)</a></li>
+              <li> 2012 : Horde 5 <a href="https://lists.horde.org/archives/announce/2012/000817.html">(nouvelles interfaces)</a></li>
+              <li> 2018? : Horde 6 <a href="https://www.horde.org/apps/webmail/roadmap">(roadmap)</a></li>
+            </ul></li>
+    <br>
+          2 développeurs : 20 commits par semaine en moyenne
+          <br>
+          Documentation officielle peu à jour
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">A Paris 1</h2>
+          </header>
+          <div class="slide-content">
+
+            <style>
+table.with-border { border-collapse: collapse; width: 100%; }
+table.with-border th { text-align: center; padding-bottom: 0.2em; min-width: 3em; }
+table.with-border td { border: 1px solid; border-bottom-color: #ccc; padding: 0.4em !important; }
+table.with-border tr td:first-child { border-left: none; border-top: none; border-bottom: none; vertical-align: middle; text-align: right; padding-right: 0.7em !important; }
+table.with-border tr:last-child td { border-bottom-color: #000; }
+table.with-border td.light-border-right { border-right-color: #ccc; border-right-style: dashed; }
+table.with-border td.light-border-left { border-left-color: #ccc; border-left-style: dashed; }
+
+table.title-on-left {
+  width: 100%;
+}
+table.title-on-left th {
+  text-align: center;
+  vertical-align: bottom;
+  font-size: 90%;
+}
+table.title-on-left td {
+  text-align: center;
+}
+</style>
+<table class="title-on-left with-border">
+              <tr>
+                <th></th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
+              </tr>
+              <tr><td>webmail étudiant</td><td>~4000</td><td>~14000</td></tr>
+              <tr><td>webmail personnel</td><td>~800</td><td>~2000</td></tr>
+              <tr><td>web agenda</td><td>~180</td><td>~300</td></tr>
+</table>
+<ul>
+  <li>2016
+    <ul>
+      <li>Horde 2 pour les étudiants</li>
+      <li>Horde 3 pour le personnel</li>
+      <li>Horde 5 en test dans différents services</li>
+    </ul>
+  <li>2017 : migration de toute le personnel à Horde 5
+  </li>
+</ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+            
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2>Agenda</h2>
+            <h3 class="shadow">pour le personnel</h3>
+          </header>
+          <div class="slide-content">
+            <ul>            
+<li> la nouvelle interface Horde 5 introduit des régressions
+                
+<li> groupes institutionnels disponibles (via LDAP & grouper)
+<li> nom du calendrier contient le nom du service + partage par défaut avec le service ou direction + synchronisation par cron
+<li> activesync pour les mobiles (mail + calendrier + contacts)
+  <li> caldav pour thunderbird (lightning)
+  <li> kerberisé, comme notre imap (REMOTE_USER based SabreDAV auth  + apache mod-auth-kerb)
+    <li>  caldav collections:  only show calendars selected in web calendar (to  lower resource  consumption of Apple Calendar, and show a smaller list)
+    </ul>
+
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2>Agenda</h2>
+            <h3 class="shadow">invitations</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+<li> modifications pour que les invitations créent des événements dans les agendas + correctifs
+<li> quand on fait "Enregistrer en tant que nouveau" sur un evt qui a  des   participants, demander "supprimer les participants" ou "notifier  les   participants"
+<li> ajouter un lien "Voir l'événement dans votre agenda" quand on accepte une invitation
+<li> when U1 accepts an invitation from U2, create an event in U1's agenda  
+  <li> afficher la liste des invitations auxquels l'utilisateur n'a pas répondu (GLPI UP1 #52484)
+  </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+  
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">Comptes de fonction</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+<li> handle comptes de fonction: transform master user into compte de fonction
+<li> cas: handle comptes de fonction: add cas_login.php param "login" for compte de fonction
+<li> add comptes_de_fonction_sidebar (tout sauf kronolith)
+<li> Gestion par Grouper:
+  <ul>
+    <li> 1 boîte de fonction = 1 groupe 
+    <li> stem dédié pour les boîtes de fonction (1 sous-stem pour chaque domaine DNS)
+    <li> cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail (posixAccount, mail, mailHost, etc)
+    <li> délégation possible de la gestion des membres au responsable de l'adresse via les privilèges "read"+"update" Grouper
+  </ul>
+    </ul>  
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2>Webmail</h2>
+            <h3 class="shadow">IMP</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+            <li>beaucoup de possibilité de configuration, difficile de s'y retrouver.
+            <li>
+              intégration au SI :
+              <ul>
+<li> carnet d'adresses : recherche dans le personnel de l'université
+<li> signature générée semi-automatiquement via l'application maison "signature.univ-paris1.fr"
+              </ul>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+            
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2>Serveur IMAP</h2>
+            <h3 class="shadow">Dovecot</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>format de boîte <a href="https://wiki2.dovecot.org/MailboxFormat/dbox#Multi-dbox">MDBOX</a> avec "rotate size" de 20 Mo + purge glissante <small>(tous les 15 jours)</small>
+         <li>quotas personnels de 5 Go et étudiants de 1 Go <small>(extensible à la demande justifiée)</small>
+         <li>Sieve + manageSieve
+         <li>backend LDAP (userdb, règles de quota) avec search sur uid, supannAliasLogin et mail; filtrage par mailHost
+         <li>Authentification :
+           <ul>
+             <li>Kerberos (avec mapping LDAP) + PAM-CAS + bind LDAP
+               <li><a href="https://wiki2.dovecot.org/Authentication/MasterUsers">Master users</a> pour gérer les comptes de fonction, login "fonction*user" <small>(ou utilisation du "authorization ID" SASL)</small>, autorisation par filtre sur attributs LDAP
+           </ul>
+          </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">Infrastructure</h2>
+          </header>
+          <div class="slide-content">
+            Pour le personnel
+            <ul>
+<li> Horde 5 : utilisé 2 CPU + 2 Go RAM (dispo 4 CPU + 5 Go)
+<li> dovecot : utilisé 1 CPU + 9 Go RAM (dispo 8 CPU + 15 Go) + espace disque utilisé ?
+            </ul>
+            <p>
+  Pour les étudiants
+              <ul>
+<li> dovecot : utilisé 1 CPU + 2 Go RAM + espace disque utilisé ?
+<li> Horde 2 & 3 : faible
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">Intégration CAS</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li> casification simple via la méthode <a href="https://www.esup-portail.org/wiki/display/PROJHORDE/Installation+de+Horde-webmail">alternate login</a>
+              <li> avec <a href="https://www.esup-portail.org/wiki/x/swA8#id-01-Installationetparamétragedepam_cas-Cachedestickets">cache tickets</a> <a href="https://github.com/EsupPortail/esup-pam-cas">esup-pam-cas</a>
+              <li> et single logout
+                <ul>
+                  <li>Horde étant connu, il est scripté pour  envoyer des spams après fishing,
+                  <li>donc en cas de compte piraté, il faut annuler la session CAS & Horde après avoir changé le mot de passe
+                   <small>(pas d'invalidation du cache pam_cache puisque le proxy ticket est connu de Horde seul, il n'est pas connu du client web)</small>
+                </ul>
+            </ul>
+            <p>
+               <small>Merci à Jérôme Nenert !</small>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">Perspectives</h2>
+          </header>
+          <div class="slide-content">
+<ul>
+  <li>2017-2018 : nombre de mails non lus dans l'ENT (via <a href="https://github.com/prigaux/esup-imap-ws">Web Service CAS-IMAP</a>)
+  <li>2018 : extension de Horde 5 aux étudiants 
+  <li>2018-2019 : banalisation des serveurs de boîtes mail (étudiants+perso) + frontal IMAP proxy (dovecot Director)
+  <li> carnets d'adresses individuels centralisés kerbérisés partageables Horde + Thunderbird <small>(LDAP ? CardDAV fourni par Horde ?)</small>
+  <li> optimisations serveurs de boîtes : process multi-users <small>(nécessite d'abandonner PAM-CAS au profit d'un développement de plugin dovecot-auth CAS)</small>
+  <li> gestion des clés ou mots de passe "techniques" IMAP/SMTP par terminal ?
+  </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        
+      </div>
+    </div>
+
+    -->
+    
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
