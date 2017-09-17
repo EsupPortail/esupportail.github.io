@@ -144,11 +144,11 @@ table.title-on-left td {
   <li>Statistiques :
 <table class="title-on-left with-border">
               <tr>
-                <th></th><th>sessions par jour</th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
+                <th></th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
               </tr>
-              <tr><td>webmail étudiant</td><td>~12000</td><td>~4000</td><td>~14000</td></tr>
-              <tr><td>webmail personnel</td><td>~40000</td><td>~800</td><td>~2000</td></tr>
-              <tr><td>web agenda</td><td></td><td>~180</td><td>~300</td></tr>
+              <tr><td>webmail étudiant</td><td>~4000</td><td>~14000</td></tr>
+              <tr><td>webmail personnel</td><td>~800</td><td>~2000</td></tr>
+              <tr><td>web agenda</td><td>~180</td><td>~300</td></tr>
 </table>
 </ul>
           </div>
@@ -160,7 +160,8 @@ table.title-on-left td {
         <!--///////////////////////////////////////////-->
         <section>
           <header>
-            <h2 class="shadow">Infrastructure</h2>
+            <h2>Infrastructure</h2>
+            <h3 class="shadow">à Paris 1</h3>
           </header>
           <div class="slide-content">
 <table class="title-on-left with-border">
@@ -172,7 +173,7 @@ table.title-on-left td {
                       <td>1 CPU <br> 9 Go RAM<br>5 To stockage<br><small>(dispo 8 CPU + 15 Go)</small></td>
                       <td>1 CPU <br> 2 Go RAM<br>3,5 To stockage</td></tr>
 </table>
-
+<small>NB : la charge Horde personnel vient en partie des calendriers, cf page suivante</small>
 <!--
             Pour le personnel
             <ul>
@@ -202,25 +203,21 @@ table.title-on-left td {
             <h3 class="shadow">pour le personnel</h3>
           </header>
           <div class="slide-content">
+            Horde 5 permet les utilisations nomades :
             <ul>            
-    <li>la nouvelle interface web introduit des régressions <small>(pauvreté des informations, création d'événements erronnés, plus de catégorisation par couleurs...)</small></li>
-    <li>la vue mobile est limitée : lecture seule, pas de choix d'agendas</li>
-<li>gros travail</li>
-<li>faciliter la collaboration dans les services :
-        <ul>
-          <li> groupes institutionnels disponibles (via LDAP & grouper)</li>
-          <li> nom du calendrier contient le nom du service + partage par défaut avec le service ou direction + synchronisation par cron</li>
-          <li>gestion des salles de réunion</li>
-        </ul>
-</li>      
-<li>disponible via différents outils :
-  <ul>
   <li> activesync pour les mobiles (mail + calendrier + contacts)
-  <li> caldav pour Thunderbird (Lightning) et mobiles
+  <li> caldav pour les mobiles et Thunderbird (Lightning)
       <ul>
-    <li> kerberisé, comme notre imap <small>(REMOTE_USER based SabreDAV auth  + apache mod-auth-kerb)</small></li>
-    <li> problème avec les collections, notamment avec Apple Calendar <small>(solution : limiter les calendriers accessibles à ceux activés dans le web agenda)</small></li>
-    </ul></li>
+        <li> kerberisé, comme notre imap <small>(apache mod-auth-kerb + SabreDAV auth avec REMOTE_USER)</small></li>
+      </ul>
+      &#9888; problèmes de performance, notamment avec Apple Calendar
+      <small>(solution : limiter les calendriers accessibles à ceux activés dans le web agenda)</small></li>
+  <li> web agenda
+    <ul>
+      <li>la nouvelle interface web introduit des régressions <small>(pauvreté des informations, création d'événements erronés, plus de catégorisation par couleurs...)</small></li>
+      <li>la vue mobile est limitée : lecture seule, pas de choix d'agendas</li>
+      <li>thème Paris1, intégration ProlongationENT
+      </ul>
   </ul>
 </li>
 </ul>
@@ -235,16 +232,77 @@ table.title-on-left td {
         <section>
           <header>
             <h2>Agenda</h2>
+            <h3 class="shadow">faciliter la collaboration dans les services</h3>
+          </header>
+          <div class="slide-content">
+            <img class="fragment" src="img/kronolith-agendas-services.gif" style="float: right; border: 2px solid #b5b5b5; border-right: 0px">
+            <style>
+              .allow-float {
+              display: initial !important;
+              }
+            </style>
+        <ul class="allow-float">
+          <li>groupes institutionnels disponibles (via LDAP & grouper)</li>
+          <li>calendriers partagés utilisés pour les salles de réunion</li>
+          <li>au sein d'une direction :
+            <ul>
+            <li>calendriers partagés en lecture
+            <li>nom du calendrier contient le nom du service,
+              <br>permet de grouper les agendas par service
+            </ul>
+            synchronisation par cron du nom &amp; partage
+          </ul>
+        </ul>
+
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+
+        <!--///////////////////////////////////////////-->
+        <section>
+                <header>
+                      <h2 class="shadow">Agenda</h2>
+                  </header>
+                  <div class="slide-content">
+
+              <div class="gallery-item">
+                <a href="img/kronolith.png"><img src="img/kronolith.png"></a>
+                <span>Kronolith avec ProlongationENT, thème Paris 1, agendas groupés</span>
+              </div>                 
+                  </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2>Agenda</h2>
             <h3 class="shadow">invitations</h3>
           </header>
           <div class="slide-content">
+            Par défaut le système d'invitations est prévu pour des serveurs d'agendas qui ne peuvent communiquer.
+            Nous l'avons donc adapté :
             <ul>
-<li> modifications pour que les invitations créent des événements dans les agendas + correctifs
-<li> quand on fait "Enregistrer en tant que nouveau" sur un evt qui a  des   participants, demander "supprimer les participants" ou "notifier  les   participants"
-<li> ajouter un lien "Voir l'événement dans votre agenda" quand on accepte une invitation
-<li> when U1 accepts an invitation from U2, create an event in U1's agenda  
-  <li> afficher la liste des invitations auxquels l'utilisateur n'a pas répondu (GLPI UP1 #52484)
+<li>quand on accepte une invitation,
+  <ul>
+   <li>créer un événement dans l'agenda de l'utilisateur
+   <li>page moins austère avec un lien « Voir l'événement dans votre agenda »
   </ul>
+<li>dans le web agenda
+    <ul>
+      <li>afficher la liste des invitations non répondues
+    </ul>    
+<li>correctifs
+      <ul>
+        <li>éviter que l'acceptation d'une invitation dans Thunderbird conserve les participants
+        <li>dans le web agenda, quand on fait « Enregistrer en tant que nouveau » sur un evt qui a des participants, question « supprimer les participants ou notifier les participants&nbsp; ? »
+      </ul>
+            </ul>
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
@@ -265,7 +323,7 @@ table.title-on-left td {
                 </ul>
 	    <li>adaptations
  <ul>
-            <li>thème Paris 1</li>
+            <li>thème Paris 1, intégration ProlongationENT</li>
 	    <li>signature générée via l'application maison "signature.univ-paris1.fr"
       	    <li>menu déroulant proposant les différents comptes de fonction
               </ul>
@@ -343,18 +401,36 @@ table.title-on-left td {
           <li>délégation de la gestion des membres via les privilèges Grouper,
 		<br>mais peu utilisée pour l'instant (utilisation récente de Grouper)
         </ul>
-      <li>publiés dans LDAP :
-           
-          <br>cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail <small>(posixAccount, mail, mailHost, etc)</small>
+      <li>publiés dans LDAP :           
+        <br>cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail <small>(posixAccount, mail, mailHost, etc)</small>
+      </li>
       <li>Horde affiche un menu déroulant avec les comptes de fonction
       <li>compte de fonction passé en paramètre à l'alternate login cas_login.php
-          </ul>  
+                  </ul>
+                  
                 </div>
                 <footer>
                   <img src="./img/communaute.png" alt="">
                 </footer>
               </section>
 
+        <!--///////////////////////////////////////////-->
+        <section>
+                <header>
+                      <h2 class="shadow">Comptes de fonction</h2>
+                  </header>
+                  <div class="slide-content">
+
+              <div class="gallery-item">
+                <a href="img/imp.gif"><img src="img/imp.gif"></a>
+                <span>Menu déroulant avec les comptes de fonction</span>
+              </div>                 
+                  </div>
+                <footer>
+                  <img src="./img/communaute.png" alt="">
+                </footer>
+        </section>
+              
         <!--///////////////////////////////////////////-->
         <section>
           <header>

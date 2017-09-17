@@ -429,7 +429,8 @@ body,
   background: none;
   color: #1d71b8;
   padding: 0 0 5px 0;
-  font-size: 0.8;
+  margin: 0;
+  font-size: 0.8em;
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -437,7 +438,8 @@ body,
   color: #BBB;
   padding: 5px 0 25px 0;
   background: none;
-  font-size: 0.8;
+  font-size: 0.8em;
+  margin: 0;
 }
 .esup.lighter section.divider h3 {
   color: #1d71b8;
