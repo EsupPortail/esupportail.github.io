@@ -51,38 +51,71 @@
 
         <!--///////////////////////////////////////////-->
         <section>
-          <header>
-            <h2 class="shadow">A propos de Horde</h2>
-          </header>
-          <div class="slide-content">
-          Historique :<br>
-            <ul>
-              <li> 2002 : Horde 2</li>
-              <li> 2004 : Horde 3 <a href="https://lists.horde.org/archives/announce/2004/000140.html">(multi-charset / utf8, Sieve, IMAP quotas)</a></li>
-     <!--         <li> 2008 : <a href="https://lists.horde.org/archives/announce/2008/000411.html">Horde 3.2</a></li> -->
-              <li> 2011 : Horde 4 <a href="https://lists.horde.org/archives/announce/2011/000607.html">(Web 2.0, vue mobile, ActiveSync)</a></li>
-              <li> 2012 : Horde 5 <a href="https://lists.horde.org/archives/announce/2012/000817.html">(nouvelles interfaces)</a></li>
-              <li> 2018? : Horde 6 <a href="https://www.horde.org/apps/webmail/roadmap">(roadmap)</a></li>
-            </ul></li>
-    <br>
-          2 développeurs : 20 commits par semaine en moyenne
-          <br>
-          Documentation officielle peu à jour
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
+                <header>
+                  <h2 class="shadow">Plan</h2>
+                </header>
+                <div class="slide-content">
+                <ul>
+                    <li>Présentation de Horde</li>
+                    <li>Infrastructure</li>
+                    <li>Agenda</li>
+                    <li>Webmail</li>
+                    <li>Intégration CAS</li>
+                    <li>Serveur IMAP</li>
+		    <li>Comptes de fonction</li>
+                    <li>Perspectives</li>
+                </ul>
+                </div>
+                <footer>
+                  <img src="./img/communaute.png" alt="">
+                </footer>
+              </section>
+              
+        <!--///////////////////////////////////////////-->
+        <section>
+                <header>
+                  <h2 class="shadow">Présentation de Horde</h2>
+                </header>
+                <div class="slide-content">
+                <ul>
+                  <li>Collection d'outils :
+                      <ul>
+                        <li>Webmail, carnet d'adresses, gestion des filtres &amp; mgs d'absence</li>
+                        <li>Agenda, tâches, fichiers, ...</li>
+                    </ul>
+                  <li>
+                  Historique :<br>
+                  <ul>
+                    <li> 2002 : Horde 2</li>
+                    <li> 2004 : Horde 3 <a href="https://lists.horde.org/archives/announce/2004/000140.html">(multi-charset / utf8, Sieve, IMAP quotas)</a></li>
+           <!--         <li> 2008 : <a href="https://lists.horde.org/archives/announce/2008/000411.html">Horde 3.2</a></li> -->
+                    <li> 2011 : Horde 4 <a href="https://lists.horde.org/archives/announce/2011/000607.html">(Web 2.0, vue mobile, ActiveSync)</a></li>
+                    <li> 2012 : Horde 5 <a href="https://lists.horde.org/archives/announce/2012/000817.html">(nouvelles interfaces)</a></li>
+                    <li> 2018? : Horde 6 <a href="https://www.horde.org/apps/webmail/roadmap">(roadmap)</a></li>
+                  </ul></li>
+                  <li>Projet actif : ~20 commits par semaine, 2 développeurs</li>                
+                </ul>
+                <br>&#9888; Documentation officielle peu à jour
+            </div>
+                <footer>
+                  <img src="./img/communaute.png" alt="">
+                </footer>
+              </section>
+      
 
         <!--///////////////////////////////////////////-->
         <section>
           <header>
-            <h2 class="shadow">A Paris 1</h2>
+            <h2>Présentation de Horde</h2>
+            <h3 class="shadow">à Paris 1</h3>
           </header>
           <div class="slide-content">
 
             <style>
+li.no-bullet {
+  list-style: none !important;
+}
+
 table.with-border { border-collapse: collapse; width: 100%; }
 table.with-border th { text-align: center; padding-bottom: 0.2em; min-width: 3em; }
 table.with-border td { border: 1px solid; border-bottom-color: #ccc; padding: 0.4em !important; }
@@ -103,23 +136,20 @@ table.title-on-left td {
   text-align: center;
 }
 </style>
+<ul>
+  <li>2004 : Horde 2 pour les étudiants</li>
+  <li>2005 : Horde 3 pour le personnel</li>
+  <li>2016 : Horde 5 en test dans différents services</li>
+  <li>2017 : Horde 5 pour le personnel (avec migration des carnets d'adresses, filtres)</li>
+  <li>Statistiques :
 <table class="title-on-left with-border">
               <tr>
-                <th></th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
+                <th></th><th>sessions par jour</th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
               </tr>
-              <tr><td>webmail étudiant</td><td>~4000</td><td>~14000</td></tr>
-              <tr><td>webmail personnel</td><td>~800</td><td>~2000</td></tr>
-              <tr><td>web agenda</td><td>~180</td><td>~300</td></tr>
+              <tr><td>webmail étudiant</td><td>~12000</td><td>~4000</td><td>~14000</td></tr>
+              <tr><td>webmail personnel</td><td>~40000</td><td>~800</td><td>~2000</td></tr>
+              <tr><td>web agenda</td><td></td><td>~180</td><td>~300</td></tr>
 </table>
-<ul>
-  <li>2016
-    <ul>
-      <li>Horde 2 pour les étudiants</li>
-      <li>Horde 3 pour le personnel</li>
-      <li>Horde 5 en test dans différents services</li>
-    </ul>
-  <li>2017 : migration de toute le personnel à Horde 5
-  </li>
 </ul>
           </div>
           <footer>
@@ -127,6 +157,43 @@ table.title-on-left td {
           </footer>
         </section>
             
+        <!--///////////////////////////////////////////-->
+        <section>
+          <header>
+            <h2 class="shadow">Infrastructure</h2>
+          </header>
+          <div class="slide-content">
+<table class="title-on-left with-border">
+              <tr>
+                <th></th><th>pour le personnel</th><th>pour les étudiants</th>
+              </tr>
+              <tr><td>Horde</td><td>2 CPU <br> 2 Go RAM<br><small>(dispo 4 CPU + 5 Go)</small></td><td>faible</td></tr>
+              <tr><td>Dovecot</td>
+                      <td>1 CPU <br> 9 Go RAM<br>5 To stockage<br><small>(dispo 8 CPU + 15 Go)</small></td>
+                      <td>1 CPU <br> 2 Go RAM<br>3,5 To stockage</td></tr>
+</table>
+
+<!--
+            Pour le personnel
+            <ul>
+<li> Horde 5 : utilise 2 CPU + 2 Go RAM (dispo 4 CPU + 5 Go)
+<li> Dovecot : utilise 1 CPU + 9 Go RAM (dispo 8 CPU + 15 Go) + espace disque utilisé ?
+            </ul>
+            <p>
+            <br>
+  Pour les étudiants
+<br>
+              <ul>
+<li> Dovecot : utilise 1 CPU + 2 Go RAM + espace disque utilisé ?
+<li> Horde 2 & 3 : 0,3 CPU
+              </ul>
+-->
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
 
         <!--///////////////////////////////////////////-->
         <section>
@@ -136,15 +203,27 @@ table.title-on-left td {
           </header>
           <div class="slide-content">
             <ul>            
-<li> la nouvelle interface Horde 5 introduit des régressions
-                
-<li> groupes institutionnels disponibles (via LDAP & grouper)
-<li> nom du calendrier contient le nom du service + partage par défaut avec le service ou direction + synchronisation par cron
-<li> activesync pour les mobiles (mail + calendrier + contacts)
-  <li> caldav pour thunderbird (lightning)
-  <li> kerberisé, comme notre imap (REMOTE_USER based SabreDAV auth  + apache mod-auth-kerb)
-    <li>  caldav collections:  only show calendars selected in web calendar (to  lower resource  consumption of Apple Calendar, and show a smaller list)
-    </ul>
+    <li>la nouvelle interface web introduit des régressions <small>(pauvreté des informations, création d'événements erronnés, plus de catégorisation par couleurs...)</small></li>
+    <li>la vue mobile est limitée : lecture seule, pas de choix d'agendas</li>
+<li>gros travail</li>
+<li>faciliter la collaboration dans les services :
+        <ul>
+          <li> groupes institutionnels disponibles (via LDAP & grouper)</li>
+          <li> nom du calendrier contient le nom du service + partage par défaut avec le service ou direction + synchronisation par cron</li>
+          <li>gestion des salles de réunion</li>
+        </ul>
+</li>      
+<li>disponible via différents outils :
+  <ul>
+  <li> activesync pour les mobiles (mail + calendrier + contacts)
+  <li> caldav pour Thunderbird (Lightning) et mobiles
+      <ul>
+    <li> kerberisé, comme notre imap <small>(REMOTE_USER based SabreDAV auth  + apache mod-auth-kerb)</small></li>
+    <li> problème avec les collections, notamment avec Apple Calendar <small>(solution : limiter les calendriers accessibles à ceux activés dans le web agenda)</small></li>
+    </ul></li>
+  </ul>
+</li>
+</ul>
 
           </div>
           <footer>
@@ -171,54 +250,61 @@ table.title-on-left td {
             <img src="./img/communaute.png" alt="">
           </footer>
         </section>
-
   
         <!--///////////////////////////////////////////-->
         <section>
           <header>
-            <h2 class="shadow">Comptes de fonction</h2>
+            <h2 class="shadow">Webmail</h2>
           </header>
           <div class="slide-content">
             <ul>
-<li> handle comptes de fonction: transform master user into compte de fonction
-<li> cas: handle comptes de fonction: add cas_login.php param "login" for compte de fonction
-<li> add comptes_de_fonction_sidebar (tout sauf kronolith)
-<li> Gestion par Grouper:
-  <ul>
-    <li> 1 boîte de fonction = 1 groupe 
-    <li> stem dédié pour les boîtes de fonction (1 sous-stem pour chaque domaine DNS)
-    <li> cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail (posixAccount, mail, mailHost, etc)
-    <li> délégation possible de la gestion des membres au responsable de l'adresse via les privilèges "read"+"update" Grouper
-  </ul>
-    </ul>  
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-        <section>
-          <header>
-            <h2>Webmail</h2>
-            <h3 class="shadow">IMP</h3>
-          </header>
-          <div class="slide-content">
-            <ul>
-            <li>beaucoup de possibilité de configuration, difficile de s'y retrouver.
-            <li>
-              intégration au SI :
-              <ul>
-<li> carnet d'adresses : recherche dans le personnel de l'université
-<li> signature générée semi-automatiquement via l'application maison "signature.univ-paris1.fr"
+	    <li>configuration
+		<ul>
+	            <li>beaucoup de possibilités, mais difficile de s'y retrouver.
+		    <li>carnet d'adresses : recherche dans le personnel de l'université
+                </ul>
+	    <li>adaptations
+ <ul>
+            <li>thème Paris 1</li>
+	    <li>signature générée via l'application maison "signature.univ-paris1.fr"
+      	    <li>menu déroulant proposant les différents comptes de fonction
               </ul>
+</ul>
+            <br>&#9888; interface web 2.0 difficile à utiliser pour certaines personnes :
+            <ul><li class="no-bullet"><ul><li>ascenseur virtuel pour naviguer dans les messages</li>
+                <li>glisser/déplacer à la souris pour déplacer les messages</li>
+            </ul> 
             </ul>
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
           </footer>
         </section>
-            
+
+        <!--///////////////////////////////////////////-->
+        <section>
+                <header>
+                  <h2 class="shadow">Intégration CAS</h2>
+                </header>
+                <div class="slide-content">
+                  <ul>
+                    <li> casification simple via la méthode <a href="https://www.esup-portail.org/wiki/display/PROJHORDE/Installation+de+Horde-webmail">alternate login</a>
+                    <li> avec <a href="https://www.esup-portail.org/wiki/x/swA8#id-01-Installationetparamétragedepam_cas-Cachedestickets">cache tickets</a> <a href="https://github.com/EsupPortail/esup-pam-cas">esup-pam-cas</a>
+                    <li> et single logout
+                      <ul>
+                        <li>Horde étant connu, il est scripté pour  envoyer des spams après fishing,
+                        <li>donc en cas de compte piraté, il faut annuler la session CAS &amp; Horde après avoir changé le mot de passe
+                         <small>(pas d'invalidation du cache pam_cache puisque le proxy ticket est connu de Horde seul, il n'est pas connu du client web)</small>
+                      </ul>
+                  </ul>
+                  <p>
+                     <small>Merci à Jérôme Nenert !</small>
+                </div>
+                <footer>
+                  <img src="./img/communaute.png" alt="">
+                </footer>
+              </section>
+
         <!--///////////////////////////////////////////-->
         <section>
           <header>
@@ -245,50 +331,29 @@ table.title-on-left td {
 
         <!--///////////////////////////////////////////-->
         <section>
-          <header>
-            <h2 class="shadow">Infrastructure</h2>
-          </header>
-          <div class="slide-content">
-            Pour le personnel
-            <ul>
-<li> Horde 5 : utilisé 2 CPU + 2 Go RAM (dispo 4 CPU + 5 Go)
-<li> dovecot : utilisé 1 CPU + 9 Go RAM (dispo 8 CPU + 15 Go) + espace disque utilisé ?
-            </ul>
-            <p>
-  Pour les étudiants
-              <ul>
-<li> dovecot : utilisé 1 CPU + 2 Go RAM + espace disque utilisé ?
-<li> Horde 2 & 3 : faible
-              </ul>
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-        <section>
-          <header>
-            <h2 class="shadow">Intégration CAS</h2>
-          </header>
-          <div class="slide-content">
-            <ul>
-              <li> casification simple via la méthode <a href="https://www.esup-portail.org/wiki/display/PROJHORDE/Installation+de+Horde-webmail">alternate login</a>
-              <li> avec <a href="https://www.esup-portail.org/wiki/x/swA8#id-01-Installationetparamétragedepam_cas-Cachedestickets">cache tickets</a> <a href="https://github.com/EsupPortail/esup-pam-cas">esup-pam-cas</a>
-              <li> et single logout
-                <ul>
-                  <li>Horde étant connu, il est scripté pour  envoyer des spams après fishing,
-                  <li>donc en cas de compte piraté, il faut annuler la session CAS & Horde après avoir changé le mot de passe
-                   <small>(pas d'invalidation du cache pam_cache puisque le proxy ticket est connu de Horde seul, il n'est pas connu du client web)</small>
-                </ul>
-            </ul>
-            <p>
-               <small>Merci à Jérôme Nenert !</small>
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
+                <header>
+                      <h2 class="shadow">Comptes de fonction</h2>
+                  </header>
+                <div class="slide-content">
+                  <ul>
+      <li>gérés dans Grouper :
+        <ul>
+          <li>1 boîte de fonction = 1 groupe 
+          <li>rangés par domaine DNS
+          <li>délégation de la gestion des membres via les privilèges Grouper,
+		<br>mais peu utilisée pour l'instant (utilisation récente de Grouper)
+        </ul>
+      <li>publiés dans LDAP :
+           
+          <br>cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail <small>(posixAccount, mail, mailHost, etc)</small>
+      <li>Horde affiche un menu déroulant avec les comptes de fonction
+      <li>compte de fonction passé en paramètre à l'alternate login cas_login.php
+          </ul>  
+                </div>
+                <footer>
+                  <img src="./img/communaute.png" alt="">
+                </footer>
+              </section>
 
         <!--///////////////////////////////////////////-->
         <section>
@@ -299,7 +364,7 @@ table.title-on-left td {
 <ul>
   <li>2017-2018 : nombre de mails non lus dans l'ENT (via <a href="https://github.com/prigaux/esup-imap-ws">Web Service CAS-IMAP</a>)
   <li>2018 : extension de Horde 5 aux étudiants 
-  <li>2018-2019 : banalisation des serveurs de boîtes mail (étudiants+perso) + frontal IMAP proxy (dovecot Director)
+  <li>2018-2019 : banalisation des serveurs de boîtes mail (étudiants+perso) + frontal IMAP proxy (Dovecot Director)
   <li> carnets d'adresses individuels centralisés kerbérisés partageables Horde + Thunderbird <small>(LDAP ? CardDAV fourni par Horde ?)</small>
   <li> optimisations serveurs de boîtes : process multi-users <small>(nécessite d'abandonner PAM-CAS au profit d'un développement de plugin dovecot-auth CAS)</small>
   <li> gestion des clés ou mots de passe "techniques" IMAP/SMTP par terminal ?
