@@ -137,8 +137,9 @@ table.title-on-left td {
 }
 </style>
 <ul>
+  <li>2001-2002 : Horde 1</li>
   <li>2004 : Horde 2 pour les étudiants</li>
-  <li>2005 : Horde 3 pour le personnel</li>
+  <li>2005 : Horde 3 pour le personnel + Thunderbird avec autoconfig</li>
   <li>2016 : Horde 5 en test dans différents services</li>
   <li>2017 : Horde 5 pour le personnel (avec migration des carnets d'adresses, filtres)</li>
   <li>Statistiques :
@@ -168,9 +169,9 @@ table.title-on-left td {
               <tr>
                 <th></th><th>pour le personnel</th><th>pour les étudiants</th>
               </tr>
-              <tr><td>Horde</td><td>2 CPU <br> 2 Go RAM<br><small>(dispo 4 CPU + 5 Go)</small></td><td>faible</td></tr>
+              <tr><td>Horde</td><td>2 CPU <br> 2 Go RAM<br><small>(dispo 4 CPU + 5 Go)</small></td><td>0,2 CPU<br>0,4 Go RAM</td></tr>
               <tr><td>Dovecot</td>
-                      <td>1 CPU <br> 9 Go RAM<br>5 To stockage<br><small>(dispo 8 CPU + 15 Go)</small></td>
+                      <td>2 CPU <br> 9 Go RAM<br>5 To stockage<br><small>(dispo 8 CPU + 15 Go)</small></td>
                       <td>1 CPU <br> 2 Go RAM<br>3,5 To stockage</td></tr>
 </table>
 <small>NB : la charge Horde personnel vient en partie des calendriers, cf page suivante</small>
@@ -206,6 +207,7 @@ table.title-on-left td {
             Horde 5 permet les utilisations nomades :
             <ul>            
   <li> activesync pour les mobiles (mail + calendrier + contacts)
+    <br>&#9888; consommation mémoire importante, non généralisable
   <li> caldav pour les mobiles et Thunderbird (Lightning)
       <ul>
         <li> kerberisé, comme notre imap <small>(apache mod-auth-kerb + SabreDAV auth avec REMOTE_USER)</small></li>
@@ -300,7 +302,7 @@ table.title-on-left td {
 <li>correctifs
       <ul>
         <li>éviter que l'acceptation d'une invitation dans Thunderbird conserve les participants
-        <li>dans le web agenda, quand on fait « Enregistrer en tant que nouveau » sur un evt qui a des participants, question « supprimer les participants ou notifier les participants&nbsp; ? »
+        <li>dans le web agenda, quand on fait « Enregistrer en tant que nouveau » sur un événement qui a des participants, question « supprimer les participants ou notifier les participants&nbsp; ? »
       </ul>
             </ul>
           </div>
@@ -319,7 +321,8 @@ table.title-on-left td {
 	    <li>configuration
 		<ul>
 	            <li>beaucoup de possibilités, mais difficile de s'y retrouver.
-		    <li>carnet d'adresses : recherche dans le personnel de l'université
+		      <li>carnet d'adresses : recherche dans le personnel de l'université
+                        <li>nommage des dossiers spéciaux uniformisé avec Thunderbird
                 </ul>
 	    <li>adaptations
  <ul>
@@ -328,7 +331,7 @@ table.title-on-left td {
       	    <li>menu déroulant proposant les différents comptes de fonction
               </ul>
 </ul>
-            <br>&#9888; interface web 2.0 difficile à utiliser pour certaines personnes :
+            <br>&#9888; interface web 2.0 difficile à utiliser pour certaines personnes
             <ul><li class="no-bullet"><ul><li>ascenseur virtuel pour naviguer dans les messages</li>
                 <li>glisser/déplacer à la souris pour déplacer les messages</li>
             </ul> 
@@ -347,12 +350,14 @@ table.title-on-left td {
                 <div class="slide-content">
                   <ul>
                     <li> casification simple via la méthode <a href="https://www.esup-portail.org/wiki/display/PROJHORDE/Installation+de+Horde-webmail">alternate login</a>
-                    <li> avec <a href="https://www.esup-portail.org/wiki/x/swA8#id-01-Installationetparamétragedepam_cas-Cachedestickets">cache tickets</a> <a href="https://github.com/EsupPortail/esup-pam-cas">esup-pam-cas</a>
-                    <li> et single logout
+                      <li> avec <a href="https://www.esup-portail.org/wiki/x/swA8#id-01-Installationetparamétragedepam_cas-Cachedestickets">cache tickets</a> <a href="https://github.com/EsupPortail/esup-pam-cas">esup-pam-cas</a>
+                        <small>(développé pour éviter un patch saslauthd)</small>
+                    <li> et single logout CAS back-channel
                       <ul>
-                        <li>Horde étant connu, il est scripté pour  envoyer des spams après fishing,
+                        <li>Horde étant connu, des scripts d'automatisation sont utilisés par les pirates pour envoyer des spams après fishing,
                         <li>donc en cas de compte piraté, il faut annuler la session CAS &amp; Horde après avoir changé le mot de passe
-                         <small>(pas d'invalidation du cache pam_cache puisque le proxy ticket est connu de Horde seul, il n'est pas connu du client web)</small>
+                          <small>(pas d'invalidation du cache pam_cache puisque le proxy ticket est connu de Horde seul, il n'est pas connu du client web)</small>
+                        <li>utilisation d'un outil pour annuler la session CAS d'un utilisateur
                       </ul>
                   </ul>
                   <p>
@@ -374,11 +379,15 @@ table.title-on-left td {
               <li>format de boîte <a href="https://wiki2.dovecot.org/MailboxFormat/dbox#Multi-dbox">MDBOX</a> avec "rotate size" de 20 Mo + purge glissante <small>(tous les 15 jours)</small>
          <li>quotas personnels de 5 Go et étudiants de 1 Go <small>(extensible à la demande justifiée)</small>
          <li>Sieve + manageSieve
-         <li>backend LDAP (userdb, règles de quota) avec search sur uid, supannAliasLogin et mail; filtrage par mailHost
+           <li>backend LDAP <small>(userdb, règles de quota)</small> avec search sur uid, supannAliasLogin et mail
          <li>Authentification :
            <ul>
-             <li>Kerberos (avec mapping LDAP) + PAM-CAS + bind LDAP
-               <li><a href="https://wiki2.dovecot.org/Authentication/MasterUsers">Master users</a> pour gérer les comptes de fonction, login "fonction*user" <small>(ou utilisation du "authorization ID" SASL)</small>, autorisation par filtre sur attributs LDAP
+             <li>ticket Kerberos, PAM-CAS, mot de passe <small>(bind LDAP)</small>
+               <li><a href="https://wiki2.dovecot.org/Authentication/MasterUsers">Master users</a> pour gérer les comptes de fonction
+                 <ul>
+                 <li>login "fonction*user" <small>(ou utilisation du "authorization ID" SASL)</small>
+                 <li>autorisation par filtre sur attributs LDAP
+                 </ul>
            </ul>
           </ul>
           </div>
@@ -405,7 +414,10 @@ table.title-on-left td {
         <br>cron qui ajoute les attributs de l'entrée LDAP pour en faire un compte mail <small>(posixAccount, mail, mailHost, etc)</small>
       </li>
       <li>Horde affiche un menu déroulant avec les comptes de fonction
-      <li>compte de fonction passé en paramètre à l'alternate login cas_login.php
+        <ul>
+          <li>compte de fonction passé en paramètre à l'alternate login cas_login.php</li>
+        </ul>
+      <li>autoconfig Thunderbird avec Active Directory
                   </ul>
                   
                 </div>
@@ -438,12 +450,13 @@ table.title-on-left td {
           </header>
           <div class="slide-content">
 <ul>
-  <li>2017-2018 : nombre de mails non lus dans l'ENT (via <a href="https://github.com/prigaux/esup-imap-ws">Web Service CAS-IMAP</a>)
+  <li>2017-2018 : nombre de mails non lus dans l'accueil ENT (via <a href="https://github.com/prigaux/esup-imap-ws">Web Service CAS-IMAP</a>)
   <li>2018 : extension de Horde 5 aux étudiants 
   <li>2018-2019 : banalisation des serveurs de boîtes mail (étudiants+perso) + frontal IMAP proxy (Dovecot Director)
   <li> carnets d'adresses individuels centralisés kerbérisés partageables Horde + Thunderbird <small>(LDAP ? CardDAV fourni par Horde ?)</small>
   <li> optimisations serveurs de boîtes : process multi-users <small>(nécessite d'abandonner PAM-CAS au profit d'un développement de plugin dovecot-auth CAS)</small>
   <li> gestion des clés ou mots de passe "techniques" IMAP/SMTP par terminal ?
+  <li>prochains événements de l'agenda dans l'accueil ENT
   </ul>
           </div>
           <footer>
