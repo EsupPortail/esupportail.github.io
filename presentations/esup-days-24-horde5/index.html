@@ -145,11 +145,11 @@ table.title-on-left td {
   <li>Statistiques :
 <table class="title-on-left with-border">
               <tr>
-                <th></th><th>utilisateurs par jour </th><th>utilisateurs par mois</th>
+                <th></th><th>utilisateurs par jour </th><th>utilisateurs par mois</th><th>population</th>
               </tr>
-              <tr><td>webmail étudiant</td><td>~4000</td><td>~14000</td></tr>
-              <tr><td>webmail personnel</td><td>~800</td><td>~2000</td></tr>
-              <tr><td>web agenda</td><td>~180</td><td>~300</td></tr>
+              <tr><td>webmail étudiant</td><td>~4000</td><td>~14000</td><td>40000</td></tr>
+              <tr><td>webmail personnel</td><td>~800</td><td>~2000</td><td>6000</td></tr>
+              <tr><td>web agenda</td><td>~180</td><td>~300</td><td>900</td></tr>
 </table>
 </ul>
           </div>
@@ -212,8 +212,8 @@ table.title-on-left td {
       <ul>
         <li> kerberisé, comme notre imap <small>(apache mod-auth-kerb + SabreDAV auth avec REMOTE_USER)</small></li>
       </ul>
-      &#9888; problèmes de performance, notamment avec Apple Calendar
-      <small>(solution : limiter les calendriers accessibles à ceux activés dans le web agenda)</small></li>
+      <small>&#9888; quelques problèmes, notamment avec Apple Calendar
+      (solution : limiter les calendriers accessibles à ceux activés dans le web agenda)</small></li>
   <li> web agenda
     <ul>
       <li>la nouvelle interface web introduit des régressions <small>(pauvreté des informations, création d'événements erronés, plus de catégorisation par couleurs...)</small></li>
@@ -252,7 +252,7 @@ table.title-on-left td {
             <li>nom du calendrier contient le nom du service,
               <br>permet de grouper les agendas par service
             </ul>
-            synchronisation par cron du nom &amp; partage
+            synchronisation par cron
           </ul>
         </ul>
 
