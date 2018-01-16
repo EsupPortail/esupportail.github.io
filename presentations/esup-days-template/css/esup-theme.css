@@ -256,10 +256,10 @@ body,
   display: none;
 }
 .esup section.divider img.event-title {
-  height: 60px;
+  height: 80px;
   opacity: 0.7;
   text-align: center;
-  margin: 0 auto 100px;
+  margin: 0 auto 80px;
 }
 .esup section.divider .topics ul,
 .esup section.divider .topics .line-divider {
@@ -323,8 +323,8 @@ body,
 }
 
 .esup section.main-title header h1 img.event-title {
-  max-height: 100px; 
-  margin: 120px auto;
+  max-height: 180px; 
+  margin: 85px auto;
 }
 .esup section .line-divider {
   width: 100%;
