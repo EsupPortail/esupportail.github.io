@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Template Presentation ESUP-Days</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+      </script>
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="6 fev. 2018 @Paris" class="header-img upright">-->
+              <img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 45px; padding-top: 25px;">
+              <img src="./img/event-title.png" alt="ESUP-Days #25 / Apereo Paris 2018" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Esup-Pay<br/>pour faciliter le paiement en ligne</h2>
+            <ul class="presenters">
+              <li>Vincent BONAMY</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>Genèse du projet</li>
+	      <li>Objectifs initiaux</li>
+              <li>Fonctionnement</li>
+              <li>Démonstration rapide</li>
+              <li>Retour d'usage à l'Université de Rouen Normandie</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Genèse du projet</h2>
+            <h3 class="shadow">le besoin</h3>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li>Mi-Mai 2014 - un besoin <span class="important">urgent</span> ... la DSI en mode pompier
+		  <ul>
+		    <li>site web (drupal) d'un colloque UnivRouen monté par le laboratoire organisateur</li>
+		    <li>100 participants, 17 pays représentés</li>
+		    <li>des inscriptions déjà réalisées, ... reste aux congressistes à régler les frais d'inscription</li>
+		    <li>le paiment en ligne doit fonctionner pour Mi-Juin</li>
+		  </ul>
+                <li>Solutions envisagées
+		  <ul>
+		    <li>passage sur <a href="https://www.sciencesconf.org">sciencesconf.org</a> (CCSD - CNRS)</li>
+		    <li>utilisation de sciencesconf.org en plus du drupal</li>
+		    <li>intégration paybox dans drupal</li>
+		    <li>mini-appli java sur-mesure pour faire "juste le paybox"</li>
+		</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2>Genèse du projet</h2>
+            <h3 class="shadow">la solution proposée</h3>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li>application très simple mais fonctionnelle et spécifique (non paramétrable) pour faire "juste le paybox"</li>
+		<li>au 30 septembre 2014, 6 colloques ont finalement été pris en charge
+		  <ul>
+		    <li>retours positifs</li>
+		    <li>fonctionnalités basiques suffisent ?!</li>
+		  </ul>
+		</li>
+		<li>adaptation de l'application pour un colloque : 1/2 journée homme DSI pour :
+		  <ul>
+		    <li>expliquer,</li>
+		    <li>patcher (modification du code en dur),</li>
+		    <li>mettre en œuvre (serveur d'appli, BD, DNS, ...)</li>
+		  </ul>
+		</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2>Genèse du projet</h2>
+          </header>
+	  <div class="gallery-item">
+            <img src="img/paybox-6-instances.png" alt="Captures d'écran des formulaires de paiement">
+            <span>Pages de paiement des 6 colloques</span>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+		<section>
+          <header>
+            <h2>Objectifs du projet</h2>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li>Généraliser le paiement en ligne (notamment sur les colloques)
+		</li>
+		<li>Laisser autonome les responsables fonctionnels de cette mise en place 
+		  <ul>
+		    <li>Service comptable</li>
+		    <li>Service communication</li>
+		    <li>Laboratoires</li>
+		    <li>Correspondants informatique</li>
+		    <li>...</li>
+		  </ul>
+		</li>
+		<li>
+		  ... au travers de 3 possibilités :
+		  <ul>
+		    <li><a href="https://www.sciencesconf.org">sciencesconf.org</a></li>
+		    <li>site web spécifique (drupal, wordpress, ...)</li>
+		    <li>application générique -> esup-pay</li>		    
+		  </ul>
+		</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+		</section>
+		
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP-PAY</h2>
+            <h3 class="shadow">Objectif</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+              <li>Constat : les 6 instances mis en place depuis mai 2014 conviennent
+	      </li>
+	      <li>Objectif : faire de ce bout d'appli une application autonome, paramétrable et « déléguable ».
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+	<section>
+          <header>
+            <h2>ESUP-PAY</h2>
+            <h3 class="shadow">Spécifications</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+              <li>Authentification CAS, Identification LDAP
+	      </li>
+	      <li>3 types d'utilisateurs
+		<ul>
+		  <li>Service comptable
+		  </li>
+		  <li>Labo
+		  </li>
+		  <li>Usager (anonyme)
+		  </li>
+		</ul>
+	      </li>
+	      <li>2 types d'objets
+		<ul>
+		  <li>Évènements Paiement
+		  </li>
+		  <li>Des montants de paiements
+		  </li>
+		</ul>
+	      </li>	      
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+		
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2>ESUP-PAY</h2>
+            <h3 class="shadow">Scénario d'usage</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>
+		Le service comptable (Auth CAS) initie un évènement paybox :
+		<ul>
+		  <li>Numéro OTP (code e-OTP)</li>
+		  <li>Titre du colloque</li>
+		  <li>Identifiant (login) d'un responsable du colloque (labo)</li>
+		</ul>
+	      </li>
+	      <li>
+		Le resp. du colloque (labo) – Auth CAS
+		<ul>
+		  <li>Complète l'évènement paybox
+		    <ul>
+		      <li>Logins des co-responsables</li>
+		      <li>Logo du colloque</li>
+		      <li>Modification éventuelles du titre</li>
+		      <li>...</li>
+		    </ul>
+		  </li>
+		  <li>Ajoute les différents montants voulus</li>
+		</ul>
+	      </li>
+	      <li>
+		L'usager (anonyme) a le droit d'acéder via un lien généré par l'application (transmis
+		par un resp.) à un formulaire de paiement en ligne (un formulaire par montant) qui lui
+		permet effectivement de payer.
+		</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+		
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP-PAY - Workflow</h2>
+            <h3 class="shadow">Mise en place d'un paiement en ligne</h3>
+          </header>
+          <div class="slide-content">
+              <div class="gallery-item">
+                <img src="img/workflow-appli-paybox-standalone.svg" alt"Workflow de mise en place d'un paiement en ligne">
+                <span>Mise en place d'un paiement en ligne avec ESUP-PAY</span>
+              </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+	        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP-PAY - Démo ?</h2>
+            <h3 class="shadow">Capture d'écran</h3>
+          </header>
+          <div class="slide-content">
+              <div class="gallery-item">
+                <img src="img/esup-pay-creation-evt.png" alt"Workflow de mise en place d'un paiement en ligne">
+                <span>Création d'un évènement ESUP-PAY</span>
+              </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+	        <!--///////////////////////////////////////////-->
+	<section>
+          <header>
+            <h2>ESUP-PAY - retour d'usage</h2>
+            <h3 class="shadow">à l'Université de Rouen Normandie</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Utilisé à l'Université de Rouen Normandie pour
+		<ul>
+		  <li>des colloques</li>
+		  <li>dons à des fondations</li>
+		  <li>Inscription à des formations continues / par alternance</li>
+		  <li>Facturation partenaires (notamment à l'international)</li>
+		  <li>Recouvrement de droits d'inscription</li>
+		  <li>Billeterie spectacles de la Maison De l'Université</li>
+		  <li>... ??</li>
+		</ul>
+		</li>
+	    </ul>
+	    <ul>
+	      <li>
+		Chiffres ... depuis fin 2014 :
+		<ul>
+		  <li>42 évènements</li>
+		  <li>pour 190 montants</li>
+		  <li>2560 transactions</li>
+		  <li>pour un total de quelques centaines de milliers d'euros</li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+		        <!--///////////////////////////////////////////-->
+	<section>
+          <header>
+            <h2>ESUP-PAY</h2>
+            <h3 class="shadow">Conclusion</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>ESUP-PAY facilite la mise en place du paiement en ligne
+		<ul>
+		  <li>en s'intégrant dans le si (authentification/identification cas/ldap)</li>
+		  <li>en proposant du paiement en ligne générique et très simple, sans adhérence avec un système métier (et donc indépendant de tout système métier)</li>
+		</ul>
+	      </li>
+	    </ul>
+	    <ul>
+	      <li>Fonctionnalités supplémentaires
+		<ul>
+		  <li>montant libre (à l'instar du chèque)</li>
+		  <li>lien possible avec sciencesconf</li>
+		  <li>mailing, tableau de bord, graphes, export CSV, ...</li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+		        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP-PAY</h2>
+            <h3>Configurations</h3>
+          </header>
+          <div class="slide-content">
+            <div class="code-area">
+              <pre>
+
+		esup-pay.url=https://esup-pay.univ-ville.fr
+
+		institute.name=Esup Portail
+		institute.href=http://www.esup-portail.org
+		institute.logo.url=/resources/images/logo-esup.png
+		institute.logo-navbar.url=/resources/images/logo_esup_navbar.png
+
+		cas.url=https://cas.univ-ville.fr
+		cas.authKey=changeitWithWhatyouwant
+
+		ldap.url=ldap://ldap.univ-ville.fr
+		ldap.base=dc=univ-ville,dc=fr
+		ldap.userDn=cn=esuppay,dc=univ-ville,dc=fr
+		ldap.password=passldap
+		ldap.peopleSearchBase=ou=people
+		ldap.peopleSearchFilter=(uid={0})
+		ldap.groupSearchBase=ou=groups
+		# for posixGroup set memberUid={1} but for groupOfNames set member={0}
+		ldap.groupSearchFilter=member={0}
+		ldap.groupAdmin=FOR.ESUPPAY.ADMIN
+
+		paybox.prod.site=1999888
+		paybox.prod.rang=32
+		paybox.prod.identifiant=107904482
+		paybox.prod.devise=978
+		paybox.prod.hmacKey=0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
+		
+              </pre>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
