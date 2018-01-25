@@ -94,9 +94,9 @@
                 <li>Solutions envisagées
 		  <ul>
 		    <li>passage sur <a href="https://www.sciencesconf.org">sciencesconf.org</a> (CCSD - CNRS)</li>
-		    <li>utilisation de sciencesconf.org en plus du drupal</li>
-		    <li>intégration paybox dans drupal</li>
-		    <li>mini-appli java sur-mesure pour faire "juste le paybox"</li>
+		    <li>utilisation de sciencesconf.org en plus du CMS local (Drupal)</li>
+		    <li>intégration paybox dans le CMS local (Drupal)</li>
+		    <li>mini-appli java sur-mesure pour faire le lien avec la plateforme de télépaiement (Verifone PAYBOX)</li>
 		</li>
               </ul>
           </div>
@@ -118,14 +118,14 @@
 		<li>au 30 septembre 2014, 6 colloques ont finalement été pris en charge
 		  <ul>
 		    <li>retours positifs</li>
-		    <li>fonctionnalités basiques suffisent ?!</li>
+		    <li>fonctionnalités basiques suffisantes ?!</li>
 		  </ul>
 		</li>
-		<li>adaptation de l'application pour un colloque : 1/2 journée homme DSI pour :
+		<li>adaptation de l'application pour un colloque : 1/2 jour-homme DSI pour :
 		  <ul>
 		    <li>expliquer,</li>
 		    <li>patcher (modification du code en dur),</li>
-		    <li>mettre en œuvre (serveur d'appli, BD, DNS, ...)</li>
+		    <li>mettre en œuvre (serveur d'application, base de données, DNS, ...)</li>
 		  </ul>
 		</li>
               </ul>
@@ -162,10 +162,10 @@
 		</li>
 		<li>Laisser autonome les responsables fonctionnels de cette mise en place 
 		  <ul>
-		    <li>Service comptable</li>
+		    <li>Agence comptable</li>
 		    <li>Service communication</li>
 		    <li>Laboratoires</li>
-		    <li>Correspondants informatique</li>
+		    <li>Correspondants informatiques</li>
 		    <li>...</li>
 		  </ul>
 		</li>
@@ -196,7 +196,7 @@
 	    <ul>
               <li>Constat : les 6 instances mis en place depuis mai 2014 conviennent
 	      </li>
-	      <li>Objectif : faire de ce bout d'appli une application autonome, paramétrable et « déléguable ».
+	      <li>Objectif : faire de ce micro-code une application autonome, paramétrable et « délégable ».
 	      </li>
 	    </ul>
           </div>
@@ -251,7 +251,7 @@
           <div class="slide-content">
 	    <ul>
 	      <li>
-		Le service comptable (Auth CAS) initie un évènement paybox :
+		L'agence comptable (Auth CAS) initie un évènement paybox :
 		<ul>
 		  <li>Numéro OTP (code e-OTP)</li>
 		  <li>Titre du colloque</li>
@@ -263,9 +263,9 @@
 		<ul>
 		  <li>Complète l'évènement paybox
 		    <ul>
-		      <li>Logins des co-responsables</li>
+		      <li>Identifiants des co-responsables</li>
 		      <li>Logo du colloque</li>
-		      <li>Modification éventuelles du titre</li>
+		      <li>Modifications éventuelles du titre</li>
 		      <li>...</li>
 		    </ul>
 		  </li>
@@ -273,7 +273,7 @@
 		</ul>
 	      </li>
 	      <li>
-		L'usager (anonyme) a le droit d'acéder via un lien généré par l'application (transmis
+		L'usager (anonyme) a le droit d'accéder via un lien généré par l'application (transmis
 		par un resp.) à un formulaire de paiement en ligne (un formulaire par montant) qui lui
 		permet effectivement de payer.
 		</li>
@@ -332,12 +332,12 @@
 	      <li>Utilisé à l'Université de Rouen Normandie pour
 		<ul>
 		  <li>des colloques</li>
-		  <li>dons à des fondations</li>
+		  <li>des dons diverses (fondations, associations, etc.)</li>
 		  <li>Inscription à des formations continues / par alternance</li>
 		  <li>Facturation partenaires (notamment à l'international)</li>
 		  <li>Recouvrement de droits d'inscription</li>
 		  <li>Billeterie spectacles de la Maison De l'Université</li>
-		  <li>... ??</li>
+		  <li>Etc.</li>
 		</ul>
 		</li>
 	    </ul>
@@ -368,7 +368,7 @@
 	    <ul>
 	      <li>ESUP-PAY facilite la mise en place du paiement en ligne
 		<ul>
-		  <li>en s'intégrant dans le si (authentification/identification cas/ldap)</li>
+		  <li>en s'intégrant dans le Système d'Information (authentification/identification cas/ldap)</li>
 		  <li>en proposant du paiement en ligne générique et très simple, sans adhérence avec un système métier (et donc indépendant de tout système métier)</li>
 		</ul>
 	      </li>
