@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Installation rapide de Grouper à la ESUP</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="6 fev. 2018 @Paris" class="header-img upright">-->
+              <img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 45px; padding-top: 25px;">
+              <img src="./img/event-title.png" alt="ESUP-Days #25 / Apereo Paris 2018" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Installation rapide de Grouper à la ESUP</h2>
+            <ul class="presenters">
+              <li>Pascal RIGAUX</li>
+	      <li>Vincent BONAMY</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université Paris 1 Panthéon-Sorbonne</li>
+	      <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>Le contexte et la démarche</li>
+	      <li>Fonctionnalités couvertes</li>
+              <li><span class="important">Grouper à la ESUP :</span> <br/> la documentation, le fork sur github et la VM</li>	      
+              <li>Démonstration rapide</li>
+              <li>Conclusion et questions</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Le contexte et la démarche</h2>
+            <h3 class="shadow">Grouper à Paris1, un projet qui date !</h3>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li>Pascal ... ?</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+	        <section>
+          <header>
+            <h2>Le contexte et la démarche</h2>
+            <h3 class="shadow">Grouper, une mise en place compliquée ...</h3>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li><span class="important">Avril-Juin 2013 - Université de Rouen Normandie</span>
+		  <ul>
+		    <li>installation et configuration de Grouper 2.1.4</li>
+		    <li>ressenti technique mitigé, c'est compliqué :
+		      <ul>
+			<li>installation et configuration longue, fastidieuse</li>
+			<li>possibilités d'installation/configuration très variées multiples
+		      </ul>
+		    </li>
+		    <li>présentation fonctionnelle aux membres DSI -> pas convaincus
+		    </li>
+		    <li>-> on supprime Grouper, on reste avec un dev local permettant de manipuler les groupes ldap simplement</li>
+		  </ul>
+		</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2>Le contexte et la démarche</h2>
+            <h3 class="shadow">Grouper, une mise en place qui peut être facilitée :)</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Avril 2014 : Workshop Grouper 2.1.5 EsupPortail
+		<ul>
+		  <li>par Arnaud Deman</li>
+		  <li>avec support de formation, Machine Virtuelle, ...</li>
+		  <li>... mais à Rouen, on ne s'est pas encore remis de notre essai de l'an dernier ...</li>
+		</ul>
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+	
+        <!--///////////////////////////////////////////-->
+	
+	<section>
+          <header>
+            <h2>Le contexte et la démarche</h2>
+            <h3 class="shadow">Grouper, une mise en place qui peut être facilitée :)</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+                <li><span class="important">Nov 2016 - Université de Rouen Normandie</span>
+		  <ul>
+		    <li>Grouper 2.3 est sortie en Juin</li>
+		    <li>L'IHM serait beaucoup mieux</li>
+		    <li>On sait qu'on peut faire compliqué ... mais on veut faire simple
+		      <ul>
+			<li>en bref, on veut le même grouper que les autres ...</li>
+			<li>... Paris1 nous le donne !</li>
+			<li>find . -type f -exec sed -i  's/univ-paris1.fr/univ-rouen.fr/' {} \;</li>
+			<li>;)</li>
+		      </ul>
+		    </li>
+		  </ul>
+		</li>
+		<li>Janv 2017 -> passage en production
+		  <ul>
+		    <li>On est content :)</li>
+		  </ul>
+		</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+		<section>
+          <header>
+            <h2>Le contexte et la démarche</h2>
+            <h3 class="shadow">Grouper, une mise en place qui doit être facilitée !</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+                <li>Idée</span>
+		  <ul>
+		    <li>Partager cette expérience</li>
+		    <li>-> faire en sorte que les autres établissements puissent faire pareil</li>
+		  </ul>
+		</li>
+		<li>Mission ESUP : documentation, fork, VM</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+	    <h2>Grouper à la ESUP</h2>
+            <h3 class="shadow">Fonctionnalités couvertes</h3>
+          </header>
+              <ul>
+                <li>Gestion des groupes ldap
+		  <ul>
+		    <li>avec délégation de la gestion</li>
+		    <li>avec des groupes composites (groupes intégrés dans des groupes)</li>
+		    <li>provenant de requêtes
+		      <ul>
+			<li>en base de données externes : apogée, harpege, ...</li>
+			<li>ou de l'IHM avec authentification dans le Système d'Information (shibboleth)</li>
+		      </ul>
+		      </li>
+		    <li>groupes ldap usuels : à plat, groupOfNames, overlay memberOf, ...</li>
+		  </ul>
+		</li>
+	      </ul>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+	        <!--///////////////////////////////////////////-->
+
+	<section>
+          <header>
+            <h2>Fonctionnalités</h2>
+	    <h3 class="shadow">Groupes portés par LDAP</h3>
+          </header>
+	      <div class="gallery-item">
+		<img src="img/esup-grouper-archi.png" alt="schéma d'architecture">
+		<span>architecture grouper : pour le SI les groupes sont portés par LDAP</span>
+	      </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+		<section>
+          <header>
+            <h2>Grouper à la ESUP</h2>
+	    <h3 class="shadow">la documentation, le fork sur github et la VM</h3>
+          </header>
+          <div class="slide-content">
+              <ul>
+                <li>Objectif EsupPortail :
+		  <ul>
+		    <li>faciliter l'adoption de Grouper</li>
+		    <li>-> documentation, fork github et vm à jour</li>
+		    <li>en proposant d'utiliser Grouper dans un contexte d'usage
+		      <ul>
+			<li>spécifique</li>
+			<li>restreint</li>
+			<li>usuel</li>
+			<li>éprouvé</li>
+		      </ul>
+		    </li>
+		  </ul>
+		</li>
+		<li>Doc, VM, Fork Grouper ESUP == partager une instance Grouper telle que celui de Paris1 !</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+		</section>
+		
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Démonstration rapide</h2>
+            <h3 class="shadow">Machine virtuelle ESUP avec Grouper</h3>
+          </header>
+	  <div class="gallery-item" style="width: 50%">
+	    <img src="img/vm-grouper-virtualbox.png" alt="vm virtualbox">
+	    <span>machine virtuelle sous virtualbox</span>
+	  </div>
+	  <div class="gallery-item" style="width: 50%">
+	    <img src="img/vm-grouper-archi-groupe.png" alt="Grouper 2.3">
+	    <span>IHM Grouper 2.3</span>
+	  </div>	  
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+	
+	<!--///////////////////////////////////////////-->
+	<section>
+          <header>
+            <h2>Conclusion et questions</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Grouper d'Internet2 est compliqué à mettre en oeuvre mais :
+		<ul>
+		  <li>on peut simplifier</li>
+		  <li>des établissements partenaires Esup ont fait un super boulot (<span class="important">merci à eux !</span>),<br/> on peut s'appuyer sur leur expérience</li>
+		  <li>une fois en place, il sait se faire apprécié !</li>
+		</ul>
+	      </li>
+	      <li>Questions ?
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
