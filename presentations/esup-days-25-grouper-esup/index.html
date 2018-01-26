@@ -36,7 +36,7 @@
           </header>
           <div class="presentation-title">
             <div class="line-divider"></div>
-            <h2>Installation rapide de Grouper à la ESUP</h2>
+            <h2>Installation rapide de Grouper <hr/> à la ESUP</h2>
             <ul class="presenters">
               <li>Pascal RIGAUX</li>
 	      <li>Vincent BONAMY</li>
@@ -58,7 +58,7 @@
             <ol>
               <li>Le contexte et la démarche</li>
 	      <li>Fonctionnalités couvertes</li>
-              <li><span class="important">Grouper à la ESUP :</span> <br/> la documentation, le fork sur github et la VM</li>	      
+              <li><span class="important">Grouper à la ESUP :</span> <br/> &nbsp; la documentation, le fork sur github et la VM</li>	      
               <li>Démonstration rapide</li>
               <li>Conclusion et questions</li>
             </ol>
@@ -99,14 +99,15 @@
 		    <li>ressenti technique mitigé, c'est compliqué :
 		      <ul>
 			<li>installation et configuration longue, fastidieuse</li>
-			<li>possibilités d'installation/configuration très variées multiples
+			<li>possibilités d'installation/configuration très variées
 		      </ul>
 		    </li>
-		    <li>présentation fonctionnelle aux membres DSI -> pas convaincus
+		    <li>présentation fonctionnelle aux membres de la DSI -> pas convaincus
 		    </li>
-		    <li>-> on supprime Grouper, on reste avec un dev local permettant de manipuler les groupes ldap simplement</li>
 		  </ul>
 		</li>
+		<li>-> on supprime Grouper</li>
+		<li>-> on reste avec un dev local permettant de manipuler les groupes ldap simplement</li>
               </ul>
           </div>
           <footer>
@@ -127,7 +128,7 @@
 		<ul>
 		  <li>par Arnaud Deman</li>
 		  <li>avec support de formation, Machine Virtuelle, ...</li>
-		  <li>... mais à Rouen, on ne s'est pas encore remis de notre essai de l'an dernier ...</li>
+		  <li>... mais à Rouen, on ne s'est pas encore remis de notre essai de l'année passée ...</li>
 		</ul>
 	      </li>
 	    </ul>
@@ -148,7 +149,7 @@
             <ul>
                 <li><span class="important">Nov 2016 - Université de Rouen Normandie</span>
 		  <ul>
-		    <li>Grouper 2.3 est sortie en Juin</li>
+		    <li>Grouper 2.3 est sorti en Juin</li>
 		    <li>L'IHM serait beaucoup mieux</li>
 		    <li>On sait qu'on peut faire compliqué ... mais on veut faire simple
 		      <ul>
@@ -205,12 +206,12 @@
               <ul>
                 <li>Gestion des groupes ldap
 		  <ul>
-		    <li>avec délégation de la gestion</li>
-		    <li>avec des groupes composites (groupes intégrés dans des groupes)</li>
-		    <li>provenant de requêtes
+		    <li>avec délégation</li>
+		    <li>avec des groupes composites (~ groupes membres de groupes)</li>
+		    <li>provenant
 		      <ul>
-			<li>en base de données externes : apogée, harpege, ...</li>
-			<li>ou de l'IHM avec authentification dans le Système d'Information (shibboleth)</li>
+			<li>de requêtes en base de données externes : apogée, harpege, ...</li>
+			<li>ou de l'IHM avec authentification dans le Système d'Information<br/> &nbsp; (Shibboleth / Fédération RENATER)</li>
 		      </ul>
 		      </li>
 		    <li>groupes ldap usuels : à plat, groupOfNames, overlay memberOf, ...</li>
@@ -232,7 +233,7 @@
           </header>
 	      <div class="gallery-item">
 		<img src="img/esup-grouper-archi.png" alt="schéma d'architecture">
-		<span>architecture grouper : pour le SI les groupes sont portés par LDAP</span>
+		<span>Pour le Système d'Information les groupes sont portés par LDAP</span>
 	      </div>
           <footer>
             <img src="./img/communaute.png" alt="">
@@ -303,11 +304,30 @@
 		<ul>
 		  <li>on peut simplifier</li>
 		  <li>des établissements partenaires Esup ont fait un super boulot (<span class="important">merci à eux !</span>),<br/> on peut s'appuyer sur leur expérience</li>
-		  <li>une fois en place, il sait se faire apprécié !</li>
+		  <li>une fois en place, il sait se faire apprécier !</li>
 		</ul>
 	      </li>
 	      <li>Questions ?
 	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+		<!--///////////////////////////////////////////-->
+	<section>
+          <header>
+            <h2>Liens</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li><a href="https://www.internet2.edu/products-services/trust-identity/grouper/">Grouper d'Internet2</a></li>
+	      <li><a href="https://www.esup-portail.org/wiki/display/PROJESUPGRP/">GT ESUP-Grouper</a></li>
+	      <li>Doc ESUP : <a href="https://www.esup-portail.org/wiki/display/PROJESUPGRP/Installation%2C+configuration+et+exploitation+de+Grouper">Installation, configuration et exploitation de Grouper</a></li>
+	      <li>Machine Virtuelle : <a href="https://www.esup-portail.org/wiki/display/PROJESUPGRP/VM+Grouper%2C+Shibboleth%2C+LDAP">VM Grouper, Shibboleth, LDAP</a></li>
 	    </ul>
           </div>
           <footer>
