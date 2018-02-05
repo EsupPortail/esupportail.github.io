@@ -50,7 +50,6 @@ body {
  *********************************************/
 .reveal a:not(.image) {
   color: #ff6600;
-  text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   -ms-transition: color .15s ease;
