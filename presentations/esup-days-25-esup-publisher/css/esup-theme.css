@@ -1,0 +1,498 @@
+/**
+ * ESUP default theme 
+ * @author Mathilde Guerin
+ *
+ * To use the previous version of this template, simply remove the 'lighter' class from the first DIV element in the BODY.
+ *
+ * Main colors: 
+ *    - blue: #1d71b8;
+ *    - pinkish-red: #E9294A (used to be #E2007A)
+ *    - light-gray: #BBB;
+ *    - dark-gray: #888;
+ */
+
+
+body,
+.esup  {
+  font-family: 'Oswald', Verdana,Helvetica,Arial,sans-serif;
+  color: #5E5E5E;
+}
+.esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
+  font-family:'Oswald', Verdana,Helvetica,Arial,sans-serif;
+}
+
+.header,
+.footer {
+   position: fixed;
+   font-size: 0.8em;
+   color: #bcbcbc;
+}
+.header {
+   top: 10px;
+}
+.footer {
+  bottom: 15px;
+}
+.header-left,
+.footer-left {
+   left: 1.5em;
+}
+.header span,
+.footer span {
+  display: block;
+}
+
+.footer-left img {
+  height: 2em;
+  margin-top: -0.3em;
+}
+
+.esup .controls div.navigate-up,
+.esup .controls div.navigate-down { display: none; }
+ 
+.esup .progress { height: 0.3em; }
+
+.esup .controls .slideNb {
+  position: relative;
+  opacity: 1;
+  z-index: -1;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 110px;
+  height: 110px !important;
+  width: 110px;
+  text-align: center;
+  border: 0;
+  font-size: 20px;
+  color: #E9294A;
+}
+
+.esup .controls div.navigate-left, .esup .controls div.navigate-left.enabled {
+  border-right-color: #E9294A;
+}
+.esup .controls div.navigate-left.enabled:hover {
+  border-right-color: #F495C8;
+}
+.esup .controls div.navigate-right, .esup .controls div.navigate-right.enabled {
+  border-left-color: #E9294A;
+}
+.esup .controls div.navigate-right.enabled:hover {
+  border-left-color: #F495C8;
+}
+
+@media (max-width: 767px) { 
+  .footer-left {
+    top: 0.3em;
+    bottom: auto;
+  }
+}
+
+.esup .slides {
+  text-align: left;
+}
+/* override reveal.js settings */
+.esup h1 {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.esup h2, .esup h3 { 
+  -webkit-hyphens: manual;
+     -moz-hyphens: manual;
+          hyphens: manual;
+}
+.esup .center {
+  text-align: center;
+}
+.esup .really-important {
+  color:#e9294a;
+  text-decoration: underline;
+}
+.esup .important {
+  color:#e9294a;
+}
+.esup .somewhat-important {
+ text-decoration: underline; 
+}
+.esup h4 {
+  color: #E9294A;
+  font-weight: bold;
+}
+.esup small {
+  vertical-align: middle;
+}
+
+.esup ul ul,
+.esup ol ol {
+  margin-left: 30px;
+}
+.esup ul li,.esup ol li {
+  margin: 0.1em 0;
+  padding-left: 0.15em; 
+}
+.esup ul li {
+  font-weight: normal;
+  list-style-type: square;
+}
+.esup ul li li {
+  font-size: 0.95em;
+}
+.esup ul li li li {
+  font-size: 0.95em;
+}
+.esup ul li li li li {
+  font-size: 0.95em;
+  color: #919191;
+}
+.esup ul li li li li li {
+  font-size: 0.95em;
+  font-style: italic;
+}
+
+.esup ol li {
+  font-weight: 700;
+}
+.esup ol li ol li {
+  font-weight: normal;
+  color: #444;
+  font-size: 0.9em;
+}
+.esup ol li ol li ol li {
+  font-weight: normal;
+  color: #777;
+  font-size: 0.9em;
+}
+.esup ol li ol li ol li ol li {
+  font-weight: normal;
+  color: #777;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.esup .progress {
+  background: rgba(233, 41, 74, 0.1);
+}
+.esup .progress span {
+  background: rgba(233, 41, 74, 0.8);
+}
+
+.h1em {
+  height: 1em;
+}
+.vspace {
+  padding-top: 0.4em !important;
+}
+.esup .new-line,
+.esup .clear {
+  clear: both;
+}
+
+.as-if-no-link {
+  color: black !important;
+}
+
+.esup pre {
+  width: 100%;
+}
+.esup .shadow {
+  -webkit-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.4);
+}
+.esup.lighter section .shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.esup section {
+  background: #FFF;
+  min-height: 650px;
+}
+.esup section img {
+  border: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.esup section.present h2 {
+  color: #ffffff;
+  background: #1d71b8;
+  font-size: 1em;
+  font-weight: bold;
+  padding: 15px 20px;
+  margin: 0;
+  text-transform: uppercase;
+}
+.esup section.present h3:before {
+  content: '>';
+  margin-right: 5px;
+}
+.esup.lighter section.present h3:before {
+  content: '';
+  margin-right: 0;
+}
+.esup section.present h3 {
+  color: #ffffff;
+  background: #E9294A;
+  font-size: 0.8em;
+  padding: 10px 0 10px 20px;
+  margin: 0;
+}
+.esup section.divider h2 {
+  font-size: 0.6em;
+  color: #bcbcbc;
+  text-transform: uppercase;
+}
+.esup.lighter section.divider h2 {
+  display: none;
+}
+.esup section.divider img.cloud,
+.esup.lighter section.divider img.event-title {
+  display: block;
+}
+.esup section.divider img.event-title,
+.esup.lighter section.divider img.cloud {
+  display: none;
+}
+.esup section.divider img.event-title {
+  height: 80px;
+  opacity: 0.7;
+  text-align: center;
+  margin: 0 auto 80px;
+}
+.esup section.divider .topics ul,
+.esup section.divider .topics .line-divider {
+  display: none
+}
+.esup.lighter section.divider .topics {
+  min-height: 60px;
+}
+.esup.lighter section.divider .topics .line-divider {
+  display: block;
+}
+.esup.lighter section.divider .topics ul {
+  margin-left: 0;
+  display: block;
+}
+.esup.lighter section.divider .topics ul li {
+  color: #BBB;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  line-height: 1.3em;
+  font-weight: lighter;
+}
+
+.esup section.divider h3 {
+  margin: 20px auto 0;
+  border: 10px solid #FFF;
+  width: 80%;
+  min-height: 150px;
+  font-weight: bold;
+}
+.esup section.divider header img.cloud {
+  display: block;
+  margin: 0 auto;
+  opacity: 0.2;
+}
+
+.esup div.slide-content {
+  padding-left: 20px;
+  font-size: 0.9em;
+}
+
+.esup section.present.main-title{
+  position: relative;
+}
+
+.esup section.present.main-title header {
+  height: 300px;
+}
+.esup section.main-title header h1 img.header-img {
+  position: relative;
+  padding-top: 5px;
+  max-height: 80px;
+  opacity: 0.5;
+}
+.esup section.main-title header h1 img.header-img.upleft {
+  float: left;
+}
+.esup section.main-title header h1 img.header-img.upright {
+  float: right;
+}
+
+.esup section.main-title header h1 img.event-title {
+  max-height: 180px; 
+  margin: 85px auto;
+}
+.esup section .line-divider {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  padding-bottom: 5px;
+  border-top: 2px solid #BBB;
+}
+.esup.lighter section h2 {
+  border-bottom: 2px solid #BBB;
+}
+
+.esup section.main-title h5 span.event-name {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.esup section.main-title h5 .event-date,
+.esup section.main-title h5 .event-location {
+  font-style: italic;
+  font-size: 0.7em;
+  margin-top: 5px;
+  display: block;
+}
+.esup section.main-title h5 .event-date {
+  padding-top: 20px;
+}
+
+.esup section.main-title .presentation-title {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+}
+.esup section.main-title .presentation-title h2,
+.esup section.section-title h2 {
+  color: #1d71b8;
+  padding: 10px 0;
+  opacity : 0.9;
+  text-align: left;
+  margin-bottom: 40px;
+  font-weight: bold;
+  font-size: 1.4em;
+  background: transparent;
+  text-transform: uppercase;
+  border: none;
+  line-height: 1em;
+}
+.esup section.main-title .presentation-title ul {
+  display: inline-block;
+  margin: 0;
+}
+.esup .presenters li,
+.esup .institutions li {
+  display: block;
+  vertical-align: top;
+  list-style: none;
+  font-size: 0.7em;
+  text-align: left;
+  color: #BBB;
+  font-weight: normal;
+  margin: 0;
+  line-height: 1.5em;
+  padding: 0;
+}
+.esup .presenters li {
+  text-align: right;
+}
+.esup .institutions li:before {
+  content: '--';
+  margin-right: 15px;
+}
+
+.esup section .gallery-item {
+  text-align: center;
+  float: left;
+  position: relative;
+}
+.esup section .gallery-item img {
+  margin: 0 auto;
+  display: block;
+  max-height: 450px;
+}
+.esup section .gallery-item span {
+  font-style: italic;
+  font-size: 0.7em;
+  color: #888;
+  display: block;
+  font-weight: lighter;
+}
+
+.esup section footer img {
+  clear: both;
+  max-height: 40px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.3;
+  padding-top: 20px;
+}
+
+.esup.lighter section h2 {
+  background: none;
+  color: #1d71b8;
+  padding: 0 0 5px 0;
+  margin: 0;
+  font-size: 0.8em;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+.esup.lighter section h3 {
+  color: #BBB;
+  padding: 5px 0 25px 0;
+  background: none;
+  font-size: 0.8em;
+  margin: 0;
+}
+.esup.lighter section.divider h3 {
+  color: #1d71b8;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+  border: none;
+  min-height: 0;
+  font-size: 1.4em;
+}
+.esup section header {
+  padding-bottom: 10px;
+}
+
+.esup section .bubble {
+  min-height: 150px;
+  border: 2px solid #888;
+  padding: 20px;
+  margin: 10px 20px 0;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #888;
+  text-transform: uppercase;
+}
+.esup section .bubble span {
+  display: block;
+}
+.esup.lighter section .bubble {
+  background: #1d71b8;
+  border: none;
+  color: #FFF;
+}
+
+.esup section .bubble-tail {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><polygon fill='%23888' points='0,0 40,0 20,30'/></svg>");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+  background-position: 85% top;
+  min-height: 40px;
+}
+.esup.lighter section .bubble-tail {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'><polygon fill='%231d71b8' points='0,0 40,0 20,30'/></svg>");
+}
+.esup section .quote-author {
+  text-align: right;
+  padding: 0 15px 20px;
+  font-size: 1em;
+  color: #BBB;
+}
+
+
+.esup section .code-area {
+  font-size: 0.9em;
+  background: #222;
+  color: #FFF;
+}

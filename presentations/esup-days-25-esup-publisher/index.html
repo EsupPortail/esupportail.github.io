@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>ESUP-Publisher ESUP-Days25</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="6 fev. 2018 @Paris" class="header-img upright">-->
+              <img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 45px; padding-top: 25px;">
+              <img src="./img/event-title.png" alt="ESUP-Days #25 / Apereo Paris 2018" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Esup-Publisher & co. : publier et afficher différents contenus simplement</h2>
+            <ul class="presenters">
+              <li>Julien Gribonvald</li>
+            </ul>
+            <ul class="institutions">
+              <li>GIP RECIA</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>
+                Rappel présentation ESUP Days 22
+                <ol>
+                  <li>Contexte</li>
+                  <li>Les besoins</li>
+                  <li>Les Technologies</li>
+                </ol>
+              </li>
+              <li>
+                Les fonctionnalités
+                <ol>
+                  <li>Une bonne ergonomie pour une utilisation simple et rapide</li>
+                  <li>Publication contextualisée et typée par rapport à l'affichage souhaité</li>
+                  <li>Définition du public cible lors de la rédaction ou ancien mode</li>
+                  <li>Gestion des permissions sur des groupes</li>
+                </ol>
+              </li>
+              <li>Retour des usagers</li>
+              <li>Un aperçu des applications</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Rappel présentation ESUP Days 22</h2>
+            <h3 class="shadow">Contexte</h3>
+          </header>
+          <div class="slide-content">
+            <p><ul>
+              Chiffres ENT :
+              <li>~250 établissements d'enseignement secondaire</li>
+              <li>jusqu'à 140 000 connexions par jour</li>
+              <li>+ de 120 000 utilisateurs distincts par mois</li>
+              <li>des chefs d'établissement pas toujours impliqués</li>
+            </ul>
+            </p>
+            <p>
+            <ul>
+              Étude des usages :
+              <li>problèmes d'ergonomie -> refonte complète de l'ENT (portail, et services)</li>
+              <li>Esup-News et autres services vieillissants/devenus inadaptés</li>
+            </ul>
+            </p>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Rappel présentation ESUP Days 22</h2>
+            <h3 class="shadow">Les besoins</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>communiquer aux différents publics (parents, élèves, personnels, ...)</li>
+              <li>pouvoir déléguer/faire participer les différentes populations</li>
+              <li>simple et ergonomique pour les producteurs d'informations</li>
+              <li>paramétrage le plus simple possible</li>
+              <li>restitution la mieux adaptée et intégrée pour différents besoins : actualités, flash-infos, documents, alertes, ... </li>
+              <li>attractivité de la page d'accueil ENT</li>
+              <li>mobilité (RWD)</li>
+              <li>solution évolutive pour étendre les usages</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Rappel présentation ESUP Days 22</h2>
+            <h3 class="shadow">Les technologies</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Backend java en REST (full Spring) :
+              <ul>
+                <li>Spring-boot</li>
+                <li>Spring-security</li>
+                <li>Spring-data</li>
+                <li>Spring-ldap</li>
+                <li>Jackson (json)</li>
+                <li>Liquibase (gestion des modifications du schema BD)</li>
+              </ul>
+              </li>
+              <li>Frontend (single page app) :
+              <ul>
+                <li>AngularJS</li>
+                <li>Bootstrap</li>
+              </ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Fonctionnalités</h2>
+            <h3 class="shadow">Une bonne ergonomie pour une utilisation simple et rapide</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Utiliser dess technologies/techniques adaptées
+                <ul>
+                  <li>Bonne réactivité et fluidité via front-end exécuté sur le client</li>
+                  <li>CSS adaptive (composant bootstrap, comportements à la Material Design, CSS3, flexbox layout, table -> card) </li>
+                  <li>Robustesse et sécurité via un backend java</li>
+                  <li>Un backend souple et simple</li>
+                </ul>
+              </li>
+              <li>aller à l'essentiel afin d'avoir des interfaces épurées sans surcharge
+                <ul>
+                  <li>quand il y a trop de choses affichées l'utilisateur est perdu</li>
+                </ul>
+              </li>
+              <li>prendre le temps de réfléchir aux cinématiques afin qu'elles soient courtes.
+                <ul>
+                  <li>si c'est trop long et fastidieux l'utilisateur abondonne et se détourne de l'outil.</li>
+                </ul>
+              </li>
+            </ul>
+            <p>=> pas toujours évident et il faut savoir limiter les options !</p>
+
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Fonctionnalités</h2>
+            <h3 class="shadow">Publication contextualisée et typée par rapport à l'affichage souhaité</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Différents lieux de restitution:
+                <ul>
+                  en en-tête de la page d'accueil, en page d'accueil (résumé), services spécifiques
+                </ul>
+              </li>
+              <li>différents rendus :
+                <ul>
+                  slide-show, categorisation-arbre/filtrage, simple mais spécifique, flux rss, notifications
+                </ul>
+              </li>
+              <li>différentes informations :
+                <ul>
+                  actualités, évènements, documents, alertes, contenus "statics"
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Fonctionnalités</h2>
+            <h3 class="shadow">Publication contextualisée et typée par rapport à l'affichage souhaité</h3>
+          </header>
+          <div class="slide-content">
+            <ul> Soit :
+              <li>nécessité de distinguer le type de contenus</li>
+              <li>centrer la rédaction sur l'élément principal du contenu</li>
+              <li>contextualiser afin de différencier les cinématiques</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Fonctionnalités</h2>
+            <h3 class="shadow">Définition du public cible lors de la rédaction ou ancien mode</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Uniquement sur les rubriques comme dans Esup-news (pas pratique mais encore nécessaire pour certains cas généraux)</li>
+              <li>En fin de rédaction d'une actualité</li>
+              <li>Ciblage pouvant être limité par permission en fonction de l'utilisateur</li>
+              <div class="gallery-item" style="float: right"><img src="./img/groupes.png" alt=""></div>
+              <li>Différentes recherches possible :
+                <ul>
+                  <li>un utilisateur précis</li>
+                  <li>un utilisateur à partir d'un groupe</li>
+                  <li>un groupe, à partir de l'arborescence des groupes</li>
+                </ul>
+              </li>
+              <li>Possibilité de définir une cible par expression régulière sur des attributs LDAP (limité aux admins de l'outil)</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Fonctionnalités</h2>
+            <h3 class="shadow">Gestion des permissions sur des groupes</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>C'était le gros manque dans Esup-news</li>
+              <li>Assez compliqué à réaliser au départ (mais merci spring-security)</li>
+              <li>2 types de permissions:
+                <ul>
+                  <li>simple</li>
+                  <li>avec définition des cibles autorisées => Permet d'autoriser des parents ou des élèves à publier des contenus destinés et limités à certaines populations</li>
+                </ul>
+              </li>
+              <li>des niveaux de droits administrateur, éditeur, contributeur
+                <ul>
+                  <li>administrateur: gère les contextes en plus des autres droits</li>
+                  <li>éditeur: modère et publie des contenus dans son(ses) contexte(s)</li>
+                  <li>contributeur: propose des publications soumises à validation</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Retour des usagers</h2>
+          </header>
+          <div class="slide-content">
+            <p style="text-align: center;"><img src="./img/smiley.png" alt=""><img src="./img/smiley.png" alt=""><img src="./img/smiley.png" alt=""></p>
+            <ul>
+            Usages :
+              <li>133 établissements ont publiés au moins 1 fois </li>
+              <li>3000 actualités</li>
+              <li>300 flash-infos</li>
+              <li>750 documents</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Un aperçu des applications</h2>
+          </header>
+          <div class="slide-content">
+
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
