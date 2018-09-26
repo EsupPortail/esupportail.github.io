@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>ESUP-SGC 1.0</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <img src="./img/event-datelocation.png" alt="15 oct. 2018 @Paris" class="header-img upright">
+              <!--<img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 45px; padding-top: 25px;">-->
+              <img src="./img/event-title.png" alt="ESUP-Days #26" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>ESUP-SGC 1.0</h2>
+	    <h3>Système de Gestion de Cartes libre</h3>
+            <ul class="presenters">
+              <li>Vincent Bonamy</li>
+              <li>Anthnony Paul</li>
+              <li>Geoffroy Vibrac</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+              <li>Université de Caen Normandie</li>
+              <li>Cnous/Crous de Poitiers</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Plan</h2>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>
+                Présentation générale d'ESUP-SGC
+                <ol>
+                  <li>Rappel rapide des fonctionnalités</li>
+		  <li>Usage d'ESUP-SGC aujourd'hui</li>
+		  <li>Version 1.0 disponible</li>
+                </ol>
+              </li>
+              <li>ESUP-SGC à l'Université de Caen Normandie</li>
+              <li>CROUS/IZLY et carte étudiante européenne</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+	
+        <section>
+          <header>
+            <h2>ESUP-SGC</h2>
+            <h3 class="shadow">Couverture fonctionnelle ... 1/2</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Impression et encodage de cartes MIFARE DESFire
+		<ul>
+		  <li>En utilisant des protocoles standards ...</li>
+		  <li>... et donc en n'imposant pas d'imprimantes spécifiques</li>
+		</ul>
+	      </li>
+	    </ul>
+	  </div>
+	</section>
+
+	
+        <section>
+          <header>
+            <h2>ESUP-SGC</h2>
+            <h3 class="shadow">Couverture fonctionnelle ... 2/2</h3>
+          </header>
+          <div class="slide-content">
+            <ul>	      
+	      <li>Mais aussi : 
+                <ul>
+		  <li>
+		    Récupération des informations utilisateurs depuis le SI
+		    <ul>
+		      <li>Shib + Supann,
+			LDAP + Supann,
+			bases de données,
+			règles logiques,
+			...</li>
+		    </ul>
+		  </li>
+                  <li>
+                    Synchronisation des cartes en temps réel avec
+                    <ul>
+		      <li>Contrôles d'accès,
+			annuaires (supannRefId),
+			CROUS/IZLY,
+			carte étudiante européenne,
+			...</li>
+                    </ul>
+                  </li>
+		  <li>Interface Web pour l'ensemble des utilisateurs (authentification fédérée shibboleth)
+                    <ul>
+		      <li>Demande de carte avec envoi/prise de photo (et donc gestion des demandes),
+			vue utilisateur,
+			activation/désactivation par l'utilisateur (ou gestionnaire),
+			livraison,
+			paiement,
+			mailing,
+			statistiques,
+			vue responsive,
+			...</li>
+		    </ul>		    
+		  </li>
+		  <li>
+		    <ul>ESUP-NFC
+		      <li>badgeage par téléphone,
+			lecteur nfc,
+			ajour du service de badgeage dans un service institutionnel facilité,
+			...
+		    </ul>
+		  </li>
+		</ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>ESUP-SGC</h2>
+            <h3 class="shadow">Usage Aujourd'hui</h3>
+          </header>
+          <div class="slide-content">
+            <div class="gallery-item" style="width: 73%">
+	      <ul>
+              <li>En production dans les établissements de la COMUE Normandie Université
+                <ul>
+		  <li>9 instances</li>
+                  <li>~ 50.000 cartes éditées</li>
+		  <li>plus de 100.000 cartes gérées</li>
+                </ul>
+              </li>
+              </ul>
+	      </div>
+	    <div class="gallery-item" style="width: 26%">
+              <img src="img/esup-sgc-screenshot.png" alt="Copie d'écran ESUP-SGC">
+              <span>ESUP-SGC</span>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+	        <section>
+          <header>
+            <h2>ESUP-SGC</h2>
+            <h3 class="shadow">Version 1.0 disponible.</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Une release 1.0.0 d'esup-sgc taguée sur le <a href="https://github.com/EsupPortail/esup-sgc/releases">github EsupPortail</a></li>
+	      <li>Releases des autres briques esup-sgc/esup-nfc également disponibles</li>
+	      <li>De la documentation en ligne sur le <a href="https://www.esup-portail.org/wiki/display/SGC/">wiki EsupPortail</a></li>
+	      <li>Une <a href="https://www.esup-portail.org/wiki/pages/viewpage.action?pageId=615547103">instance de démonstration en ligne</a></li>
+	      <li>Une <a href="https://www.esup-portail.org/wiki/display/SGC/VM+ESUP-SGC">VM autonome d'Esup-SGC</a> & co pour une prise en main et un exemple d'installation.</li>
+	      <li>Tous ces éléments étant librement accessibles via les outils comunautaires <a href="https://www.esup-portail.org">ESUP-Portail</a></li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+	<section class="divider">
+          <header>
+            <h2 class="shadow">ESUP-SGC</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <img class="event-title" src="./img/event-title.png" alt="">
+            <h3>ESUP-SGC à l'Université de Caen Normandie</h3>
+          </header>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Titre slide</h2>
+            <h3 class="shadow">Mon sous-titre</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>1er niveau
+                <ul>
+                  <li>
+                    2e niveau
+                    <ul>
+                      <li>3e niveau
+                        <ul>
+                            <li>4e niveau
+                              <ul>
+                                <li>5e niveau</li>
+                              </ul>
+                            </li>
+                          </ul>  
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+
+	<section class="divider">
+          <header>
+            <h2 class="shadow">ESUP-SGC</h2>
+            <img class="cloud" src="./img/cloud.png" alt="">
+            <img class="event-title" src="./img/event-title.png" alt="">
+            <h3>CROUS/IZLY et carte étudiante européenne</h3>
+          </header>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Titre slide</h2>
+            <h3 class="shadow">Mon sous-titre</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>1er niveau
+                <ul>
+                  <li>
+                    2e niveau
+                    <ul>
+                      <li>3e niveau
+                        <ul>
+                            <li>4e niveau
+                              <ul>
+                                <li>5e niveau</li>
+                              </ul>
+                            </li>
+                          </ul>  
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+        <section>
+          <header>
+            <h2>Merci de votre attention</h2>
+          </header>
+          <div class="slide-content">
+            <div class="bubble">
+	      <span>Des Questions !?</span>
+            </div>
+            <div class="bubble-tail"></div>
+          
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
