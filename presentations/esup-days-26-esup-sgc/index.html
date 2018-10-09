@@ -618,9 +618,10 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
           </header>
           <div class="slide-content">
             <ul style="white-space: nowrap">
-              <li>Lancement en septembre 2015</li>
-              <li>1.960.000 Compte activés</li>
-              <li>13% actifs (semaine dernière)</li>
+              <li>Paiements sur le campus (RU, DA, Laverie, photocopies...)</li>
+              <li>Lancé en septembre 2015</li>
+              <li>1.960.000 comptes activés</li>
+              <li>13% de comptes actifs (semaine dernière)</li>
               <li>2.000.000 paiements par semaine</li>
             </ul>
           </div>
@@ -638,14 +639,14 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
           </header>
           <div class="slide-content">
             <ul style="white-space: nowrap">
-              <li>SFTP (infocartecrous.xml)</li>
+              <li>SFTP pour l'envoi des infocartecrous.xml</li>
               <ul>
-                <li>Création des comptes</li>
+                <li>Création/Modification des comptes</li>
                 <li>Ajout des cartes</li>
               </ul>
-              <li>SOAP + WS-Security</li>
+              <li>SOAP + WS-Security utilisé par notre logiciel de caisse</li>
               <ul>
-                <li>Création des comptes</li>
+                <li>Création/Modification des comptes</li>
                 <li>Ajout des cartes</li>
                 <li>Paiements</li>
               </ul>
@@ -660,101 +661,27 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         <!--3-->
         <section>
           <header>
-            <h2>Before Izly</h2>
-            <h3 class="shadow">Passerelle vers izly</h3>
+            <h2>api.lescrous.fr</h2>
           </header>
           <div class="slide-content">
             <ul style="white-space: nowrap">
-              <li>XML plus léger vers Izly</li>
-              <li>Ajoute une gestion par "établissements"</li>
-              <li>Création de comptes par import excel</li>
-              <li>Liaison commande SELP / Izly</li>
+              <li>"Proxy" SOAP to REST</li>
+              <li>Avec Esup-SGC</li>
+              <ul>
+                <li>Création/Modification comptes et cartes en temps réel</li>
+                <li>Invalidation des cartes en temps réel</li>
+                <li>Workflows de gestion des erreurs</li>
+              </ul>
             </ul>
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
           </footer>
         </section>
+
 
         <!--///////////////////////////////////////////-->
         <!--4-->
-        <section>
-          <header>
-            <h2>Première API</h2>
-          </header>
-          <div class="slide-content">
-            <ul style="white-space: nowrap">
-              <li>Pour ISIC</li>
-              <li>Intégré à Before Izly</li>
-              <li>Proxy "SOAP Service" vers "Rest ressources"</li>
-              <li>Limitations</li>
-              <ul>
-                  <li>Authentification par signature unique des requêtes</li>
-                  <li>Orientée <strong>Cartes</strong> plutôt qu'<strong>Ayant-droit</strong></li>
-                  <li>Dépendance forte avec Before Izly</li>
-              </ul>
-            </ul>
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-        <!--5-->
-        <section>
-          <header>
-            <h2>api.lescrous.fr</h2>
-          </header>
-          <div class="slide-content">
-            <ul style="white-space: nowrap">
-              <li>Authentification par token JWT</li>
-              <ul>
-                  <li>Gestion de droits</li>
-              </ul>
-              <li>Orientée Ayant droit</li>
-              <ul>
-                  <li>ressource /rightholders</li>
-                  <li>ressource /rightholders/{id}/smartcards</li>
-              </ul>
-              <li>BDD de Before Izly mais application indépendante</li>
-            </ul>
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-        <!--6-->
-        <section>
-          <header>
-            <h2>api.lescrous.fr</h2>
-            <h3 class="shadow">1ère architecture</h3>
-          </header>
-          <div class="slide-content">
-            <div style="display:flex;">
-              <div>
-                <img src="./img/version-api-1.png" style="height:600px"/>
-              </div>
-              <div style="flex-grow: 1;">
-                <ul style="white-space: nowrap">
-                  <li style="color:red">Monolithe</li>
-                  <li style="color:red">SPOF</li>
-                  <li style="color:red">Routage compliqué</li>
-                  <li style="color:green">1 VM</li>
-                  <li style="color:green">Ça marche...</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <footer>
-            <img src="./img/communaute.png" alt="">
-          </footer>
-        </section>
-
-        <!--///////////////////////////////////////////-->
-        <!--7-->
         <section>
           <header>
             <h2>api.lescrous.fr</h2>
@@ -767,11 +694,10 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
               </div>
               <div style="flex-grow: 1;">
                 <ul style="white-space: nowrap">
-                  <li style="color:orange">moins monolithe</li>
+                  <li style="color:red">Monolithe Java EE 7</li>
                   <li style="color:red">SPOF</li>
-                  <li style="color:green">Routage simple</li>
-                  <li style="color:orange">Au moins 3 VMs</li>
-                  <li style="color:green">Ça marche toujours...</li>
+                  <li style="color:red">Pas de répartition de charge</li>
+                  <li style="color:green">Ça marche</li>
                 </ul>
               </div>
             </div>
@@ -782,7 +708,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--8-->
+        <!--5-->
         <section>
           <header>
             <h2>api.lescrous.fr</h2>
@@ -797,8 +723,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
                 <ul style="white-space: nowrap">
                   <li style="color:green">Service indépendants</li>
                   <li style="color:green">Redondance</li>
-                  <li style="color:green">Routage simple</li>
-                  <li style="color:orange">VMs++ (ou doker)</li>
+                  <li style="color:green">Répartition de charge</li>
                   <li style="color:red">Ça marche pas encore...</li>
                 </ul>
               </div>
@@ -810,7 +735,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--9-->
+        <!--6-->
         <section>
           <header>
             <h2>api.lescrous.fr</h2>
@@ -835,14 +760,14 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--10-->
+        <!--7-->
         <section data-background="./img/elk.png"></section>
 
         <!--///////////////////////////////////////////-->
-        <!--11-->
+        <!--8-->
         <section>
           <header>
-            <h2>api.lescrous.fr / Esup'SGC</h2>
+            <h2>api.lescrous.fr / Esup-SGC</h2>
             <h3 class="shadow">Quelques chiffres</h3>
           </header>
           <div class="slide-content">
@@ -864,7 +789,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--12-->
+        <!--9-->
         <section>
           <header>
             <h2>Carte Européenne</h2>
@@ -890,24 +815,24 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--13-->
+        <!--10-->
         <section>
           <header>
             <h2>Carte Européenne</h2>
-            <h3 class="shadow">Reconnaissance visuelle</h3>
+            <h3 class="shadow">Spécifications</h3>
           </header>
           <div class="slide-content">
-            <div style="display:flex;">
-              <div>
-                <img src="./img/hologram.png" style="height:250px"/>
-              </div>
-              <div style="flex-grow: 1;">
-                <ul style="white-space: nowrap">
-                  <li>Un hologramme par dorure à chaud</li>
-                  <li>Un qrcode</li>
+              <ul style="white-space: nowrap">
+                <li>ESCN</li>
+                <ul>
+                  <li>Chaque carte a un numéro unique généré localement par le SGC</li>
                 </ul>
-              </div>
-            </div>
+                <li>Visuel</li>
+                <ul>
+                  <li>Un hologramme par dorure à chaud</li>
+                  <li>Un qrcode contenant l'ESCN</li>
+                </ul>
+              </ul>
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
@@ -915,16 +840,21 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--14-->
+        <!--11-->
         <section>
           <header>
             <h2>Carte Européenne</h2>
-            <h3 class="shadow">router</h3>
+            <h3 class="shadow">Router</h3>
           </header>
           <div class="slide-content">
               <ul style="white-space: nowrap">
-                <li>Registre contenant les étudiants & cartes européennes</li>
+                <li>Registre des étudiants & cartes européennes</li>
                 <li>Tiers de confiance pour ajouter de la sécurité</li>
+                <li>Offre une API pour</li>
+                <ul>
+                  <li>Ajouter/Modifier des comptes & cartes</li>
+                  <li>Vérifier le statut étudiant</li>
+                </ul>
                 <li>Alimentation par les établissements qui participent au projet</li>
               </ul>
           </div>
@@ -934,7 +864,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--15-->
+        <!--12-->
         <section>
           <header>
             <h2>Carte Européenne</h2>
@@ -943,12 +873,10 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
           <div class="slide-content">
             <div style="flex-grow: 1;">
               <ul style="white-space: nowrap">
-                <li>Alimentation du router 100% API</li>
-                <li>Authentification par clé</li>
-                <li>Esup' SGC</li>
+                <li>Esup-SGC</li>
                 <ul>
                     <li>Génère le numéro unique de carte (ESCN)</li>
-                    <li>Envoie les requêtes à l'API</li>
+                    <li>Créé/Modifie les comptes & cartes en temps réel</li>
                 </ul>
               </ul>
             </div>
@@ -959,7 +887,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-        <!--16-->
+        <!--13-->
         <section>
           <header>
             <h2>Carte Européenne</h2>
@@ -970,7 +898,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
               <ul style="white-space: nowrap">
                 <li>24.984 Cartes</li>
                 <li>100% Françaises</li>
-                <li>67,55% par Esup' SGC</li>
+                <li>67,55% par Esup-SGC</li>
               </ul>
             </div>
           </div>
