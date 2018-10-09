@@ -9,10 +9,10 @@
     <title>ESUP-SGC 1.0</title>
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="css/reveal.min.css">
-    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme">
     <link rel="stylesheet" href="css/esup-theme.css">
 
     <link rel="stylesheet" href="plugin/highlight/default.min.css">
@@ -78,7 +78,7 @@
         </section>
 
         <!--///////////////////////////////////////////-->
-	
+
         <section>
           <header>
             <h2>ESUP-SGC</h2>
@@ -96,15 +96,15 @@
 	  </div>
 	</section>
 
-	
+
         <section>
           <header>
             <h2>ESUP-SGC</h2>
             <h3 class="shadow">Couverture fonctionnelle ... 2/2</h3>
           </header>
           <div class="slide-content">
-            <ul>	      
-	      <li>Mais aussi : 
+            <ul>
+	      <li>Mais aussi :
                 <ul>
 		  <li>
 		    Récupération des informations utilisateurs depuis le SI
@@ -137,7 +137,7 @@
 			statistiques,
 			vue responsive,
 			...</li>
-		    </ul>		    
+		    </ul>
 		  </li>
 		  <li>
 		    <ul>ESUP-NFC
@@ -572,33 +572,369 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         </section>
 
         <!--///////////////////////////////////////////-->
-
+        <!--1-->
         <section>
           <header>
-            <h2>Titre slide</h2>
-            <h3 class="shadow">Mon sous-titre</h3>
+            <h2>Izly</h2>
+            <h3 class="shadow">Quelques chiffres</h3>
           </header>
           <div class="slide-content">
-            <ul>
-              <li>1er niveau
-                <ul>
-                  <li>
-                    2e niveau
-                    <ul>
-                      <li>3e niveau
-                        <ul>
-                            <li>4e niveau
-                              <ul>
-                                <li>5e niveau</li>
-                              </ul>
-                            </li>
-                          </ul>  
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </li>
+            <ul style="white-space: nowrap">
+              <li>Lancement en septembre 2015</li>
+              <li>1.960.000 Compte activés</li>
+              <li>13% actifs (semaine dernière)</li>
+              <li>2.000.000 paiements par semaine</li>
             </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" aolt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--2-->
+        <section>
+          <header>
+            <h2>Izly</h2>
+            <h3 class="shadow">Interfaces</h3>
+          </header>
+          <div class="slide-content">
+            <ul style="white-space: nowrap">
+              <li>SFTP (infocartecrous.xml)</li>
+              <ul>
+                <li>Création des comptes</li>
+                <li>Ajout des cartes</li>
+              </ul>
+              <li>SOAP + WS-Security</li>
+              <ul>
+                <li>Création des comptes</li>
+                <li>Ajout des cartes</li>
+                <li>Paiements</li>
+              </ul>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--3-->
+        <section>
+          <header>
+            <h2>Before Izly</h2>
+            <h3 class="shadow">Passerelle vers izly</h3>
+          </header>
+          <div class="slide-content">
+            <ul style="white-space: nowrap">
+              <li>XML plus léger vers Izly</li>
+              <li>Ajoute une gestion par "établissements"</li>
+              <li>Création de comptes par import excel</li>
+              <li>Liaison commande SELP / Izly</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--4-->
+        <section>
+          <header>
+            <h2>Première API</h2>
+          </header>
+          <div class="slide-content">
+            <ul style="white-space: nowrap">
+              <li>Pour ISIC</li>
+              <li>Intégré à Before Izly</li>
+              <li>Proxy "SOAP Service" vers "Rest ressources"</li>
+              <li>Limitations</li>
+              <ul>
+                  <li>Authentification par signature unique des requêtes</li>
+                  <li>Orientée <strong>Cartes</strong> plutôt qu'<strong>Ayant-droit</strong></li>
+                  <li>Dépendance forte avec Before Izly</li>
+              </ul>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--5-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr</h2>
+          </header>
+          <div class="slide-content">
+            <ul style="white-space: nowrap">
+              <li>Authentification par token JWT</li>
+              <ul>
+                  <li>Gestion de droits</li>
+              </ul>
+              <li>Orientée Ayant droit</li>
+              <ul>
+                  <li>ressource /rightholders</li>
+                  <li>ressource /rightholders/{id}/smartcards</li>
+              </ul>
+              <li>BDD de Before Izly mais application indépendante</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--6-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr</h2>
+            <h3 class="shadow">1ère architecture</h3>
+          </header>
+          <div class="slide-content">
+            <div style="display:flex;">
+              <div>
+                <img src="./img/version-api-1.png" style="height:600px"/>
+              </div>
+              <div style="flex-grow: 1;">
+                <ul style="white-space: nowrap">
+                  <li style="color:red">Monolithe</li>
+                  <li style="color:red">SPOF</li>
+                  <li style="color:red">Routage compliqué</li>
+                  <li style="color:green">1 VM</li>
+                  <li style="color:green">Ça marche...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--7-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr</h2>
+            <h3 class="shadow">Architecture actuelle</h3>
+          </header>
+          <div class="slide-content">
+            <div style="display:flex;">
+              <div>
+                <img src="./img/version-api-2.png" style="height:500px"/>
+              </div>
+              <div style="flex-grow: 1;">
+                <ul style="white-space: nowrap">
+                  <li style="color:orange">moins monolithe</li>
+                  <li style="color:red">SPOF</li>
+                  <li style="color:green">Routage simple</li>
+                  <li style="color:orange">Au moins 3 VMs</li>
+                  <li style="color:green">Ça marche toujours...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--8-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr</h2>
+            <h3 class="shadow">Future architecture</h3>
+          </header>
+          <div class="slide-content">
+            <div style="display:flex;">
+              <div>
+                <img src="./img/version-api-3.png" style="height:450px"/>
+              </div>
+              <div style="flex-grow: 1;">
+                <ul style="white-space: nowrap">
+                  <li style="color:green">Service indépendants</li>
+                  <li style="color:green">Redondance</li>
+                  <li style="color:green">Routage simple</li>
+                  <li style="color:orange">VMs++ (ou doker)</li>
+                  <li style="color:red">Ça marche pas encore...</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--9-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr</h2>
+            <h3 class="shadow">Logs avec Elasticsearch/Logstash/Kibana</h3>
+          </header>
+          <div class="slide-content">
+            <div style="display:flex;">
+              <div>
+                <img src="./img/elk.png" style="width:600px"/>
+              </div>
+              <div style="flex-grow: 1;">
+                <ul style="white-space: nowrap">
+                  <li>Logs de Kong</li>
+                  <li>Log applicatifs</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--10-->
+        <section data-background="./img/elk.png"></section>
+
+        <!--///////////////////////////////////////////-->
+        <!--11-->
+        <section>
+          <header>
+            <h2>api.lescrous.fr / Esup'SGC</h2>
+            <h3 class="shadow">Quelques chiffres</h3>
+          </header>
+          <div class="slide-content">
+              <div>
+                <ul style="white-space: nowrap">
+                  <li>Entre le 1er juillet et le 8 octobre </li>
+                  <ul>
+                    <li>4.453.780 requêtes</li>
+                    <li>97,02% de 20x</li>
+                    <li>93.289 POST</li>
+                    <li>270.627 PUT</li>
+                  </ul>
+                <ul>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--12-->
+        <section>
+          <header>
+            <h2>Carte Européenne</h2>
+          </header>
+          <div class="slide-content">
+              <div>
+                <ul style="white-space: nowrap">
+                  <li>Démarré en 2016</li>
+                  <li>4 acteurs (France, Italie, Allemagne, Irlande)</li>
+                  <li>Objectifs</li>
+                  <ul>
+                    <li>Propager le statut étudiant à l’échelle Européenne</li>
+                    <li>Etablir une identité numérique et graphique commune à tous les étudiants d’Europe</li>
+                    <li>Faire valoir ses droits d'étudiants dans toute l'europe</li>
+                    <li><a href="http://europeanstudentcard.eu/" target="_blank">http://europeanstudentcard.eu/</a>
+                  </ul>
+                <ul>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--13-->
+        <section>
+          <header>
+            <h2>Carte Européenne</h2>
+            <h3 class="shadow">Reconnaissance visuelle</h3>
+          </header>
+          <div class="slide-content">
+            <div style="display:flex;">
+              <div>
+                <img src="./img/hologram.png" style="height:250px"/>
+              </div>
+              <div style="flex-grow: 1;">
+                <ul style="white-space: nowrap">
+                  <li>Un hologramme par dorure à chaud</li>
+                  <li>Un qrcode</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--14-->
+        <section>
+          <header>
+            <h2>Carte Européenne</h2>
+            <h3 class="shadow">router</h3>
+          </header>
+          <div class="slide-content">
+              <ul style="white-space: nowrap">
+                <li>Registre contenant les étudiants & cartes européennes</li>
+                <li>Tiers de confiance pour ajouter de la sécurité</li>
+                <li>Alimentation par les établissements qui participent au projet</li>
+              </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--15-->
+        <section>
+          <header>
+            <h2>Carte Européenne</h2>
+            <h3 class="shadow">API</h3>
+          </header>
+          <div class="slide-content">
+            <div style="flex-grow: 1;">
+              <ul style="white-space: nowrap">
+                <li>Alimentation du router 100% API</li>
+                <li>Authentification par clé</li>
+                <li>Esup' SGC</li>
+                <ul>
+                    <li>Génère le numéro unique de carte (ESCN)</li>
+                    <li>Envoie les requêtes à l'API</li>
+                </ul>
+              </ul>
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        <!--16-->
+        <section>
+          <header>
+            <h2>Carte Européenne</h2>
+            <h3 class="shadow">Quelques chiffres</h3>
+          </header>
+          <div class="slide-content">
+            <div style="flex-grow: 1;">
+              <ul style="white-space: nowrap">
+                <li>24.984 Cartes</li>
+                <li>100% Françaises</li>
+                <li>67,55% par Esup' SGC</li>
+              </ul>
+            </div>
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
@@ -617,7 +953,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
 	      <span>Des Questions !?</span>
             </div>
             <div class="bubble-tail"></div>
-          
+
           </div>
           <footer>
             <img src="./img/communaute.png" alt="">
@@ -643,7 +979,7 @@ value="#userInfosInComputing['userType'] == Null ? 'U' : #userInfosInComputing['
         center: true,
         theme: 'simple', // available themes are in /css/theme
         transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
-        dependencies: [ 
+        dependencies: [
             // Cross-browser element.classList (esp needed on safari 4.0.5)
             { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 
