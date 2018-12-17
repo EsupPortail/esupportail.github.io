@@ -282,7 +282,49 @@
 
 
         <!--///////////////////////////////////////////-->
+	
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Exemples de Hook</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Filtre : bewpi_placeholders dans le code de woocommerce-pdf-invoices.
+		<div class="code-area">
+		  <pre>
+		    
+		    ...
+  $placeholders = apply_filters('bewpi_placeholders', array(
+    '[payment_method]' => $this->order->payment_method_title,
+    '[shipping_method]' => $this->order->get_shipping_method()
+  ), $this->order->id);
+		    ...
+		    
+		  </pre>
+		</div>
+	      </li>
+	      <li>Action : prime le rôle admin des utilisateurs : le plugin CAS utilisé ne sait qu'ajouter des rôles (et ne les supprime jamais)
+		<div class="code-area">
+		  <pre>
 
+		    ...
+  // Define custom plugin hook after cas authentication.
+  // For example, for two factor authentication, you can plug another authentication plugin to fired custom action here.
+    do_action( 'wp_cassify_after_cas_authentication', $cas_user_datas );
+		    ...
+		    
+		  </pre>
+		</div>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+	
         <section>
           <header>
             <h2>WordPress</h2>
@@ -330,6 +372,32 @@
 
         <!--///////////////////////////////////////////-->
 
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Hook Dans wordpress</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Nombre de filtres et actions important dans wordpress (et plugins utilisés par notre site de boutique en ligne ici) :
+		<div class="code-area">
+		  <pre>
+
+		    fgrep -R do_action * | wc -l                                                                                                 
+
+		    fgrep -R apply_filter * | wc -l                                                                                              
+
+		  </pre>
+		</div>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>	
+
+	
         <section>
           <header>
             <h2>WordPress</h2>
