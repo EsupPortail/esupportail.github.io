@@ -209,7 +209,7 @@
 	      <li>nombre d'étoiles, nbre d'utilisateurs, commentaires des utilisateurs</li>
 	      <li>dates de dernières mises à jour</li>
 	      <li>gratuits -> permet une installation / mise à jour rapidement (quitte à prendre une version payante finalement si besoin)</li>
-	      <li>on se restreint en nbre de plugins mieux ; exemple, le plugin cas suffit pour l'authentification <b>et</b> l'identification (pas besoin de plugin ldap supplémentaire)</li>
+	      <li>on se restreint en nbre de plugins au mieux ; exemple, le plugin cas suffit pour l'authentification <b>et</b> l'identification (pas besoin de plugin ldap supplémentaire)</li>
             </ul>
 	    -> mise en place de la boutique en 2016 == 11 plugins et un thème.
           </div>
@@ -304,7 +304,7 @@
 		  </pre>
 		</div>
 	      </li>
-	      <li>Action : prime le rôle admin des utilisateurs : le plugin CAS utilisé ne sait qu'ajouter des rôles (et ne les supprime jamais)
+	      <li>Action : wp_cassify_after_cas_authentication dans le code de wp-cassify
 		<div class="code-area">
 		  <pre>
 
@@ -444,7 +444,7 @@
 	      <li>Notamment grâce à ses possibilités de 'hook' qui permettent le développement de plugins et leurs adaptations
 	      </li>
 	      <li>Le développement doit être fait en utilisant ces possibilités</li>
-	      <li>... ou alors, plutôt que de modifier le code en dur dans une logique de court terme, il vaudrait mieux envisager de se passer d'une telle modification du code ...</li>
+	      <li>... ou alors, plutôt que de modifier le code en dur dans une logique de court terme, il vaudrait mieux envisager se passer d'une telle modification du code ...</li>
 	    </ul>
           </div>
           <footer>
