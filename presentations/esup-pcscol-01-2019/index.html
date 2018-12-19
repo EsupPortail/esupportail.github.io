@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Rencontre ESUP/PC-Scol</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+    <style type="text/css"> 
+      p.event-title {
+      font-size: 25%;
+      color: #800;
+      padding-top: 5cm;
+      }
+      </style>
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">-->
+              <img src="./img/pc-scol.png" alt="PC-SCOL" class="header-img upright" style="max-height: 100px; padding-top: 15px;">
+              <p class="event-title">Rencontre ESUP/PC-Scol - 17 Janvier 2019</p>
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+	    <h2>Techniques d'intégration du SI dans les briques applicatives</h2>
+	    <h3>17 Janvier 2019</h3>
+            <ul class="presenters">
+              <li>Vincent Bonamy</li>
+	      <li>Pascal Rigaux</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>Techniques d'intégration du SI dans les briques applicatives</h2>
+            <h3 class="shadow">Plan</h3>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>Introduction</li>
+	      <li>Exempled de cas d'usages avec Apogée</li>
+	      <li>Intégration faible
+		<ul>
+		  <li>D'un point de vue théorique</li>
+		  <li>D'un point de vue technique</li>
+		</ul>
+	      </li>
+	      <li>Intégration forte
+		<ul>
+		  <li>D'un point de vue théorique</li>
+		  <li>D'un point de vue technique</li>
+		</ul>
+	      </li>
+	      <li>Propositions</li>
+	      <li>Conclusion</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+	<section>
+          <header>
+            <h2>Introduction</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+              <li>
+		Une des valeurs ajoutées de nos applications métier <b>ESR</b> == intégration au SI, et notamment au SI 'étudiant'.
+	      </li>
+	      <li>
+		La généralisation de CAS, Shibboleth, Ldap, Supann permet d'avoir un référentiel standardisé pour l'authentification et l'identification :-) 
+	      </li>
+	      <li>
+		Pour des raisons techniques et/ou fonctionnelles ce référentiel d'authentification/identification ne suffit pas toujours ; une interaction spécifique entres les briques logicielles est alors requise.
+	      </li>
+	    </ul>
+	  </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>
+
+
+	<section>
+          <header>
+            <h2>Exemples de cas d'usages avec Apogée</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>
+		Gestion du compte informatique de l'étudiant.
+		<ul>
+		  <li>Etre averti de l'inscription d'un étudiant dans Apogée</li>
+		  <li>Récupérer les informations nécessaires à la création de son compte (email, nom, prénom)</li>
+		  <li>Possibilité de retrouver ces comptes dans cette application de gestion de comptes</li>
+		  <li>Resynchronisation des comptes en cas de modification</li>
+		</ul>
+	      </li>
+	      <li>
+		Affichage des notes d'un étudiant
+		<ul>
+		  <li>Etre averti d'une nouvelle note</li>
+		  <li>Récupérer la note</li>
+		</ul>
+	      </li>
+	      <li>
+		Cartes Multi Services
+		<ul>
+		  <li>Etre averti que l'inscriptino est validée/payée</li>
+		  <li>Récupérer les informations d'inscriptions</li>
+		  <li>Pouvoir retrouver les cartes dans cette application sur des critères liés à l'inscription (ufr, année, ...)</li>
+		</ul>
+	      </li>
+	      <li>Etc.</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>	
+
+        <section>
+	  <header>
+	    <h2>Intégration faible</h2>
+	    <h3>D'un point de vue théorique</h3>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>
+		On récupère à l'instant t la donnée pour l'utiliser et l'afficher directement.
+	      </li>
+	      <li>
+		Le requêtage à l'instant t peut aussi permettre de faire une recherche plus globale sur la base Apogée.
+	      </li>
+	      <li>
+		<b>Avantages :</b> intégration simple et rapide.
+	      </li>
+	      <li>
+		<b>Inconvénients :</b> intégration limitée
+		<ul>
+		  <li>
+		    pas de recherche complexe entre Apogée et données de la base applicative
+		  </li>
+		  <li>
+		    ou/et problèmes potentiels de performances voir de disponibilités.
+		  </li>
+		</ul>
+	      </li>
+	    </ul>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+
+	<section>
+	  <header>
+	    <h2>Intégration faible</h2>
+	    <h3>D'un point de vue technique</h3>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>
+		On fait une requête SQL/SOAP/REST pour récupérer l'information voulue (ex: notes de l'utilisateur) et les afficher.
+	      </li>
+	      <li>
+		On fait une requête SQL/SOAP/REST pour récupérer de's informations en fonction de paramètres de la requête.
+	      </li>
+	      <li>
+		Ces résultats sont ensuite consolidés avec les informations issues de la base de données de l'application.
+	      </li>
+	    </ul>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+
+        <section>
+	  <header>
+	    <h2>Intégration forte</h2>
+	    <h3>D'un point de vue théorique</h3>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>
+		On synchronize 'régulièrement' les données dans la 'base de données' de l'application.
+	      </li>
+	      <li>
+		Régulièrement = tous les x temps, ou encore à chaque 'mouvement' (~ notion de trigger).
+	      </li>
+	      <li>
+		<b>Avantages :</b>
+		<ul>
+		  <li>possibilités de recherche, affichage, interactions optimales</li>
+		  <li>solution robuste</li>
+		  <li>intégration dans la même application d'autres briques applicatives (ldap, harpege, sifac, ...) par le même procédé n'impacte pas non plus la disponibilité, stabilité, performance</li>
+		</ul>
+	      </li>
+	      <li>
+		<b>Inconvénients :</b> synchronisation régulière à coder et réaliser -> consommateur de cpu, réseau, disque, ...
+	      </li>
+	    </ul>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>	
+	
+        <section>
+	  <header>
+	    <h2>Intégration forte</h2>
+	    <h3>D'un point de vue technique</h3>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>
+		Requêtes SQL/SOAP/REST via un CRON like pour récupérer toutes les informations qui peuvent être utiles.
+	      </li>
+	      <li>
+		~ Trigger like sur Apogée pour signifier un changement sur une entité (étudiant) à l'applciation.
+	      </li>
+	      <li>
+		-> C'est l'application qui récupère ce dont elle a besoin (pull et pas push)
+	      </li>
+	      <li>
+		Requêtages / affichages en utilisant les données synchronisées en local (en base de données).
+	      </li>
+	    </ul>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>	
+	
+
+        <section>
+          <header>
+            <h2>Conclusion</h2>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>pas de solution utltime parfaite, suivant les besoins, les intégrations faible à forte ontt chacunes leurs avantages/inconvénients</li>
+	      <li>Faire simple mais souple</li>
+	      <li>Se rappeler que PC-SCOL, Apogée, applications esup, etc. ne sont chacune qu'une brique parmis d'autres</li>
+	      <li>-> une application de gestion de comptes intègre apogée, mais aussi harpege, ...</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>

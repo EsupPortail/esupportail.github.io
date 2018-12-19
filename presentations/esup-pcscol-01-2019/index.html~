@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Rencontre ESUP/PC-Scol</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+    <style type="text/css"> 
+      p.event-title {
+      font-size: 25%;
+      color: #800;
+      padding-top: 5cm;
+      }
+      </style>
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--<img src="./img/event-datelocation.png" alt="21 sept. 2016 @Paris" class="header-img upright">-->
+              <img src="./img/logo_univrouen.png" alt="Université de Rouen" class="header-img upright" style="max-height: 50px; padding-top: 15px;">
+              <p class="event-title">Rencontre ESUP/PC-Scol - 17 Janvier 2019</p>
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>WordPress</h2>
+            <ul class="presenters">
+              <li>Vincent Bonamy</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+	    <h2>WordPress</h2>
+            <h3 class="shadow">Plan</h3>
+          </header>
+          <div class="slide-content">
+            <ol>
+              <li>Origines et chiffres</li>
+	      <li>Communauté</li>
+              <li>Pièges</li>
+	      <li>Boutique en ligne de l'URN</li>
+	      <li>Choix des plugins</li>
+	      <li>Le code et les hooks</li>
+	      <li>Mises à jour</li>
+	      <li>Conclusion</li>
+            </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+	<section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Origines et chiffres</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+              <li>
+		... d'un point de vue technique à l'origine c'est Français, auteur : Michel Valdrighi
+	      </li>
+	      <li>
+		développement permettant de mettre en oeuvre un 'blog' librement
+	      </li>
+	      <li>
+		aujourd'hui (2018), application php/mysql en GPL qui est utilisée par 30% des sites web dans le monde, très (très) loin devant ses 'concurrents' (Joomla, Drupal).
+	      </li>
+	    </ul>
+	    Source <a href="https://fr.wikipedia.org/wiki/WordPress">wikipedia</a>.
+	  </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>
+
+
+	<section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">logiquement 1 grosse communauté</h3>
+          </header>
+          <div class="slide-content">
+	    30% des sites web !
+	    <ul>
+	      <li>
+		-> très grosse communauté
+	      </li>
+	      <li>
+		-> communauté très diversifiée
+	      </li>
+	      <li>
+		-> plus de <a href="https://wordpress.org/plugins">50.000 plugins référencés officiellement</a>
+	      </li>
+	      <li>
+		-> des centaines de sites, forums, livres, documentations, etc. sur wordpress ...
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>	
+
+        <section>
+	  <header>
+	    <h2>WordPress</h2>
+	    <h3 class="shadow">et donc plein de pièges à éviter</h3>
+	  </header>
+	  <div class="slide-content">
+	    <ul>
+	      <li>
+		des mauvais conseils, des questions/réponses non pertinentes, des 'mauvais' usages
+	      </li>
+	      <li>
+		des plugins qui ne passeront pas l'hiver, qui poseront problèmes à la première màj, qui sont buggués, 'mal' écrits
+	      </li>
+	      <li>
+		des sites dont le code a été patché 'en dur' pour faire vite ou par méconnaissance, 
+	      </li>
+	      <li>
+		...
+	      </li>
+	    </ul>
+	    Tout ça alors que WordPress est <b>évidemment</b> un super outil si on l'utilise 'comme il faut' !
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+	
+	
+	<section>
+          <header>
+            <h2>WordPress à l'Université de Rouen Normandie</h2>
+            <h3 class="shadow">Pour la réalisation de sa boutique en ligne</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>Objectifs : une boutique en ligne.
+	      </li>
+	      <li>Drupal Commerce écarté car semblant trop complexe 
+	      </li>
+	      <li>prestashop non connu à l'époque</li>
+	      <li>
+		Connaissance limitée de wordpress :
+		<ul>
+		  <li>Intuitif et facile à prendre en main via l'IHM</li>
+		  <li>Simple</li>
+		  <li>Mise à jour de sécurité automatique</li>
+		  <li>Bon support de sécurité pour des versions anciennes</li>
+		</ul>
+	      </li>
+	      <li><a href="https://fr.wordpress.org/plugins/woocommerce/">woocommerce</a> :
+		<ul>
+		  <li>
+		    1 <b>seul</b> plugin permettant de transformer wordpress en 1 boutique en ligne fonctionnelle
+		  </li>
+		  <li>
+		    -> 30% des sites de commerce en ligne !
+		  </li>
+	      </li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+	</section>	
+
+
+        <section>
+          <header>
+            <h2>WordPress à l'Université de Rouen Normandie</h2>
+            <h3 class="shadow">Choix des plugins (modules)</h3>
+          </header>
+          <div class="slide-content">
+	    <p>A choisir très méticuleusement</p>
+            <ul>
+	      <li>nombre d'étoiles, nbre d'utilisateurs, commentaires des utilisateurs</li>
+	      <li>dates de dernières mises à jour</li>
+	      <li>gratuits -> permet une installation / mise à jour rapidement (quitte à prendre une version payante finalement si besoin)</li>
+	      <li>on se restreint en nbre de plugins au mieux ; exemple, le plugin cas suffit pour l'authentification <b>et</b> l'identification (pas besoin de plugin ldap supplémentaire)</li>
+            </ul>
+	    -> mise en place de la boutique en 2016 == 11 plugins et un thème.
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+	
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>WordPress à l'Université de Rouen Normandie</h2>
+            <h3 class="shadow">quand il faut mettre les mains dans le cambouis</h3>
+          </header>
+          <div class="slide-content">
+	    <p>le site ainsi obtenu ne correspond pas à 100% à ce qui était attendu ... mais presque !</p>
+	    <p>Il faut alors</p>
+            <ul>
+	      <li>arriver à convaincre et montrer qu'on peut faire sans et adapater donc le besoin :-)</li>
+	      <li>modifier véritablement le comportement du site ... et donc de wordpress et des plugins utilisés !</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Le code !</h3>
+          </header>
+          <div class="slide-content">
+	    Documentations, forums, livres ... en fait le plus simple / rapide / efficace / sûr est de lire / comprendre le code (de wordpress <b>et</b> des plugins).
+            <ul>
+	      <li>Eclipse–php et xdebug pour tracer le code</li>
+	      <li>En prêtant une attention particulière sur les possibilités et mises en oeuvre des Hook :
+		<ul>
+		  <li>Filter</li>
+		  <li>Action</li>
+		</ul>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Modification de wordpress, plugins et thèmes</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Ne pas modifier le code en dur !!! <br/><i style="color:#aaa"> oui ça marche, mais à moyen/long terme, c'est une catastrophe</i></li>
+	      <li>Les hooks doivent/peuvent suffir <br/><i style="color:#aaa">oui, 'faire bien' prend plus de temps à très court terme</i></li>
+	      <li>Mise en place des hooks avec <a href="https://fr.wordpress.org/plugins/code-snippets/">Code snippets</a></li>
+	      <li>Au pire, mais à ne pas conseiller, ajout de scripts php 'surchargeants' les scripts initiaux dans un thème enfant ... mais ce sont ces modifications qui poseront de potentiels problèmes lors des mises à jour :-(</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>		
+
+
+        <!--///////////////////////////////////////////-->
+	
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Exemples de Hook</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Filtre : bewpi_placeholders dans le code de woocommerce-pdf-invoices.
+		<div class="code-area">
+		  <pre>
+		    
+		    ...
+  $placeholders = apply_filters('bewpi_placeholders', array(
+    '[payment_method]' => $this->order->payment_method_title,
+    '[shipping_method]' => $this->order->get_shipping_method()
+  ), $this->order->id);
+		    ...
+		    
+		  </pre>
+		</div>
+	      </li>
+	      <li>Action : wp_cassify_after_cas_authentication dans le code de wp-cassify
+		<div class="code-area">
+		  <pre>
+
+		    ...
+  // Define custom plugin hook after cas authentication.
+  // For example, for two factor authentication, you can plug another authentication plugin to fired custom action here.
+    do_action( 'wp_cassify_after_cas_authentication', $cas_user_datas );
+		    ...
+		    
+		  </pre>
+		</div>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+	
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Exemples de Hook</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Filtre : Remplacement du placeholder '[wcso_shipping_option]' par le point de retrait choisi dans les factures pdf.
+		<div class="code-area">
+		  <pre>
+		    
+  add_filter( 'bewpi_placeholders' , 'ur_custom_bewpi_placeholders', 10, 2);
+
+  function ur_custom_bewpi_placeholders( $placeholders, $orderId) {
+  
+    $placeholders['[wcso_shipping_option]'] = get_post_meta( $orderId, 'wcso_shipping_option', true );
+  
+    return $placeholders;
+  
+  }
+		  </pre>
+		</div>
+	      </li>
+	      <li>Action : Supprime le rôle admin des utilisateurs : le plugin CAS utilisé ne sait qu'ajouter des rôles (et ne les supprime jamais)
+		<div class="code-area">
+		  <pre>
+		    
+  add_action( 'wp_cassify_after_cas_authentication' , 'ur_wp_cassify_after_cas_authentication', 10 , 1);
+
+  function ur_wp_cassify_after_cas_authentication($cas_user_datas) {
+    $wp_user = get_user_by( 'login', $cas_user_datas[ 'cas_user_id' ] );
+    if ( $wp_user != false ) {
+      $wp_user->remove_role( 'administrator' );
+    }
+  }
+		  </pre>
+		</div>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">Hook Dans wordpress</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>Nombre de filtres et actions important dans wordpress (et plugins utilisés par notre site de boutique en ligne ici) :
+		<div class="code-area">
+		  <pre>
+
+		    fgrep -R do_action * | wc -l                                                                                                 
+		    -> 1920
+		    
+		    fgrep -R apply_filter * | wc -l
+		    -> 3947
+
+		  </pre>
+		</div>
+	      </li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>	
+
+	
+        <section>
+          <header>
+            <h2>WordPress</h2>
+            <h3 class="shadow">mises à jour ...</h3>
+          </header>
+          <div class="slide-content">
+	    <ol>
+	      <li>
+	    <ul>
+	      <li>Moins il y a de plugins,</li>
+	      <li>notamment de plugins 'exotiques',</li>
+	      <li>moins il y a de modifications d'effectuées,</li>
+	      <li>et plus il y a de chance que les mises à jour fonctionnent !</li>	      	      	      
+	    </ul>
+	      </li>
+	      <li>
+	    <ul>
+	      <li>
+		Les wordpress modifiés sans respecter le code, le fonctionnement des plugins (hook), construits sans réflexion technique, sont voués à poser problème à chaque tentative de mise à jour.
+	      </li>
+	      <li>un wordpress ainsi construit, et donc non mis à jour, a des chances de survie très limitées !
+	      </li>
+	    </ul>
+	    </ol>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Conclusion</h2>
+            <h3>WordPress</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>WordPress est un très bon outil.
+	      </li>
+	      <li>Notamment grâce à ses possibilités de 'hook' qui permettent le développement de plugins et leurs adaptations
+	      </li>
+	      <li>Le développement doit être fait en utilisant ces possibilités</li>
+	      <li>... ou alors, plutôt que de modifier le code en dur dans une logique de court terme, il vaudrait mieux envisager se passer d'une telle modification du code ...</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
