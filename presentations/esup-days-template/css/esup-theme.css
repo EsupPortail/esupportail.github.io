@@ -106,9 +106,10 @@ body,
   text-align: center;
 }
 .esup .really-important {
-  color:#e9294a;
   text-decoration: underline;
+  font-weight: 400;
 }
+.esup .really-important,
 .esup .important {
   color:#e9294a;
 }
@@ -132,7 +133,6 @@ body,
   padding-left: 0.15em; 
 }
 .esup ul li {
-  font-weight: normal;
   list-style-type: square;
 }
 .esup ul li li {
@@ -151,7 +151,7 @@ body,
 }
 
 .esup ol li {
-  font-weight: 700;
+  font-weight: 500;
 }
 .esup ol li ol li {
   font-weight: normal;
@@ -209,6 +209,7 @@ body,
 .esup section {
   background: #FFF;
   min-height: 650px;
+  font-weight: 300 !important;
 }
 .esup section img {
   border: none;
@@ -323,7 +324,7 @@ body,
 }
 
 .esup section.main-title header h1 img.event-title {
-  max-height: 180px; 
+  max-height: 140px; 
   margin: 85px auto;
   max-width: 420px;
 }
@@ -386,7 +387,6 @@ body,
   font-size: 0.7em;
   text-align: left;
   color: #BBB;
-  font-weight: lighter;
   margin: 0;
   line-height: 1.5em;
   padding: 0;
@@ -431,15 +431,15 @@ body,
   color: #1d71b8;
   padding: 0 0 5px 0;
   margin: 0;
-  font-size: 0.8em;
+  font-size: 0.9em;
   text-transform: uppercase;
   font-weight: normal;
 }
 .esup.lighter section h3 {
   color: #BBB;
-  padding: 5px 0 25px 0;
+  padding: 5px 0 0 0;
   background: none;
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: 0;
 }
 .esup.lighter section.divider h3 {
@@ -451,7 +451,7 @@ body,
   font-size: 1.4em;
 }
 .esup section header {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
 .esup section .bubble {
@@ -496,4 +496,38 @@ body,
   font-size: 0.9em;
   background: #222;
   color: #FFF;
+}
+
+.esup section .text.normal {
+  font-size: 1em;
+}
+
+.esup section .text.smallest {
+  font-size: 0.5em;
+}
+.esup section .text.evensmaller {
+  font-size: 0.7em;
+}
+.esup section .text.smaller {
+  font-size: 0.8em;
+}
+.esup section .text.small {
+  font-size: 0.9em;
+}
+.esup section .text.large {
+  font-size: 1.1em;
+}
+.esup section .text.larger {
+  font-size: 1.2em;
+}
+.esup section .text.evenlarger {
+  font-size: 1.3em;
+}
+.esup section .text.largest {
+  font-size: 1.5em;
+}
+.esup hr {
+  width: 30%;
+  border: thin solid #ddd;
+  margin-left: 0;
 }
