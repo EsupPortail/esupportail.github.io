@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+<head>
+  <meta charset="utf-8">
+
+  <title>ESUP-APEREO uPortal Winter Summit  2019</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+  <link rel="stylesheet" href="css/esup-theme.css">
+
+  <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  <style type="text/css">
+    p.event-title {
+      font-size: 25%;
+      color: #800;
+      padding-top: 5cm;
+    }
+  </style>
+</head>
+
+<body>
+<!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+<div class="reveal esup lighter">
+
+  <div class="slides">
+
+    <section class="main-title">
+      <header>
+        <h1>
+          <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+          <img src="./img/logo-apereo.png" alt="APEREO" class="header-img upright" style="max-height:
+              50px; padding-top: 15px;">
+          <p class="event-title">uPortal Winter Summit France 2019</p>
+        </h1>
+      </header>
+      <div class="presentation-title">
+        <div class="line-divider"></div>
+        <ul>
+          <li><a href="#/up-uportal">Jan. 29 am- Présentation uPortal 5.4.x</a></li>
+          <li><a href="#/up-wc">Jan. 29 pm- Présentation uPortal Web-Components</a></li>
+          <li>Jan. 30 am- Ouverture à l'accessibilité - L'accessibilité une nécessité avant d'être une obligation.</li>
+          <li>Jan. 30 pm- Appartenir à une communauté et contribuer.</li>
+          <li>Jan. 31 am- Présentation uPortal Soffits</li>
+          <li>Jan. 31 pm- Sujets libres</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="up-uportal" class="main-title">
+      <header>
+        <h1>
+          <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+          <img src="./img/logo-apereo.png" alt="APEREO" class="header-img upright" style="max-height:
+              50px; padding-top: 15px;">
+          <p class="event-title">uPortal Winter Summit France 2019</p>
+        </h1>
+      </header>
+      <div class="presentation-title">
+        <div class="line-divider"></div>
+        <h2>Présentation uPortal 5.4.x</h2>
+        <ul class="presenters">
+          <li>Julien Gribonvald</li>
+        </ul>
+        <ul class="institutions">
+          <li>GIP RECIA</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2 class="shadow">Plan</h2>
+      </header>
+      <div class="slide-content">
+        <ol>
+          <li>Nouveautés</li>
+          <ul>
+            <li>Quelques rappels</li>
+            <li>L'API</li>
+            <li>Les soffits</li>
+            <li>UI et web-components</li>
+          </ul>
+          <li>Atelier Déploiement</li>
+          <li>Moment d'échanges</li>
+        </ol>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <section>
+        <header>
+          <h2>Nouveautés</h2>
+          <h3 class="shadow">Quelques rappels</h3>
+        </header>
+        <div class="slide-content">
+          <p><a
+                  href="https://www.esup-portail.org/wiki/download/attachments/611713095/05-ed25_ap18--uPortal5_the_path_forward.pdf?version=1&modificationDate=1518189649000&api=v2"
+                  target="_blank">Cf présentation Drew Wills ESUP-Days 25 !</a>
+          <p>
+          <ul>
+            <li>uPortal-start un client pour configurer/déployer facilement et rapidement !</li>
+            <li>UI améliorée et RWD</li>
+            <li>Accessibilité: implémente le  WCAG 2.0 Level AA</li>
+            <li>multi-tenants</li>
+            <li>Documentation en Français</li>
+            <li>Gradle</li>
+            <li>docker</li>
+          </ul>
+          <p><a href="https://github.com/Jasig/uPortal/releases" target="_blank">Sinon pour les détails !</a></p>
+        </div>
+        <footer>
+          <img src="./img/communaute.png" alt="">
+        </footer>
+      </section>
+
+      <section>
+        <header>
+          <h2>Nouveautés</h2>
+          <h3 class="shadow">l'API</h3>
+        </header>
+        <div class="slide-content">
+          <p>
+            Évolution de l'API pour les nouveaux besoins
+          <ul>
+            <li><a href="https://github.com/Jasig/uPortal/pull/1162" target="_blank">api REST sécurisée par OIDC (OpenID Connect)</a>
+              -> évite de devoir déployer son propre service OIDC (ou autre)</li>
+            <li><a href="https://github.com/Jasig/uPortal/pull/1441" target="_blank">session-less depuis peu</a></li>
+            <li><a href="https://github.com/Jasig/uPortal/pull/1503" target="_blank">bientôt sécure server-to-server</a></li>
+          </ul>
+          </p>
+          <p><a href="https://jasig.github.io/uPortal/fr/developper/other/API.html" target="_blank">Activer Swagger
+            en test !</a></p>
+        </div>
+        <footer>
+          <img src="./img/communaute.png" alt="">
+        </footer>
+      </section>
+
+      <section>
+        <header>
+          <h2>Nouveautés</h2>
+          <h3 class="shadow">les Soffits</h3>
+        </header>
+        <div class="slide-content">
+          <p>RDV demain (le 30/01) matin pour plus de détails !</p>
+          <br/>
+          <p>Permet de migrer rapidement les portlets suite à l'abandon du support de la norme portlet par Spring
+            Framework à partir de la v5 !
+          </p>
+        </div>
+        <footer>
+          <img src="./img/communaute.png" alt="">
+        </footer>
+      </section>
+
+      <section>
+        <header>
+          <h2>Nouveautés</h2>
+          <h3 class="shadow">UI et web-components</h3>
+        </header>
+        <div class="slide-content">
+          <p>Toutes les régions et leur contenu sont configurables/définissables => À vos uPortal-datas !</p>
+          <br/>
+          <p>web-components: RDV cet après-midi (le 29/01) pour plus de détails !</p>
+        </div>
+        <footer>
+          <img src="./img/communaute.png" alt="">
+        </footer>
+      </section>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2>Atelier Déploiement</h2>
+      </header>
+      <div class="slide-content">
+             <pre>
+               <code>
+                 $ git clone https://github.com/Jasig/uPortal-start.git
+                 $ cd uPortal-start
+                 
+                 $ export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+                 $ ./gradlew tasks
+                 
+                 $ cp build.properties.sample build.properties
+                 # edit build.properties
+
+                 $ ./gradlew hsqlStart
+                 $ ./gradlew portalInit
+                 $ ./gradlew tomcatStart
+                 # aller à  http://localhost:8080/uPortal/ et lire https://github.com/Jasig/uPortal-start/blob/master/LISEZMOI.md#premier-lancement-duportal-via-uportal-start
+               </code>
+             </pre>
+        <p>Pour le reste il y a les documentations <a href="https://github.com/Jasig/uPortal-start/blob/master/LISEZMOI.md"
+                                                      target="_blank">uPortal-Start</a>
+          <a href="" target="_blank">https://jasig.github.io/uPortal/fr</a> ou les mailing-list !</p>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2>Moment d'échanges</h2>
+      </header>
+      <div class="slide-content">
+        <p>Questions/réponses</p>
+        <br/>
+        <p>Recensement des travaux en cours</p>
+        <br/>
+        <p>Recensement des besoins</p>
+        <br/>
+        <p>Autres sujets</p>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+
+    <section id="up-wc" class="main-title">
+      <header>
+        <h1>
+          <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+          <img src="./img/logo-apereo.png" alt="APEREO" class="header-img upright" style="max-height:
+              50px; padding-top: 15px;">
+          <p class="event-title">uPortal Winter Summit France 2019</p>
+        </h1>
+      </header>
+      <div class="presentation-title">
+        <div class="line-divider"></div>
+        <h2>Présentation uPortal Web-Components</h2>
+        <ul class="presenters">
+          <li>Julien Gribonvald</li>
+          <li>Christian Cousquer</li>
+        </ul>
+        <ul class="institutions">
+          <li>GIP RECIA</li>
+          <li>Université Sorbonne</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2 class="shadow">Plan</h2>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Qu'es aquo ?</li>
+          <li>Comment faire ?</li>
+          <ul>
+            <li>À chacun sa façon de faire</li>
+            <li>Quelques références</li>
+          </ul>
+          <li>Atelier Développement ?</li>
+          <li>Moment d'échanges</li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+
+    <section>
+      <header>
+        <h2>Qu'es aquo ?</h2>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li><a href="https://developer.mozilla.org/fr/docs/Web/Web_Components" target="_blank">Définiton selon
+            MDN</a></li>
+          <li><a href="https://www.webcomponents.org/introduction" target="_blank">Définiton selon webcomponents.org</a></li>
+          <li><p>4 fonctionnalités: Custom Elements <a
+                  href="https://caniuse.com/#feat=custom-elementsv1" target="_blank">(compatibilité)</a>, Shadow DOM  <a
+                  href="https://caniuse.com/#feat=shadowdomv1" target="_blank">(compatibilité)</a>, HTML templates <a
+                  href="https://caniuse.com/#feat=template" target="_blank">(compatibilité)</a>, HTML imports <a
+                  href="https://caniuse.com/#feat=imports" target="_blank">(compatibilité)</a></p></li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+    <section>
+      <header>
+        <h2>Qu'es aquo ?</h2>
+        <h3>Ce qui est a retenir</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Compatibles nouveaux navigateurs ou via des polyfill (intégrés dans uPortal)</li>
+          <li>Bien plus rapide que les portlets à développer</li>
+          <li>Facilement intégrables/transportables (webjars)</li>
+          <li>Retenir principalement Custom Elements et Shadow DOM</li>
+          <li>Faire attention à la taille des composants (dépendences)</li>
+          <li>Utilisation de webpack et babel recommandée</li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+
+    <section>
+      <header>
+        <h2>Comment faire ?</h2>
+        <h3>À chacun sa façon de faire</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>pur javascript (Christian Cousquer)</li>
+          <li>VueJS* (Julien Gribonvald)</li>
+          <li>PReact*</li>
+          <li>React</li>
+          <li>HyperHTML</li>
+          <li>Polymer*</li>
+          <li>Angular</li>
+          <li>Svelte</li>
+          <li>et bien d'autres</li>
+        </ul>
+        <br/>
+        <a href="https://uportal-contrib.github.io/uPortal-web-components/en/" target="_blank">Documentation
+          uPortal-contrib</a>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Comment faire ?</h2>
+        <h3>Quelques références</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li><a href="https://www.webcomponents.org/" target="_blank">webcomponents.org</a></li>
+          <li><a href="https://uportal-contrib.github.io/uPortal-web-components/en/" target="_blank">Documentations et
+            démos de Web-Components dans uPortal-contrib/uPortal-web-components</a></li>
+          <li><a href="http://prigaux.github.io/presentation-web-components/" target="_blank">Présentation
+            Pascal Rigaux G-Dev septembre 2018</a> </li>
+          <li><a href="https://github.com/topics/web-components" target="_blank">web-components taggés sur github</a></li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Atelier Développement</h2>
+      </header>
+      <div class="slide-content">
+        <a href="https://uportal-contrib.github.io/uPortal-web-components/en/developer/SETUP.html"
+           target="_blank">Documentation uPortal-contrib</a>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2>Moment d'échanges</h2>
+      </header>
+      <div class="slide-content">
+        <p>Questions/réponses</p>
+        <br/>
+        <p>Autres sujets ?</p>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+
+  </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+
+<script>
+
+  Reveal.initialize({
+    margin: 0,
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    theme: 'simple', // available themes are in /css/theme
+    transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+    dependencies: [
+      // Cross-browser element.classList (esp needed on safari 4.0.5)
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+      // Syntax highlight for <pre> elements
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+    ],
+  });
+
+  function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+    var node = container.querySelector( '.' + classname );
+    if( !node ) {
+      node = document.createElement( tagname );
+      node.classList.add( classname );
+      if( innerHTML !== null ) {
+        node.innerHTML = innerHTML;
+      }
+      container.appendChild( node );
+    }
+    return node;
+
+  }
+
+  // From https://github.com/hakimel/reveal.js/pull/56
+  function slidenumber(event){
+    var current_slide = 0;
+
+    var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+    for (var i = 0; i < event.indexh; i++) {
+      // get subslides
+      var subslides = horizontal_slides[i].querySelectorAll('section');
+
+      // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+      current_slide += (subslides.length === 0) ? 1 : subslides.length;
+    }
+
+    current_slide += event.indexv+1;
+    return current_slide.toString();
+  }
+
+  function setSlideNb(event) {
+    var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+    dom.innerHTML = event.indexh ? event.indexh : '';
+  }
+
+  Reveal.addEventListener('slidechanged', setSlideNb);
+  Reveal.addEventListener('ready', setSlideNb);
+
+</script>
+
+</body>
+</html>
