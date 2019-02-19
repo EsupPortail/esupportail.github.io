@@ -49,7 +49,7 @@
           <li><a href="#/up-wc">Jan. 29 pm- Présentation uPortal Web-Components</a></li>
           <li>Jan. 30 am- Ouverture à l'accessibilité - L'accessibilité une nécessité avant d'être une obligation.</li>
           <li>Jan. 30 pm- Appartenir à une communauté et contribuer.</li>
-          <li>Jan. 31 am- Présentation uPortal Soffits</li>
+          <li><a href="#/up-soffits">Jan. 31 am- Présentation uPortal Soffits</a></li>
           <li>Jan. 31 pm- Sujets libres</li>
         </ul>
       </div>
@@ -381,6 +381,325 @@
         <img src="./img/communaute.png" alt="">
       </footer>
     </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2>Moment d'échanges</h2>
+      </header>
+      <div class="slide-content">
+        <p>Questions/réponses</p>
+        <br/>
+        <p>Autres sujets ?</p>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+
+
+
+
+
+
+
+    <section id="up-soffits" class="main-title">
+      <header>
+        <h1>
+          <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+          <img src="./img/logo-apereo.png" alt="APEREO" class="header-img upright" style="max-height:
+              50px; padding-top: 15px;">
+          <p class="event-title">uPortal Winter Summit France 2019</p>
+        </h1>
+      </header>
+      <div class="presentation-title">
+        <div class="line-divider"></div>
+        <h2>Présentation uPortal Soffits</h2>
+        <ul class="institutions">
+          <li>Université Polytechnique Hauts-de-France</li>
+        </ul>
+      </div>
+    </section>
+
+    <!--///////////////////////////////////////////-->
+    <section>
+      <header>
+        <h2 class="shadow">Plan</h2>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Pourquoi les soffits</li>
+          <li>Créer une soffit</li>
+          <ul>
+            <li>Création du projet</li>
+            <li>Configuration</li>
+            <li>Compilation - test</li>
+            <li>Exemple</li>
+            <li>Sécurisation</li>
+          </ul>
+          <li>Retour d'expérience</li>
+          <li>Moment d'échanges</li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+
+    <section>
+      <header>
+        <h2>Pourquoi les soffits</h2>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Spring 5: Abandon de l'API Portlet</li>
+          <li>Solutions:</li>
+          <ul>
+            <li>Soffits</li>
+            <li>Systèmes sécurisés utilisant des technos récentes (JWT, etc...)</li>
+            <li>Web-components</li>
+          </ul>
+          <li><a href="https://jasig.github.io/uPortal/developer/soffits/" target="_blank">documentation</a></li>
+          <li>Sécurisation des échanges entre le client, l'API REST et uPortal</li>
+          <ul>
+            <li>Plusieurs solutions mais la Soffit est la solution une simplifiée/rapide</li>
+          </ul>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Création du projet</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li><a href="https://jasig.github.io/uPortal/developer/soffits/" target="_blank">en
+            suivant la documentation</a></li>
+          <li>Utilisation de spring boot</li>
+          <li>Utilisation de gradle</li>
+          <li>Utilisation de l'outil spring initializer : http://start.spring.io/</li>
+          <ul>
+            <li>Gradle projet</li>
+            <li>packaging war</li>
+            <li>Dependencies : Sélection dans le search ou dans la liste</li>
+            <ul>
+              <li>Web</li>
+              <li>Cache</li>
+              <li>…</li>
+            </ul>
+            <li>Infos :</li>
+            <ul>
+              <li>Group : fr.esupportail</li>
+              <li>Artifact : zimbra</li>
+              <li>Name : zimbra</li>
+              <li>Description : …</li>
+            </ul>
+          </ul>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Configurations</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Dépendances</li>
+          <ul>
+            <li>Uportal-soffit-renderer</li>
+            <ul>
+              <li>ATTENTION : utiliser la version de uPortal installée</li>
+            </ul>
+          </ul>
+          <li>Code java</li>
+          <ul>
+            <li>Ajouter l'annotation @SoffitApplication dans la classe principale de l'application</li>
+            <li>Créer le répertoire</li>
+            <ul>
+              <li>src/main/webapp/WEB-INF/soffit</li>
+              <li>Créer les sous répertoires qui contiendront les soffits (ZimbraMail, ZimbraIcone, ZimbraCalendar, ...)</li>
+            </ul>
+          </ul>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Configurations</h3>
+      </header>
+      <div class="slide-content">
+        <img src="./img/soffits_1.jpg" alt="">
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Compilation - test</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Compiler le projet</li>
+          <ul>
+            <li>./gradlew assemble</li>
+          </ul>
+          <li>Déployer le projet dans un tomcat</li>
+          <li>Ajouter les soffits dans uPortal (portlet-definition)</li>
+        </ul>
+        <br>
+        <img src="./img/soffits_2.jpg" alt="">
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Exemple 1/2 (zimbra)</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Utilisation de jsonp pour récupérer un token zimbra depuis auth-zcs</li>
+          <li>Utilisation des services REST proposés par Zimbra pour récupérer les mail et l'agenda</li>
+          <li>Création de services REST dans la soffit pour interroger les services REST de Zimbra</li>
+          <li>Utilisation des configurations externes pour récupérer les adresses des serveurs de messagerie</li>
+          <ul>
+            <li>Le fichier de conf n'est pas l'application.properties par défaut.</li>
+            <li>Utilisation des mécanismes introduit dans uPortal 5,0 avec déport des fichiers de conf (utilisation des
+              annotations dans les classes directement @PropertySource et @ConfigurationProperties)</li>
+          </ul>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Exemple 2/2 (zimbra)</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Mécanisme</li>
+          <ul>
+            <li>Le views.jsp configure et lance le js</li>
+            <li>Le js appelle l'api REST de la soffit qui permet de récupérer un token zimbra avec un appel jsonp</li>
+            <li>L'api REST récupère le bon service de récupération de token en fonction du statut de l'utilisateur
+              connecté.</li>
+            <li>Le js récupère un token pour l'utilisateur sur la bonne adresse en jsonp</li>
+            <li>Le js appelle l'api REST de la soffit qui permet de récupérer les mails non lus dans inbox en utilisant
+              le token récupéré à l'étape précédente</li>
+            <li>L'api REST appelle le service REST proposé par Zimbra</li>
+            <li>Le js traite les informations récupérées pour l'affichage</li>
+          </ul>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Créer une soffit</h2>
+        <h3>Sécurisation</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li><a href="https://jasig.github.io/uPortal/developer/soffits/securing_apis.html" target="_blank">Ajouter la classe SecurityConfiguration</a></li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Retour d'expérience</h2>
+        <h3>1/2</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Soffit développée ou en cours de dev</li>
+          <ul>
+            <li>Zimbra</li>
+            <ul>
+              <li>Derniers mails, agenda, lien direct vers le bon serveur de mail</li>
+            </ul>
+            <li>Sympa</li>
+            <ul>
+              <li>Liste des listes auxquelles l'utilisateur est abonné sur différents robots</li>
+            </ul>
+            <li>Actus depuis un flux sécurisé</li>
+            <li>Recherche sur ISTEX</li>
+            <li>Récupération de la dernière mise à jour de la fiche chercheur</li>
+            <ul>
+              <li>à partir des informations d'un outil interne : SIR</li>
+            </ul>
+          </ul>
+          <li>En réflexion : annuaire (pour remplacer ContactPortlet et gérer un annuaire interne et externe)</li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
+    <section>
+      <header>
+        <h2>Retour d'expérience</h2>
+        <h3>2/2</h3>
+      </header>
+      <div class="slide-content">
+        <ul>
+          <li>Remplacement simple de petites portlets ou CMS</li>
+          <ul>
+            <li>Affichage de flux RSS sécurisé, l'affichage se fait toujours correctement contrairement à
+              l'utilisation de la CMS qui ne passe toujours correctement l'authentification et ne récupère pas
+              toujours bien les flux</li>
+          </ul>
+          <li>Problème lors de la mise à jour de uPortal, il faut mettre à jour la version de l'API SOFFIT dans chacune d'elle</li>
+          <ul>
+            <li>Ce ne sera plus un problème lorsque le portail sera en prod (sauf en cas de mise à jour), mais en
+              phase de test c'est assez fastidieux</li>
+          </ul>
+          <li>Sécurisation : Test sur la soffit sympa</li>
+          <ul>
+            <li>Pb de cross domain pour récupérer les informations du service REST développé coté soffit si on ne
+              veut pas récupérer le mail dans le bearer depuis la jsp</li>
+          </ul>
+          <li>Manque de doc et d'exemples concrets, avec sécurisation, etc.</li>
+        </ul>
+      </div>
+      <footer>
+        <img src="./img/communaute.png" alt="">
+      </footer>
+    </section>
+
 
     <!--///////////////////////////////////////////-->
     <section>
