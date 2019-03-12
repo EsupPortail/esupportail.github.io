@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Atelier GED - Esup-Signature - Mars 2019</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+	    <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+            <h1 style="color:#800;font-weight: bold;font-size: 1.6em;background: transparent;text-transform: uppercase;">
+	      Esup-Signature
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Atelier GED - Mars 2019</h2>
+            <ul class="presenters">
+              <li>David Lemaignent</li>
+              <li>Vincent Bonamy</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+	      <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Plan de la présentation</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Expression du besoin</li>
+	      <li>Objectifs et moyens</li>
+	      <li>Démonstration</li>
+	      <li>Présentation technique</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2>Besoin initial</h2>
+	    <h3 class="shadow">à l'université de Rouen Normandie</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li><span class="really-important">Dématérialiser les parapheurs<span></li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>	
+
+        <!--///////////////////////////////////////////-->
+
+	
+        <section>
+          <header>
+            <h2>Besoin contestualisé</h2>
+	    <h3 class="shadow">Constats</h3>
+          </header>
+          <div class="slide-content">
+            <ul>
+	      <li>La signature des documents nous contraint au papier.</li>
+	      <li>Pas de 'GED' à l'université de Rouen Normandie mais des outils multiples : <br/> mail, homedirs, groupdirs, intranet, drive, ...</li>
+	      <li>Les procédures sont variables et indéfinies informatiquement parlant.</li>
+	      <li>La souplesse de la gestion par un humain est parfois un plus.</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+        <section>
+          <header>
+            <h2>Expression du Besoin</h2>
+	    <h3 class="shadow">Dématérialiser sans tout remettre en cause</h3>
+          </header>
+          <div class="slide-content">
+	    Le besoin est donc :
+	    <ul>
+	      <li>de dématérialiser la signature,</li>
+	      <li>pour s'intégrer dans les façons de faire actuelles,</li>
+	      <li>cad sans remise en cause fonctionnelle,</li>
+	      <li>et donc sans embarquer dans ce projet, par cascades, la problématique complète de GED ... et typage des documents, informatisation des worlfows, etc. ...</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+        <section>
+          <header>
+            <h2>Objectifs et moyens</h2>
+	    <h3 class="shadow"></h3>
+          </header>
+          <div class="slide-content">
+	    Proposer une application permettant 
+	    <ul>
+	      <li>de signer ou faire signer un/des document(s),</li>
+	      <li>de manière très simple et souple,</li>
+	      <li>ou/et en s'intégratn à un service institutionnel existant</li>
+	    </ul>
+	  </div>
+	  <div class="slide-content">
+	    Une mutualisation au niveau ESR est opportune, car outils et procédures communs :
+	    <ul>
+	      <li>fédération d'identités,</li>
+	      <li>ldap/supann,</li>
+	      <li>tcs/digicert via Renater,</li>
+	      <li><a href="https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/DSS">Digital Signature Services</a></li>
+	      <li>...</li>
+	    </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+
+
+        <section>
+          <header>
+            <h2>Objectifs et moyens</h2>
+	    <h3 class="shadow">esup-signature</h3>
+          </header>
+          <div class="slide-content">
+	    <ul>
+	      <li>projet libre ESUP,</li>
+	      <li>ouvert à la <span class="really-important">co-construction</span>,</li>
+	      <li>avec dès maintenant un site de démonstration !</li>
+	    </ul>
+	  </div>
+	  -> page officielle d'esup-signature :<br/>
+	  <a href="https://www.esup-portail.org/wiki/display/SIGN">https://www.esup-portail.org/wiki/display/SIGN</a>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>			
+
+	<section>
+	  <header>
+	    <h2>Démo</h2>
+	    <h3 class="shadow">Démo</h3>
+	  </header>
+	  <div class="slide-content">
+	    <p>Démonstration avec <a href="https://esup-signature-demo.univ-rouen.fr">esup-signature-demo.univ-rouen.fr</a> !
+	    </p>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+
+	<section>
+	  <header>
+	    <h2>Présentation technique</h2>
+	    <h3 class="shadow"></h3>
+	  </header>
+	  <div class="slide-content">
+	    ...
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>	
+	
+
+
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
