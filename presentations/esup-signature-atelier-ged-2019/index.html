@@ -75,7 +75,12 @@
           </header>
           <div class="slide-content">
             <ul>
-              <li><span class="really-important">Dématérialiser les parapheurs<span></li>
+              <li><span class="really-important">Dématérialiser les parapheurs<span> à l'aide d'un outil qui propose :</li>
+		<ul>
+		<li>La signature de PDF avec ou sans certificat</li>
+		<li>L'import de documents par différents canaux : file system, GED ...</li>
+		<li>Des mécanismes permettant de "reproduire" les workflows de signature</li>
+		</ul>
             </ul>
           </div>
           <footer>
@@ -88,7 +93,7 @@
 	
         <section>
           <header>
-            <h2>Besoin contestualisé</h2>
+            <h2>Besoin contextualisé</h2>
 	    <h3 class="shadow">Constats</h3>
           </header>
           <div class="slide-content">
@@ -115,7 +120,7 @@
 	    Le besoin est donc :
 	    <ul>
 	      <li>de dématérialiser la signature,</li>
-	      <li>pour s'intégrer dans les façons de faire actuelles,</li>
+	      <li>pour intégrer les façons de faire actuelles,</li>
 	      <li>cad sans remise en cause fonctionnelle,</li>
 	      <li>et donc sans embarquer dans ce projet, par cascades, la problématique complète de GED ... et typage des documents, informatisation des worlfows, etc. ...</li>
 	    </ul>
@@ -130,24 +135,29 @@
         <section>
           <header>
             <h2>Objectifs et moyens</h2>
-	    <h3 class="shadow"></h3>
+	    	<h3 class="shadow"></h3>
           </header>
-          <div class="slide-content">
-	    Proposer une application permettant 
+        <div class="slide-content">
+        <ul>
+	    <li>Proposer une application permettant</li>
 	    <ul>
 	      <li>de signer ou faire signer un/des document(s),</li>
 	      <li>de manière très simple et souple,</li>
-	      <li>ou/et en s'intégratn à un service institutionnel existant</li>
+	      <li>ou/et en s'intégrant à un service institutionnel existant</li>
+	    </ul>
 	    </ul>
 	  </div>
 	  <div class="slide-content">
-	    Une mutualisation au niveau ESR est opportune, car outils et procédures communs :
+	  <ul>
+	    <li>Une mutualisation au niveau ESR est opportune, car outils et procédures communs :</li>
 	    <ul>
 	      <li>fédération d'identités,</li>
+	      <li>authentification cas/Shibboleth,</li>
 	      <li>ldap/supann,</li>
 	      <li>tcs/digicert via Renater,</li>
-	      <li><a href="https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/DSS">Digital Signature Services</a></li>
+	      <li><a href="https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/DSS" target="_blank">Digital Signature Services</a></li>
 	      <li>...</li>
+	    </ul>
 	    </ul>
           </div>
           <footer>
@@ -170,7 +180,7 @@
 	    </ul>
 	  </div>
 	  -> page officielle d'esup-signature :<br/>
-	  <a href="https://www.esup-portail.org/wiki/display/SIGN">https://www.esup-portail.org/wiki/display/SIGN</a>
+	  <a href="https://www.esup-portail.org/wiki/display/SIGN" target="_blank">https://www.esup-portail.org/wiki/display/SIGN</a>
           <footer>
             <img src="./img/communaute.png" alt="">
           </footer>
@@ -182,7 +192,7 @@
 	    <h3 class="shadow">Démo</h3>
 	  </header>
 	  <div class="slide-content">
-	    <p>Démonstration avec <a href="https://esup-signature-demo.univ-rouen.fr">esup-signature-demo.univ-rouen.fr</a> !
+	    <p>Démonstration avec <a href="https://esup-signature-demo.univ-rouen.fr" target="_blank">esup-signature-demo.univ-rouen.fr</a> !
 	    </p>
 	  </div>
 	  <footer>
@@ -190,6 +200,81 @@
 	  </footer>
 	</section>
 
+	<section>
+	  <header>
+	    <h2>Création d'un certificat sur la plateforme digicert</h2>
+	    <h3 class="shadow">Vidéo</h3>
+	  </header>
+	  <div class="slide-content">
+	    <video controls width="1000">
+	    <source src="./videos/esupdemcert.mp4"
+            type="video/mp4">
+
+    		Sorry, your browser doesn't support embedded videos.
+		</video>
+	    </p>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+	<section>
+	  <header>
+	    <h2>Première connexion</h2>
+	    <h3 class="shadow">Vidéo</h3>
+	  </header>
+	  <div class="slide-content">
+	    <video controls width="1000">
+	    <source src="./videos/esupdeminit.mp4"
+            type="video/mp4">
+
+    		Sorry, your browser doesn't support embedded videos.
+		</video>
+	    </p>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+	<section>
+	  <header>
+	    <h2>Signature d'un document</h2>
+	    <h3 class="shadow">Vidéo</h3>
+	  </header>
+	  <div class="slide-content">
+	    <video controls width="1000">
+	    <source src="./videos/esupdemsign.mp4"
+            type="video/mp4">
+
+    		Sorry, your browser doesn't support embedded videos.
+		</video>
+	    </p>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
+
+	<section>
+	  <header>
+	    <h2>Validation Acrobat Reader</h2>
+	    <h3 class="shadow">Vidéo</h3>
+	  </header>
+	  <div class="slide-content">
+	    <video controls width="1000">
+	    <source src="./videos/esupdemacrobat.mp4"
+            type="video/mp4">
+
+    		Sorry, your browser doesn't support embedded videos.
+		</video>
+	    </p>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>
 
 	<section>
 	  <header>
@@ -197,14 +282,103 @@
 	    <h3 class="shadow"></h3>
 	  </header>
 	  <div class="slide-content">
-	    ...
+		<ul>
+		<li>Java, Spring 5</li>
+		<li>Digital Signature Service 5.4 (service de signature et de validation)</li>
+			<ul><li><a href="https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/DSS" target="_blank">https://ec.europa.eu/cefdigital/wiki/display/CEFDIGITAL/DSS</a></li></ul>
+		<li>PDFBox 2.0.14 (convertion PDF/A, apposition d'image, ... )</li>
+			<li>Types de signatures gérés</li>
+			<ul>
+			<li>PAdES : signature de PDF avec certificat (type Acrobat Reader)</li>
+			<li>CAdES : signature avec certificat, le document est encapsulé avec la signature (format ASiC)</li>
+			<li>PAdES/CADES via NexU : permet l'utilisation d'un certificat materiel via une application cliente
+			voir : <a href="http://nowina.lu/solutions/java-less-browser-signing-nexu/" target="_blank">http://nowina.lu/solutions/java-less-browser-signing-nexu/</a>
+			</li>
+			
+			<li>Apposition d'une image de la signature dans un PDF (sans certificat)</li>
+			<li>Validation simple (confirmation de lecture)</li>
+			</ul>
+		</ul>
 	  </div>
 	  <footer>
 	    <img src="./img/communaute.png" alt="">
 	  </footer>
 	</section>	
-	
 
+	<section>
+	  <header>
+	    <h2>Présentation technique</h2>
+	    <h3 class="shadow">Fonctionalités et limites</h3>
+	  </header>
+	  <div class="slide-content">
+		<ul>
+		<li>Import de documents depuis différentes sources</li>
+		<li>Des parapheurs qui permettent :</li>
+			<ul>
+			<li>La signature en parallèle (un document dans plusieurs parapheurs)</li>
+			<li>Des modèles de document (type de signature et position pré-configurés)</li>
+			<li>Les documents vont de parapheurs en parapheurs</li>
+			</ul>
+		<li>Mais Esup-Signature :</li>
+		<ul>
+			<li>ne gère pas de workflow</li>
+			<li>n'est pas une GED, les documents ne font que transiter</li>
+			<li>ne permet pas de remplir en ligne un document</li>
+			</ul>
+		</ul>
+	  </div>
+	  <footer>
+	    <img src="./img/communaute.png" alt="">
+	  </footer>
+	</section>	
+
+	<section>
+	  <header>
+	    <h2>Eco système</h2>
+	    <h3 class="shadow"></h3>
+	  </header>
+	  <div class="slide-content">
+	    <img src="./img/mutualisation.png" alt="">
+	  </div>
+	  <footer>
+	  </footer>
+	</section>	
+	
+	<section>
+	  <header>
+	    <h2>Cycle de vie de la demande</h2>
+	    <h3 class="shadow"></h3>
+	  </header>
+	  <div class="slide-content">
+	    <img src="./img/cycle.png" alt="">
+	  </div>
+	  <footer>
+	  </footer>
+	</section>	
+
+	<section>
+	  <header>
+	    <h2>Entités</h2>
+	    <h3 class="shadow"></h3>
+	  </header>
+	  <div class="slide-content">
+	    <img src="./img/entities.png" alt="">
+	  </div>
+	  <footer>
+	  </footer>
+	</section>	
+
+	<section>
+	  <header>
+	    <h2>Entrées/Sortie des documents</h2>
+	    <h3 class="shadow"></h3>
+	  </header>
+	  <div class="slide-content">
+	    <img src="./img/signature_IO.png" alt="">
+	  </div>
+	  <footer>
+	  </footer>
+	</section>	
 
       </div>
     </div>
