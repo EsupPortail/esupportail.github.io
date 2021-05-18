@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://esupportail.github.io/presentations/esup-days-template/#/ -->
+<html lang="fr">
+<!-- version 1.0 -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Présentation ESUP-OTP</title>
+    <link href="./css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/simple.css" id="theme">
+    <link rel="stylesheet" href="./css/esup-theme.css">
+    <link rel="stylesheet" href="./css/default.min.css">
+</head>
+
+<body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup linear center" data-transition-speed="default" data-background-transition="default">
+        <div class="slides" style="width: 960px; height: 700px; zoom: 1;">
+            <section class="main-title present" style="top: -346px; display: block;">
+                <header>
+                    <h1>
+              <img src="./img/event-title.png" alt="Open Apereo 2021">
+            </h1>
+                </header>
+                <div class="presentation-title">
+                    <div class="line-divider"></div>
+                    <h2>ESUP-OTP</h2>
+                    <h3>An open-source Multi-Factor Authentication provider for Apereo CAS</h3>
+		    <br/>
+                    <ul class="presenters">
+                      <li class="speaker">Mathilde Guérin - Université de La Rochelle - Speaker</li>
+		      <li>Aymar Anli - Université Paris 1 Panthéon-Sorbonne</li>
+		      <li>Vincent Bonamy - Université de Rouen Normandie</li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>		
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Presentation Outline</h2>
+                </header>
+                <div class="slide-content">
+                    <ol>
+                        <li>
+                            Introduction
+                            <ul>
+                                <li>MFA Providers with Apereo CAS</li>
+                                <li>The usual issue</li>
+                            </ul>
+                        </li>
+                        <li>
+                            ESUP-OTP
+                            <ul>
+                                <li>Goal and purpose</li>
+                                <li>Technical design</li>
+                            </ul>
+                        </li>
+                        <li>
+                            How ESUP-OTP works ... well :-)
+                        </li>
+                    </ol>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+
+                <header>
+                    <h2 class="shadow">MFA Providers with Apereo CAS</h2>
+                </header>
+                <div class="slide-content">
+                  <h3>From CAS v5, MFA works well as CAS Modules !</h3>
+                            <ul style="width:45%">
+                                <li>Duo Security</li>
+				<li>Twilio Authy</li>
+				<li>Acceptto</li>
+				<li>YubiKey</li>
+				<li>WiKID</li>
+			    </ul>
+			    <ul style="width:45%; vertical-align: top;">	
+				<li>FIDO</li>
+				<li>Swivel Secure</li>
+				<li>Google Authenticator</li>
+				<li> ...</li>
+                            </ul>
+
+		  <h3>But ... most of them are :</h3>
+                  <ul>
+                    <li>not open-source</li>
+                    <li>expensive</li>
+		    <li>not self-hosted</li>
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      
+	    </section>
+
+	    <!--///////////////////////////////////////////-->	    
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Goal and purpose</h2>
+                </header>
+                <div class="slide-content">
+		  ESUP-OTP aims to : <br/>
+                  <ul>
+                    <li>be open-source and free : MIT License</li>
+		    <li>be self-hosted</li>
+		    <li>be easy to use</li>
+		    <li>let users choice its MFA</li>
+		    <li>let managers help users if needed</li>		    		    
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    
+
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Technical design</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-manager.png" alt="">
+                        <span>ESUP OTP MANAGER</span>
+                        <div>
+                            <span>CASsified web application</span>
+                            <span>Edition of authentication preferences</span>
+			    <span>Manager helping UI</span>
+                            <span>Administration  UI</span>			    
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt="">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-api.png" alt="">
+                        <span>ESUP OTP API</span>
+                        <div>
+                            <span>REST API</span>
+                            <span>Code generation methods</span>
+                            <span>Code transports</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt="">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <img src="./img/esup-cas.png" alt="">
+                        <span>ESUP OTP CAS</span>
+                        <div>
+                            <span>CAS module</span>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+              </section>
+	      
+	    <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Technical design</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/esup-auth.webp" alt="">
+                        <span>Mobile Application ESUP AUTH</span>
+                        <div>
+                            <span>On <a href="https://play.google.com/store/apps/details?id=org.esupportail.esupAuth&hl=en">Google Play Store</a></span>
+                            <span>On <a href="#next-ready-in-working">Apple Store</a></span>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+	    
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 33%">
+                        <img src="./img/esup-otp-sms.png" alt="SMS/Mail">
+                        <span>SMS/Mail</span>
+                    </div>
+                    <div class="gallery-item" style="width: 33%">
+                        <img src="./img/esup-otp-google-auth.png" alt="TOTP With Google Authenticator">
+                        <span>TOTP</span>
+                    </div>
+                    <div class="gallery-item" style="width: 33%">
+                        <img src="./img/esup-otp-random-codes.png" alt=">Random code list">
+                        <span>Random code list</span>
+                    </div>
+                    <div class="gallery-item" style="width: 33%">
+                        <img src="./img/esup-otp-push.png" alt="Mobile push">
+                        <span>Mobile push</span>
+                    </div>		    
+                    <div class="gallery-item" style="width: 33%">
+                        <img src="./img/esup-otp-esup-nfc-tag.png" alt="NFC swipe">
+                        <span>NFC swipe</span>
+                    </div>		    
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+              </section>
+
+	    
+            <section>
+                <header>
+                    <h2>ESUP OTP CAS</h2>
+                    <h3 class="shadow">How it works well ... with CAS 6.3.3 here</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-2.png" alt="waiting notification">
+                        <span>Waiting push or nfc notification</span>
+                    </div>
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-3.png" alt="input code">
+                        <span>Or input code from google-auth, sms, mail</span>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-push.png" alt="ESUP-OTP push enrollment with QR-Code">
+                        <span>ESUP-OTP push enrollment with QR-Code</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	                <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-backup-codes.png" alt="ESUP-OTP backup codes">
+                        <span>ESUP-OTP backup codes</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+			            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-manager.png" alt="ESUP-OTP Manager Interface">
+                        <span>ESUP-OTP Manager Interface</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+				    <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-admin.png" alt="ESUP-OTP Admin Interface">
+                        <span>ESUP-OTP Admin Interface</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Et voilà !</h2>
+                    <h3 class="shadow">Questions ?</h3>
+                </header>
+                <div class="slide-content">
+		  Authors and contributors : <br/>
+		  <ul>
+		    <li>Alex Bouskine</li>
+		    <li>Mouhamed Bassirou Deme</li>
+		    <li>Aymar Anli</li>
+		    <li>Francis Le Coq</li>
+		    <li>Vincent Bonamy</li>
+		    <li>and others !</li>
+		  </ul>
+		  <hr/>
+		  <h4><a href="https://github.com/search?q=org%3AEsupPortail+esup-otp">ESUP-OTP is on github - click here and install it !</a></h4>
+		  <hr/>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+        </div>
+        <div class="backgrounds">
+            <div class="slide-background present"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+        </div>
+        <div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+        <aside class="controls" style="display: block;">
+            <div class="navigate-left"></div>
+            <div class="navigate-right enabled"></div>
+            <div class="navigate-up"></div>
+            <div class="navigate-down"></div>
+            <div class="slideNb"></div>
+        </aside>
+        <div class="state-background"></div>
+        <div class="pause-overlay"></div>
+    </div>
+    <script src="./js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            {
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            },
+
+            // Syntax highlight for <pre> elements
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+
+        ],
+    });
+
+    function createSingletonNode(container, tagname, classname, innerHTML) {
+
+        var node = container.querySelector('.' + classname);
+        if (!node) {
+            node = document.createElement(tagname);
+            node.classList.add(classname);
+            if (innerHTML !== null) {
+                node.innerHTML = innerHTML;
+            }
+            container.appendChild(node);
+        }
+        return node;
+
+    }
+
+    // From https://github.com/hakimel/reveal.js/pull/56
+    function slidenumber(event) {
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll('.reveal .slides>section');
+        for (var i = 0; i < event.indexh; i++) {
+            // get subslides
+            var subslides = horizontal_slides[i].querySelectorAll('section');
+
+            // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+            current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv + 1;
+        return current_slide.toString();
+    }
+
+    function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+    }
+
+    Reveal.addEventListener('slidechanged', setSlideNb);
+    Reveal.addEventListener('ready', setSlideNb);
+    </script>
+    <script type="text/javascript" src="./Template Presentation ESUP-Days_files/highlight.js"></script>
+</body>
+
+</html>
