@@ -27,9 +27,11 @@
                     <div class="line-divider"></div>
                     <h2>ESUP-OTP</h2>
                     <h3>An open-source Multi-Factor Authentication provider for Apereo CAS</h3>
+		    <br/>
                     <ul class="presenters">
-                    <br>
-                        <li>Mathilde Guérin - Université de La Rochelle</li>
+                      <li class="speaker">Mathilde Guérin - Université de La Rochelle - Speaker</li>
+		      <li>Aymar Anli - Université Paris 1 Panthéon-Sorbonne</li>
+		      <li>Vincent Bonamy - Université de Rouen Normandie</li>
                     </ul>
                 </div>
                 <footer>
@@ -70,38 +72,45 @@
 
             <!--///////////////////////////////////////////-->
             <section style="top: -350px; display: block;" hidden="" class="future">
+
+	      <section>
                 <header>
                     <h2 class="shadow">MFA Providers with Apereo CAS</h2>
                 </header>
                 <div class="slide-content">
-                            From CAS v5, MFA works well as CAS Modules !
-                            <ul>
+                  <h3>From CAS v5, MFA works well as CAS Modules !</h3>
+                            <ul style="width:45%">
                                 <li>Duo Security</li>
 				<li>Twilio Authy</li>
 				<li>Acceptto</li>
 				<li>YubiKey</li>
 				<li>WiKID</li>
+			    </ul>
+			    <ul style="width:45%; vertical-align: top;">	
 				<li>FIDO</li>
 				<li>Swivel Secure</li>
 				<li>Google Authenticator</li>
 				<li> ...</li>
                             </ul>
 
+		  <h3>But ... most of them are :</h3>
+                  <ul>
+                    <li>not open-source</li>
+                    <li>expensive</li>
+		    <li>not self-hosted</li>
+                  </ul>
                 </div>
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
-            </section>
-
-	    <!--///////////////////////////////////////////-->
-
-            <!--///////////////////////////////////////////-->
-            <section style="top: -350px; display: block;" hidden="" class="future">
+	      </section>
+	      
+              <section>
                 <header>
                     <h2 class="shadow">MFA Providers with Apereo CAS</h2>
                 </header>
                 <div class="slide-content">
-		  Thats's fine :-)
+		  That's fine :-)
 
 		  <hr/>
 
@@ -114,24 +123,7 @@
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
             </section>
-
-	    <!--///////////////////////////////////////////-->	    
-
-            <section style="top: -350px; display: block;" hidden="" class="future">
-                <header>
-                    <h2 class="shadow">The usual issue</h2>
-                </header>
-                <div class="slide-content">
-		  But ... most of them are : <br/>
-                  <ul>
-                    <li>not open-source</li>
-                    <li>expensive</li>
-		    <li>not self-hosted</li>
-                  </ul>
-                </div>
-                <footer>
-                    <img src="./img/logo-esup--NEW.png" alt="">
-                </footer>
+		
 	    </section>
 
 	    <!--///////////////////////////////////////////-->	    
@@ -158,6 +150,7 @@
 	    <!--///////////////////////////////////////////-->
 	    
             <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
                 <header>
                     <h2>ESUP OTP</h2>
                     <h3 class="shadow">Technical design</h3>
@@ -199,11 +192,9 @@
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
-            </section>
-
-	    	    <!--///////////////////////////////////////////-->
-	    
-            <section style="top: -350px; display: block;" hidden="" class="future">
+              </section>
+	      
+	    <section>
                 <header>
                     <h2>ESUP OTP</h2>
                     <h3 class="shadow">Technical design</h3>
@@ -222,32 +213,13 @@
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
             </section>
+	    
+	    </section>
 
 	    <!--///////////////////////////////////////////-->
 	    
             <section style="top: -350px; display: block;" hidden="" class="future">
-                <header>
-                    <h2>ESUP OTP</h2>
-                    <h3 class="shadow">How it works well</h3>
-                </header>
-                <div class="slide-content">
-                    <div class="gallery-item" style="width: 50%">
-                        <img src="./img/esup-otp-cas-v6.3.3-2.png" alt="waiting notification">
-                        <span>Waiting push or nfc notification</span>
-                    </div>
-                    <div class="gallery-item" style="width: 50%">
-                        <img src="./img/esup-otp-cas-v6.3.3-3.png" alt="input code">
-                        <span>Or input code from google-auth, sms, mail</span>
-                    </div>
-                </div>
-                <footer>
-                    <img src="./img/logo-esup--NEW.png" alt="">
-                </footer>
-            </section>
-
-	    <!--///////////////////////////////////////////-->
-	    
-            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
                 <header>
                     <h2>ESUP OTP</h2>
                     <h3 class="shadow">How it works well</h3>
@@ -277,7 +249,103 @@
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
-            </section>	    
+              </section>
+
+	    
+            <section>
+                <header>
+                    <h2>ESUP OTP CAS</h2>
+                    <h3 class="shadow">How it works well ... with CAS 6.3.3 here</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-2.png" alt="waiting notification">
+                        <span>Waiting push or nfc notification</span>
+                    </div>
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-3.png" alt="input code">
+                        <span>Or input code from google-auth, sms, mail</span>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-push.png" alt="ESUP-OTP push enrollment with QR-Code">
+                        <span>ESUP-OTP push enrollment with QR-Code</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	                <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-backup-codes.png" alt="ESUP-OTP backup codes">
+                        <span>ESUP-OTP backup codes</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+			            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-manager.png" alt="ESUP-OTP Manager Interface">
+                        <span>ESUP-OTP Manager Interface</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+				    <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">How it works well</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-admin.png" alt="ESUP-OTP Admin Interface">
+                        <span>ESUP-OTP Admin Interface</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	    </section>
 
 	    <!--///////////////////////////////////////////-->
 	    
@@ -290,9 +358,9 @@
 		  Authors and contributors : <br/>
 		  <ul>
 		    <li>Alex Bouskine</li>
-		    <li>Mouhamed</li>
+		    <li>Mouhamed Bassirou Deme</li>
 		    <li>Aymar Anli</li>
-		    <li>Francis</li>
+		    <li>Francis Le Coq</li>
 		    <li>Vincent Bonamy</li>
 		    <li>and others !</li>
 		  </ul>
