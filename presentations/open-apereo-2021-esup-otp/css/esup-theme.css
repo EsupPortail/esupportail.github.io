@@ -18,7 +18,7 @@
 
 body,
 .esup  {
-  font-family: 'Open Sans', Verdana,Helvetica,Arial,sans-serif;
+  font-family: 'Open Sans',Verdana,Helvetica,Arial,sans-serif;
   color: #000;
 }
 .esup h1, .esup h2, .esup h3, .esup h4, .esup h5, .esup h6 {
@@ -115,8 +115,10 @@ body,
      -moz-hyphens: manual;
           hyphens: manual;
 }
-.esup .center {
+.esup .centered {
   text-align: center;
+  display: block;
+  margin: 0 auto;
 }
 
 .esup h4 {
@@ -138,7 +140,7 @@ body,
 .esup ol > li,
 .esup ul > li {
   color: var(--main-color-2);
-  font-weight: 700;
+  font-weight: 600;
 }
 .esup ol > li ul > li,
 .esup ul > li ul > li {
@@ -245,7 +247,8 @@ body,
 }
 .esup section.present h3 {
   color: #ffffff;
-  background: #E9294A;
+  background: var(--main-color-2);
+  opacity:0.9;
   font-size: 0.8em;
   padding: 10px 0 10px 20px;
   margin: 0;
@@ -316,7 +319,15 @@ body,
   font-size: 0.9em;
 }
 
-.esup section.present.main-title{
+.esup div.slide-content .gallery-item.dotted {
+  border: dotted 2px #CCC;
+  margin: 5px;
+}
+.esup div.slide-content .gallery-item.dotted img {
+  margin: 15px auto;
+}
+
+.esup section.present.main-title {
   position: relative;
 }
 
@@ -408,9 +419,6 @@ body,
 }
 .esup .presenters li.speaker {
   color: #444;
-}
-.esup .presenters li {
-  text-align: right;
 }
 .esup .institutions li:before {
   content: '--';
@@ -515,4 +523,48 @@ body,
   font-size: 0.9em;
   background: #222;
   color: #FFF;
+}
+
+.esup section .comment {
+  font-size: 0.7em;
+  color: #999;
+  font-style: italic;
+}
+
+.esup .comics-like {
+  font-family: 'Bangers',Verdana,Helvetica,Arial,sans-serif;
+  font-size: 4em;
+}
+.esup .comics-like span {
+  display: block;
+  color: var(--main-color);
+}
+.esup .comics-like .main {
+  font-size: 1.5em;
+  color: yellow;
+  text-shadow:
+     8px  8px 0 var(--main-color),
+    -2px -2px 0 var(--main-color),  
+     2px -2px 0 var(--main-color),
+    -2px  2px 0 var(--main-color),
+     2px  2px 0 var(--main-color);
+  margin-bottom: 120px;
+  letter-spacing: 5px;
+}
+
+.esup .component {
+  border-radius: 50%;
+  width: 220px;
+  height: 220px;
+}
+.esup .component img {
+  background: none;
+}
+.esup .component ul {
+  margin: 0;
+  padding: 0;
+}
+.esup .component ul li {
+  list-style: none;
+  text-align: center;
 }
