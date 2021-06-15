@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ESUP-SGC et ESC</title>
+    <link href="./css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/simple.css" id="theme">
+    <link rel="stylesheet" href="./css/esup-theme.css">
+    <link rel="stylesheet" href="./css/default.min.css">
+</head>
+
+<body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup linear center" data-transition-speed="default" data-background-transition="default">
+        <div class="slides" style="width: 960px; height: 700px; zoom: 1;">
+            <section class="main-title present" style="top: -346px; display: block;">
+                <header>
+                  <h1>
+		    <img src="./img/event-title.png" alt="Open Apereo 2021" style="max-height:200px"/>
+		  </h1>
+                </header>
+                <div class="presentation-title">
+                    <h2>ESUP-SGC - 22 juin 2021</h2>
+                    <h3>Son intégration dans le projet Carte Étudiante Européenne</h3>
+		    <hr/>
+		    <br/>
+                    <ul class="presenters">
+                      <li class="speaker">Vincent Bonamy - Université de Rouen Normandie</li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>		
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Plan</h2>
+                </header>
+                <div class="slide-content">
+                    <ol>
+                        <li>
+                          Impression et utilisation du QR-Code <span style="color:red">[ok]</span>
+                        </li>
+                        <li>
+			  Enregistrement d'une carte dans ESC-R <span style="color:red">[ok]</span>
+                        </li>
+                        <li>
+			  Récupération d'une carte depuis ESC-R <span style="color:red">[ok]</span>
+                        </li>
+                        <li>
+                          Ecriture et lecture électronique de la DEUINFO <span style="color:red">[ok]</span>
+                        </li>
+                        <li>
+                          Délégation d'applications Mifare Desfire EV2 <span style="color:green">[dev]</span>
+                        </li>
+                    </ol>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+
+                <header>
+                    <h2 class="shadow">Impression et utilisation du QR-Code</h2>
+                </header>
+                <div class="slide-content">
+                  <ul>
+                    <li>QR-Code ESC
+		      <ul>
+			<li>généré et imprimé par ESUP-SGC avec l'ensemble de la carte</li>
+			<li>permet de faire l'enrôlement csn->qrcode lors de l'encodage</li>
+			<li style="color:green">-> cardType 2</li>
+		      </ul>
+		    </li>
+                    <li>Exemple
+		      <ul><li>http://esc.gg/d88b02c1-894e-1038-a711-001999465982</li></ul>
+		    </li>
+		    <li>non utilisé ensuite en interne
+		      <ul>
+			<li>préférence donnée au NFC</li>
+			<li>-> DEUInfo</li>						
+		      </ul>
+		    </li>
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      
+	    </section>
+
+	    <!--///////////////////////////////////////////-->	    
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Enregistrement d'une carte dans ESC-R</h2>
+                </header>
+                <div class="slide-content">
+		  ESUP-SGC enregistre les cartes dans ESC-R :<br/>
+                  <ul>
+                    <li>envoi des infos de carte / étudiant via l'API ESC</li>
+		    <li>à l'initiative de l'étudiant ... ou automatiquement</li>
+		    <li>désactivation de l'enregistrement possible</li>
+                  </ul>
+                </div>
+		<div class="gallery-item" style="width: 40%">
+		  <img src="./img/esc-esup-scg-utilisateur.png" alt="ESUP-SGC : option ESC pour l'utilisateur"/>
+                </div>
+                <div class="gallery-item" style="width: 40%">
+		  <hr/>
+		  <span>
+		    ESUP-SGC permet à l'étudiant d'adhérer au projet Carte Étudiante Européenne !
+		  </span>
+		  <hr/>
+		</div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    
+
+	    <!--///////////////////////////////////////////-->
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Récupération d'une carte depuis ESC-R</h2>
+                </header>
+                <div class="slide-content">
+		  <p>
+		  <span style="font-size:0.7em">
+		  <i>Suite à l'enregistrement dans ESC, un compte est créé côté ESC et permet à l'étudiant de souscrire à des services.</i>
+		</span>
+</p>
+		  On peut référencer son ESUP-SGC comme un de ces services<br/>
+                  <ul>
+                    <li>L'information de carte / étudiant peut alors être importée dans ESUP-SGC en tant que carte extérieure</li>
+		    <li>ESUP-SGC peut alors (faire) reconnaitre cette carte au niveau du SI</li>
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    
+
+	    <!--///////////////////////////////////////////-->
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Écriture et lecture électronique de la DEUInfo</h2>
+                </header>
+                <div class="slide-content">
+		  <p><b style="color:green">D</b>ata <b style="color:green">E</b>uropean <b style="color:green">U</b>niversity <b style="color:green">Info</b>rmation</p>
+		  <p>DEUInfo : <b style="color:orange">ESCN</b> (~ QR-Code) encodée en clair dans la carte</p>
+                  <ul>
+		    <li>http://esc.gg/<b style="color:orange">d88b02c1-894e-1038-a711-001999465982</b></li>
+                    <li style="color:green">-> cardType 3</li>
+		    <li>mécanismes assurant authenticité et intégrité</li>
+		    <li>aucun élément personnel enregistré dans la carte</li>
+                  </ul>
+		  <ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    	    
+
+	    
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Structure électronique de la DEUInfo en Mifare Desfire</h2>
+                </header>
+                <div class="slide-content">
+
+		  <img src="./img/app-desfire-deuinfo.png" alt="Structure électronique de la DEUInfo en Mifare Desfire">
+		
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2 class="shadow">Écriture et lecture électronique de la DEUInfo</h2>
+                </header>
+                <div class="slide-content">
+                  <ul>
+                    <li>DEUInfo encodée par ESUP-SGC à l'Université de Rouen Normandie depuis le 25 mars 2021</li>
+		    <li>ESUP-NFC-TAG-DROID permet de lire/tester les DEUInfo des cartes</li>
+                  </ul>
+                </div>
+
+		<a href="https://play.google.com/store/apps/details?id=org.esupportail.esupnfctagdroid"><img src="./img/esup-nfc-tag-droid.png" alt="esupnfctagdroid"></a>
+		
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      </section>
+	      
+	      <section>
+                <header>
+                    <h2 class="shadow">Test de lecture électronique de la DEUInfo avec esup-nfc-tag-droid</h2>
+                </header>
+                <div class="slide-content">
+		  
+		<div class="gallery-item" style="width: 40%">
+		  <img src="./img/esup-nfc-tag-droid-deuinfo-1.png" alt="">		  
+		</div>
+		<div class="gallery-item" style="width: 40%">
+		  <img src="./img/esup-nfc-tag-droid-deuinfo-2.png" alt="">		  
+		</div>
+		
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      </section>
+
+	      <section>
+                <header>
+                    <h2 class="shadow">Test de lecture électronique de la DEUInfo avec esup-nfc-tag-droid</h2>
+                </header>
+                <div class="slide-content">
+		  
+		<div class="gallery-item" style="width: 40%">
+		  <img src="./img/esup-nfc-tag-droid-deuinfo-3.png" alt="">		  
+		</div>
+		<div class="gallery-item" style="width: 40%">
+		  <img src="./img/esup-nfc-tag-droid-deuinfo-4.png" alt="">		  
+		</div>
+		
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      </section>
+
+	      <section>
+                <header>
+                    <h2 class="shadow">Test de lecture électronique de la DEUInfo avec esup-nfc-tag-droid</h2>
+                </header>
+                <div class="slide-content">
+
+		  <div class="gallery-item" style="width: 40%">
+		    <img src="./img/esup-nfc-tag-droid-deuinfo-5.png" alt="">		  
+		  </div>
+		  <div class="gallery-item" style="width: 40%">
+		    <img src="./img/esup-nfc-tag-droid-deuinfo-6.png" alt="">		  
+		  </div>
+		  
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      </section>	      	      
+	      
+	    </section>
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Délégation d'Applications Mifare Desfire EV2</h2>
+                </header>
+                <div class="slide-content">
+		  <p><b style="color:green">D</b>elegated <b style="color:green">A</b>pplication <b style="color:green">M</b>anagement</p>
+		  <ul>
+		    <li>EV1 vs EV2</li>
+		    <li>DAM Keys</li>
+		    <li>DAM Applications</li>
+		    <li>Web Services</li>
+		  </ul>
+		  <p style="color:green">... en développement :-)</p>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    	    
+	    
+	    <!--///////////////////////////////////////////-->
+
+	    <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">EV1 vs EV2 ?</h2>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>Les Cartes EV1 parlent uniquement le protocole EV1</li>
+		    <li>Les Cartes EV2 parlent le protocole EV1 et EV2</li>		    
+		    <li>ESUP-SGC parle EV1 et peut donc écrire dans une EV1 et une EV2</li>
+		    <li>Les fonctionnalités amenées par EV2 ne peuvent être utilisées que dans une EV2 : par exemple la DAM !</li>
+		    <li>Pour bénéficier réellement de la sécurité des cartes EV2 sur un service comme un contrôle d'accès, il faut, au niveau du contrôle d'accès, utiliser le protocole EV2</li>
+		  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    	    
+	    
+	    <!--///////////////////////////////////////////-->
+
+	    <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">DAM Keys <span style="color:green">[dev]</span></h2>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>Disponible sur les cartes EV2</li>
+		    <li>3 DM Keys sur l'application 00, en plus de la Master Key</li>
+		    <li>DAM Keys propres à chaque carte (diversification de clefs)</li>		    
+                    <li style="color:green">-> cardType 4 ;-)</li>
+		  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+
+	    <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">DAM Application <span style="color:green">[dev]</span></h2>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>Application que l'on crée en récupérant une Dam Key auprès de l'établissement d'origine</li>
+		    <li>... et un 'payload' chiffré par l'établissement d'origine que seule la carte comprend</li>
+		    <li>payload == id de l'application + clef</li>
+                    <li>-> création d'une application sans connaitre la Master Key !</li>
+		    <li>L'établissement hébergeur prend alors la main sur l'application.</li>
+		    <li>L'application de l'établissement hébergeur est ainsi créée sur la carte de l'établissement d'origine</li>
+		  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+
+	    <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Web Services <span style="color:green">[dev]</span></h2>
+                </header>
+                <div class="slide-content">
+		  <p>
+		    Un jeu de web services est nécessaire entre les 2 SGCs des 2 étblissements
+		  </p>
+		  <ul>
+		    <li>Échange de DAM keys</li>
+		    <li>Échange du payload</li>
+		    <li>...</li>
+		  </ul>
+		  <p>
+		    Le routeur ESCR doit quand à lui permettre ce rapprochement des 2 SGCs (urls des WS).
+		    </p>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	    </section>	    	    	    	    
+	    
+	    <!--///////////////////////////////////////////-->	    	    
+	    
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Merci de votre attention</h2>
+                    <h3 class="shadow">Questions ?</h3>
+                </header>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+        </div>
+        <div class="backgrounds">
+            <div class="slide-background present"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+        </div>
+        <div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+        <aside class="controls" style="display: block;">
+            <div class="navigate-left"></div>
+            <div class="navigate-right enabled"></div>
+            <div class="navigate-up"></div>
+            <div class="navigate-down"></div>
+            <div class="slideNb"></div>
+        </aside>
+        <div class="state-background"></div>
+        <div class="pause-overlay"></div>
+    </div>
+    <script src="./js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            {
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            },
+
+            // Syntax highlight for <pre> elements
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+
+        ],
+    });
+
+    function createSingletonNode(container, tagname, classname, innerHTML) {
+
+        var node = container.querySelector('.' + classname);
+        if (!node) {
+            node = document.createElement(tagname);
+            node.classList.add(classname);
+            if (innerHTML !== null) {
+                node.innerHTML = innerHTML;
+            }
+            container.appendChild(node);
+        }
+        return node;
+
+    }
+
+    // From https://github.com/hakimel/reveal.js/pull/56
+    function slidenumber(event) {
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll('.reveal .slides>section');
+        for (var i = 0; i < event.indexh; i++) {
+            // get subslides
+            var subslides = horizontal_slides[i].querySelectorAll('section');
+
+            // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+            current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv + 1;
+        return current_slide.toString();
+    }
+
+    function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+    }
+
+    Reveal.addEventListener('slidechanged', setSlideNb);
+    Reveal.addEventListener('ready', setSlideNb);
+    </script>
+    <script type="text/javascript" src="./Template Presentation ESUP-Days_files/highlight.js"></script>
+</body>
+
+</html>
