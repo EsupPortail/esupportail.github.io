@@ -22,7 +22,7 @@
 		  </h1>
                 </header>
                 <div class="presentation-title">
-                    <h2>ESUP-SGC - 22 juin 2021</h2>
+                    <h2>ESUP-SGC <small>- 22 juin 2021</small></h2>
                     <h3>Son intégration dans le projet Carte Étudiante Européenne</h3>
 		    <hr/>
 		    <br/>
@@ -115,9 +115,9 @@
                 </div>
                 <div class="gallery-item" style="width: 40%">
 		  <hr/>
-		  <span>
+		  <small>
 		    ESUP-SGC permet à l'étudiant d'adhérer au projet Carte Étudiante Européenne !
-		  </span>
+		  </small>
 		  <hr/>
 		</div>
                 <footer>
@@ -133,10 +133,10 @@
                 </header>
                 <div class="slide-content">
 		  <p>
-		  <span style="font-size:0.7em">
-		  <i>Suite à l'enregistrement dans ESC, un compte est créé côté ESC et permet à l'étudiant de souscrire à des services.</i>
-		</span>
-</p>
+			<small>
+			  <i>Suite à l'enregistrement dans ESC, un compte est créé côté ESC et permet à l'étudiant de souscrire à des services.</i>
+			</small>
+		  </p>
 		  On peut référencer son ESUP-SGC comme un de ces services<br/>
                   <ul>
                     <li>L'information de carte / étudiant peut alors être importée dans ESUP-SGC en tant que carte extérieure</li>
@@ -187,18 +187,43 @@
 	    <!--///////////////////////////////////////////-->
 
             <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Écriture de la DEUInfo à l'Université de Rouen Normandie</h2>
+                </header>
+                <div class="slide-content">
+				  <p>
+                    DEUInfo encodée par ESUP-SGC à l'Université de Rouen Normandie depuis le 25 mars 2021
+				  </p>
+				  <ul>
+					<li>50 cartes avec un cardType 3 au 16 juin 2021</li>
+					<li>nos léocartes "4K" ont encore un peu moins de 3k de libre<br/>
+					  -> on consomme 1k de plus avec la DEUInfo <br/>
+					  <small>Breaking news : les cartes "4k" sont en fait des "5k"</small>.
+					</li>
+					<li>temps d'encodage : 3 sec -> 5 sec</li>
+				  </ul>
+                </div>
+		
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+	      </section>
+
+		  <section style="top: -350px; display: block;" hidden="" class="future">
 	      <section>
                 <header>
                     <h2 class="shadow">Écriture et lecture électronique de la DEUInfo</h2>
                 </header>
                 <div class="slide-content">
-                  <ul>
-                    <li>DEUInfo encodée par ESUP-SGC à l'Université de Rouen Normandie depuis le 25 mars 2021</li>
-		    <li>ESUP-NFC-TAG-DROID permet de lire/tester les DEUInfo des cartes</li>
-                  </ul>
+				  <p>ESUP-NFC-TAG-DROID permet de lire/tester les DEUInfo des cartes, il vous faut :</p>
+				  <ul>
+					<li>un Android avec NFC</li>
+					<li>l'application esup-nfc-tag-droid disponible sur Google Play Store</li>
+					<li>vous connecter sur la fédération d'identités RENATER</li>					
+				  </ul>
                 </div>
 
-		<a href="https://play.google.com/store/apps/details?id=org.esupportail.esupnfctagdroid"><img src="./img/esup-nfc-tag-droid.png" alt="esupnfctagdroid"></a>
+				<a href="https://play.google.com/store/apps/details?id=org.esupportail.esupnfctagdroid"><img src="./img/esup-nfc-tag-droid.png" alt="esupnfctagdroid"></a>
 		
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
@@ -287,13 +312,24 @@
                     <h2 class="shadow">EV1 vs EV2 ?</h2>
                 </header>
                 <div class="slide-content">
-		  <ul>
-		    <li>Les Cartes EV1 parlent uniquement le protocole EV1</li>
-		    <li>Les Cartes EV2 parlent le protocole EV1 et EV2</li>		    
-		    <li>ESUP-SGC parle EV1 et peut donc écrire dans une EV1 et une EV2</li>
-		    <li>Les fonctionnalités amenées par EV2 ne peuvent être utilisées que dans une EV2 : par exemple la DAM !</li>
-		    <li>Pour bénéficier réellement de la sécurité des cartes EV2 sur un service comme un contrôle d'accès, il faut, au niveau du contrôle d'accès, utiliser le protocole EV2</li>
-		  </ul>
+				  <ul>
+					<li>Les protocoles
+					  <ul>
+						<li>Le protocole EV2 est plus sécurisé, plus complexe</li>
+					  </ul>
+					</li>
+					<li>Les cartes
+					  <ul>
+						<li>Les cartes EV1 parlent uniquement le protocole EV1</li>
+						<li>Les cartes EV2 parlent le protocole EV1 et EV2</li>
+						<li>Les fonctionnalités amenées par EV2 ne peuvent être utilisées que dans une EV2 : par exemple la DAM !</li>
+					  </ul>
+					</li>					  
+				  </ul>
+				  <hr/>
+				  <small>Pour bénéficier réellement de la sécurité des cartes EV2 sur le contrôle d'accès (par ex.), il faut, au niveau du contrôle d'accès, utiliser le protocole EV2</small>
+				  <br/>
+				  <small>ESUP-SGC parle EV1 et peut donc écrire dans une EV1 et une EV2</small>
                 </div>
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
@@ -311,7 +347,7 @@
 		    <li>Disponible sur les cartes EV2</li>
 		    <li>3 DM Keys sur l'application 00, en plus de la Master Key</li>
 		    <li>DAM Keys propres à chaque carte (diversification de clefs)</li>		    
-                    <li style="color:green">-> cardType 4 ;-)</li>
+                    <li style="color:green">-> cardType 4 !</li>
 		  </ul>
                 </div>
                 <footer>
@@ -326,14 +362,24 @@
                     <h2 class="shadow">DAM Application <span style="color:green">[dev]</span></h2>
                 </header>
                 <div class="slide-content">
-		  <ul>
-		    <li>Application que l'on crée en récupérant une Dam Key auprès de l'établissement d'origine</li>
-		    <li>... et un 'payload' chiffré par l'établissement d'origine que seule la carte comprend</li>
-		    <li>payload == id de l'application + clef</li>
-                    <li>-> création d'une application sans connaitre la Master Key !</li>
-		    <li>L'établissement hébergeur prend alors la main sur l'application.</li>
-		    <li>L'application de l'établissement hébergeur est ainsi créée sur la carte de l'établissement d'origine</li>
-		  </ul>
+				  <small>
+					<b>Contexte :</b> un étudiant avec sa carte éditée par son établissement d'<b>origine</b> visite un établissement <b>hébergeur</b>.
+					<br/>L'établissement hébergeur positionne son applciation de contrôle d'accès
+				  </small>
+					<ul>
+					  <li>L'application est créée 
+						<ul>
+						  <li>par l'établissement hébergeur</li>
+						  <li>en récupérant une Dam Key auprès de l'établissement d'origine</li>
+						  <li>... et un 'payload' chiffré par l'établissement d'origine</li>
+						  <li>payload == id de l'application + clef</li>
+						  <li>-> création d'une application sans partager la Master Key !</li>
+						</ul>
+					  </li>
+					  <small>L'établissement hébergeur prend alors la main sur son application.</small>
+					  <br/>
+					  <small>L'application de l'établissement hébergeur est créée sur la carte de l'établissement d'origine</small>
+					</ul>
                 </div>
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
