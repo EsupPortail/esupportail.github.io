@@ -198,7 +198,7 @@
 					<li>50 cartes avec un cardType 3 au 16 juin 2021</li>
 					<li>nos léocartes "4K" ont encore un peu moins de 3k de libre<br/>
 					  -> on consomme 1k de plus avec la DEUInfo <br/>
-					  <small>Breaking news : les cartes "4k" sont en fait des "5k"</small>.
+					  <small>Breaking news : les cartes "4k" sont en fait des "5k"</small>
 					</li>
 					<li>temps d'encodage : 3 sec -> 5 sec</li>
 				  </ul>
@@ -322,7 +322,7 @@
 					  <ul>
 						<li>Les cartes EV1 parlent uniquement le protocole EV1</li>
 						<li>Les cartes EV2 parlent le protocole EV1 et EV2</li>
-						<li>Les fonctionnalités amenées par EV2 ne peuvent être utilisées que dans une EV2 : par exemple la DAM !</li>
+						<li>Les fonctionnalités amenées par EV2 ne peuvent être utilisées que dans une carte EV2 : par exemple la DAM !</li>
 					  </ul>
 					</li>					  
 				  </ul>
@@ -345,7 +345,7 @@
                 <div class="slide-content">
 		  <ul>
 		    <li>Disponible sur les cartes EV2</li>
-		    <li>3 DM Keys sur l'application 00, en plus de la Master Key</li>
+		    <li>3 DAM Keys sur l'application Master (000000), en plus de la Master Key</li>
 		    <li>DAM Keys propres à chaque carte (diversification de clefs)</li>		    
                     <li style="color:green">-> cardType 4 !</li>
 		  </ul>
@@ -359,7 +359,7 @@
 
 	    <section style="top: -350px; display: block;" hidden="" class="future">
                 <header>
-                    <h2 class="shadow">DAM Application <span style="color:green">[dev]</span></h2>
+                    <h2 class="shadow">Delegated Application <span style="color:green">[dev]</span></h2>
                 </header>
                 <div class="slide-content">
 				  <small>
@@ -370,9 +370,9 @@
 					  <li>L'application est créée 
 						<ul>
 						  <li>par l'établissement hébergeur</li>
-						  <li>en récupérant une Dam Key auprès de l'établissement d'origine</li>
-						  <li>... et un 'payload' chiffré par l'établissement d'origine</li>
-						  <li>payload == id de l'application + clef</li>
+						  <li>en récupérant la DAM Auth Key auprès de l'établissement d'origine</li>
+						  <li>... et un 'payload' chiffré (issu de la DAM Auth Key et la DAM MAC Key) par l'établissement d'origine</li>
+						  <li><small>payload == aid de l'application + key settings + master key de l'application (temporaire) + taille de l'application</small></li>
 						  <li>-> création d'une application sans partager la Master Key !</li>
 						</ul>
 					  </li>
@@ -397,7 +397,7 @@
 		    Un jeu de web services est nécessaire entre les 2 SGCs des 2 étblissements
 		  </p>
 		  <ul>
-		    <li>Échange de DAM keys</li>
+		    <li>Échange de DAM Keys</li>
 		    <li>Échange du payload</li>
 		    <li>...</li>
 		  </ul>
