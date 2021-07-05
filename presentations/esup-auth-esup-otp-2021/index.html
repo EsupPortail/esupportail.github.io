@@ -6,7 +6,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Présentation ESUP-OTP</title>
-    <link href="./css/css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="./css/reveal.min.css">
     <link rel="stylesheet" href="./css/simple.css" id="theme">
     <link rel="stylesheet" href="./css/esup-theme.css">
@@ -209,7 +208,6 @@
             <!--///////////////////////////////////////////-->
             <section style="top: -350px; display: block;" hidden="" class="future">
 
-	      	  <section>
                 <header>
                     <h2 class="shadow">MFA disponibles sur Apereo CAS</h2>
                 </header>
@@ -242,41 +240,14 @@
 
 	      	  </section>
 	      
-              <section>
-                <header>
-                    <h2 class="shadow">MFA Providers with Apereo CAS</h2>
-                </header>
-                <div class="slide-content">
-				  <span style="margin-bottom: 40px; display: block;">MFA in a nutshell:</span>
-
-				  <div class="gallery-item" style="width: 100%">
-		          	<img src="./img/multifactor.png" alt="">
-				  </div>
-
-                </div>
-                <footer>
-                    <img src="./img/logo-esup--NEW.png" alt="">
-                </footer>
-            </section>
-		
-	    </section>
-
-	    <!--///////////////////////////////////////////-->	    
-
-            <section style="top: -350px; display: block;" hidden="" class="future">
-              <section >
-              	<div class="comics-like centered"><span class="main">ESUP-OTP</span><span>to the rescue!</span></div>
-              </section>
-	    </section>
-	    <!--///////////////////////////////////////////-->	    
 
             <section style="top: -350px; display: block;" hidden="" class="future">
               <section>
                 <header>
-                    <h2 class="shadow">Objectifs</h2>
+                  <h2 class="shadow">Objectifs</h2>
+		   <h3 class="shadow">ESUP-OTP </h3>
                 </header>
                 <div class="slide-content">
-		  		  ESUP-OTP : <br/>
                   <ul>
                     <li>est libre (MIT License)</li>
 				    <li>auto-hébergé</li>
@@ -853,6 +824,7 @@
 		    <li>Authentification SSO : Apereo CAS</li>
 		    <li>Shibboleth Identity Provider pour shibboleth <br/>
 		      <i style="color: #aaa; font-weight= normal;">(dans la fédération d'identités ESR opérée par Renater)</i></li>
+		    <li><a href="https://github.com/Unicon/shib-cas-authn">shib-cas-authn</a> pour le lien CAS / IdP</li>
 		    <li>ESUP-OTP en place</li>
 		  </ul>
 		  <hr/>
@@ -898,14 +870,15 @@
                 <div class="slide-content">
 
 		  <ul>
-		    <li>Prpfil MFA de REFEDS</li>
+		    <li><a href="https://refeds.org/profile/mfa">Profil MFA de REFEDS</a></li>
 		    <li>Profil d'authentifcation demandé/requis au niveau du SP</li>
-		    <li>Possibilité de proagation jusqu'à CAS via shib-cas-authn</li>
+		    <li>Possibilité de propagation jusqu'à CAS via shib-cas-authn</li>
 		    <li>Mais : 
 		      <ul>
 			<li>Implémentation intrusive dans shib-cas-authn et spécifique/supplémentaire dans le module MFA CAS</li>
-			<li>Seule l'implémentation avec DuoSecurity est actuellement implémentée</li>
-			<li>... de plus, peu d'IdP supporte le MFA -> quel cas d'usage aujourd'hui ?</li>
+			<li>Seule l'implémentation avec DuoSecurity est actuellement développée</li>
+			<li>... de plus, peu d'IdP supporte le MFA</li>
+			<li>Cas d'usage aujourd'hui ?</li>
 		      </ul>
 		    </li>
 		  </ul>
@@ -927,7 +900,6 @@
 		    <li>-> on active le MFA pour le service idp.univ-ville.fr sur CAS</li>
 		  </ul>
                 </div>
-
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
@@ -948,6 +920,7 @@
 		  <ul>
 		    <li>faire de CAS notre IdP officiel</li>
 		    <li>ou  modifier/hacker le wayf + sp pour utiliser CAS comme IdP uniquement sur certains SP
+		    <li>... ou ne rien faire ???!</li>
 		  </ul>
 		  
                 </div>
@@ -983,9 +956,14 @@
    ...
 		    </pre>
 		  </div>
-		    <li>ESUP-OTP en place</li>
+		    <li>-> on active le MFA pour ce service</li>
 		  </ul>
 		  
+		  <p>
+		    Attention à bien prendre une version de <a href="https://github.com/Unicon/shib-cas-authn">shib-cas-authn</a> 
+		    <br/>incluant le <a href="https://github.com/Unicon/shib-cas-authn/pull/3">PR #3</a>
+		  </p>
+
                 </div>
 
                 <footer>
@@ -1066,7 +1044,7 @@
 
             // Syntax highlight for <pre> elements
             {
-                src: 'plugin/highlight/highlight.js',
+                src: 'js/highlight.js',
                 async: true,
                 callback: function() {
                     hljs.initHighlightingOnLoad();
@@ -1116,7 +1094,7 @@
     Reveal.addEventListener('slidechanged', setSlideNb);
     Reveal.addEventListener('ready', setSlideNb);
     </script>
-    <script type="text/javascript" src="./Template Presentation ESUP-Days_files/highlight.js"></script>
+    <script type="text/javascript" src="./js/highlight.js"></script>
 </body>
 
 </html>
