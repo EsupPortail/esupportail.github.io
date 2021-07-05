@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://esupportail.github.io/presentations/esup-days-template/#/ -->
+<html lang="fr">
+<!-- version 1.0 -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Présentation ESUP-OTP</title>
+    <link href="./css/css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/reveal.min.css">
+    <link rel="stylesheet" href="./css/simple.css" id="theme">
+    <link rel="stylesheet" href="./css/esup-theme.css">
+    <link rel="stylesheet" href="./css/default.min.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup linear centered" data-transition-speed="default" data-background-transition="default">
+        <div class="slides" style="width: 960px; height: 700px; zoom: 1;">
+            <section class="main-title present" style="top: -346px; display: block;">
+              <header>
+		<img class="centered" style="max-height: 100px;" src="./img/logo-esup--NEW.png" alt="">
+                <h1>
+		  <img src="./img/cas-esup-otp.png" alt="ESUP-OTP">
+		</h1>
+              </header>
+              <div class="presentation-title">
+                <div class="line-divider"></div>
+                <h2>Du MFA dans CAS avec ESUP-OTP</h2>
+		<h3>GT ESUP Auth - 6 juillet 2021</h3>
+		<br/>
+                <ul class="presenters">
+		  <li class="speaker">Vincent Bonamy - Université de Rouen Normandie</li>
+                    </ul>
+              </div>
+              <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>		
+            </section>
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Avant propos</h2>
+                </header>
+                <div class="slide-content">
+                  <ul>
+		    Projet fonctionnel dès 2016/2017
+                    <li>
+		      Auteurs :
+                            <ul>
+                              <li>Alex Bouskine (Université de La Rochelle)</li>
+			      <li>Aymar Anli (Université Paris 1 Panthéon-Sorbonne)</li>
+                            </ul>
+                        </li>
+                        <li>
+			  Présentations :
+                            <ul>
+                                <li><a href="https://esupportail.github.io/presentations/esup-days-22-esup-otp">ESUP-DAYS 22</a> à Paris | sept. 2016</li>
+                                <li><a href="https://replay.jres.org/videos/watch/6c418182-360d-47d3-b4f2-cf23b3a87f9c">JRES 2017</a> à Nantes</li>
+                            </ul>
+                        </li>
+                        <li>
+                          Très récemment :
+			  <ul>
+			    <li><a href="https://www.esup-portail.org/wiki/download/attachments/613384545/202106--openapereo21--esupotp.mp4">Open Apereo'21</a> en ligne | juin 2021
+			      <br/>Mathilde Guérin (Université de La Rochelle)</li>
+			  </ul>
+                        </li>
+                        <li>
+                          Bientôt :
+			  <ul>
+			    <li><a href="https://www.esup-portail.org/evenements">ESUP-Days #32</a> à Paris | 28 oct. 2021</li>
+			    <li><a href="">JRES <span style="text-decoration: line-through;">2021</span> 2022</a> à Marseille | 17 au 20 mai 2022</li>
+			  </ul>
+                        </li>
+                    </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+                <header>
+                    <h2 class="shadow">Plan</h2>
+                </header>
+                <div class="slide-content">
+                  <ul>
+                    <li>Démo</li>
+                    <li>Objectifs</li>
+                    <li>Architecture logicielle</li>
+                    <li>MFA disponibles</li>
+                    <li>Installation</li>
+                    <li>Intégration dans CAS</li>
+                    <li>MFA sur un service Shibboleth</li>		    		    
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <!--///////////////////////////////////////////-->
+<section style="top: -350px; display: block;" hidden="" class="future">
+  <section>
+                <header>
+                    <h2 class="shadow">Démo !</h2>
+                </header>
+                <div class="slide-content">
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+  </section>
+
+    <section>
+                <header>
+                    <h2 class="shadow">ESUP-OTP-MANAGER</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-manager-activation-mfa.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+    </section>
+
+        <section>
+                <header>
+                    <h2 class="shadow">Notification via ESUP-AUTH</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-cas-push-esup-auth.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+        </section>
+
+	    <section>
+                <header>
+                    <h2 class="shadow">OTP avec Google Authenticator</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-cas-google-auth.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    <section>
+                <header>
+                    <h2 class="shadow">SMS avec ESUP-SMSU</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-cas-sms-esup-smsu.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    <section>
+                <header>
+                    <h2 class="shadow">Badgeage de carte avec ESUP-NFC-TAG</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-cas-esup-nfc.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    	    <section>
+                <header>
+                    <h2 class="shadow">CAS MFA Trusted</h2>
+                </header>
+                <div class="slide-content">
+		  <video controls>
+		    <source src="videos/esup-otp-cas-trusted.mp4" type="video/mp4">
+		  </video>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    </section>
+	    
+            <!--///////////////////////////////////////////-->
+            <section style="top: -350px; display: block;" hidden="" class="future">
+
+	      	  <section>
+                <header>
+                    <h2 class="shadow">MFA disponibles sur Apereo CAS</h2>
+                </header>
+                <div class="slide-content">
+                  	<h3>Depuis CAS v5, un certain nombre de MFA disponibles ...</h3>
+	                <ul style="width:45%">
+	                    <li>Duo Security</li>
+						<li>Twilio Authy</li>
+						<li>Acceptto</li>
+						<li>YubiKey</li>
+						<li>WiKID</li>
+					</ul>
+					<ul style="width:45%; vertical-align: top;">	
+						<li>FIDO</li>
+						<li>Swivel Secure</li>
+						<li>Google Authenticator</li>
+						<li> ...</li>
+	                </ul>
+
+		  		  	<h3>Problème, la plupart :</h3>
+                  	<ul>
+                    	<li>ne sont pas libres &#128553;</li>
+                    	<li>sont chers &#128546; </li>
+		    	<li>et non auto-hébergés &#128555; </li>
+                  	</ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+
+	      	  </section>
+	      
+              <section>
+                <header>
+                    <h2 class="shadow">MFA Providers with Apereo CAS</h2>
+                </header>
+                <div class="slide-content">
+				  <span style="margin-bottom: 40px; display: block;">MFA in a nutshell:</span>
+
+				  <div class="gallery-item" style="width: 100%">
+		          	<img src="./img/multifactor.png" alt="">
+				  </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+		
+	    </section>
+
+	    <!--///////////////////////////////////////////-->	    
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+              <section >
+              	<div class="comics-like centered"><span class="main">ESUP-OTP</span><span>to the rescue!</span></div>
+              </section>
+	    </section>
+	    <!--///////////////////////////////////////////-->	    
+
+            <section style="top: -350px; display: block;" hidden="" class="future">
+              <section>
+                <header>
+                    <h2 class="shadow">Objectifs</h2>
+                </header>
+                <div class="slide-content">
+		  		  ESUP-OTP : <br/>
+                  <ul>
+                    <li>est libre (MIT License)</li>
+				    <li>auto-hébergé</li>
+				    <li>facile à utiliser et installer</li>
+				    <li>permet aux utilisateurs de choisir leur MFA</li>
+				    <li>propose une interface de gestion pour dépanner les utilisateurs</li>		    		    
+                  </ul>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+              </section>
+	    </section>	    
+
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Architecture logicielle</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 26%">
+                        <div class="component centered" style="background-color: #ffcd19;">
+                        	<ul style="padding-top: 30px;">
+                        		<li><span style="color: #888; font-family:Roboto; font-weight:100; font-size:1.3em;">Express</span></li>
+                        		<li><img src="./img/nodejs.png" alt="" style="max-width: 80%;"></li>
+                        	</ul>
+                        </div>
+                        <span>ESUP OTP MANAGER</span>
+                        <div>
+                            <span>CASsified web application</span>
+                            <span>User preferences</span>
+			    			<span>User help/assistance</span>
+                            <span>Administration UI</span>			    
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt="" style="margin-top: 80px;">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <div class="component centered" style="background-color: #ea77c4;">
+                        	<ul style="padding-top: 30px;">
+                        		<li><img src="./img/mongodb.png" alt="" style="max-width: 90%;"></li>
+                        		<li><img src="./img/nodejs.png" alt="" style="max-width: 80%;"></li>
+                        	</ul>
+                        </div>
+                        <span>ESUP OTP API</span>
+                        <div>
+                            <span>REST API</span>
+                            <span>Code generation methods</span>
+                            <span>Code transports</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item" style="width: 10%">
+                        <img src="./img/https.png" alt="" style="margin-top: 80px;">
+                    </div>
+                    <div class="gallery-item" style="width: 26%">
+                        <div class="component centered" style="background-color: #b6ef67;">
+                        	<ul style="padding-top: 60px;">
+                        		<li><img src="./img/cas.png" alt="" style="max-width: 80%;"></li>
+                        	</ul>
+                        </div>
+                        <span>ESUP OTP CAS</span>
+                        <div>
+                          <span>CAS module</span>
+                        </div>
+			<span style="color: #800; font-size: 50%; border-top: 2px dashed red; padding: 0px 10px;">code côté CAS <i style="color: red; text-decoration: underline;">réduit</i></span>			
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+              </section>
+	      
+	    	  <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Architecture logicielle</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/esup-auth.webp" alt="">
+                        <span>Application mobile ESUP AUTH</span>
+                        <div>
+                            <span><u>Disponible </u> sur <a href="https://play.google.com/store/apps/details?id=org.esupportail.esupAuth&hl=en">Google Play Store</a></span>
+                            <!--span>On <a href="#next-ready-in-working">Apple Store (Being reviewed by Apple)</a></span-->
+                            <span><u>Bientôt disponible </u> sur le App Store <i>(en phase de qualification)</i></span>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+		  </section>
+
+	    	  <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Architecture logicielle</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/esup-smsu-telephone.png" alt="">
+                        <span>Applications ESUP-SMSU</span>
+			Optionnel 
+                        <div>
+			  <span>Possibilité d'utiliser différents fournisseurs de SMS cf le <a href="https://www.esup-portail.org/wiki/display/PROJSMSU/">wiki esup-smsu</a>.</span>
+                          <span>Nécessite la "suite" esup-smsu &#8594; projet complet à appréhender</span>
+			  <span>Atttention : coût par SMS</span>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+		  </section>
+
+	    	  <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Architecture logicielle</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 100%">
+                        <img src="./img/esup-nfc-tag.png" alt="">
+                        <span>Applications ESUP-NFC</span>
+			Optionnel ;-)
+                        <div>
+			  
+                          <span>Disponible sur <a href="https://play.google.com/store/apps/details?id=org.esupportail.esupAuth&hl=en">Google Play Store</a></span>
+			  <span>Possibilité d'utiliser un lecteur NFC USB voire un Arduino, cf le <a href="https://www.esup-portail.org/wiki/display/ESUPNFC/">wiki esup-nfc-tag</a>.</span>
+                          <span>Nécessite la "suite" esup-nfc-tag-server &#8594; projet complet à appréhender</span>
+                        </div>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>		  		  
+	    
+	    </section>
+
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -350px; display: block;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2>ESUP OTP</h2>
+                    <h3 class="shadow">Les différents MFA disponibles</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item dotted" style="width: 30%">
+                        <img src="./img/esup-otp-sms.png" alt="SMS/Mail" style="height: 200px;">
+                        <span>SMS/Mail</span>
+                    </div>
+                    <div class="gallery-item dotted" style="width: 30%">
+                        <img src="./img/esup-otp-google-auth.png" alt="TOTP With Google Authenticator" style="height: 200px;">
+                        <span>TOTP w/ Google Auth</span>
+                    </div>
+                    <div class="gallery-item dotted" style="width: 30%">
+                        <img src="./img/esup-otp-random-codes.png" alt=">Random code list" style="height: 200px;">
+                        <span>Codes à imprimer</span>
+                    </div>
+                    <div class="gallery-item dotted" style="width: 30%">
+                        <img src="./img/esup-otp-push.png" alt="Mobile push" style="height: 200px;">
+                        <span>Notification mobile</span>
+                    </div>		    
+                    <div class="gallery-item dotted" style="width: 30%">
+                        <img src="./img/esup-otp-esup-nfc-tag.png" alt="NFC swipe" style="height: 200px;">
+                        <span>Badgeage NFC</span>
+                    </div>		    
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+              </section>
+
+	    
+            <section>
+                <header>
+                    <h2>ESUP OTP CAS</h2>
+                    <h3 class="shadow">[IRL] Look sur un CAS 6.3.3</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-2.png" alt="waiting notification">
+                        <span>En attente de validation mobile : notification ou badgeage NFC</span>
+                    </div>
+                    <div class="gallery-item" style="width: 50%">
+                        <img src="./img/esup-otp-cas-v6.3.3-3.png" alt="input code">
+                        <span>... ou entrée d'un code <br/>généré/reçu via Google-Auth, SMS, mail</span>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">Notifications: enrôlement de l'appareil</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-push.png" alt="ESUP-OTP enrôlement avec le QR-Code">
+                        <span>ESUP-OTP enrôlement avec le QR-Code</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	        <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">Codes à imprimer</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-backup-codes.png" alt="ESUP-OTP backup codes">
+                        <span>ESUP-OTP codes de secours</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">Interface d'assistance / dépannage pour le gestionnaire</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-manager.png" alt="ESUP-OTP Manager Interface">
+                        <span>ESUP-OTP Manager Interface</span>
+                    </div>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+            <section>
+                <header>
+                    <h2>ESUP OTP MANAGER</h2>
+                    <h3 class="shadow">Interface d'administration</h3>
+                </header>
+                <div class="slide-content">
+                    <div class="gallery-item">
+                        <img src="./img/esup-otp-manager-admin.png" alt="ESUP-OTP Admin Interface">
+                        <span>Permet d'activer/désactiver les possibilités de MFA proposées par ESUP-OTP <br/> ... les SMS peuvent coûter chers !</span>
+                    </div>
+
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    </section>
+
+            <section style="top: -20px; display: none;" hidden="" class="future">
+
+	      <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">Prérequis</h3>
+                </header>
+                <div class="slide-content">
+		  <span><a href="https://github.com/search?q=org%3AEsupPortail+esup-otp"><img src="./img/github.png" alt="" style="height:40px; vertical-align:middle; margin:2px 10px 10px 0;"><strong>CF README(s) sur github ESUP</a></strong></span><br>
+		  <hr/>
+		  <ul>
+		    <li>CAS >= v5</li>
+		    <li>npm</li>
+		    <li>MongoDB</li>
+		  </ul>
+		  <hr/>
+		  Optionnel : <br/>
+		  <ul>
+		    <li>ESUP-SMSU</li>
+		    <li>ESUP-NFC-TAG</li>
+		  </ul>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+            <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">ESUP-OTP-API</h3>
+                </header>
+                <div class="slide-content">
+		  <div class="code-area" style="color:#222; background: whitesmoke;">
+                    <pre>    
+    git clone https://github.com/EsupPortail/esup-otp-api.git
+    npm install
+    # change the fields values in properties/esup.json
+    npm start
+                    </pre>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">ESUP-OTP-MANAGER</h3>
+                </header>
+                <div class="slide-content">
+		  <div class="code-area" style="color:#222; background: whitesmoke;">
+                    <pre>    
+    git clone https://github.com/EsupPortail/esup-otp-manager.git
+    npm install
+    # change the fields values in properties/esup.json
+    npm start
+                    </pre>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">ESUP-OTP-CAS</h3>
+                </header>
+                <div class="slide-content">
+		  <div class="code-area" style="color:#222; background: whitesmoke;">
+		    Dans cas/build.gradle (CAS overlay)
+                    <pre>    
+    ...
+    repositories {
+      ...
+      maven {
+          url "https://jitpack.io"
+      }
+    }
+    ...
+
+    dependencies {
+        ...
+        implementation "com.github.EsupPortail:esup-otp-cas:3f5de8b7b2"
+    }
+                    </pre>
+                </div>
+
+		  <span>Regarder <a href="https://jitpack.io/#EsupPortail/esup-otp-cas">https://jitpack.io/#EsupPortail/esup-otp-cas</a> pour récupérer un build compatible avec votre CAS</span>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">ESUP-OTP-CAS</h3>
+                </header>
+                <div class="slide-content">
+		  <div class="code-area" style="color:#222; background: whitesmoke;">
+		    Dans /etc/cas/config/esupotp.properties
+                    <pre>    
+  esupotp.rank=0
+  esupotp.urlApi=https://esup-otp-api.univ-ville.fr
+  esupotp.usersSecret=changeit
+  esupotp.apiPassword=changeit
+  esupotp.byPassIfNoEsupOtpMethodIsActive=true
+  esupotp.trustedDeviceEnabled=true
+  esupotp.isDeviceRegistrationRequired=false
+                    </pre>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+            <section>
+                <header>
+                    <h2>Installation</h2>
+                    <h3 class="shadow">Configurations systeme</h3>
+                </header>
+                <div class="slide-content">
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:70%;">
+		    Configurations systeme usuelles : systemd, logs, proxy_pass ...
+                    <pre>    
+        ...
+	After=network.target
+
+	[Service]
+	Type=simple
+	User=tomcat
+	WorkingDirectory=/opt/esup-otp-api
+	ExecStart=/bin/npm start
+	...
+                    </pre>
+                    <pre>    
+        ...
+        ServerName esup-otp-manager.univ-ville.fr
+	...
+
+	RequestHeader set X-Forwarded-Proto https
+	RequestHeader set X-Forwarded-Port 443
+
+	RewriteEngine On
+
+	RewriteCond %{QUERY_STRING} transport=websocket [NC]
+	RewriteRule /(.*) ws://127.0.0.1:4000/$1 [P]
+ 
+
+	&lt;Location /&gt;
+	  ProxyPass http://127.0.0.1:4000/ retry=1
+	  ProxyPassReverse http://127.0.0.1:4000/
+        &lt;/Location&gt;
+
+                    </pre>
+		    <pre>
+
+        ...
+
+		    </pre>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    </section>
+            
+	    <section style="top: -20px; display: none;" hidden="" class="future">
+	      <section>
+                <header>
+                    <h2>Intégration dans CAS</h2>
+                    <h3 class="shadow">Activation du MFA</h3>
+                </header>
+                <div class="slide-content">
+		  Plusieurs options.
+		  <ul>
+		    <li>Global : très simple
+		      <br/>                                                                                                                                                                                                              cas.properties
+		      <br/>
+		      <div class="code-area" style="color:#222; background: whitesmoke;">
+			<pre>                      
+  cas.authn.mfa.globalProviderId=mfa-esupotp
+			</pre>                                                                                                                                                                                    
+                      </div>     
+		    </li>
+		  <li>
+		  Par script groovy : simple et souple.
+		  <br/>
+		  cas.properties
+		  <div class="code-area" style="color:#222; background: whitesmoke;">
+                    <pre>    
+  cas.authn.mfa.groovy-script.location=file:/etc/cas/config/mfaGroovyTrigger.groovy
+                    </pre>
+		  </div>
+                </div>
+                </li>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    <section>
+                <header>
+                    <h2>Intégration dans CAS</h2>
+                    <h3 class="shadow">Activation du MFA</h3>
+                </header>
+                <div class="slide-content">
+		  Script groovy  : <br/>
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+                    <pre>    
+  import java.util.*
+  import groovy.transform.CompileStatic
+
+  class SampleGroovyEventResolver {
+
+    def String run(final Object... args) {
+        def service = args[0]
+        def registeredService = args[1]
+        def authentication = args[2]
+	def httpRequest = args[3]
+        def logger = args[4]
+
+	def mobile = authentication.principal.attributes.mobile
+	def memberOf = authentication.principal.attributes.memberOf
+
+	logger.info("ip : [{}]", httpRequest.getRemoteAddr())
+	logger.info("mobile : [{}]", mobile)
+	logger.info("memberOf : [{}]", memberOf)
+	logger.warn("registeredService.id : [{}]", registeredService.id)
+
+	// 10, 11, 12 et 13 sont des ids de services (définis par exemple dans la config CAS via du json)
+        if ((int)registeredService.id in [10, 11, 12, 13]) && !httpRequest.getRemoteAddr().startsWith("192.168.")) {
+	   return "mfa-esupotp"
+        } 
+
+	return null
+    }
+}
+
+                    </pre>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	    <section>
+                <header>
+                    <h2>Intégration dans CAS</h2>
+                    <h3 class="shadow">Trusted MFA</h3>
+                </header>
+                <div class="slide-content">
+		  -> exemple : mémoriser les clients de confiance : <hr/>
+		  Dans cas/build.gradle (CAS overlay)
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+                  <pre>    
+    dependencies {
+        ...
+        implementation "org.apereo.cas:cas-server-support-trusted-mfa:${casServerVersion}"
+        implementation "org.apereo.cas:cas-server-support-trusted-mfa-mongo:${casServerVersion}"
+    }
+                    </pre>
+                </div>
+		  
+		cas.properties : 
+
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+                    <pre>    
+  cas.authn.mfa.trusted.mongo.clientUri=mongodb://localhost/cas-mongo-database
+  cas.authn.mfa.trusted.deviceRegistrationEnabled=true
+  cas.authn.mfa.trusted.expiration=7
+  cas.authn.mfa.trusted.timeUnit=DAYS
+                    </pre>
+                </div>
+		</div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+</section>
+
+            <section style="top: -20px; display: none;" hidden="" class="future">
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Contexte</h3>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>Authentification SSO : Apereo CAS</li>
+		    <li>Shibboleth Identity Provider pour shibboleth <br/>
+		      <i style="color: #aaa; font-weight= normal;">(dans la fédération d'identités ESR opérée par Renater)</i></li>
+		    <li>ESUP-OTP en place</li>
+		  </ul>
+		  <hr/>
+		  <span style="color: #800;">Comment requérir une authentification forte sur un service shibbolethisé ?</span>
+
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Solutions</h3>
+                </header>
+                <div class="slide-content">
+
+		  <h3>Éléments de réponses :</h3> 
+		  <p style="font-size:70%; color: #aaa; font-weight= normal;">
+		    <br/> <a href="https://conf-ng.jres.org/2019/document_revision_5332.html?download">MFA et 2FA dans l’IdP Shibboleth, le serveur CAS d’Apereo et les Fédérations</a>
+		    <br/> JRES 2019 [G. Rousse & L. Auxepaules]
+		  </p>
+
+		  <h3>Approches :</h3> 
+		  <ul>
+		    <li>On demande le MFA au niveau du SP : théoriquement la plus élégante</li>
+		    <li>On demande le MFA au niveau de l'"IdP" : la plus pragmatique</li>
+		  </ul>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Solution 1 : on demande le MFA au niveau du SP</h3>
+                </header>
+                <div class="slide-content">
+
+		  <ul>
+		    <li>Prpfil MFA de REFEDS</li>
+		    <li>Profil d'authentifcation demandé/requis au niveau du SP</li>
+		    <li>Possibilité de proagation jusqu'à CAS via shib-cas-authn</li>
+		    <li>Mais : 
+		      <ul>
+			<li>Implémentation intrusive dans shib-cas-authn et spécifique/supplémentaire dans le module MFA CAS</li>
+			<li>Seule l'implémentation avec DuoSecurity est actuellement implémentée</li>
+			<li>... de plus, peu d'IdP supporte le MFA -> quel cas d'usage aujourd'hui ?</li>
+		      </ul>
+		    </li>
+		  </ul>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Solution 2 : on demande le MFA au niveau de l'"IdP"</h3>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>On active le MFA pour tous les services côté CAS</li>
+		    <li>-> on active le MFA pour le service idp.univ-ville.fr sur CAS</li>
+		  </ul>
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Solution 3 : on demande le MFA au niveau de l'"IdP"</h3>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>CAS devient un IdP Shibboleth/SAML <span style="font-size:50%">(org.apereo.cas:cas-server-support-saml-idp)</span></li>
+		    <li>Le service devient un service CAS <span style="font-size:30%">(org.apereo.cas.support.saml.services.SamlRegisteredService)</span></li>
+		  </ul>
+		  Pour intégrer cela, on peut alors :
+		  <ul>
+		    <li>faire de CAS notre IdP officiel</li>
+		    <li>ou  modifier/hacker le wayf + sp pour utiliser CAS comme IdP uniquement sur certains SP
+		  </ul>
+		  
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+
+
+	      <section>
+                <header>
+                    <h2>MFA sur une ressource shibbolethisée</h2>
+                    <h3 class="shadow">Solution 4 : on demande le MFA au niveau de l'"IdP"</h3>
+                </header>
+                <div class="slide-content">
+		  La solution la plus simple et a priori la plus pertinente ?
+		  <ul>
+		    <li>On configure shib-cas-authn avec 
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+                    <pre>    
+  shibcas.entityIdLocation=embed
+		    </pre>
+		  </div>
+		    </li>
+		    <li>Ce qui permet d'identifier ce SP comme service CAS à part entière :
+		      <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+			<pre>    
+  {
+   "@class" : "org.apereo.cas.services.RegexRegisteredService",
+   "serviceId": "^http://idp\\.univ-ville\\.fr/idp/Authn/External\\?conversation=[a-z0-9]*&entityId=https://mon-sp-sensible\\.univ-ville\\.fr",
+   ...
+		    </pre>
+		  </div>
+		    <li>ESUP-OTP en place</li>
+		  </ul>
+		  
+                </div>
+
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+	    </section>
+	    <!--///////////////////////////////////////////-->
+	    
+            <section style="top: -20px; display: none;" hidden="" class="future">
+                <header>
+                    <h2>Et voilà!</h2>
+                    <h3 class="shadow">Auteurs et contributeurs</h3>
+                </header>
+                <div class="slide-content">
+		  <ul>
+		    <li>Alex Bouskine</li>
+		    <li>Mouhamed Bassirou Deme</li>
+		    <li>Aymar Anli</li>
+		    <li>Francis Le Coq</li>
+		    <li>Vincent Bonamy</li>
+		    <li>and others !</li>
+		  </ul>
+		  <hr/>
+		  <span><img src="./img/github.png" alt="" style="height:40px; vertical-align:middle; margin:2px 10px 10px 0;"><strong>ESUP-OTP est sur le github ESUP !</strong> :</span><br>
+		  <a href="https://github.com/search?q=org%3AEsupPortail+esup-otp">https://github.com/search?q=<strong>org%3AEsupPortail+esup-otp</strong></a>
+		  <hr/>
+                </div>
+                <footer>
+                    <img src="./img/logo-esup--NEW.png" alt="">
+                </footer>
+            </section>
+
+        </div>
+        <div class="backgrounds">
+            <div class="slide-background present"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+            <div class="slide-background future"></div>
+        </div>
+        <div class="progress" style="display: block;"><span style="width: 0px;"></span></div>
+        <aside class="controls" style="display: block;">
+            <div class="navigate-left"></div>
+            <div class="navigate-right enabled"></div>
+            <div class="navigate-up"></div>
+            <div class="navigate-down"></div>
+            <div class="slideNb"></div>
+        </aside>
+        <div class="state-background"></div>
+        <div class="pause-overlay"></div>
+    </div>
+    <script src="./js/head.min.js"></script>
+    <script src="./js/reveal.js"></script>
+    <script>
+    Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            {
+                src: 'lib/js/classList.js',
+                condition: function() {
+                    return !document.body.classList;
+                }
+            },
+
+            // Syntax highlight for <pre> elements
+            {
+                src: 'plugin/highlight/highlight.js',
+                async: true,
+                callback: function() {
+                    hljs.initHighlightingOnLoad();
+                }
+            }
+
+        ],
+    });
+
+    function createSingletonNode(container, tagname, classname, innerHTML) {
+
+        var node = container.querySelector('.' + classname);
+        if (!node) {
+            node = document.createElement(tagname);
+            node.classList.add(classname);
+            if (innerHTML !== null) {
+                node.innerHTML = innerHTML;
+            }
+            container.appendChild(node);
+        }
+        return node;
+
+    }
+
+    // From https://github.com/hakimel/reveal.js/pull/56
+    function slidenumber(event) {
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll('.reveal .slides>section');
+        for (var i = 0; i < event.indexh; i++) {
+            // get subslides
+            var subslides = horizontal_slides[i].querySelectorAll('section');
+
+            // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+            current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv + 1;
+        return current_slide.toString();
+    }
+
+    function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+    }
+
+    Reveal.addEventListener('slidechanged', setSlideNb);
+    Reveal.addEventListener('ready', setSlideNb);
+    </script>
+    <script type="text/javascript" src="./Template Presentation ESUP-Days_files/highlight.js"></script>
+</body>
+
+</html>
