@@ -721,9 +721,9 @@
   cas.authn.mfa.groovy-script.location=file:/etc/cas/config/mfaGroovyTrigger.groovy
                     </pre>
 		  </div>
-                </div>
-                </li>
-
+                  </li>
+                    <li>...</li>
+		</div>
                 <footer>
                     <img src="./img/logo-esup--NEW.png" alt="">
                 </footer>
@@ -853,8 +853,8 @@
 
 		  <h3>Approches :</h3> 
 		  <ul>
-		    <li>On demande le MFA au niveau du SP : théoriquement la plus élégante</li>
-		    <li>On demande le MFA au niveau de l'"IdP" : la plus pragmatique</li>
+		    <li>On demande le MFA au niveau du SP</li>
+		    <li>On demande le MFA au niveau de l'"IdP"</li>
 		  </ul>
                 </div>
 
@@ -876,9 +876,9 @@
 		    <li>Possibilité de propagation jusqu'à CAS via shib-cas-authn</li>
 		    <li>Mais : 
 		      <ul>
-			<li>Implémentation intrusive dans shib-cas-authn et spécifique/supplémentaire dans le module MFA CAS</li>
-			<li>Seule l'implémentation avec DuoSecurity est actuellement développée</li>
-			<li>... de plus, peu d'IdP supporte le MFA</li>
+			<li>Implémentation intrusive dans shib-cas-authn et dans le module MFA CAS</li>
+			<li>Seule l'implémentation avec DuoSecurity est actuellement proposée</li>
+			<li>... évidemment peu d'IdP supporte le MFA</li>
 			<li>Cas d'usage aujourd'hui ?</li>
 		      </ul>
 		    </li>
