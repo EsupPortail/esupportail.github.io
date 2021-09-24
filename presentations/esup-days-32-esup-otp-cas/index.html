@@ -876,6 +876,13 @@
 		    </pre>
 		  </div>
 		    </li>
+		    <li>On désactive le maintien des sessions dans l'IdP 
+		  <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
+            <pre>   
+  idp.session.enabled = false
+		    </pre>
+		  </div>
+		    </li>            
 		    <li>Ce qui permet d'identifier ce SP comme service CAS à part entière :
 		      <div class="code-area" style="color:#222; background: whitesmoke; font-size:80%;">
 			<pre>    
@@ -1051,7 +1058,7 @@
                   <ul>
 		    <li>Perspectives</li>
 			<ul>
-				<li>Projet Virtual Desktop Infrastrure (VDI)</li>
+				<li>Projet Virtual Desktop Infrastructure (VDI)</li>
 				<li>Généralisation pour l'accès à l'ENT ? Webmail ? ...</li>
 				<li>Montée en puissance du push mobile</li>
 				<li>Double facteur pour certains services étudiants ? ENT ?, Webmail, O365 ?, ...?</li>
@@ -1100,7 +1107,7 @@
 				    <li>service critique très sollicité, remarquablement stable et performant
 					  <ul>
 						<li>1 seule VM (8 CPUs, 10 GB RAM)</li>
-						<li>apache apache, tomcat, redis ... et esup-otp, mongodb</li>
+						<li>apache, tomcat, redis ... et esup-otp, mongodb</li>
 					  </ul>
 					</li>
 				  </ul>
@@ -1129,6 +1136,12 @@
 						<li>... et esup-otp-cas ;-)</li>						
 					  </ul>
 					</li>
+                    <li>Shibboleth :
+                      <ul>
+                        <li>Shibboleth IdP 4.1.4 en production (la dernière)</li>
+                        <li>Avec <a href="https://github.com/Unicon/shib-cas-authn">shib-cas-authn</a> pour sa "cassification"</li>
+                      </ul>
+                    </li>
 				  </ul>
                 </div>
                 <footer>
