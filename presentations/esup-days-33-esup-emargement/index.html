@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="fr">
+
+<!-- version 1.0 -->
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Template Presentation ESUP-Days</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/simple.css" id="theme"> 
+    <link rel="stylesheet" href="css/esup-theme.css">
+
+    <link rel="stylesheet" href="plugin/highlight/default.min.css">
+
+
+  </head>
+
+  <body>
+    <!-- Add/remove 'lighter' class here to change the look of the whole template (lighter = newer version) -->
+    <div class="reveal esup lighter">
+
+      <div class="slides">
+
+        <section class="main-title">
+          <header>
+            <h1>
+              <img src="./img/logo-esup--NEW.png" alt="ESUP-Portail" class="header-img upleft">
+              <!--img src="./img/event-datelocation.png" alt="23 sept. 2020 - 100% online" class="header-img upright"-->
+              <img src="./img/logo-apereo.png" alt="Apereo" class="header-img upright" style="max-height: 45px; padding-top: 25px;">
+              <img src="./img/event-title.png" alt="ESUP-Days #31 / Apereo Paris 2021" class="event-title">
+            </h1>
+          </header>
+          <div class="presentation-title">
+            <div class="line-divider"></div>
+            <h2>Esup-emargement, dématérialisation de l'émargement en lien avec le SI</h2>
+            <ul class="presenters">
+              <li>Jean-Pierre TRAN</li>
+              <li>Fabrice SEBBE</li>
+            </ul>
+            <ul class="institutions">
+              <li>Université de Rouen Normandie</li>
+              <li>Université de Rouen Normandie</li>
+            </ul>
+          </div>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+        <section>
+          <header>
+            <h2 class="shadow">Esup-emargement</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+              <li>Contexte</li>
+              <li>Environnement technique</li>
+              <li>Caractéristiques</li>
+              <li>Fonctionnement</li>
+              <li>Copies d'écran</li>
+              <li>Démo</li>
+              <li>Retour d'expérience</li>
+              <li>Liens</li>
+              <li>Questions</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        
+        <section>
+          <header>
+            <h2>Contexte</h2>
+          </header>
+          <div class="slide-content">
+            <p><b>Historique à l’Université de Rouen Normandie : </b></p>
+            	<p>Application d'émargement existante en lien avec esup-nfc-tag. 
+            	</p>
+				<ul>
+					<li>Version initiale utilisée pour les examens du CLES <small>(Certificat
+							de compétences en Langues de l'Enseignement Supérieur)</small></li>
+					<li>Instance mise à disposition pour la composante SHS</li>
+				</ul>
+			<p><b>
+              Limites de cette application : </b></p>            
+            <ul>
+            	<li>Pas de lien avec Apogée</li>
+            	<li>Manques : affichage photo, export CSV, recherche , notion de salle, interface responsive</li>
+            	<li>Généralisation difficile à d'autres services : pas de multi-contexte</li>
+            </ul>
+            <p><b>
+              Projet :             
+            </b></p> 
+            <ul>
+            	<li>Réécriture de l’application en concertation avec SHS pour le cahier des charges</li>
+            	<li>1er test en janvier 2020 puis en juillet 2020 pour le concours PACES <small>(Première Année Commune aux Études de Santé)</small></li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+        
+       	<section>
+          <header>
+            <h2>Environnement technique</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+            	<li>Java / Spring Boot</li>
+            	<li>Bootstrap</li>
+            	<li>Postgresql</li>
+            	<li>CAS</li>
+            	<li>Ldap</li>
+            	<li>Esup-nfc-tag server + esup-nfc-tag “client”</li>
+            	<li>Esup-SGC (photo)</li>
+            	<li>Apogée</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+     <!--///////////////////////////////////////////-->
+        
+       <section>
+          <header>
+            <h2>Caractéristiques</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+            	<li>authentification CAS</li>
+            	<li>application multi-contexte : une seule base pour plusieurs environnements cloisonnés <br/>-> un contexte par UFR par exemple</li>
+            	<li>5 niveaux de droits :
+	            	<ul>
+						<li>Super-admin : définition des contextes
+						</li>
+						<li>Admininistrateur : création des salles, sites et agents 
+						</li>
+						<li>Gestionnaire : création des sessions 
+						</li>
+						<li>Surveillant : accès à la liste d'inscrits pour l'émargement
+						</li>
+						<li>Participant : rôle par défaut d'un utilisateur, récapitulatif de ses participations
+						</li>
+					</ul>
+				</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+
+        <!--///////////////////////////////////////////-->
+        
+		<section>
+          <header>
+            <h2>Fonctionnement</h2>
+          </header>
+          <div class="slide-content">
+          	<p style="font-weight : bolder">But : créer des sessions d'émargement (examen, cours, réunion) constituées d’inscrits (étudiants ou personnels) 
+          	répartis dans des lieux (salles) situés sur un site (campus)</p>
+          	<h3 style="color:black; text-decoration: underline;text-transform: uppercase; font-weight: bolder; margin-bottom: .2em;">2 types de sessions : </h3>
+            <ul>
+            	<li>session avec import d’inscrits
+            	<br /> <small>sources possibles : Apogée, Ldap, CSV</small>
+            	</li>
+            	<li>session « libre », sans inscrit préalable , remplissage au fil de l'eau
+            	<small>ex: distribution d'autotests à l'Université de Rouen Normandie</small> 
+            	</li>
+            </ul>
+            <br />
+          	<h3 style="color:black; text-decoration: underline;text-transform: uppercase; font-weight: bolder; margin-bottom: .2em;">4 modes d’émargement possibles :</h3>
+            <ul>
+            	<li>carte avec lecteur/téléphone NFC grâce à l’application esup nfc-tag</li>
+            	<li>manuel (case à cocher)</li>
+            	<li>lien envoyé par mail</li>
+            	<li>QR Code</li>
+            </ul>            
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+        <!--///////////////////////////////////////////-->       
+        
+      	<section>
+          <header>
+            <h2>Copies d'écran (1/5)</h2>
+            <h3 class="shadow">Menu super-admin</h3>
+          </header>
+          <div class="slide-content">
+            <p>Contexte  "all"</p>
+              <div class="gallery-item">
+                <img src="img/contexte_all.png" alt="Menu super-admin">
+              </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+              <section>
+          <header>
+            <h2>Copies d'écran (2/5)</h2>
+            <h3 class="shadow">Menu Administrateur</h3>
+          </header>
+          <div class="slide-content">
+            <p>Lieux</p>
+            <div class="gallery-item">
+              <img src="img/menu_admin.png" alt="menu Admin">
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+        <!--///////////////////////////////////////////-->
+              <section>
+          <header>
+            <h2>Copies d'écran (3/5)</h2>
+            <h3 class="shadow">Menu Gestionnaire</h3>
+          </header>
+          <div class="slide-content">
+            <p>Statistiques</p>
+            <div class="gallery-item">
+              <img src="img/statistiques.png" alt="Menu Gestionnaire">
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>        
+        
+        <!--///////////////////////////////////////////-->
+              <section>
+          <header>
+            <h2>Copies d'écran (4/5)</h2>
+            <h3 class="shadow">Menu Surveillant</h3>
+          </header>
+          <div class="slide-content">
+            <p>Session libre</p>
+            <div class="gallery-item">
+              <img src="img/session_libre.png" alt="Menu Surveillant">
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>        
+
+        <!--///////////////////////////////////////////-->
+
+              <section>
+          <header>
+            <h2>Copies d'écran (5/5)</h2>
+            <h3 class="shadow">Menu Participant</h3>
+          </header>
+          <div class="slide-content">
+            <p>Historique d'un utilisateur authentifié</p>
+            <div class="gallery-item">
+              <img src="img/participant.png" alt="Menu Participant">
+            </div>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>  
+
+         <!--///////////////////////////////////////////-->         
+        
+		<section>
+          <header>
+            <h2>Démo</h2>
+          </header>
+          <div class="slide-content">
+			<p>Création d'une session et émargement dans le contexte DEMO-ESUP</p>
+			<video controls>
+		    	<source src="videos/Esup-emargement-27-01-2022.mp4" type="video/mp4">
+		  	</video>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+         <!--///////////////////////////////////////////-->
+        
+       <section>
+          <header>
+            <h2>Retour d'expérience à l'Université de Rouen Normandie</h2>
+          </header>
+          <div class="slide-content">
+            <ul>
+            	<li>Gain de temps considérable (avec 2 Terminaux - 10 min pour 200 étudiants Vs 45min au format papier)</li>
+            	<li>Aussi fiable qu'un emargement papier</li>
+            	<li>Très forte adhésion des étudiants et des surveillants</li>
+				<li>Image de modérnité au niveau de l'institution</li>
+				<li>S'inscrit dans une démarche de développement durable (fin des multiples liasses papier)</li>
+            </ul>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+
+        <!--///////////////////////////////////////////-->
+
+       <section>
+          <header>
+            <h2>Liens</h2>
+          </header>
+          <div class="slide-content">
+			Page Esup : <br />
+			<a href="https://www.esup-portail.org/wiki/display/EMARGEMENT">https://www.esup-portail.org/wiki/display/EMARGEMENT</a>
+			<br />
+			Page GitHub : <br />
+			<a href="https://github.com/EsupPortail/esup-emargement">https://github.com/EsupPortail/esup-emargement</a>
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>
+        
+        <!--///////////////////////////////////////////-->
+
+       <section>
+          <header>
+            <h2>Questions</h2>
+          </header>
+          <div class="slide-content">
+			???..............................
+          </div>
+          <footer>
+            <img src="./img/communaute.png" alt="">
+          </footer>
+        </section>        
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        margin: 0,
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        theme: 'simple', // available themes are in /css/theme
+        transition: 'linear', // default/cube/page/concave/zoom/linear/fade/none
+        dependencies: [ 
+            // Cross-browser element.classList (esp needed on safari 4.0.5)
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+
+            // Syntax highlight for <pre> elements
+                  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+
+            ],
+        });
+
+        function createSingletonNode( container, tagname, classname, innerHTML ) {
+
+          var node = container.querySelector( '.' + classname );
+          if( !node ) {
+              node = document.createElement( tagname );
+              node.classList.add( classname );
+              if( innerHTML !== null ) {
+                  node.innerHTML = innerHTML;
+              }
+              container.appendChild( node );
+          }
+          return node;
+
+        }
+
+      // From https://github.com/hakimel/reveal.js/pull/56
+      function slidenumber(event){
+        var current_slide = 0;
+
+        var horizontal_slides = document.querySelectorAll( '.reveal .slides>section' );
+        for (var i = 0; i < event.indexh; i++) {
+          // get subslides
+          var subslides = horizontal_slides[i].querySelectorAll('section');
+
+          // if subslides.length is 0, add 1 for horizontal slide, else add subslides.length
+          current_slide += (subslides.length === 0) ? 1 : subslides.length;
+        }
+
+        current_slide += event.indexv+1;
+        return current_slide.toString();
+      }
+
+      function setSlideNb(event) {
+        var dom = createSingletonNode(document.querySelector(".controls"), "div", "slideNb");
+        dom.innerHTML = event.indexh ? event.indexh : '';
+      }
+
+      Reveal.addEventListener('slidechanged', setSlideNb);
+      Reveal.addEventListener('ready', setSlideNb);
+
+    </script>
+
+  </body>
+</html>
